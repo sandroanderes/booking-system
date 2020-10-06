@@ -2,8 +2,8 @@
 <html>
     @include('includes.head')
 <body>
-    <div class="container">
-        @include('includes.header')
+    @include('includes.header')
+    <div class="container mt-3">
         @yield('content')
         @include('includes.footer')
     </div>

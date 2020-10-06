@@ -1,3 +1,3 @@
 <footer>
-    <div id="copyright text-right">© Copyright 2020 - Buechs</div>
+    <div id="copyright" class="text-center">© Copyright 2020 - Buechs</div>
 </footer>
