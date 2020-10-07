@@ -88,7 +88,7 @@ return [
     */
 
     'resource' => [
-        'stylesheets' => [],
+        'stylesheets' => ['/assets/sass/main.css'],
         'scripts'     => [],
     ],
 

@@ -1,0 +1,20 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "main.scss",
+        "abstracts/_variables.scss",
+        "abstracts/_functions.scss",
+        "abstracts/_mixins.scss",
+        "abstracts/_placeholders.scss",
+        "base/_base.scss",
+        "base/_typography.scss",
+        "layout/_navigation.scss",
+        "layout/_header.scss",
+        "layout/_footer.scss",
+        "themes/_theme.scss",
+        "themes/_admin.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}
