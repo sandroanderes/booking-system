@@ -44,7 +44,7 @@ class PlatformProvider extends OrchidServiceProvider
 
             ItemMenu::label('Profileinstellungen')
                 ->icon('user')
-                ->route('platform.userprofile')
+                ->route('platform.profile')
                 ->title('Einstellungen'),
 
             ItemMenu::label('Design')
@@ -52,6 +52,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->route('platform.systemdesign')
                 ->icon('settings'),
 
+                /*
             ItemMenu::label('Basic Elements')
                 ->title('Form controls')
                 ->icon('note')
@@ -77,9 +78,9 @@ class PlatformProvider extends OrchidServiceProvider
             ItemMenu::label('Cards')
                 ->icon('grid')
                 ->route('platform.example.cards'),
-
+*/
             ItemMenu::label('Documentation')
-                ->title('Irgendöppis')
+                ->title('Weiteres')
                 ->icon('docs')
                 ->url('https://orchid.software/en/docs'),
         ];

@@ -103,8 +103,6 @@ Route::screen('roles', RoleListScreen::class)
 Route::screen('/newCalendar', newCalendar::class)->name('platform.newCalendar');
 // Calendar Overview
 Route::screen('/calendarOverview', calendarOverview::class)->name('platform.calendarOverview');
-// Userprofile
-Route::screen('/userprofile', userprofile::class)->name('platform.userprofile');
 // Design Settings
 Route::screen('/systemdesign', systemdesign::class)->name('platform.systemdesign');
 

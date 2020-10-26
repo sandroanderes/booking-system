@@ -141,10 +141,6 @@ class newCalendar extends Screen
                     ->placeholder('Kalender veröffentlichen')
                     ->help('Möchten Sie, dass Ihr Kalender öffentlich zugänglich ist?'),
                 ]),
-                Button::make('Speichern')
-                    ->method('buttonClickProcessing')
-                    ->type(Color::DEFAULT()),
-
             ])->title('Angaben zum Unternehmen'),
             
             // Angaben zum Kalender
@@ -264,11 +260,10 @@ class newCalendar extends Screen
                     ->title('Nur Ganztägige Reservationen')
                     ->placeholder('Reservationen ganztäglich')
                     ->help('Kann ein ganzer Tag reserviert werden?'),
-                Input::make('reservationperiod')
-                    ->title('Reservationszeitraum')
-                    ->type('email')
-                    ->help('Von wann bis wann können Kunden Ihr Angebot reservieren?')
-                    ->required(),
+
+                Button::make('Speichern')
+                    ->method('buttonClickProcessing')
+                    ->type(Color::PRIMARY()),
             ])->title('Angaben zum Kalender'),  
         ];
     }
