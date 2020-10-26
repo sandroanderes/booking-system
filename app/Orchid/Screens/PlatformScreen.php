@@ -15,14 +15,14 @@ class PlatformScreen extends Screen
      *
      * @var string
      */
-    public $name = 'Get Started';
+    public $name = 'Legen Sie los!';
 
     /**
      * Display header description.
      *
      * @var string
      */
-    public $description = 'Welcome to your Orchid application.';
+    public $description = 'Willkommen zur Verwaltung ihres Reservationssystems.';
 
     /**
      * Query data.

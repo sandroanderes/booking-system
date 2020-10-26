@@ -29,23 +29,31 @@ class PlatformProvider extends OrchidServiceProvider
             ItemMenu::label('Example screen')
                 ->icon('monitor')
                 ->route('platform.example')
-                ->title('Navigation')
+                ->title('Navigation.old')
                 ->badge(function () {
                     return 6;
                 }),
 
-            ItemMenu::label('Dropdown menu')
-                ->slug('example-menu')
-                ->icon('code')
+            ItemMenu::label('Dashboard')
+                ->icon('monitor')
+                ->route('platform.example')
+                ->title('Navigation'),
+
+            ItemMenu::label('Kalender...')
+                ->slug('calendar-menu')
+                ->icon('calendar')
+                ->route('platform.example.fields')
                 ->childs(),
 
-            ItemMenu::label('Sub element item 1')
-                ->place('example-menu')
-                ->icon('bag'),
+            ItemMenu::label('Übersicht')
+                ->place('calendar-menu')
+                ->icon('layers')
+                ->route('platform.calendarOverview'),
 
-            ItemMenu::label('Sub element item 2')
-                ->place('example-menu')
-                ->icon('heart'),
+            ItemMenu::label('Neuer Kalender')
+                ->place('calendar-menu')
+                ->icon('plus')
+                ->route('platform.newCalendar'),
 
             ItemMenu::label('Basic Elements')
                 ->title('Form controls')
