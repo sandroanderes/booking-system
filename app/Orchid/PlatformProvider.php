@@ -26,34 +26,31 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerMainMenu(): array
     {
         return [
-            ItemMenu::label('Example screen')
+            ItemMenu::label('Dashboard')
                 ->icon('monitor')
                 ->route('platform.example')
-                ->title('Navigation.old')
                 ->badge(function () {
                     return 6;
                 }),
 
-            ItemMenu::label('Dashboard')
-                ->icon('monitor')
-                ->route('platform.example')
-                ->title('Navigation'),
-
-            ItemMenu::label('Kalender...')
-                ->slug('calendar-menu')
-                ->icon('calendar')
-                ->route('platform.example.fields')
-                ->childs(),
-
             ItemMenu::label('Übersicht')
-                ->place('calendar-menu')
-                ->icon('layers')
-                ->route('platform.calendarOverview'),
+                ->icon('chart')
+                ->route('platform.calendarOverview')
+                ->title('Kalender'),
 
             ItemMenu::label('Neuer Kalender')
-                ->place('calendar-menu')
                 ->icon('plus')
                 ->route('platform.newCalendar'),
+
+            ItemMenu::label('Profileinstellungen')
+                ->icon('user')
+                ->route('platform.userprofile')
+                ->title('Einstellungen'),
+
+            ItemMenu::label('Design')
+                ->slug('design-menu')
+                ->route('platform.systemdesign')
+                ->icon('settings'),
 
             ItemMenu::label('Basic Elements')
                 ->title('Form controls')
