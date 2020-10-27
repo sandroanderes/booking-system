@@ -30,6 +30,7 @@ use App\Orchid\Screens\userprofile;
 // System Design
 use App\Orchid\Screens\systemdesign;
 
+
 /*
 |--------------------------------------------------------------------------
 | Dashboard Routes
@@ -100,11 +101,11 @@ Route::screen('roles', RoleListScreen::class)
     });
 
 // New Calendar
-Route::screen('/newCalendar', newCalendar::class)->name('platform.newCalendar');
+Route::screen('/add-calendar', newCalendar::class)->name('platform.newCalendar');
 // Calendar Overview
-Route::screen('/calendarOverview', calendarOverview::class)->name('platform.calendarOverview');
+Route::screen('/calendar-overview', calendarOverview::class)->name('platform.calendarOverview');
 // Design Settings
-Route::screen('/systemdesign', systemdesign::class)->name('platform.systemdesign');
+Route::screen('/change-design', systemdesign::class)->name('platform.systemdesign');
 
 
 // Example...

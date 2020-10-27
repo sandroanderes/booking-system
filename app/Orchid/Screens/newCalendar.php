@@ -14,8 +14,11 @@ use Orchid\Support\Color;
 use Orchid\Support\Facades\Alert;
 use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\CheckBox;
-use Orchid\Screen\Fields\DateRange;
 use Orchid\Screen\Fields\DateTimer;
+
+// DB
+use App\Models\Calendar;
+use Illuminate\Http\Request;
 
 class newCalendar extends Screen
 {
@@ -74,7 +77,7 @@ class newCalendar extends Screen
             ->title('Kalender Guide')
             ->applyButton('Weiter')
             ->closeButton('Schliessen'),
-
+/*
             // Persönliche Angaben
             Layout::rows([
                 Group::make([
@@ -91,15 +94,22 @@ class newCalendar extends Screen
                     ->title('Persönliche Email-Adresse')
                     ->type('email')
                     ->required(),
-            ])->title('Persönliche Angaben'),  
-
-            // Angaben zum Unternehmen
-            Layout::rows([
+                Group::make([
+                    Input::make('email')
+                        ->title('Öffentliche Email-Adresse')
+                        ->type('email')
+                        ->help('Über welche Email-Adresse können Kunden Sie erreichen?')
+                        ->required(),
+                    Input::make('phone')
+                        ->mask('+41 81 234 56 78')
+                        ->title('Öffentliche TelefonNr.')
+                        ->help('Über welche Telefonnummer können Kunden Sie erreichen?')
+                ]),
                 Group::make([
                     Input::make('compamyname')
                         ->title('Name')
                         ->type('text')
-                        ->help('Wie heisst Ihr Unternhemen?')
+                        ->help('Wie heisst Ihr Unternhemen / Ihre Organisation?')
                         ->required(),
                     Select::make('branch')
                         ->options([
@@ -113,45 +123,21 @@ class newCalendar extends Screen
                         ->help('Für welche Branche möchten Sie ein Reservationssystem erstellen?')
                         ->required(),
                 ]),
-                TextArea::make('description')
-                    ->title('Beschreibung')
-                    ->rows(5)
-                    ->help('Was kann man hier reservieren?')
-                    ->required(),
-                Group::make([
-                    Input::make('email')
-                        ->title('Öffentliche Email-Adresse')
-                        ->type('email')
-                        ->help('Über welche Email-Adresse können Kunden Sie erreichen?')
-                        ->required(),
-                    Input::make('phone')
-                        ->mask('+41 81 234 56 78')
-                        ->title('Öffentliche TelefonNr.')
-                        ->help('Über welche Telefonnummer können Kunden Sie erreichen?')
-                ]),
-                Group::make([
-                    Input::make('website')
+                Input::make('website')
                     ->title('Webseite')
                     ->type('url')
                     ->help('Unter welcher URL gelangen Kunden auf Ihre Webseite?'),
-
-                    CheckBox::make('publicCalendar')
-                    ->value(1)
-                    ->title('Öffentlicher Kalender')
-                    ->placeholder('Kalender veröffentlichen')
-                    ->help('Möchten Sie, dass Ihr Kalender öffentlich zugänglich ist?'),
-                ]),
-            ])->title('Angaben zum Unternehmen'),
-            
+            ])->title('Persönliche Angaben'),  
+            */
             // Angaben zum Kalender
             Layout::rows([
                 Group::make([
-                    Input::make('calendername')
+                    Input::make('calendar.calendar_name')
                         ->title('Name des Reservationssystems')
                         ->type('text')
                         ->help('Unter welchem Namen soll Ihr Reservationssystem angezeigt werden?')
                         ->required(),
-                    Select::make('calendarformat')
+                    Select::make('calendar.calendar_format')
                         ->options([
                             'dayview' => 'Tagesansicht',
                             'fivedayview' => 'Fünftagesansicht',
@@ -162,20 +148,25 @@ class newCalendar extends Screen
                         ->help('Welches Kalenderformat soll standardmässig angezeigt werden?')
                         ->required(),
                 ]),
+                TextArea::make('calendar.description')
+                    ->title('Beschreibung')
+                    ->rows(5)
+                    ->help('Was kann man hier reservieren?')
+                    ->required(),
                 Group::make([
-                    DateTimer::make('reservationperiod_start')
+                    DateTimer::make('calendar.period_from')
                         ->title('Reservationszeitraum Von:')
                         ->noCalendar()
                         ->format('h:i K')
                         ->help('Ab wann kann reserviert werden?'),
-                    DateTimer::make('reservationperiod_end')
+                    DateTimer::make('calendar.period_until')
                         ->title('Reservationszeitraum Bis:')
                         ->noCalendar()
                         ->format('h:i K')
                         ->help('Bis wann kann reserviert werden??')   
                 ]),
                 Group::make([
-                    Select::make('minreservation')
+                    Select::make('calendar.min_duration')
                     ->options([
                         '0.25' => '15 min',
                         '0.5' => '30 min',
@@ -202,7 +193,7 @@ class newCalendar extends Screen
                     ])
                     ->title('Min. Reservationsdauer')
                     ->help('Wie lange kann minimal reserviert werden?'),
-                    Select::make('maxreservation')
+                    Select::make('calendar.max_duration')
                     ->options([
                         '0.5' => '30 min',
                         '0.75'   => '45 min',
@@ -229,7 +220,7 @@ class newCalendar extends Screen
                     ->title('Max. Reservationsdauer')
                     ->help('Wie lange kann maximal reserviert werden?')  
                 ]),
-                Select::make('fixreservation')
+                Select::make('calendar.fixed_duration')
                     ->options([
                         '0.5' => '30 min',
                         '0.75'   => '45 min',
@@ -255,20 +246,28 @@ class newCalendar extends Screen
                     ])
                     ->title('Fixe Reservationsdauer')
                     ->help('Wie lange dauert ein Reservationsblock?'), 
-                CheckBox::make('alldayreservation')
-                    ->value(1)
-                    ->title('Nur Ganztägige Reservationen')
-                    ->placeholder('Reservationen ganztäglich')
-                    ->help('Kann ein ganzer Tag reserviert werden?'),
-
+                Group::make([
+                    CheckBox::make('calendar.allday_reservation')
+                        ->value(1)
+                        ->title('Nur Ganztägige Reservationen')
+                        ->placeholder('Reservationen ganztäglich')
+                        ->help('Kann ein ganzer Tag reserviert werden?'),
+                    CheckBox::make('calendar.private_link')
+                        ->value(1)
+                        ->title('Privater Kalender')
+                        ->placeholder('Privaten Link zum Kalender erstellen')
+                        ->help('Möchten Sie, dass Ihr Kalender nur über einen privaten Link zugänglich ist?'),
+                ]),
                 Button::make('Speichern')
-                    ->method('buttonClickProcessing')
+                    ->method('createCalendar')
                     ->type(Color::PRIMARY()),
             ])->title('Angaben zum Kalender'),  
         ];
     }
-    public function buttonClickProcessing()
+    public function createCalendar(Calendar $calendar, Request $request)
     {
-        Alert::warning('Ihre Angaben wurden Zwischengespeichert.');
+        $calendar->fill($request->get('calendar'))->save();
+        Alert::warning('Ihr Kalender wurde erstellt.');
+        return redirect()->route('platform.calendarOverview');
     }
 }
