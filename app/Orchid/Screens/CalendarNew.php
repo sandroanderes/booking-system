@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Auth;
 
 
 
-class newCalendar extends Screen
+class CalendarNew extends Screen
 {
     /**
      * Display header name.

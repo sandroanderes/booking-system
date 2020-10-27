@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+//use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Orchid\Screen\AsSource;
 use Illuminate\Database\Eloquent\Model;
 
 class Calendar extends Model
 {
-    use HasFactory;
-    // sonst --> use AsSource;
+    // use HasFactory;
+    use AsSource;
 
     protected $fillable = [
         'calendar_name',

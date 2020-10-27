@@ -18,11 +18,9 @@ use App\Orchid\Screens\User\UserProfileScreen;
 use Illuminate\Support\Facades\Route;
 use Tabuna\Breadcrumbs\Trail;
 
-// NewCalendar
-use App\Orchid\Screens\newCalendar;
-
-// CalendarOverview
-use App\Orchid\Screens\calendarOverview;
+// Calendar Views
+use App\Orchid\Screens\CalendarNew;
+use App\Orchid\Screens\CalendarOverview;
 
 // System Design
 use App\Orchid\Screens\systemdesign;
@@ -97,11 +95,10 @@ Route::screen('roles', RoleListScreen::class)
             ->push(__('Roles'), route('platform.systems.roles'));
     });
 
-// New Calendar
-Route::screen('/add-calendar', newCalendar::class)->name('platform.newCalendar');
+// Calendar Views
+Route::screen('/calendar-add', CalendarNew::class)->name('platform.CalendarNew');
+Route::screen('/calendar-overview', CalendarOverview::class)->name('platform.CalendarOverview');
 
-// Calendar Overview
-Route::screen('/calendar-overview', calendarOverview::class)->name('platform.calendarOverview');
 // Design Settings
 Route::screen('/change-design', systemdesign::class)->name('platform.systemdesign');
 

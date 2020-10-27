@@ -35,12 +35,12 @@ class PlatformProvider extends OrchidServiceProvider
 
             ItemMenu::label('Übersicht')
                 ->icon('chart')
-                ->route('platform.calendarOverview')
+                ->route('platform.CalendarOverview')
                 ->title('Kalender'),
 
             ItemMenu::label('Neuer Kalender')
                 ->icon('plus')
-                ->route('platform.newCalendar'),
+                ->route('platform.CalendarNew'),
 
             ItemMenu::label('Profileinstellungen')
                 ->icon('user')
