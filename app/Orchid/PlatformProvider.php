@@ -52,7 +52,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->route('platform.systemdesign')
                 ->icon('settings'),
 
-                /*
+            /*
             ItemMenu::label('Basic Elements')
                 ->title('Form controls')
                 ->icon('note')

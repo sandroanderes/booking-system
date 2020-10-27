@@ -15,8 +15,8 @@ class CreateCalendarsTable extends Migration
     {
         Schema::create('calendars', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id');
-            $table->string('calendar_name');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');            $table->string('calendar_name');
             $table->string('description');
             $table->string('calendar_format');
             $table->string('period_from');
@@ -26,6 +26,14 @@ class CreateCalendarsTable extends Migration
             $table->string('fixed_duration');
             $table->string('allday_reservation');
             $table->string('private_link');
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->string('private_email');
+            $table->string('public_email');
+            $table->string('public_phoneNr');
+            $table->string('company_name');
+            $table->string('branch');
+            $table->string('website_url');
             $table->timestamps();
         });
     }

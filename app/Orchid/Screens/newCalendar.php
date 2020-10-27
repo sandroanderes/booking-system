@@ -7,18 +7,21 @@ use Orchid\Screen\Fields\Group;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
 use Orchid\Screen\Fields\Input;
-use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Actions\ModalToggle;
 use Orchid\Screen\Actions\Button;
 use Orchid\Support\Color;
 use Orchid\Support\Facades\Alert;
 use Orchid\Screen\Fields\Select;
+use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Fields\CheckBox;
 use Orchid\Screen\Fields\DateTimer;
 
 // DB
 use App\Models\Calendar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class newCalendar extends Screen
 {
@@ -43,7 +46,8 @@ class newCalendar extends Screen
      */
     public function query(): array
     {
-        return [];
+
+         return [];
     }
 
     /**
@@ -77,41 +81,47 @@ class newCalendar extends Screen
             ->title('Kalender Guide')
             ->applyButton('Weiter')
             ->closeButton('Schliessen'),
-/*
+
             // Persönliche Angaben
             Layout::rows([
                 Group::make([
-                    Input::make('firstname')
+                    Input::make('calendar.firstname')
                         ->title('Vorname')
                         ->type('text')
                         ->required(),
-                    Input::make('lastname')
+                    Input::make('calendar.lastname')
                         ->title('Nachname')
                         ->type('text')
                         ->required(),
-                ]),    
-                Input::make('email')
-                    ->title('Persönliche Email-Adresse')
-                    ->type('email')
-                    ->required(),
-                Group::make([
-                    Input::make('email')
+                ]), 
+                Group::make([   
+                    Input::make('calendar.private_email')
+                        ->title('Persönliche Email-Adresse')
+                        ->type('email')
+                        ->help('Über welche Email-Adresse dürfen wir Sie kontaktieren?')
+                        ->required(),
+                    Input::make('calendar.public_email')
                         ->title('Öffentliche Email-Adresse')
                         ->type('email')
                         ->help('Über welche Email-Adresse können Kunden Sie erreichen?')
                         ->required(),
-                    Input::make('phone')
-                        ->mask('+41 81 234 56 78')
+                    Input::make('calendar.public_phoneNr')
+                        ->placeholder('+41 81 234 56 78')
                         ->title('Öffentliche TelefonNr.')
                         ->help('Über welche Telefonnummer können Kunden Sie erreichen?')
+                        ->required(),
                 ]),
+                Input::make('calendar.user_id')
+                    ->type('integer')
+                    ->value(Auth::id())
+                    ->hidden(),
                 Group::make([
-                    Input::make('compamyname')
+                    Input::make('calendar.company_name')
                         ->title('Name')
                         ->type('text')
                         ->help('Wie heisst Ihr Unternhemen / Ihre Organisation?')
                         ->required(),
-                    Select::make('branch')
+                    Select::make('calendar.branch')
                         ->options([
                             'andere' => 'Andere ...',
                             'gastronomie'   => 'Gastronomie',
@@ -123,12 +133,13 @@ class newCalendar extends Screen
                         ->help('Für welche Branche möchten Sie ein Reservationssystem erstellen?')
                         ->required(),
                 ]),
-                Input::make('website')
+                Input::make('calendar.website_url')
                     ->title('Webseite')
+                    ->placeholder('https://weburl.com')
                     ->type('url')
                     ->help('Unter welcher URL gelangen Kunden auf Ihre Webseite?'),
-            ])->title('Persönliche Angaben'),  
-            */
+            ])->title('Persönliche Angaben'), 
+            
             // Angaben zum Kalender
             Layout::rows([
                 Group::make([
@@ -261,13 +272,14 @@ class newCalendar extends Screen
                 Button::make('Speichern')
                     ->method('createCalendar')
                     ->type(Color::PRIMARY()),
-            ])->title('Angaben zum Kalender'),  
+            ])->title('Angaben zum Kalender'), 
         ];
     }
+
     public function createCalendar(Calendar $calendar, Request $request)
     {
         $calendar->fill($request->get('calendar'))->save();
-        Alert::warning('Ihr Kalender wurde erstellt.');
+        Alert::warning('Der Kalender wurde gespeichert.');
         return redirect()->route('platform.calendarOverview');
     }
 }

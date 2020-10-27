@@ -12,6 +12,8 @@ class Calendar extends Model
 
     protected $fillable = [
         'calendar_name',
+        'user_id',
+        'calendar_name',
         'description',
         'calendar_format',
         'period_from',
@@ -20,6 +22,14 @@ class Calendar extends Model
         'max_duration',
         'fixed_duration',
         'allday_reservation',
-        'private_link'
+        'private_link',
+        'firstname',
+        'lastname',
+        'private_email',
+        'public_email',
+        'public_phoneNr',
+        'company_name',
+        'branch',
+        'website_url'
     ];
 }

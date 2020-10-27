@@ -24,9 +24,6 @@ use App\Orchid\Screens\newCalendar;
 // CalendarOverview
 use App\Orchid\Screens\calendarOverview;
 
-// Userprofile
-use App\Orchid\Screens\userprofile;
-
 // System Design
 use App\Orchid\Screens\systemdesign;
 
@@ -102,6 +99,7 @@ Route::screen('roles', RoleListScreen::class)
 
 // New Calendar
 Route::screen('/add-calendar', newCalendar::class)->name('platform.newCalendar');
+
 // Calendar Overview
 Route::screen('/calendar-overview', calendarOverview::class)->name('platform.calendarOverview');
 // Design Settings
