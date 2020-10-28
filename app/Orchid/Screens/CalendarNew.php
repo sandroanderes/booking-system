@@ -21,8 +21,6 @@ use App\Models\Calendar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-
-
 class CalendarNew extends Screen
 {
     /**
@@ -280,6 +278,6 @@ class CalendarNew extends Screen
     {
         $calendar->fill($request->get('calendar'))->save();
         Alert::warning('Der Kalender wurde gespeichert.');
-        return redirect()->route('platform.calendarOverview');
+        return redirect()->route('platform.CalendarOverview');
     }
 }
