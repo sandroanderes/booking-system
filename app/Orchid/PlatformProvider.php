@@ -32,27 +32,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->badge(function () {
                     return 6;
                 }),
-
-            ItemMenu::label('Übersicht')
-                ->icon('chart')
-                ->route('platform.CalendarOverview')
-                ->title('Kalender'),
-
-            ItemMenu::label('Neuer Kalender')
-                ->icon('plus')
-                ->route('platform.CalendarNew'),
-
-            ItemMenu::label('Profileinstellungen')
-                ->icon('user')
-                ->route('platform.profile')
-                ->title('Einstellungen'),
-
-            ItemMenu::label('Design')
-                ->slug('design-menu')
-                ->route('platform.systemdesign')
-                ->icon('settings'),
-
-            /*
+            
             ItemMenu::label('Basic Elements')
                 ->title('Form controls')
                 ->icon('note')
@@ -78,7 +58,7 @@ class PlatformProvider extends OrchidServiceProvider
             ItemMenu::label('Cards')
                 ->icon('grid')
                 ->route('platform.example.cards'),
-*/
+                
             ItemMenu::label('Documentation')
                 ->title('Weiteres')
                 ->icon('docs')

@@ -95,14 +95,6 @@ Route::screen('roles', RoleListScreen::class)
             ->push(__('Roles'), route('platform.systems.roles'));
     });
 
-// Calendar Views
-Route::screen('/calendar-add', CalendarNew::class)->name('platform.CalendarNew');
-Route::screen('/calendar-overview', CalendarOverview::class)->name('platform.CalendarOverview');
-
-// Design Settings
-Route::screen('/change-design', systemdesign::class)->name('platform.systemdesign');
-
-
 // Example...
 Route::screen('example', ExampleScreen::class)
     ->name('platform.example')
