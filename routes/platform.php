@@ -15,8 +15,15 @@ use App\Orchid\Screens\Role\RoleListScreen;
 use App\Orchid\Screens\User\UserEditScreen;
 use App\Orchid\Screens\User\UserListScreen;
 use App\Orchid\Screens\User\UserProfileScreen;
+use App\Orchid\Screens\Calendars\Overview;
+use App\Orchid\Screens\Calendars\NewCalendar;
+use App\Orchid\Screens\Settings\User;
+use App\Orchid\Screens\Settings\Password;
+use App\Orchid\Screens\Settings\View;
+use App\Orchid\Screens\Settings\Delete;
 use Illuminate\Support\Facades\Route;
 use Tabuna\Breadcrumbs\Trail;
+
 
 // Calendar Views
 use App\Orchid\Screens\CalendarNew;
@@ -95,6 +102,60 @@ Route::screen('roles', RoleListScreen::class)
             ->push(__('Roles'), route('platform.systems.roles'));
     });
 
+// Platform > Calendars > Overview
+Route::screen('overview', Overview::class)
+    ->name('platform.overview')
+    ->breadcrumbs(function (Trail $trail) {
+        return $trail
+            ->parent('platform.index')
+            ->push(__('Übersicht'));
+    });
+
+// Platform > Calendars > New Calendar
+Route::screen('newcalendar', NewCalendar::class)
+    ->name('platform.newcalendar')
+    ->breadcrumbs(function (Trail $trail) {
+        return $trail
+            ->parent('platform.index')
+            ->push(__('Neuer Kalender'));
+    });
+
+// Platform > Settings > User
+Route::screen('user', User::class)
+    ->name('platform.user')
+    ->breadcrumbs(function (Trail $trail) {
+        return $trail
+            ->parent('platform.index')
+            ->push(__('Benutzereinstellungen'));
+    });
+
+// Platform > Settings > Password
+Route::screen('password', Password::class)
+    ->name('platform.password')
+    ->breadcrumbs(function (Trail $trail) {
+        return $trail
+            ->parent('platform.index')
+            ->push(__('Password ändern'));
+    });
+
+// Platform > Settings > View
+Route::screen('view', View::class)
+    ->name('platform.view')
+    ->breadcrumbs(function (Trail $trail) {
+        return $trail
+            ->parent('platform.index')
+            ->push(__('Ansicht ändern'));
+    });
+
+// Platform > Settings > Delete
+Route::screen('delete', Delete::class)
+    ->name('platform.delete')
+    ->breadcrumbs(function (Trail $trail) {
+        return $trail
+            ->parent('platform.index')
+            ->push(__('Konto löschen'));
+    });
+
 // Example...
 Route::screen('example', ExampleScreen::class)
     ->name('platform.example')
@@ -103,6 +164,8 @@ Route::screen('example', ExampleScreen::class)
             ->parent('platform.index')
             ->push(__('Example screen'));
     });
+
+
 
 
 

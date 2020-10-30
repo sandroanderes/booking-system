@@ -32,7 +32,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->badge(function () {
                     return 6;
                 }),
-            
+
             ItemMenu::label('Basic Elements')
                 ->title('Form controls')
                 ->icon('note')
@@ -58,11 +58,47 @@ class PlatformProvider extends OrchidServiceProvider
             ItemMenu::label('Cards')
                 ->icon('grid')
                 ->route('platform.example.cards'),
-                
+
             ItemMenu::label('Documentation')
                 ->title('Weiteres')
                 ->icon('docs')
                 ->url('https://orchid.software/en/docs'),
+
+            ItemMenu::label('Kalenderübersicht')
+                ->title('Kalender')
+                ->icon('calendar')
+                ->route('platform.overview'),
+
+            ItemMenu::label('Neuer Kalender hinzufügen')
+                ->icon('plus')
+                ->route('platform.newcalendar'),
+
+            ItemMenu::label('Alle Einstellungen')
+                ->title('Einstellungen')
+                ->slug('parent-hidden-menu')
+                ->childs()
+                ->hideEmpty(),
+
+            ItemMenu::label('Benutzer')
+                ->place('parent-hidden-menu')
+                ->icon('user')
+                ->route('platform.user'),
+
+            ItemMenu::label('Passwort ändern')
+                ->place('parent-hidden-menu')
+                ->icon('pencil')
+                ->route('platform.password'),
+                
+            ItemMenu::label('Ansicht')
+                ->place('parent-hidden-menu')
+                ->icon('screen-desktop')
+                ->route('platform.view'),
+                
+            ItemMenu::label('Konto löschen')
+                ->place('parent-hidden-menu')
+                ->icon('trash')
+                ->route('platform.delete'),
+                
         ];
     }
 
