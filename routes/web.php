@@ -17,18 +17,18 @@ Route::get('/', function () {
     return view('pages.home');
 });
 
-Route::get('/Kalender', function () {
+Route::get('/kalender', function () {
     return view('pages.calendar');
 });
 
-Route::get('/Funktionen', function () {
+Route::get('/funktionen', function () {
     return view('pages.functions');
 });
 
-Route::get('/Über uns', function () {
-    return view('pages.about');
+Route::get('/support', function () {
+    return view('pages.support');
 });
 
-Route::get('/Support', function () {
-    return view('pages.support');
+Route::get('/ueber', function () {
+    return view('pages.about');
 });

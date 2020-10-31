@@ -1,0 +1,32 @@
+footer {
+    color: black;
+
+    .container {
+        padding: 15px 0;
+    }
+
+    img {
+        width: 300px;
+    }
+
+    .footer-top {
+        background-color: black;
+
+        p {
+            margin-bottom: 0.3rem;
+        }
+    }
+
+    .footer-copyright {
+        background-color: black;
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    a:hover {
+        text-decoration: none;
+        color: white;
+    }
+}

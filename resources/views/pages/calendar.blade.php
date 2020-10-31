@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('base.default')
 
 @section('content')
     <div id="main">
