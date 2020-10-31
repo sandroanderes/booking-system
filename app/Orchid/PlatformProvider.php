@@ -82,23 +82,23 @@ class PlatformProvider extends OrchidServiceProvider
             ItemMenu::label('Benutzer')
                 ->place('parent-hidden-menu')
                 ->icon('user')
-                ->route('platform.user'),
+                ->route('platform.userscreen'),
 
             ItemMenu::label('Passwort ändern')
                 ->place('parent-hidden-menu')
                 ->icon('pencil')
                 ->route('platform.password'),
-                
+
             ItemMenu::label('Ansicht')
                 ->place('parent-hidden-menu')
                 ->icon('screen-desktop')
                 ->route('platform.view'),
-                
+
             ItemMenu::label('Konto löschen')
                 ->place('parent-hidden-menu')
                 ->icon('trash')
                 ->route('platform.delete'),
-                
+
         ];
     }
 
@@ -108,8 +108,8 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerProfileMenu(): array
     {
         return [
-            ItemMenu::label('Profile')
-                ->route('platform.profile')
+            ItemMenu::label('Benutzer')
+                ->route('platform.userscreen')
                 ->icon('user'),
         ];
     }
