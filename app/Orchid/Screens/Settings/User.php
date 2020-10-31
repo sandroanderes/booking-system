@@ -2,7 +2,7 @@
 
 namespace App\Orchid\Screens\Settings;
 
-use App\Orchid\Layouts\Settings\SettingsUser;
+use App\Orchid\Layouts\Settings\UserLayout;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
 
@@ -51,7 +51,7 @@ class User extends Screen
     public function layout(): array
     {
         return [
-            SettingsUser::class,
+            UserLayout::class,
         ];
     }
 }

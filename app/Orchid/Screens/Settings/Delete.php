@@ -2,7 +2,7 @@
 
 namespace App\Orchid\Screens\Settings;
 
-use App\Orchid\Layouts\Settings\SettingsDelete;
+use App\Orchid\Layouts\Settings\DeleteLayout;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
 
@@ -51,7 +51,7 @@ class Delete extends Screen
     public function layout(): array
     {
         return [
-            SettingsDelete::class,
+            DeleteLayout::class,
         ];
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Orchid\Screens\Settings;
 
-use App\Orchid\Layouts\Settings\SettingsPassword;
+use App\Orchid\Layouts\Settings\PasswordLayout;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
 
@@ -51,7 +51,7 @@ class Password extends Screen
     public function layout(): array
     {
         return [
-            SettingsPassword::class,
+            PasswordLayout::class,
         ];
     }
 }

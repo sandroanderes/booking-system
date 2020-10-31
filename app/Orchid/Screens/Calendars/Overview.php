@@ -2,7 +2,7 @@
 
 namespace App\Orchid\Screens\Calendars;
 
-use App\Orchid\Layouts\Calendars\CalendarOverview;
+use App\Orchid\Layouts\Calendars\OverviewLayout;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
 
@@ -55,7 +55,7 @@ class Overview extends Screen
                 'Example Tab 2' => Layout::view('platform::dummy.block'),
                 'Example Tab 3' => Layout::view('platform::dummy.block'),
             ]),
-            CalendarOverview::class,
+            OverviewLayout::class,
         ];
     }
 }

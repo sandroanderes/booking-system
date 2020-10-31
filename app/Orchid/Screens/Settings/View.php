@@ -2,7 +2,7 @@
 
 namespace App\Orchid\Screens\Settings;
 
-use App\Orchid\Layouts\Settings\SettingsView;
+use App\Orchid\Layouts\Settings\ViewLayout;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
 
@@ -51,7 +51,7 @@ class View extends Screen
     public function layout(): array
     {
         return [
-            SettingsView::class,
+            ViewLayout::class,
         ];
     }
 }

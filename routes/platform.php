@@ -15,19 +15,18 @@ use App\Orchid\Screens\Role\RoleListScreen;
 use App\Orchid\Screens\User\UserEditScreen;
 use App\Orchid\Screens\User\UserListScreen;
 use App\Orchid\Screens\User\UserProfileScreen;
+use Illuminate\Support\Facades\Route;
+use Tabuna\Breadcrumbs\Trail;
+
+// Calendar Views
 use App\Orchid\Screens\Calendars\Overview;
 use App\Orchid\Screens\Calendars\NewCalendar;
+
+//Settings Views
 use App\Orchid\Screens\Settings\User;
 use App\Orchid\Screens\Settings\Password;
 use App\Orchid\Screens\Settings\View;
 use App\Orchid\Screens\Settings\Delete;
-use Illuminate\Support\Facades\Route;
-use Tabuna\Breadcrumbs\Trail;
-
-
-// Calendar Views
-use App\Orchid\Screens\CalendarNew;
-use App\Orchid\Screens\CalendarOverview;
 
 // System Design
 use App\Orchid\Screens\systemdesign;

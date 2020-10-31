@@ -12,7 +12,7 @@ use Orchid\Screen\Fields\Radio;
 use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\TextArea;
 
-class SettingsDelete extends Rows
+class UserLayout extends Rows
 {
     /**
      * Used to create the title of a group of form elements.
