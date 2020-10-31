@@ -1,144 +1,176 @@
-  /* navbar regular css start */
-  .navbar-area {
-      background: rgba(0, 0, 0, .6);
-      border-bottom: 1px solid #000;
-  }
+/* navbar regular css start */
 
-  .site-navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-  }
+.navbar-area {
+    background: white;
+    border-bottom: 1px solid black;
+}
 
-  a.site-logo {
-      font-size: 26px;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: #fff;
-      text-decoration: none;
-      text-transform: uppercase;
-  }
+.site-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  .site-navbar ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: flex;
-  }
+    a.site-logo {
+        font-size: 26px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: black;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
 
-  .site-navbar ul li a {
-      color: #fff;
-      padding: 20px;
-      display: block;
-      text-decoration: none;
-  }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
 
-  .site-navbar ul li a:hover {
-      background: rgba(255, 255, 255, .1);
-  }
+        li {
+            a {
+                color: black;
+                padding: 25px;
+                display: block;
+                text-decoration: none;
 
-  /* navbar regular css end */
+                &:hover {
+                    background: rgba(255, 255, 255, 0.1);
+                }
+            }
 
+            &.admin-mobile {
+                display: none;
+            }
 
-  /* nav-toggler css start */
-  .nav-toggler {
-      border: 3px solid #fff;
-      padding: 5px;
-      background-color: transparent;
-      cursor: pointer;
-      height: 39px;
-      display: none;
-  }
+            &.admin-desktop {
+                border-left: 1px solid black;
 
-  .nav-toggler span,
-  .nav-toggler span:before,
-  .nav-toggler span:after {
-      width: 28px;
-      height: 3px;
-      background-color: #fff;
-      display: block;
-      transition: .3s;
-  }
+                span {
+                    float: left;
+                }
+            }
+        }
+    }
 
-  .nav-toggler span:before {
-      content: '';
-      transform: translateY(-9px);
-  }
+}
 
-  .nav-toggler span:after {
-      content: '';
-      transform: translateY(6px);
-  }
+/* navbar regular css end */
 
-  .nav-toggler.toggler-open span {
-      background-color: transparent;
-  }
+/* nav-toggler css start */
 
-  .nav-toggler.toggler-open span:before {
-      transform: translateY(0px) rotate(45deg);
-  }
+.nav-toggler {
+    border: 3px solid black;
+    padding: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    height: 39px;
+    display: none;
 
-  .nav-toggler.toggler-open span:after {
-      transform: translateY(-3px) rotate(-45deg);
-  }
+    span {
+        width: 28px;
+        height: 3px;
+        background-color: black;
+        display: block;
+        transition: .3s;
 
-  /* nav-toggler css start */
+        &:before,
+        &:after {
+            width: 28px;
+            height: 3px;
+            background-color: black;
+            display: block;
+            transition: .3s;
+        }
 
+        &:before {
+            content: '';
+            transform: translateY(-9px);
+        }
 
-  /* mobile breakpoint start */
-  @media screen and (max-width: 767px) {
-      .container {
-          max-width: 720px;
-      }
+        &:after {
+            content: '';
+            transform: translateY(6px);
+        }
+    }
 
-      /* navbar css for mobile start */
-      .nav-toggler {
-          display: block;
-      }
+    &.toggler-open span {
+        background-color: transparent;
 
-      .site-navbar {
-          min-height: 60px;
-      }
+        &:before {
+            transform: translateY(0px) rotate(45deg);
+        }
 
-      .site-navbar ul {
-          position: absolute;
-          width: 100%;
-          height: calc(100vh - 60px);
-          left: 0;
-          top: 60px;
-          flex-direction: column;
-          align-items: center;
-          border-top: 1px solid #444;
-          background-color: rgba(0, 0, 0, .75);
-          max-height: 0;
-          overflow: hidden;
-          transition: .3s;
-      }
+        &:after {
+            transform: translateY(-3px) rotate(-45deg);
+        }
+    }
+}
 
-      .site-navbar ul li {
-          width: 100%;
-          text-align: center;
-      }
+/* nav-toggler css start */
 
-      .site-navbar ul li a {
-          padding: 25px;
-      }
+/* mobile breakpoint start */
+@media screen and (max-width: 767px) {
+    .container {
+        max-width: 720px;
+    }
 
-      .site-navbar ul li a:hover {
-          background-color: rgba(255, 255, 255, .1);
-      }
+    /* navbar css for mobile start */
 
-      .site-navbar ul.open {
-          max-height: 100vh;
-          overflow: visible;
-      }
+    .nav-toggler {
+        display: block;
+    }
 
-      .intro-area h2 {
-          font-size: 36px;
-          margin-bottom: 15px;
-      }
+    .site-navbar {
+        min-height: 60px;
 
-      /* navbar css for mobile end */
-  }
+        ul {
+            position: absolute;
+            width: 100%;
+            height: calc(100vh - 60px);
+            left: 0;
+            top: 60px;
+            flex-direction: column;
+            align-items: center;
+            border-top: 1px solid #444;
+            background-color: rgba(0, 0, 0, 0.8);
+            max-height: 0;
+            overflow: hidden;
+            transition: .3s;
 
-  /* mobile breakpoint end */
+            li {
+                width: 100%;
+                text-align: center;
+
+                a {
+                    padding: 25px;
+                    color: white;
+
+                    &:hover {
+                        background-color: rgba(255, 255, 255, 0.1);
+                    }
+                }
+
+                &.admin-mobile {
+                    display: block;
+                }
+
+                &.admin-desktop {
+                    display: none;
+                }
+            }
+
+            &.open {
+                max-height: 100vh;
+                overflow: visible;
+            }
+        }
+    }
+
+    .intro-area h2 {
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+
+    /* navbar css for mobile end */
+}
+
+/* mobile breakpoint end */

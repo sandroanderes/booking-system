@@ -7,6 +7,4 @@
     <title>Buechs</title>
 
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-    
-
 </head>

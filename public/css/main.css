@@ -11305,8 +11305,8 @@ a {
 /* navbar regular css start */
 
 .navbar-area {
-  background: rgba(0, 0, 0, 0.6);
-  border-bottom: 1px solid #000;
+  background: white;
+  border-bottom: 1px solid black;
 }
 
 .site-navbar {
@@ -11315,11 +11315,11 @@ a {
   align-items: center;
 }
 
-a.site-logo {
+.site-navbar a.site-logo {
   font-size: 26px;
   font-weight: 800;
   text-transform: uppercase;
-  color: #fff;
+  color: black;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -11332,8 +11332,8 @@ a.site-logo {
 }
 
 .site-navbar ul li a {
-  color: #fff;
-  padding: 20px;
+  color: black;
+  padding: 25px;
   display: block;
   text-decoration: none;
 }
@@ -11342,12 +11342,24 @@ a.site-logo {
   background: rgba(255, 255, 255, 0.1);
 }
 
+.site-navbar ul li.admin-mobile {
+  display: none;
+}
+
+.site-navbar ul li.admin-desktop {
+  border-left: 1px solid black;
+}
+
+.site-navbar ul li.admin-desktop span {
+  float: left;
+}
+
 /* navbar regular css end */
 
 /* nav-toggler css start */
 
 .nav-toggler {
-  border: 3px solid #fff;
+  border: 3px solid black;
   padding: 5px;
   background-color: transparent;
   cursor: pointer;
@@ -11355,12 +11367,19 @@ a.site-logo {
   display: none;
 }
 
-.nav-toggler span,
+.nav-toggler span {
+  width: 28px;
+  height: 3px;
+  background-color: black;
+  display: block;
+  transition: 0.3s;
+}
+
 .nav-toggler span:before,
 .nav-toggler span:after {
   width: 28px;
   height: 3px;
-  background-color: #fff;
+  background-color: black;
   display: block;
   transition: 0.3s;
 }
@@ -11415,7 +11434,7 @@ a.site-logo {
     flex-direction: column;
     align-items: center;
     border-top: 1px solid #444;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.8);
     max-height: 0;
     overflow: hidden;
     transition: 0.3s;
@@ -11428,10 +11447,19 @@ a.site-logo {
 
   .site-navbar ul li a {
     padding: 25px;
+    color: white;
   }
 
   .site-navbar ul li a:hover {
     background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .site-navbar ul li.admin-mobile {
+    display: block;
+  }
+
+  .site-navbar ul li.admin-desktop {
+    display: none;
   }
 
   .site-navbar ul.open {
@@ -11480,5 +11508,9 @@ footer .footer-copyright p {
 footer a:hover {
   text-decoration: none;
   color: white;
+}
+
+section.main {
+  margin-top: 75px;
 }
 

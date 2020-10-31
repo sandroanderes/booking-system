@@ -1,13 +1,14 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="de">
 @include('layouts.head')
 
 <body>
-    @include('layouts.navigation')
-    <div class="container mt-3">
+    <header class="header-area">
+        @include('layouts.navigation')
+    </header>
+    <section class="main container">
         @yield('content')
-        
-    </div>
+    </section>
     @include('layouts.footer')
     <script type="text/javascript" src="{{ asset('js/navigation.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
