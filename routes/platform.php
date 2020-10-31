@@ -14,21 +14,18 @@ use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
 use App\Orchid\Screens\User\UserEditScreen;
 use App\Orchid\Screens\User\UserListScreen;
-use App\Orchid\Screens\User\UserProfileScreen;
-use App\Orchid\Screens\Calendars\Overview;
-use App\Orchid\Screens\Calendars\NewCalendar;
-use App\Orchid\Screens\Settings\User;
-use App\Orchid\Screens\Settings\Password;
-use App\Orchid\Screens\Settings\View;
-use App\Orchid\Screens\Settings\Delete;
 use Illuminate\Support\Facades\Route;
 use Tabuna\Breadcrumbs\Trail;
 
-
 // Calendar Views
-use App\Orchid\Screens\CalendarNew;
-use App\Orchid\Screens\CalendarOverview;
+use App\Orchid\Screens\Calendars\Overview;
+use App\Orchid\Screens\Calendars\NewCalendar;
 
+//Settings Views
+use App\Orchid\Screens\Settings\Password;
+use App\Orchid\Screens\Settings\View;
+use App\Orchid\Screens\Settings\Delete;
+use App\Orchid\Screens\Settings\UserScreen;
 // System Design
 use App\Orchid\Screens\systemdesign;
 
@@ -49,12 +46,12 @@ Route::screen('/main', PlatformScreen::class)
     ->name('platform.main');
 
 // Platform > Profile
-Route::screen('profile', UserProfileScreen::class)
-    ->name('platform.profile')
+Route::screen('userscreen', UserScreen::class)
+    ->name('platform.userscreen')
     ->breadcrumbs(function (Trail $trail) {
         return $trail
             ->parent('platform.index')
-            ->push(__('Profile'), route('platform.profile'));
+            ->push(__('Profile'), route('platform.userscreen'));
     });
 
 // Platform > System > Users
@@ -121,8 +118,8 @@ Route::screen('newcalendar', NewCalendar::class)
     });
 
 // Platform > Settings > User
-Route::screen('user', User::class)
-    ->name('platform.user')
+Route::screen('userscreen', UserScreen::class)
+    ->name('platform.userscreen')
     ->breadcrumbs(function (Trail $trail) {
         return $trail
             ->parent('platform.index')

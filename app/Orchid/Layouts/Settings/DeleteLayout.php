@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Orchid\Layouts\Calendars;
+namespace App\Orchid\Layouts\Settings;
 
 use Orchid\Screen\Field;
 use Orchid\Screen\Layouts\Rows;
@@ -12,7 +12,7 @@ use Orchid\Screen\Fields\Radio;
 use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\TextArea;
 
-class CalendarOverview extends Rows
+class DeleteLayout extends Rows
 {
     /**
      * Used to create the title of a group of form elements.
@@ -29,8 +29,6 @@ class CalendarOverview extends Rows
     protected function fields(): array
     {
         return [
-
-
             Input::make('name')
                 ->title('Full Name:')
                 ->placeholder('Enter full name')

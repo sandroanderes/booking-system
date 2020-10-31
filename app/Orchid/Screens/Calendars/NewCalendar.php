@@ -2,7 +2,7 @@
 
 namespace App\Orchid\Screens\Calendars;
 
-use App\Orchid\Layouts\Calendars\CalendarNew;
+use App\Orchid\Layouts\Calendars\NewCalendarLayout;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
 
@@ -52,7 +52,7 @@ class NewCalendar extends Screen
     {
         return [
 
-            CalendarNew::class,
+            NewCalendarLayout::class,
 
         ];
     }
