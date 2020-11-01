@@ -11352,6 +11352,7 @@ a {
 
 .site-navbar ul li.admin-desktop span {
   float: left;
+  margin-right: 0.2rem;
 }
 
 /* navbar regular css end */
@@ -11627,6 +11628,54 @@ footer a:hover {
 .featured-section .col-5 {
   padding-right: 0;
   padding-left: 0;
+}
+
+.home-section h1 {
+  color: #6f925aff;
+}
+
+.home-section .col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.home-section li {
+  padding-left: 1.3em;
+}
+
+.home-section li:before {
+  content: "\2713";
+  /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.3em;
+  /* same as padding-left set on li */
+  width: 1.3em;
+  /* same as padding-left set on li */
+}
+
+.home-section .img-container {
+  display: block;
+  content: "";
+  /* 16:9 aspect ratio */
+  padding-top: 56.25%;
+}
+
+.home-section .img-container img {
+  /* Image should match parent box size */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 section.main {
