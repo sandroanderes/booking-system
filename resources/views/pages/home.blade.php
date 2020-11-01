@@ -3,7 +3,7 @@
 @section('content')
 <section class="container-fluid featured-section">
     <div class="row">
-        <div class="col-7">
+        <div class="col-xl-7 col-12">
             <div class="img-container">
                 <img src="images/restaurant.jpg" class="img-fluid" alt="Restaurant">
                 <div class="content text-center">
@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-5">
+        <div class="col-xl-5 col-12">
             <div class="col">
                 <div class="img-container">
                     <img src="images/table_tennis.jpg" class="img-fluid" alt="Restaurant">
@@ -66,9 +66,9 @@
 </section>
 <section class="container-fluid home-section py-5">
     <div class="container">
-        <h1 class="text-center">Grüezi</h1>
+        <h1 class="text-center mt-0">Grüezi</h1>
         <div class="row">
-            <div class="col">
+            <div class="col col-lg-6 col-12">
                 Eintrag und Verbreitung für jeden Event komplett kostenlos:
                 <ul>
                     <li>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -79,7 +79,7 @@
                     <li>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</li>
                 </ul>
             </div>
-            <div class="col">
+            <div class="col col-lg-6 col-12">
                 <div class="img-container">
                     <img src="images/party.jpg" class="img-fluid" alt="Party">
                 </div>
@@ -87,15 +87,15 @@
         </div>
     </div>
 </section>
-<section class="container-fluid home-section pb-5">
+<section class="container-fluid home-section section-bg py-5">
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col col-lg-6 col-12">
                 <div class="img-container">
                     <img src="images/underwater.jpg" class="img-fluid" alt="Underwater">
                 </div>
             </div>
-            <div class="col">
+            <div class="col col-lg-6 col-12">
 
                 <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.

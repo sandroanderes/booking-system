@@ -1,9 +1,5 @@
 footer {
-    color: black;
-
-    .container {
-        padding: 15px 0;
-    }
+    color: white;
 
     img {
         width: 300px;
@@ -11,6 +7,7 @@ footer {
 
     .footer-top {
         background-color: black;
+        padding: 20px 0;
 
         p {
             margin-bottom: 0.3rem;
@@ -19,14 +16,28 @@ footer {
 
     .footer-copyright {
         background-color: black;
+        padding-bottom: 20px;
 
         p {
             margin-bottom: 0;
         }
     }
 
-    a:hover {
-        text-decoration: none;
+    a {
         color: white;
+
+        &.site-logo {
+            font-size: 26px;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-transform: uppercase;
+
+        }
+
+        &:hover {
+            text-decoration: none;
+            color: $russian-green;
+        }
     }
 }
