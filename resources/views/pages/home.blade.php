@@ -1,9 +1,70 @@
 @extends('base.default')
 
 @section('content')
-<section class="featured-section">
+<section class="container-fluid featured-section">
+    <div class="row">
+        <div class="col-7">
+            <div class="img-container">
+                <img src="images/restaurant.jpg" class="img-fluid" alt="Restaurant">
+                <div class="content text-center">
+                    <div class="align-middle">
+                        <p>Gastro</p>
+                        <h1>Zum Ochsen</h1>
+                        <h6>Öffnungszeiten</h6>
+                        <table>
+                            <tr>
+                                <td>Mo-Do:</td>
+                                <td>10 bis 21 Uhr</td>
+                            </tr>
+                            <tr>
+                                <td>Fr-Sa:</td>
+                                <td>10 bis 23 Uhr</td>
+                            </tr>
+                        </table>
+                        <button type="button" class="btn btn-primary">Buechs jetzt!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="col">
+                <div class="img-container">
+                    <img src="images/table_tennis.jpg" class="img-fluid" alt="Restaurant">
+                    <div class="content-hover">
+                        <div>
+                            <button type="button" class="btn btn-outline-light mx-auto">Buechs jetzt!</button>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div>
+                            <p>Gewerbe</p>
+                            <h2 class="text-break">Co-Working Space</h2>
+                            <p>Chur, GR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="img-container">
+                    <img src="images/office.jpg" class="img-fluid" alt="Restaurant">
+                    <div class="content-hover">
+                        <div>
+                            <button type="button" class="btn btn-outline-light mx-auto">Buechs jetzt!</button>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div>
+                            <p>Sport</p>
+                            <h2 class="text-break">Tischtennis</h2>
+                            <p>Bern, BE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-<section id="main">
+<section class="container" id="main">
     <h1>Startseite</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit</b>. Mauris massa. Vestibulum lacinia arcu eget nulla. <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit</b>. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
     <p>Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit</i>. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit</i>. Maecenas mattis. Sed convallis tristique sem. <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit</i>. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. <b>Curabitur sodales ligula in libero</b>. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. </p>

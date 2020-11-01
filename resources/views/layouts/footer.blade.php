@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="page-footer small fixed-bottom">
+<footer class="page-footer small">
   <div class="container-fluid footer-top">
     <div class="container">
       <p>Ein Angebot in Zusammenarbeit mit:</p>

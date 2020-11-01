@@ -6,7 +6,7 @@
     <header class="header-area">
         @include('layouts.navigation')
     </header>
-    <section class="main container">
+    <section class="main">
         @yield('content')
     </section>
     @include('layouts.footer')
