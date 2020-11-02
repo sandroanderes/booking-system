@@ -2,7 +2,9 @@
 
 namespace App\Orchid\Screens\Calendars;
 
-use App\Orchid\Layouts\Calendars\NewCalendarLayout;
+use App\Orchid\Layouts\Calendars\GeneralInformationsLayout;
+use App\Orchid\Layouts\Calendars\SpecificationLayout;
+use App\Orchid\Layouts\Calendars\OpeningHoursLayout;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
 
@@ -51,12 +53,14 @@ class NewCalendar extends Screen
     public function layout(): array
     {
         return [
+            
+
             Layout::accordion([
-                'Neuen Kalender anlegen' => [
+                'Schritt 1: Allgemeine Infos' => GeneralInformationsLayout::class,
+                'Schritt 2: Spezifikationen' => SpecificationLayout::class,
+                'Schritt 3: Informationen zum Betrieb' => OpeningHoursLayout::class,
 
-                    NewCalendarLayout::class,
-
-                ],
+        
             ]),
 
         ];
