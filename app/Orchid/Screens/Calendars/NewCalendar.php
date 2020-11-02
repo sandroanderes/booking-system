@@ -23,7 +23,7 @@ class NewCalendar extends Screen
      *
      * @var string
      */
-    public $description = 'Erstelle einen neuen Kalender';
+    public $description = 'Alle Angaben können später wieder geändert werden';
 
     /**
      * Query data.
@@ -56,7 +56,7 @@ class NewCalendar extends Screen
             
 
             Layout::accordion([
-                'Schritt 1: Allgemeine Infos' => GeneralInformationsLayout::class,
+                'Schritt 1: Allgemeine Einstellungen' => GeneralInformationsLayout::class,
                 'Schritt 2: Spezifikationen' => SpecificationLayout::class,
                 'Schritt 3: Informationen zum Betrieb' => OpeningHoursLayout::class,
 

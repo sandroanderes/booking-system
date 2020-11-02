@@ -51,7 +51,7 @@ class SpecificationLayout extends Rows
             Switcher::make('specification.duration_fixed')
                 ->sendTrueOrFalse()
                 ->title('Fixes Reservationsintervall')
-                ->value(1)
+                ->value(true)
                 ->help('Dauert eine Reservationseinheit bei dir immer gleich lang?'),
 
             Select::make('specification.duration_interval')

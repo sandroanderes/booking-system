@@ -5,9 +5,11 @@ namespace App\Orchid\Layouts\Calendars;
 use Orchid\Screen\Field;
 use Orchid\Screen\Layouts\Rows;
 use Orchid\Screen\Fields\Input;
-use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Fields\Switcher;
 use Orchid\Screen\Fields\Select;
+use Orchid\Screen\Fields\Cropper;
+use Orchid\Screen\Fields\Upload;
+use Orchid\Screen\Fields\Quill;
 
 class GeneralInformationsLayout extends Rows
 {
@@ -33,17 +35,26 @@ class GeneralInformationsLayout extends Rows
                 ->title('Name')
                 ->placeholder('Gib deinem Kalender einen Namen'),
 
-            TextArea::make('calendar.description')
+            Input::make('calendar.status')
+                ->sendTrueOrFalse()
+                ->hidden()
+                ->value(true),
+
+                Quill::make('calendar.description')
+                ->title('Kalenderbeschreibung')
+                ->placeholder('Beschreibe deinen Kalender in ein paar Worten?'),
+
+            /*TextArea::make('calendar.description')
                 ->rows(5)
                 ->required()
-                ->title('Beschreibung')
-                ->placeholder('Kurzbeschreibung des Kalenders')
-                ->help('Worum geht es in deinem Kalender?'),
+                ->title('Kalenderbeschreibung')
+                ->placeholder('Kurzbeschreibung des ')
+                ->help('Beschreibe deinen Kalender in ein paar Worten?'),*/
 
             Switcher::make('calendar.public')
                 ->sendTrueOrFalse()
                 ->title('Öffentlicher Kalender')
-                ->value(1)
+                ->value(true)
                 ->help('Sollen dein Kalender öffentlich einsehbar sein?'),
 
             Select::make('calendar.template')
@@ -58,6 +69,16 @@ class GeneralInformationsLayout extends Rows
                 ->title('Kalendervorlage wählen')
                 ->help('Verwende eine unserer Kalendervorlagen'),
 
+            Cropper::make('calendar.image')
+                ->title('Bild hochladen')
+                ->width(500)
+                ->height(300)
+                ->horizontal(),
+            Upload::make('files')
+                ->title('Upload files (wissen auch noch nicht welche)')
+                ->horizontal(),
+
+            
 
         ];
     }

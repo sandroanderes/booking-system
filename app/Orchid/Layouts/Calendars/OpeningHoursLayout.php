@@ -4,10 +4,9 @@ namespace App\Orchid\Layouts\Calendars;
 
 use Orchid\Screen\Field;
 use Orchid\Screen\Layouts\Rows;
-use Orchid\Screen\Fields\Input;
-use Orchid\Screen\Fields\TextArea;
-use Orchid\Screen\Fields\Switcher;
-use Orchid\Screen\Fields\Select;
+use Orchid\Screen\Fields\DateTimer;
+
+
 
 class OpeningHoursLayout extends Rows
 {
@@ -27,37 +26,17 @@ class OpeningHoursLayout extends Rows
     {
         return [
 
-            Input::make('calendar.name')
-                ->type('text')
-                ->required()
-                ->title('Name')
-                ->placeholder('Gib deinem Kalender einen Namen'),
+            DateTimer::make('openinghours.start')
+                ->title('Reservationsstart')
+                ->noCalendar()
+                ->format('H:i')
+                ->help('Ab welcher Uhrzeit können Reservationen getätigt werden?'),
 
-            TextArea::make('calendar.description')
-                ->rows(5)
-                ->required()
-                ->title('Beschreibung')
-                ->placeholder('Kurzbeschreibung des Kalenders')
-                ->help('Worum geht es in deinem Kalender?'),
-
-            Switcher::make('calendar.public')
-                ->sendTrueOrFalse()
-                ->title('Öffentlicher Kalender')
-                ->value(1)
-                ->help('Sollen dein Kalender öffentlich einsehbar sein?'),
-
-            Select::make('calendar.template')
-                ->options([
-                    'none'   => 'Kein Template verwenden',
-                    'gastronomy'   => 'Gastronomie',
-                    'sportsfield' => 'Sportplätze',
-                    'room' => 'Räumlichkeiten',
-                    'services' => 'Dienstleistungen',
-
-                ])
-                ->title('Kalendervorlage wählen')
-                ->help('Verwende eine unserer Kalendervorlagen'),
-
+            DateTimer::make('openinghours.end')
+                ->title('Reservationsende')
+                ->noCalendar()
+                ->format('H:i')
+                ->help('Ab welcher Uhrzeit können keine Reservationen mehr getätigt werden?'),
 
         ];
     }
