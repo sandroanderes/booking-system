@@ -79,7 +79,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->childs()
                 ->hideEmpty(),
 
-            ItemMenu::label('Benutzer')
+            ItemMenu::label('Benutzereinstellungen')
                 ->place('parent-hidden-menu')
                 ->icon('user')
                 ->route('platform.userscreen'),

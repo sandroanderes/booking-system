@@ -6,6 +6,8 @@ use Orchid\Screen\Field;
 use Orchid\Screen\Layouts\Rows;
 use Orchid\Screen\Fields\CheckBox;
 use Orchid\Screen\Fields\Input;
+use Orchid\Support\Facades\Layout;
+
 use Orchid\Screen\Fields\Label;
 use Orchid\Screen\Fields\Password;
 use Orchid\Screen\Fields\Radio;
@@ -30,46 +32,25 @@ class NewCalendarLayout extends Rows
     {
         return [
 
-            Input::make('name')
-                ->title('Full Name:')
-                ->placeholder('Enter full name')
+            Input::make('calendar.name')
+                ->type('text')
                 ->required()
-                ->help('Please enter your full name'),
+                ->title('Name')
+                ->placeholder('So soll dein neuer Kalender heissen'),
 
-            Input::make('email')
-                ->title('Email address')
-                ->placeholder('Email address')
-                ->help("We'll never share your email with anyone else.")
-                ->popover('Tooltip - hint that user opens himself.'),
+            TextArea::make('calendar.description')
+                ->rows(5)
+                ->required()
+                ->title('Beschreibung')
+                ->placeholder('Kurzbeschreibung des Kalenders')
+                ->help('Dieser Text werden deine Nutzer sehen'),
 
-            Password::make('password')
-                ->title('Password')
-                ->placeholder('Password'),
-
-            Label::make('static')
-                ->title('Static:')
-                ->value('email@example.com'),
-
-            Select::make('select')
-                ->title('Select')
-                ->options([1, 2]),
-
-            CheckBox::make('checkbox')
-                ->title('Checkbox')
-                ->placeholder('Remember me'),
-
-            Radio::make('radio')
-                ->placeholder('Yes')
+            CheckBox::make('calendar.public')
                 ->value(1)
-                ->title('Radio'),
+                ->title('Öffentlicher Kalender')
+                ->help('Sollen alle Nutzer Einblick in den Kalender haben?')
+                ->sendTrueOrFalse(),
 
-            Radio::make('radio')
-                ->placeholder('No')
-                ->value(0),
-
-            TextArea::make('textarea')
-                ->title('Example textarea')
-                ->rows(6),
         ];
     }
 }

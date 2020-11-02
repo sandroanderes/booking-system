@@ -51,8 +51,13 @@ class NewCalendar extends Screen
     public function layout(): array
     {
         return [
+            Layout::accordion([
+                'Neuen Kalender anlegen' => [
 
-            NewCalendarLayout::class,
+                    NewCalendarLayout::class,
+
+                ],
+            ]),
 
         ];
     }
