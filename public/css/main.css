@@ -11640,6 +11640,43 @@ footer a:hover {
   padding-left: 0;
 }
 
+.calendar-banner .overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  left: 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.calendar-banner .thumbnail {
+  position: relative;
+}
+
+.calendar-banner .thumbnail img {
+  width: 100%;
+  height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.calendar-banner .thumbnail .caption {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  width: 100%;
+  color: white;
+}
+
+.calendar-banner .thumbnail .caption .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .home-section h1 {
   color: #6f925aff;
 }
@@ -11690,6 +11727,14 @@ footer a:hover {
 
 .home-section.section-bg {
   background-color: #ccccccff;
+}
+
+.calendar-section .container {
+  padding: 10px;
+}
+
+.calendar-section ul li {
+  list-style: none;
 }
 
 section.main {

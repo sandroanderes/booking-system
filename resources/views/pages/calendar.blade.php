@@ -1,13 +1,126 @@
 @extends('base.default')
 
 @section('content')
-    <div id="main">
-        <h1>Alles über den Kalender</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit</b>. Mauris massa. Vestibulum lacinia arcu eget nulla. <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit</b>. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
-        <p>Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit</i>. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit</i>. Maecenas mattis. Sed convallis tristique sem. <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit</i>. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. <b>Curabitur sodales ligula in libero</b>. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. </p>
-        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. </p>
-        <p>Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. <b>Etiam ultrices</b>. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. <b>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui</b>. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. <i>Proin quam</i>. Integer lacinia sollicitudin massa. Cras metus. </p>
-        <p>Sed aliquet risus a tortor. Integer id quam. Morbi mi. <b>Morbi in dui quis est pulvinar ullamcorper</b>. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. <b>Nulla facilisi</b>. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede. Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. Sed pretium blandit orci. Ut eu diam at pede suscipit sodales. </p>
+<section class="container-fluid calendar-banner px-0">
 
+    <div class="thumbnail text-left">
+        <div class="overlay"></div>
+        <img src="images/place.jpg" alt="Place" class="img-responsive">
+        <div class="caption">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-12 text-md-left text-center">
+                        <h1>Restaurant, Büro, Coiffeur? Buechs!</h1>
+                    </div>
+                    <div class="col-md-4 col-12 text-md-right text-center">
+                        <button type="button" class="btn btn-primary btn-lg">Jetzt neuen Kalender erstellen!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
+<section class="container-fluid calendar-section py-5">
+    <div class="container">
+        <div class="row ">
+            <div class="col-sm-3 mb-3">
+                <input type="text" id="CalendarFilter" class="form-control" placeholder="Räume, Plätze, Objekte, ...">
+            </div>
+            <div class="col-sm-3  mb-3">
+                <input type="text" id="CalendarFilter2" class="form-control" placeholder="Ortschaften">
+            </div>
+            <div class="col mb-3">
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option selected value="Alle">Alle</option>
+                    <option value="5km">5km</option>
+                    <option value="10km">10km</option>
+                    <option value="50km">50km</option>
+                    <option value="100km">100km</option>
+                </select>
+            </div>
+            <div class="col-sm-3 mb-3">
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option selected value="Alle">Alle Kategorien</option>
+                    <option value="Gastronomie">Gastro</option>
+                    <option value="Sportplätze">Sport</option>
+                    <option value="Räumlichkeiten">Räumlichkeiten</option>
+                    <option value="Dienstleistungen">Dienstleistungen</option>
+                </select>
+            </div>
+            <div class="col mb-3">
+                <button type="button" class="btn btn-primary btn-block">Suchen</button>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3" id="CalendarItems">
+            <div class="col mb-4">
+                <div class="card">
+                    <img src="/images/place.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="row" id="CalendarItems">
+                            <div class="col-sm-2 text-center d-flex align-items-center">
+                                <p class="mb-0">SEP</p>
+                            </div>
+                            <div class="col-sm-10">
+                                <h5 class="card-title">Co-Working Space</h5>
+                                <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
+                                <h6 class="card-text">Aarau, Schweiz</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card">
+                    <img src="/images/restaurant.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="row" id="CalendarItems">
+                            <div class="col-sm-2 text-center d-flex align-items-center">
+                                <p class="mb-0">SEP</p>
+                            </div>
+                            <div class="col-sm-10">
+                                <h5 class="card-title">Co-Working Space</h5>
+                                <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
+                                <h6 class="card-text">Aarau, Schweiz</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card">
+                    <img src="/images/table_tennis.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="row" id="CalendarItems">
+                            <div class="col-sm-2 text-center d-flex align-items-center">
+                                <p class="mb-0">SEP</p>
+                            </div>
+                            <div class="col-sm-10">
+                                <h5 class="card-title">Co-Working Space</h5>
+                                <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
+                                <h6 class="card-text">Aarau, Schweiz</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card">
+                    <img src="/images/party.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="row" id="CalendarItems">
+                            <div class="col-sm-2 text-center d-flex align-items-center">
+                                <p class="mb-0">SEP</p>
+                            </div>
+                            <div class="col-sm-10">
+                                <h5 class="card-title">Co-Working Space</h5>
+                                <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
+                                <h6 class="card-text">Aarau, Schweiz</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 @stop
