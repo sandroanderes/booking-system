@@ -40,16 +40,9 @@ class GeneralInformationsLayout extends Rows
                 ->hidden()
                 ->value(true),
 
-                Quill::make('calendar.description')
+            Quill::make('calendar.description')
                 ->title('Kalenderbeschreibung')
-                ->placeholder('Beschreibe deinen Kalender in ein paar Worten?'),
-
-            /*TextArea::make('calendar.description')
-                ->rows(5)
-                ->required()
-                ->title('Kalenderbeschreibung')
-                ->placeholder('Kurzbeschreibung des ')
-                ->help('Beschreibe deinen Kalender in ein paar Worten?'),*/
+                ->placeholder('Beschreibe deinen Kalender in 2-3 Sätzen?'),
 
             Switcher::make('calendar.public')
                 ->sendTrueOrFalse()
@@ -77,8 +70,6 @@ class GeneralInformationsLayout extends Rows
             Upload::make('files')
                 ->title('Upload files (wissen auch noch nicht welche)')
                 ->horizontal(),
-
-            
 
         ];
     }
