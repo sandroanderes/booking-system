@@ -23,13 +23,13 @@
 <section class="container-fluid calendar-section py-5">
     <div class="container">
         <div class="row ">
-            <div class="col-sm-3 mb-3">
+            <div class="col-lg-3 col-md-6 mb-3">
                 <input type="text" id="CalendarFilter" class="form-control" placeholder="Räume, Plätze, Objekte, ...">
             </div>
-            <div class="col-sm-3  mb-3">
-                <input type="text" id="CalendarFilter2" class="form-control" placeholder="Ortschaften">
+            <div class="col-lg-3 col-md-6 mb-3">
+                <input type="text" id="CityFilter" class="form-control" placeholder="Ortschaften">
             </div>
-            <div class="col mb-3">
+            <div class="col col-md-6 col-lg mb-3">
                 <select class="form-control" id="exampleFormControlSelect1">
                     <option selected value="Alle">Alle</option>
                     <option value="5km">5km</option>
@@ -38,7 +38,7 @@
                     <option value="100km">100km</option>
                 </select>
             </div>
-            <div class="col-sm-3 mb-3">
+            <div class="col-lg-3 col-md-6 mb-3">
                 <select class="form-control" id="exampleFormControlSelect1">
                     <option selected value="Alle">Alle Kategorien</option>
                     <option value="Gastronomie">Gastro</option>
@@ -51,74 +51,101 @@
                 <button type="button" class="btn btn-primary btn-block">Suchen</button>
             </div>
         </div>
-        <div class="row row-cols-1 row-cols-md-3" id="CalendarItems">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3" id="CalendarItems">
             <div class="col mb-4">
-                <div class="card">
-                    <img src="/images/place.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="row" id="CalendarItems">
-                            <div class="col-sm-2 text-center d-flex align-items-center">
-                                <p class="mb-0">SEP</p>
-                            </div>
-                            <div class="col-sm-10">
-                                <h5 class="card-title">Co-Working Space</h5>
-                                <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
-                                <h6 class="card-text">Aarau, Schweiz</h6>
+                <a href="#">
+                    <div class="card">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <img src="/images/place.jpg" class="card-img-top embed-responsive-item" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <div class="row" id="CalendarItems">
+                                <div class="col-2 text-center d-flex align-items-center">
+                                    <p class="card-date mb-0">SEP</p>
+                                </div>
+                                <div class="col-10">
+                                    <h5 class="card-title">Co-Working Space</h5>
+                                    <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
+                                    <h6 class="card-text">Aarau, Schweiz</h6>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col mb-4">
-                <div class="card">
-                    <img src="/images/restaurant.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="row" id="CalendarItems">
-                            <div class="col-sm-2 text-center d-flex align-items-center">
-                                <p class="mb-0">SEP</p>
-                            </div>
-                            <div class="col-sm-10">
-                                <h5 class="card-title">Co-Working Space</h5>
-                                <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
-                                <h6 class="card-text">Aarau, Schweiz</h6>
+                <a href="#">
+                    <div class="card">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <img src="/images/restaurant.jpg" class="card-img-top embed-responsive-item" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <div class="row" id="CalendarItems">
+                                <div class="col-2 d-flex align-items-center">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="card-date mb-0 text-center">OKT</p>
+                                        </div>
+                                        <div class="col text-center">
+                                            <p class="text-center">30</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <h5 class="card-title">Tennisplätze</h5>
+                                    <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
+                                    <h6 class="card-text">Chur, Schweiz</h6>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col mb-4">
-                <div class="card">
-                    <img src="/images/table_tennis.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="row" id="CalendarItems">
-                            <div class="col-sm-2 text-center d-flex align-items-center">
-                                <p class="mb-0">SEP</p>
-                            </div>
-                            <div class="col-sm-10">
-                                <h5 class="card-title">Co-Working Space</h5>
-                                <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
-                                <h6 class="card-text">Aarau, Schweiz</h6>
+                <a href="#">
+                    <div class="card">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <img src="/images/table_tennis.jpg" class="card-img-top embed-responsive-item" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <div class="row" id="CalendarItems">
+                            <div class="col-2 d-flex align-items-center date">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="card-date mb-0 text-center">SEP</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <h5 class="card-title">Co-Working Space</h5>
+                                    <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
+                                    <h6 class="card-text">Olten, Schweiz</h6>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col mb-4">
-                <div class="card">
-                    <img src="/images/party.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="row" id="CalendarItems">
-                            <div class="col-sm-2 text-center d-flex align-items-center">
-                                <p class="mb-0">SEP</p>
-                            </div>
-                            <div class="col-sm-10">
-                                <h5 class="card-title">Co-Working Space</h5>
-                                <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
-                                <h6 class="card-text">Aarau, Schweiz</h6>
+                <a href="#">
+                    <div class="card">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <img src="/images/party.jpg" class="card-img-top embed-responsive-item" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <div class="row" id="CalendarItems">
+                                <div class="col-2 text-center d-flex align-items-center">
+                                    <p class="card-date mb-0">SEP</p>
+                                </div>
+                                <div class="col-10">
+                                    <h5 class="card-title">Co-Working Space</h5>
+                                    <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
+                                    <h6 class="card-text">Aarau, Schweiz</h6>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>

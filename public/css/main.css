@@ -11737,6 +11737,26 @@ footer a:hover {
   list-style: none;
 }
 
+.calendar-section a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.calendar-section a .card .embed-responsive .card-img-top {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.calendar-section a .card h5,
+.calendar-section a .card p {
+  margin-bottom: 0.5rem;
+}
+
+.calendar-section a .card .card-date {
+  color: #6f925aff;
+  font-weight: 500;
+}
+
 section.main {
   margin-top: 75px;
 }

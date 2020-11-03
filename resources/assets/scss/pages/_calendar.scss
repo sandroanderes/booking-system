@@ -7,4 +7,26 @@
         list-style: none;
 
     }
+
+    a{
+        &:hover{
+            color: black;
+            text-decoration: none;
+        }
+
+        .card{
+            .embed-responsive .card-img-top {
+                object-fit: cover;
+            }
+            h5,
+            p{
+                margin-bottom: 0.5rem;
+            }
+            .card-date{
+                color: $russian-green;
+                font-weight: 500;
+            }
+        }
+        
+    }
 }
