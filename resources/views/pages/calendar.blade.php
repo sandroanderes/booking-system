@@ -48,7 +48,7 @@
                 </select>
             </div>
             <div class="col mb-3">
-                <button type="button" class="btn btn-primary btn-block">Suchen</button>
+                <button type="button" id="searchCalendar" class="btn btn-primary btn-block">Suchen</button>
             </div>
         </div>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3" id="CalendarItems">
@@ -150,4 +150,7 @@
         </div>
     </div>
 </section>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="{{ asset('js/filter.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/location.js') }}"></script>
 @stop

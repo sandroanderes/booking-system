@@ -17,3 +17,7 @@ mix
     .js('resources/assets/js/navigation.js', 'public/js')
     .js('resources/assets/js/filter.js', 'public/js')
     .js('resources/assets/js/location.js', 'public/js');
+
+if (mix.inProduction()) {
+    mix.version();
+}

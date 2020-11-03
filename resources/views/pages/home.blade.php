@@ -68,9 +68,9 @@
     <div class="container">
         <h1 class="text-center mt-0">Grüezi</h1>
         <div class="row">
-            <div class="col col-lg-6 col-12">
+            <div class="col col-lg-6 col-12 mb-3 mb-lg-0">
                 Eintrag und Verbreitung für jeden Event komplett kostenlos:
-                <ul>
+                <ul class="mb-0">
                     <li>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                         diam nonumy eirmod tempor invidunt.</li>
                     <li>At vero eos et accusam et justo duo dolores et ea rebum.</li>
@@ -90,7 +90,7 @@
 <section class="container-fluid home-section section-bg py-5">
     <div class="container">
         <div class="row">
-            <div class="col col-lg-6 col-12">
+            <div class="col col-lg-6 col-12 mb-3 mb-lg-0">
                 <div class="img-container">
                     <img src="images/underwater.jpg" class="img-fluid" alt="Underwater">
                 </div>
