@@ -11,6 +11,7 @@ use Orchid\Screen\Fields\Cropper;
 use Orchid\Screen\Fields\Upload;
 use Orchid\Screen\Fields\Quill;
 
+
 class GeneralInformationsLayout extends Rows
 {
     /**
@@ -44,7 +45,7 @@ class GeneralInformationsLayout extends Rows
                 ->title('Kalenderbeschreibung')
                 ->placeholder('Beschreibe deinen Kalender in 2-3 Sätzen?'),
 
-            Switcher::make('calendar.public')
+            Switcher::make('calendar.public') 
                 ->sendTrueOrFalse()
                 ->title('Öffentlicher Kalender')
                 ->value(true)
