@@ -6,7 +6,7 @@
         <div class="col-xl-7 col-12">
             <div class="img-container">
                 <img src="images/restaurant.jpg" class="img-fluid" alt="Restaurant">
-                <div class="content text-center">
+                <div class="content text-center desktop">
                     <div class="align-middle">
                         <p>Gastro</p>
                         <h1>Zum Ochsen</h1>
@@ -22,6 +22,18 @@
                             </tr>
                         </table>
                         <button type="button" class="btn btn-primary">Buechs jetzt!</button>
+                    </div>
+                </div>
+                <div class="content-hover mobile">
+                    <div>
+                        <button type="button" class="btn btn-outline-light mx-auto">Buechs jetzt!</button>
+                    </div>
+                </div>
+                <div class="content mobile">
+                    <div>
+                        <p>Gewerbe</p>
+                        <h2 class="text-break">Co-Working Space</h2>
+                        <p>Chur, GR</p>
                     </div>
                 </div>
             </div>

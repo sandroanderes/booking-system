@@ -11411,6 +11411,12 @@ a {
 
 /* mobile breakpoint start */
 
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .container {
     max-width: 720px;
@@ -11556,6 +11562,10 @@ footer a:hover {
   padding-bottom: 40%;
 }
 
+.featured-section .img-container div.mobile {
+  display: none;
+}
+
 .featured-section .img-container img {
   /* Image should match parent box size */
   position: absolute;
@@ -11638,6 +11648,47 @@ footer a:hover {
 .featured-section .col-xl-5 {
   padding-right: 0;
   padding-left: 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .featured-section .img-container div.mobile {
+    display: flex;
+  }
+
+  .featured-section .img-container .desktop {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .featured-section .img-container .content-hover {
+    display: none;
+  }
+
+  .featured-section .img-container .content-hover.mobile {
+    display: none;
+  }
+
+  .featured-section .img-container .content {
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .featured-section .img-container .content p {
+    margin-bottom: 0;
+  }
+
+  .featured-section .img-container .content h2 {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .featured-section .img-container .content h2 {
+    font-size: 1.5rem;
+  }
 }
 
 .calendar-banner .overlay {
@@ -11770,5 +11821,17 @@ section.main {
 ::selection {
   color: white;
   background: black;
+}
+
+@media screen and (max-width: 992px) {
+  section.main {
+    margin-top: 99px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section.main {
+    margin-top: 61px;
+  }
 }
 

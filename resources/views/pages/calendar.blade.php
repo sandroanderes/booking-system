@@ -32,10 +32,10 @@
             <div class="col col-md-6 col-lg mb-3">
                 <select class="form-control" id="exampleFormControlSelect1">
                     <option selected value="Alle">Alle</option>
-                    <option value="5km">5km</option>
-                    <option value="10km">10km</option>
-                    <option value="50km">50km</option>
-                    <option value="100km">100km</option>
+                    <option value="5 km">5 km</option>
+                    <option value="10 km">10 km</option>
+                    <option value="50 km">50 km</option>
+                    <option value="100 km">100 km</option>
                 </select>
             </div>
             <div class="col-lg-3 col-md-6 mb-3">

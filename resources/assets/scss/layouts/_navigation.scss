@@ -109,6 +109,12 @@
 /* nav-toggler css start */
 
 /* mobile breakpoint start */
+@media screen and (max-width: 1200px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
 @media screen and (max-width: 767px) {
     .container {
         max-width: 720px;

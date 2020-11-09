@@ -1,7 +1,9 @@
 .home-section {
-    h1{
+
+    h1 {
         color: $russian-green;
     }
+
     .col {
         display: flex;
         flex-direction: column;
@@ -44,7 +46,8 @@
             object-fit: cover;
         }
     }
-    &.section-bg{
+
+    &.section-bg {
         background-color: $light-gray;
     }
 }

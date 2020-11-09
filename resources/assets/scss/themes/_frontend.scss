@@ -12,3 +12,15 @@ section.main {
     color: white;
     background: black;
 }
+
+@media screen and (max-width: 992px) {
+    section.main{
+        margin-top: 99px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section.main{
+        margin-top: 61px;
+    }
+}
