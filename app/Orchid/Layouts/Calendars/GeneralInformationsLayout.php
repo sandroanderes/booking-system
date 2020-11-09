@@ -43,6 +43,7 @@ class GeneralInformationsLayout extends Rows
 
             Quill::make('calendar.description')
                 ->title('Kalenderbeschreibung')
+                ->toolbar(["text"])
                 ->placeholder('Beschreibe deinen Kalender in 2-3 Sätzen?'),
 
             Switcher::make('calendar.public') 
