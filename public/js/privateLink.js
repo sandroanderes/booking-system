@@ -81,72 +81,64 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/assets/js/filter.js":
-/*!***************************************!*\
-  !*** ./resources/assets/js/filter.js ***!
-  \***************************************/
+/***/ "./resources/assets/js/privateLink.js":
+/*!********************************************!*\
+  !*** ./resources/assets/js/privateLink.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-document.getElementById("CalendarFilter").onkeyup = function () {
-  TitelFunction();
-};
+// Privater Link Feld
+var calendarPublicSwitch = document.getElementById('field-calendarpublic-70b17328819d614c3e7fca94804b19b91a3e1651');
+var calendarPublicLink = document.getElementById('field-calendarprivatelink-e214161646df417e1c98b63c42bacedcf980bf94');
+calendarPublicLink.parentElement.parentElement.style.display = "none";
+calendarPublicSwitch.addEventListener("click", privateLink);
 
-document.getElementById("CityFilter").onkeyup = function () {
-  CityFunction();
-};
+function privateLink() {
+  var publicCalendar = calendarPublicSwitch.checked;
 
-function TitelFunction() {
-  var input, filter, cards, cardContainer, h5, title, i;
-  input = document.getElementById("CalendarFilter");
-  filter = input.value.toUpperCase();
-  cardContainer = document.getElementById("CalendarItems");
-  cards = cardContainer.getElementsByClassName("card");
-
-  for (i = 0; i < cards.length; i++) {
-    title = cards[i].querySelector(".card-body h5.card-title");
-
-    if (title.innerText.toUpperCase().indexOf(filter) > -1) {
-      cards[i].parentElement.parentElement.style.display = "";
-    } else {
-      cards[i].parentElement.parentElement.style.display = "none";
-    }
+  if (publicCalendar === true) {
+    calendarPublicLink.parentElement.parentElement.style.display = "none";
+  } else {
+    var randomValue = randomString(16, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+    calendarPublicLink.parentElement.parentElement.style.display = "inline";
+    calendarPublicLink.value = window.location.hostname + "/" + randomValue;
   }
-}
+} // Kalender kopieren
 
-function CityFunction() {
-  var input, filter, cards, cardContainer, p, title, i;
-  input = document.getElementById("CityFilter");
-  filter = input.value.toUpperCase();
-  cardContainer = document.getElementById("CalendarItems");
-  cards = cardContainer.getElementsByClassName("card");
 
-  for (i = 0; i < cards.length; i++) {
-    title = cards[i].querySelector(".card-body h6.card-text");
+calendarPublicLink.addEventListener("click", function (event) {
+  event.preventDefault();
+  calendarPublicLink.select();
+  document.execCommand("copy");
+  alert("Link wurde in die Zwischenablage kopiert");
+}); // Randmom URL
 
-    if (title.innerText.toUpperCase().indexOf(filter) > -1) {
-      cards[i].parentElement.parentElement.style.display = "";
-    } else {
-      cards[i].parentElement.parentElement.style.display = "none";
-    }
+function randomString(length, chars) {
+  var result = '';
+
+  for (var i = length; i > 0; --i) {
+    result += chars[Math.floor(Math.random() * chars.length)];
   }
+
+  return result;
 }
 
 /***/ }),
 
-/***/ 2:
-/*!*********************************************!*\
-  !*** multi ./resources/assets/js/filter.js ***!
-  \*********************************************/
+/***/ 4:
+/*!**************************************************!*\
+  !*** multi ./resources/assets/js/privateLink.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\filter.js */"./resources/assets/js/filter.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\privateLink.js */"./resources/assets/js/privateLink.js");
 
 
 /***/ })

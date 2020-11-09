@@ -11,7 +11,6 @@ use Orchid\Screen\Fields\Cropper;
 use Orchid\Screen\Fields\Upload;
 use Orchid\Screen\Fields\Quill;
 
-
 class GeneralInformationsLayout extends Rows
 {
     /**
@@ -51,6 +50,10 @@ class GeneralInformationsLayout extends Rows
                 ->title('Öffentlicher Kalender')
                 ->value(true)
                 ->help('Sollen dein Kalender öffentlich einsehbar sein?'),
+
+            Input::make('calendar.privateLink')
+                ->title('Dein privater Link')
+                ->readonly(),
 
             Select::make('calendar.template')
                 ->options([
