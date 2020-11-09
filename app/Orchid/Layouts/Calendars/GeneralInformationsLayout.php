@@ -11,7 +11,6 @@ use Orchid\Screen\Fields\Cropper;
 use Orchid\Screen\Fields\Upload;
 use Orchid\Screen\Fields\Quill;
 
-
 class GeneralInformationsLayout extends Rows
 {
     /**
@@ -43,6 +42,7 @@ class GeneralInformationsLayout extends Rows
 
             Quill::make('calendar.description')
                 ->title('Kalenderbeschreibung')
+                ->toolbar(["text"])
                 ->placeholder('Beschreibe deinen Kalender in 2-3 Sätzen?'),
 
             Switcher::make('calendar.public') 
@@ -50,6 +50,10 @@ class GeneralInformationsLayout extends Rows
                 ->title('Öffentlicher Kalender')
                 ->value(true)
                 ->help('Sollen dein Kalender öffentlich einsehbar sein?'),
+
+            Input::make('calendar.privateLink')
+                ->title('Dein privater Link')
+                ->readonly(),
 
             Select::make('calendar.template')
                 ->options([

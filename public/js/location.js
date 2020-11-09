@@ -170,7 +170,7 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/booking-system/resources/assets/js/location.js */"./resources/assets/js/location.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\location.js */"./resources/assets/js/location.js");
 
 
 /***/ })

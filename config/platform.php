@@ -88,8 +88,8 @@ return [
     */
 
     'resource' => [
-        'stylesheets' => ['/assets/sass/main.css'],
-        'scripts'     => [],
+        'stylesheets' => [],
+        'scripts'     => ['/js/privateLink.js'],
     ],
 
     /*
