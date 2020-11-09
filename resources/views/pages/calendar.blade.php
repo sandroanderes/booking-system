@@ -150,7 +150,6 @@
         </div>
     </div>
 </section>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript" src="{{ asset('js/filter.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/location.js') }}"></script>
 @stop

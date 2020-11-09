@@ -17,7 +17,7 @@ function TitelFunction() {
     }
 }
 
-function CityFunction() {
+/* function CityFunction() {
     var input, filter, cards, cardContainer, p, title, i;
     input = document.getElementById("CityFilter");
     filter = input.value.toUpperCase();
@@ -31,4 +31,4 @@ function CityFunction() {
             cards[i].parentElement.parentElement.style.display = "none";
         }
     }
-}
+} */
