@@ -6,5 +6,7 @@
 
     <title>Buechs</title>
 
+    <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}">
+
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>

@@ -1,8 +1,8 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/main.css": "/css/main.css",
-    "/js/filter.js": "/js/filter.js",
-    "/js/location.js": "/js/location.js",
-    "/js/navigation.js": "/js/navigation.js",
-    "/js/privateLink.js": "/js/privateLink.js"
+    "/js/app.js": "/js/app.js?id=bfec9cc3762f75a3f552",
+    "/css/main.css": "/css/main.css?id=fd90eff884ee512f965e",
+    "/js/filter.js": "/js/filter.js?id=2f5c688a02511bb18f6a",
+    "/js/location.js": "/js/location.js?id=05edcfbfcc3544ae3c8c",
+    "/js/navigation.js": "/js/navigation.js?id=d1876038b8910e259894",
+    "/js/privateLink.js": "/js/privateLink.js?id=e3fe00e82af3ee88cf1d"
 }

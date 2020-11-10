@@ -11808,6 +11808,10 @@ footer a:hover {
   font-weight: 500;
 }
 
+.functions-section .card .card-body {
+  border-bottom: 3px solid black;
+}
+
 section.main {
   margin-top: 75px;
 }
