@@ -48,7 +48,7 @@ class GeneralInformationsLayout extends Rows
             Switcher::make('calendar.public') 
                 ->sendTrueOrFalse()
                 ->title('Öffentlicher Kalender')
-                ->value(true)
+                ->value(false)
                 ->help('Sollen dein Kalender öffentlich einsehbar sein?'),
 
             Input::make('calendar.privateLink')

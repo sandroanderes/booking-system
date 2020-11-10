@@ -19331,10 +19331,18 @@ module.exports = function(module) {
 /***/ (function(module, exports) {
 
 // Privater Link Feld
-var calendarPublicSwitch = document.getElementById('field-calendarpublic-70b17328819d614c3e7fca94804b19b91a3e1651');
+var calendarPublicSwitch = document.querySelector('[id^="field-calendarpublic-"]');
 var calendarPublicLink = document.getElementById('field-calendarprivatelink-e214161646df417e1c98b63c42bacedcf980bf94');
-calendarPublicLink.parentElement.parentElement.style.display = "none";
-calendarPublicSwitch.addEventListener("click", privateLink);
+calendarPublicLink.value = "";
+var calendarName = document.querySelector('[id^="field-calendarname-"]').value;
+var calendarNameField = document.querySelector('[id^="field-calendarname-"]');
+var randomValue = randomString(16, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+calendarPublicLink.parentElement.parentElement.style.display = "inline";
+calendarPublicSwitch.addEventListener("click", privateLink); // KeyDown Calendar Name
+
+calendarNameField.addEventListener("keyup", function (event) {
+  calendarPublicLink.value = window.location.hostname + "/" + document.querySelector('[id^="field-calendarname-"]').value + "-" + randomValue;
+}); // PrivateLink
 
 function privateLink() {
   var publicCalendar = calendarPublicSwitch.checked;
@@ -19342,9 +19350,7 @@ function privateLink() {
   if (publicCalendar === true) {
     calendarPublicLink.parentElement.parentElement.style.display = "none";
   } else {
-    var randomValue = randomString(16, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
     calendarPublicLink.parentElement.parentElement.style.display = "inline";
-    calendarPublicLink.value = window.location.hostname + "/" + randomValue;
   }
 } // Kalender kopieren
 
@@ -19365,6 +19371,8 @@ function randomString(length, chars) {
 
   return result;
 }
+
+;
 
 /***/ }),
 

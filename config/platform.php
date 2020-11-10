@@ -89,7 +89,7 @@ return [
 
     'resource' => [
         'stylesheets' => [],
-        'scripts'     => ['/js/privateLink.js'],
+        'scripts'     => [],
     ],
 
     /*

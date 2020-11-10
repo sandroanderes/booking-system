@@ -53,16 +53,15 @@ class NewCalendar extends Screen
     public function layout(): array
     {
         return [
-            
-
             Layout::accordion([
                 'Schritt 1: Allgemeine Einstellungen' => GeneralInformationsLayout::class,
                 'Schritt 2: Spezifikationen' => SpecificationLayout::class,
                 'Schritt 3: Informationen zum Betrieb' => OpeningHoursLayout::class,
-
-        
             ]),
+            Layout::view('orchid.scripts'),
 
         ];
     }
 }
+
+

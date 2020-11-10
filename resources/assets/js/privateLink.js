@@ -1,18 +1,27 @@
 // Privater Link Feld
-var calendarPublicSwitch = document.getElementById('field-calendarpublic-70b17328819d614c3e7fca94804b19b91a3e1651');
+var calendarPublicSwitch = document.querySelector('[id^="field-calendarpublic-"]');
 var calendarPublicLink = document.getElementById('field-calendarprivatelink-e214161646df417e1c98b63c42bacedcf980bf94');
+calendarPublicLink.value = "";
+var calendarName = document.querySelector('[id^="field-calendarname-"]').value;
+var calendarNameField = document.querySelector('[id^="field-calendarname-"]');
 
-calendarPublicLink.parentElement.parentElement.style.display = "none";
+var randomValue = randomString(16, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+calendarPublicLink.parentElement.parentElement.style.display = "inline";
+
 calendarPublicSwitch.addEventListener("click", privateLink);
 
+// KeyDown Calendar Name
+calendarNameField.addEventListener("keyup", function (event) {
+    calendarPublicLink.value = window.location.hostname + "/" + document.querySelector('[id^="field-calendarname-"]').value + "-" + randomValue;
+});
+
+// PrivateLink
 function privateLink() {
     var publicCalendar = calendarPublicSwitch.checked;
     if (publicCalendar === true) {
         calendarPublicLink.parentElement.parentElement.style.display = "none";
     } else {
-        var randomValue = randomString(16, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
         calendarPublicLink.parentElement.parentElement.style.display = "inline";
-        calendarPublicLink.value = window.location.hostname + "/" + randomValue;
     }
 }
 
@@ -22,11 +31,11 @@ calendarPublicLink.addEventListener("click", function (event) {
     calendarPublicLink.select();
     document.execCommand("copy");
     alert("Link wurde in die Zwischenablage kopiert");
-   }); 
+});
 
 // Randmom URL
 function randomString(length, chars) {
     var result = '';
     for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
     return result;
-}
+};
