@@ -1,8 +1,8 @@
 // Privater Link Feld
 var calendarPublicSwitch = document.getElementById('field-calendarpublic-70b17328819d614c3e7fca94804b19b91a3e1651');
 var calendarPublicLink = document.getElementById('field-calendarprivatelink-e214161646df417e1c98b63c42bacedcf980bf94');
-calendarPublicLink.parentElement.parentElement.style.display = "none";
 
+calendarPublicLink.parentElement.parentElement.style.display = "none";
 calendarPublicSwitch.addEventListener("click", privateLink);
 
 function privateLink() {
