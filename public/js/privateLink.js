@@ -101,11 +101,11 @@ var calendarName = document.querySelector('[id^="field-calendarname-"]').value;
 var calendarNameField = document.querySelector('[id^="field-calendarname-"]');
 var randomValue = randomString(16, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
 calendarPublicLink.parentElement.parentElement.style.display = "inline";
-calendarPublicSwitch.addEventListener("click", privateLink); // KeyDown Calendar Name
+calendarPublicSwitch.addEventListener("click", privateLink); // Function KeyDown Calendar Name
 
 calendarNameField.addEventListener("keyup", function (event) {
   calendarPublicLink.value = window.location.hostname + "/" + document.querySelector('[id^="field-calendarname-"]').value + "-" + randomValue;
-}); // PrivateLink
+}); // Function PrivateLink
 
 function privateLink() {
   var publicCalendar = calendarPublicSwitch.checked;
@@ -115,7 +115,7 @@ function privateLink() {
   } else {
     calendarPublicLink.parentElement.parentElement.style.display = "inline";
   }
-} // Kalender kopieren
+} // Function Calendar copy
 
 
 calendarPublicLink.addEventListener("click", function (event) {
@@ -123,7 +123,7 @@ calendarPublicLink.addEventListener("click", function (event) {
   calendarPublicLink.select();
   document.execCommand("copy");
   alert("Link wurde in die Zwischenablage kopiert");
-}); // Randmom URL
+}); // Function Random URL
 
 function randomString(length, chars) {
   var result = '';
