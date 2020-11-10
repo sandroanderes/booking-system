@@ -93,6 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+/* =========== Calendar Private Link =========== */
 // Private Link Field
 var calendarPublicSwitch = document.querySelector('[id^="field-calendarpublic-"]');
 var calendarPublicLink = document.getElementById('field-calendarprivatelink-e214161646df417e1c98b63c42bacedcf980bf94');
@@ -139,6 +140,7 @@ function randomString(length, chars) {
 }
 
 ;
+/* =========== Usage of an Template =========== */
 
 /***/ }),
 

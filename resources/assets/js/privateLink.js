@@ -1,3 +1,4 @@
+/* =========== Calendar Private Link =========== */
 // Private Link Field
 var calendarPublicSwitch = document.querySelector('[id^="field-calendarpublic-"]');
 var calendarPublicLink = document.getElementById('field-calendarprivatelink-e214161646df417e1c98b63c42bacedcf980bf94');
@@ -43,3 +44,5 @@ function randomString(length, chars) {
     for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
     return result;
 };
+
+/* =========== Usage of an Template =========== */
