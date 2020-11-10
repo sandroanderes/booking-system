@@ -1,12 +1,17 @@
-// Privater Link Feld
+// Private Link Field
 var calendarPublicSwitch = document.querySelector('[id^="field-calendarpublic-"]');
 var calendarPublicLink = document.getElementById('field-calendarprivatelink-e214161646df417e1c98b63c42bacedcf980bf94');
 calendarPublicLink.value = "";
+
+// Get Calendar Name
 var calendarName = document.querySelector('[id^="field-calendarname-"]').value;
 var calendarNameField = document.querySelector('[id^="field-calendarname-"]');
+
+// Get Random Value
 var randomValue = randomString(16, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
 calendarPublicLink.parentElement.parentElement.style.display = "inline";
 
+// EventListener onClick => Switch
 calendarPublicSwitch.addEventListener("click", privateLink);
 
 // Function KeyDown Calendar Name
