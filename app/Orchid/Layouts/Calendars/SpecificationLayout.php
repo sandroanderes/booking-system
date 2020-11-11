@@ -3,10 +3,13 @@
 namespace App\Orchid\Layouts\Calendars;
 
 use Orchid\Screen\Field;
+use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Layouts\Rows;
 use Orchid\Screen\Fields\Select;
-use Orchid\Screen\Fields\TextArea;
+use Orchid\Screen\Fields\RadioButtons;
 use Orchid\Screen\Fields\Switcher;
+use Orchid\Screen\Fields\Matrix;
+
 
 class SpecificationLayout extends Rows
 {
@@ -37,22 +40,28 @@ class SpecificationLayout extends Rows
                 ->value('weekly')
                 ->help('In welchem Format soll dein Kalender standardmässig angezeigt werden?'),
 
-            Select::make('specification.timeunit')
+            RadioButtons::make('specification.timeunit')
+                ->title('Reservationsdauer in')
                 ->options([
-                    'minunte'   => 'Minuten',
-                    'hour' => 'Stunden',
-                    'day' => 'Tage',
+                    1 => 'Minuten',
+                    0 => 'Stunden',
+                    3 => 'Tage',
                 ])
-                ->title('Reservationsdauer in:')
-                ->value('hour')
-                ->help('Was ist die standardmässige Zeiteinheit der Reservation?'),
-
+                ->help('In welchem Zeitformat soll die Reservation angezeigt werden?'),
 
             Switcher::make('specification.duration_fixed')
                 ->sendTrueOrFalse()
                 ->title('Fixes Reservationsintervall')
                 ->value(true)
                 ->help('Dauert eine Reservationseinheit bei dir immer gleich lang?'),
+
+            Select::make('specification.timeunit')
+                ->options([
+                    'minute' => 'Minuten',
+                    'hour' => 'Stunden',
+                    'day' => 'Tage',
+                ])
+                ->title('Wie soll die Reservationsdauer angezeigt werden'),
 
             Select::make('specification.duration_interval')
                 ->options([
@@ -174,7 +183,43 @@ class SpecificationLayout extends Rows
                 ])
                 ->title('Minimale Reservationsdauer in Tagen'),
 
+            Matrix::make('specification.gastro')
+                ->title('Anzahl Tische')
+                ->columns(['Tischgrösse', 'Verfügbare Tische'])
+                ->maxRows(10)
+                ->fields([
+                    'Tischgrösse'   => Select::make('gastrotable')->type('text')->options([
+                        '1' => '1er-Tisch',
+                        '2' => '2er-Tisch',
+                        '4' => '4er-Tisch',
+                        '5' => '5er-Tisch',
+                        '6' => '6er-Tisch',
+                        '7' => '7er-Tisch',
+                        '8' => '8er-Tisch']),
+                    'Verfügbare Tische' => Input::make('gastrotable_number')->type('number')->min(1),
+                ])
+                ->help('Klick auf "+Hinzufügen" um weitere Räume einzutragen'),
 
+            Input::make('specification.sportunit')
+                ->type('text')
+                ->title('Was kann man bei deinem Sportverein reservieren')
+                ->placeholder('Bsp: Tennisplätze, Fussballplätze, Billardtische oder Bowlingbahnen')
+                ->help('Eingabe im Plural z.bsp. Dartscheiben'),
+
+            Input::make('specification.sportnumber')
+                ->type('number')
+                ->min('0')
+                ->title('Anzahl Einheiten von oben')
+                ->placeholder('Gib die gewünschte Anzahl ein'),
+
+            Matrix::make('specification.room')
+                ->title('Räume')
+                ->columns(['Raum-Name', 'Max. Personenanzahl'])
+                ->fields([
+                    'Raum-Name'   => Input::make('room_name')->type('text')->maxlength(50)->placeholder('Z.Bsp. Sitzungszimmer'),
+                    'Max. Personenanzahl' => Input::make('room_capacity')->type('number')->min(0),
+                ])
+                ->help('Klick auf "+Hinzufügen" um weitere Räume einzutragen'),
         ];
     }
 }
