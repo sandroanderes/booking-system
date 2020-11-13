@@ -182,7 +182,7 @@ class OpeningHoursLayout extends Rows
             ]),
 
             Group::make([
-                DateTimer::make('openinghours_tuesdayy')
+                DateTimer::make('openinghours_tuesday')
                     ->title('Öffnungszeiten Dienstag: Von...')
                     ->noCalendar()
                     ->format('H:i'),
