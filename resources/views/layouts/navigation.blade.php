@@ -7,11 +7,11 @@
 
       <!-- site menu/nav -->
       <ul>
-        <li><a href="/">Startseite</a></li>
-        <li><a href="/kalender">Kalender</a></li>
-        <li><a href="/funktionen">Funktionen</a></li>
-        <li><a href="/support">Support & FAQ</a></li>
-        <li><a href="/ueber">Über uns</a></li>
+        <li><a class="{{ ((Request::is('/')) ? 'active' : '') }}" href="/">Startseite</a></li>
+        <li><a class="{{ ((Request::is('kalender')) ? 'active' : '') }}" href="/kalender">Kalender</a></li>
+        <li><a class="{{ ((Request::is('funktionen')) ? 'active' : '') }}" href="/funktionen">Funktionen</a></li>
+        <li><a class="{{ ((Request::is('support')) ? 'active' : '') }}" href="/support">Support & FAQ</a></li>
+        <li><a class="{{ ((Request::is('ueber')) ? 'active' : '') }}" href="/ueber">Über uns</a></li>
         <li class="admin-mobile"><a href="/admin">Anmelden</a></li>
         <li class="admin-desktop">
           <a href="/admin">
