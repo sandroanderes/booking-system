@@ -1,7 +1,13 @@
 .functions-section {
+    h1 {
+        color: $russian-green;
+    }
+
     .card {
-        .card-body {
-            border-bottom: 3px solid black;
-        }
+            border-bottom: 4px solid black;
+    }
+
+    p{
+        margin-bottom: 2rem;
     }
 }

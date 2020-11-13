@@ -1,7 +1,7 @@
 @extends('base.default')
 
 @section('content')
-<section class="container-fluid calendar-banner px-0">
+<section class="container-fluid banner px-0">
 
     <div class="thumbnail text-left">
         <div class="overlay"></div>
