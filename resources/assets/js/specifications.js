@@ -76,34 +76,52 @@ var switcher_fixed_res = document.querySelector(
     '[id^="field-specificationduration-fixed-"]'
 );
 
-//Selector Fixed duration 
-var select_fixed_dur = document.querySelector( 
-    '[id^="field-specificationtimeunit-"]'
-).parentElement.parentElement.parentElement.parentElement;
-
+//Selector Fixed duration
+var select_fixed_dur = document.querySelector(
+    '[id^="field-specificationduration-all-"]'
+).parentElement.parentElement.parentElement;
 
 //Button Min, Hour, Day
-var timeunit_button = document.querySelector( 
+var timeunit_button = document.querySelector(
     '[id^="field-specificationtimeunit-"]'
 ).parentElement.parentElement.parentElement.parentElement;
+//Button Min, Hour, Day standardmässig ausblenden
+timeunit_button.style.display = "none";
 
 //EventListener Reservationsadauer
-switcher_fixed_res.addEventListener("click", reservation_duration_fixed);
+switcher_fixed_res.addEventListener("click", reservation_duration_fixed); //bezieht es sich auf diese Funktion? ja genau eine eigene...
+timeunit_button.addEventListener("click", reservation_duration_fixed);
 
 // Function Show Hide reservation_duration_fixed
 function reservation_duration_fixed() {
     if (switcher_fixed_res.checked === true) {
+        //Remove Active Class der einzelnen Buttons -man muss die einzelnen Knöpfe auslesen... nicht die Gruppe...
+        timeunit_minute.parentElement.classList.remove("active");
+        timeunit_hour.parentElement.classList.remove("active");
+        timeunit_day.parentElement.classList.remove("active");
+
+        //Alle Min, Std, Tage-Inputfelder entfernen, wenn gedrückt
         min_reservation_minute.style.display = "none";
         max_reservation_minute.style.display = "none";
         min_reservation_hour.style.display = "none";
         max_reservation_hour.style.display = "none";
         min_reservation_day.style.display = "none";
         max_reservation_day.style.display = "none";
-        
+
+        timeunit_minute.checked = false;
+        timeunit_hour.checked = false;
+        timeunit_day.checked = false;
+
+        //Button "minuten, Stunden, Tage" ausblenden
         timeunit_button.style.display = "none";
 
-        //ne den Select einblenden
-        //ah ja, wie heisst der Min, Std aha - dann ist mein Comment falsch
+        //Selector "Fixe Reservationsdauer" einblenden
+        select_fixed_dur.style.display = "inline";
+    } else if (switcher_fixed_res.checked === false) {
+        //Button "minuten, Stunden, Tage" einblenden
+        timeunit_button.style.display = "inline";
 
+        //Selector "Fixe Reservationsdauer" ausblenden
+        select_fixed_dur.style.display = "none";
     }
 }
