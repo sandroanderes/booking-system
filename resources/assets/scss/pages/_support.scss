@@ -18,7 +18,7 @@
         }
 
         :nth-child(even) a {
-            background: $alloy-orange;
+            background: $light-gray;
         }
 
         &-collapse {
@@ -44,13 +44,13 @@
                 display: block;
                 font-size: 1.2rem;
                 font-weight: 500;
-                color: white;
+                color: black;
                 padding: 0.9rem 2rem;
                 position: relative;
 
                 &::before {
                     content: "";
-                    border-top: 0.4rem solid white;
+                    border-top: 0.4rem solid black;
                     border-left: 0.4rem solid transparent;
                     border-right: 0.4rem solid transparent;
                     position: absolute;

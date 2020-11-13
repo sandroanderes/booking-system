@@ -31,9 +31,10 @@
                 padding: 25px;
                 display: block;
                 text-decoration: none;
+                font-weight: 400;
 
-                &:hover {
-                    background: rgba(255, 255, 255, 0.1);
+                &.active{
+                    font-weight: bold;
                 }
             }
 

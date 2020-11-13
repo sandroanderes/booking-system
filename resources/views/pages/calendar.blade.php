@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="container-fluid banner px-0">
-
+    
     <div class="thumbnail text-left">
         <div class="overlay"></div>
         <img src="images/place.jpeg" alt="Place" class="img-responsive">
