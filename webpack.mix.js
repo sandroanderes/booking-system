@@ -20,6 +20,7 @@ mix
     .js('resources/assets/js/privateLink.js', 'public/js')
     .js('resources/assets/js/functions.js', 'public/js')
     .js('resources/assets/js/openinghours.js', 'public/js')
+    .js('resources/assets/js/fixed-footer.js', 'public/js')
     .js('resources/assets/js/specifications.js', 'public/js');
 
 

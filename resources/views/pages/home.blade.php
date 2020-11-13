@@ -41,7 +41,7 @@
         <div class="col-xl-5 col-12">
             <div class="col">
                 <div class="img-container">
-                    <img src="images/table_tennis.jpg" class="img-fluid" alt="Restaurant">
+                    <img src="images/table_tennis.jpeg" class="img-fluid" alt="Restaurant">
                     <div class="content-hover">
                         <div>
                             <button type="button" class="btn btn-outline-light mx-auto">Buechs jetzt!</button>
@@ -93,7 +93,7 @@
             </div>
             <div class="col col-lg-6 col-12">
                 <div class="img-container">
-                    <img src="images/party.jpg" class="img-fluid" alt="Party">
+                    <img src="images/party.jpeg" class="img-fluid" alt="Party">
                 </div>
             </div>
         </div>
@@ -104,11 +104,10 @@
         <div class="row">
             <div class="col col-lg-6 col-12 mb-3 mb-lg-0">
                 <div class="img-container">
-                    <img src="images/underwater.jpg" class="img-fluid" alt="Underwater">
+                    <img src="images/underwater.jpeg" class="img-fluid" alt="Underwater">
                 </div>
             </div>
             <div class="col col-lg-6 col-12">
-
                 <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
                 </p>
