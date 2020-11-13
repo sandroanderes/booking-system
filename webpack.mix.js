@@ -19,7 +19,8 @@ mix
     .js('resources/assets/js/location.js', 'public/js')
     .js('resources/assets/js/privateLink.js', 'public/js')
     .js('resources/assets/js/functions.js', 'public/js')
-    .js('resources/assets/js/openinghours.js', 'public/js');
+    .js('resources/assets/js/openinghours.js', 'public/js')
+    .js('resources/assets/js/fixed-footer.js', 'public/js');
 
 if (mix.inProduction()) {
     mix.version();

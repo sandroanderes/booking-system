@@ -28,7 +28,7 @@
             <div class="col mb-4">
                 <div class="card animate__animated animate__slideInUp">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <img src="/images/functions/all-in-one.jpg" class="card-img-top embed-responsive-item" alt="...">
+                        <img src="/images/functions/all-in-one.jpeg" class="card-img-top embed-responsive-item" alt="...">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center">All-In-One Lösung</h5>
@@ -39,7 +39,7 @@
             <div class="col mb-4">
                 <div class="card animate__animated animate__slideInUp">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <img src="/images/functions/modern.jpg" class="card-img-top embed-responsive-item" alt="...">
+                        <img src="/images/functions/modern.jpeg" class="card-img-top embed-responsive-item" alt="...">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center">Modernes Design</h5>
@@ -50,7 +50,7 @@
             <div class="col mb-4">
                 <div class="card animate__animated animate__slideInUp">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <img src="/images/functions/private.jpg" class="card-img-top embed-responsive-item" alt="...">
+                        <img src="/images/functions/private.jpeg" class="card-img-top embed-responsive-item" alt="...">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center">Privat und Öffentlich</h5>
@@ -61,7 +61,7 @@
             <div class="col mb-4">
                 <div class="card animate__animated animate__slideInUp">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <img src="/images/functions/security.jpg" class="card-img-top embed-responsive-item" alt="...">
+                        <img src="/images/functions/security.jpeg" class="card-img-top embed-responsive-item" alt="...">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center">Hohe Sicherheitsstandards</h5>
@@ -72,7 +72,7 @@
             <div class="col mb-4">
                 <div class="card animate__animated animate__slideInUp">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <img src="/images/functions/simple.jpg" class="card-img-top embed-responsive-item" alt="...">
+                        <img src="/images/functions/simple.jpeg" class="card-img-top embed-responsive-item" alt="...">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center">Benutzerfreundlich</h5>
@@ -83,7 +83,7 @@
             <div class="col mb-4">
                 <div class="card animate__animated animate__slideInUp">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <img src="/images/functions/support.jpg" class="card-img-top embed-responsive-item" alt="...">
+                        <img src="/images/functions/support.jpeg" class="card-img-top embed-responsive-item" alt="...">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center">Professioneller Support</h5>

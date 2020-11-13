@@ -5,7 +5,7 @@
 
     <div class="thumbnail text-left">
         <div class="overlay"></div>
-        <img src="images/place.jpg" alt="Place" class="img-responsive">
+        <img src="images/place.jpeg" alt="Place" class="img-responsive">
         <div class="caption">
             <div class="container">
                 <div class="row">
@@ -56,7 +56,7 @@
                 <a href="#">
                     <div class="card">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <img src="/images/place.jpg" class="card-img-top embed-responsive-item" alt="...">
+                            <img src="/images/place.jpeg" class="card-img-top embed-responsive-item" alt="...">
                         </div>
                         <div class="card-body">
                             <div class="row" id="CalendarItems">
@@ -105,7 +105,7 @@
                 <a href="#">
                     <div class="card">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <img src="/images/table_tennis.jpg" class="card-img-top embed-responsive-item" alt="...">
+                            <img src="/images/table_tennis.jpeg" class="card-img-top embed-responsive-item" alt="...">
                         </div>
                         <div class="card-body">
                             <div class="row" id="CalendarItems">
@@ -130,7 +130,7 @@
                 <a href="#">
                     <div class="card">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <img src="/images/party.jpg" class="card-img-top embed-responsive-item" alt="...">
+                            <img src="/images/party.jpeg" class="card-img-top embed-responsive-item" alt="...">
                         </div>
                         <div class="card-body">
                             <div class="row" id="CalendarItems">
