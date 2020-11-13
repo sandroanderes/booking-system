@@ -78,8 +78,7 @@ class OpeningHoursLayout extends Rows
                 RadioButtons::make('halfday_closed_general')
                     ->options([
                         0 => 'Ja',
-                        1 => 'Nur morgens geöffnet',
-                        2 => 'Nur nachmittags geöffnet',
+                        1 => 'Nur halbtags geöffnet',
                     ])
                     ->title('Hast du ganztags geöffnet?')
                     ->value(0),
@@ -123,8 +122,7 @@ class OpeningHoursLayout extends Rows
                 RadioButtons::make('halfday_closed_monday')
                     ->options([
                         0 => 'Ja',
-                        1 => 'Nur morgens geöffnet',
-                        2 => 'Nur nachmittags geöffnet',
+                        1 => 'Nur halbtags geöffnet',
                     ])
                     ->title('Am Montag ganztags geöffnet?')
                     ->value(0),
@@ -166,8 +164,7 @@ class OpeningHoursLayout extends Rows
                 RadioButtons::make('halfday_closed_tuesday')
                     ->options([
                         0 => 'Ja',
-                        1 => 'Nur morgens geöffnet',
-                        2 => 'Nur nachmittags geöffnet',
+                        1 => 'Nur halbtags geöffnet',
                     ])
                     ->title('Am Dienstag ganztags geöffnet?')
                     ->value(0),
@@ -209,8 +206,7 @@ class OpeningHoursLayout extends Rows
                 RadioButtons::make('halfday_closed_wednesday')
                     ->options([
                         0 => 'Ja',
-                        1 => 'Nur morgens geöffnet',
-                        2 => 'Nur nachmittags geöffnet',
+                        1 => 'Nur halbtags geöffnet',
                     ])
                     ->title('Am Mittwoch ganztags geöffnet?')
                     ->value(0),
@@ -252,8 +248,7 @@ class OpeningHoursLayout extends Rows
                 RadioButtons::make('halfday_closed_thursday')
                     ->options([
                         0 => 'Ja',
-                        1 => 'Nur morgens geöffnet',
-                        2 => 'Nur nachmittags geöffnet',
+                        1 => 'Nur halbtags geöffnet',
                     ])
                     ->title('Am Donnerstag ganztags geöffnet?')
                     ->value(0),
@@ -295,8 +290,7 @@ class OpeningHoursLayout extends Rows
                 RadioButtons::make('halfday_closed_friday')
                     ->options([
                         0 => 'Ja',
-                        1 => 'Nur morgens geöffnet',
-                        2 => 'Nur nachmittags geöffnet',
+                        1 => 'Nur halbtags geöffnet',
                     ])
                     ->title('Am Freitag ganztags geöffnet?')
                     ->value(0),
@@ -338,8 +332,7 @@ class OpeningHoursLayout extends Rows
                 RadioButtons::make('halfday_closed_saturday')
                     ->options([
                         0 => 'Ja',
-                        1 => 'Nur morgens geöffnet',
-                        2 => 'Nur nachmittags geöffnet',
+                        1 => 'Nur halbtags geöffnet',
                     ])
                     ->title('Am Samstag ganztags geöffnet?')
                     ->value(0),
@@ -381,8 +374,7 @@ class OpeningHoursLayout extends Rows
                 RadioButtons::make('halfday_closed_sunday')
                     ->options([
                         0 => 'Ja',
-                        1 => 'Nur morgens geöffnet',
-                        2 => 'Nur nachmittags geöffnet',
+                        1 => 'Nur halbtags geöffnet',
                     ])
                     ->title('Am Sonntag ganztags geöffnet?')
                     ->value(0),
