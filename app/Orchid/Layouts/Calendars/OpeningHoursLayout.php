@@ -115,7 +115,7 @@ class OpeningHoursLayout extends Rows
                     ->noCalendar()
                     ->format('H:i'),
             ]),
-       
+
             //Öffnungszeiten der einzelnen Wochentage
             //Montag
             Group::make([

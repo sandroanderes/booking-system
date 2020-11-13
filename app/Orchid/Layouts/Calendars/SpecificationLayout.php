@@ -9,6 +9,7 @@ use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\RadioButtons;
 use Orchid\Screen\Fields\Switcher;
 use Orchid\Screen\Fields\Matrix;
+use Orchid\Screen\Fields\Group;
 
 
 class SpecificationLayout extends Rows
@@ -40,6 +41,49 @@ class SpecificationLayout extends Rows
                 ->value('weekly')
                 ->help('In welchem Format soll dein Kalender standardmässig angezeigt werden?'),
 
+            Group::make([
+                Switcher::make('specification.duration_fixed')
+                    ->sendTrueOrFalse()
+                    ->title('Fixes Reservationsintervall')
+                    ->value(true)
+                    ->help('Falls Reservationen immer gleich lang dauern?'),
+
+                Select::make('specification.duration_all')
+                    ->title('Fixe Reservationsdauer')
+                    ->value('1')
+                    ->options([
+                        '0.166' => '10 Minuten',
+                        '0.25' => '15 Minuten',
+                        '0.333' => '20 Minuten',
+                        '0.5' => '30 Minuten',
+                        '0.666' => '40 Minuten',
+                        '0.75' => '45 Minuten',
+                        '0.833' => '50 Minuten',
+                        '1' => '1 Stunde',
+                        '1.5' => '1.5 Stunden',
+                        '2' => '2 Stunden',
+                        '3' => '3 Stunden',
+                        '4' => '4 Stunden',
+                        '5' => '5 Stunden',
+                        '6' => '6 Stunden',
+                        '7' => '7 Stunden',
+                        '8' => '8 Stunden',
+                        '9' => '9 Stunden',
+                        '10' => '10 Stunden',
+                        '11' => '11 Stunden',
+                        '12' => '12 Stunden',
+                        '24' => '1 Tag',
+                        '48' => '2 Tage',
+                        '72' => '3 Tage',
+                        '96' => '4 Tage',
+                        '120' => '5 Tage',
+                        '144' => '6 Tage',
+                        '168' => '7 Tage',
+                        '240' => '10 Tage',
+                        '336' => '14 Tage',
+                    ]),
+            ]),
+
             RadioButtons::make('specification.timeunit')
                 ->required()
                 ->title('Reservationsdauer in')
@@ -49,12 +93,6 @@ class SpecificationLayout extends Rows
                     2 => 'Tage',
                 ])
                 ->help('Welches Zeitformat macht für deine Art von Reservationen am meisten Sinn?'),
-
-            Switcher::make('specification.duration_fixed')
-                ->sendTrueOrFalse()
-                ->title('Fixes Reservationsintervall')
-                ->value(true)
-                ->help('Dauert eine Reservationseinheit bei dir immer gleich lang?'),
 
             Select::make('specification.duration_min_min')
                 ->options([
