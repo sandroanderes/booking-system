@@ -55,13 +55,11 @@ class NewCalendar extends Screen
         return [
             Layout::accordion([
                 'Schritt 1: Allgemeine Einstellungen' => GeneralInformationsLayout::class,
-                'Schritt 2: Spezifikationen' => SpecificationLayout::class,
-                'Schritt 3: Informationen zum Betrieb' => OpeningHoursLayout::class,
+                'Schritt 2: Öffnungszeiten' => OpeningHoursLayout::class,
+                'Schritt 3: Reservations-Spezifikationen' => SpecificationLayout::class,
             ]),
             Layout::view('orchid.scripts'),
 
         ];
     }
 }
-
-

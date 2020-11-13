@@ -81,57 +81,31 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/assets/js/navigation.js":
-/*!*******************************************!*\
-  !*** ./resources/assets/js/navigation.js ***!
-  \*******************************************/
+/***/ "./resources/assets/js/openinghours.js":
+/*!*********************************************!*\
+  !*** ./resources/assets/js/openinghours.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// define all UI variable
-var navToggler = document.querySelector('.nav-toggler');
-var navMenu = document.querySelector('.site-navbar ul');
-var navLinks = document.querySelectorAll('.site-navbar a'); // load all event listners
-
-allEventListners(); // functions of all event listners
-
-function allEventListners() {
-  // toggler icon click event
-  navToggler.addEventListener('click', togglerClick); // nav links click event
-
-  navLinks.forEach(function (elem) {
-    return elem.addEventListener('click', navLinkClick);
-  });
-} // togglerClick function
-
-
-function togglerClick() {
-  navToggler.classList.toggle('toggler-open');
-  navMenu.classList.toggle('open');
-} // navLinkClick function
-
-
-function navLinkClick() {
-  if (navMenu.classList.contains('open')) {
-    navToggler.click();
-  }
-}
+/* =========== Calendar Opening Hours =========== */
+// Montag geöffnet Checkbox
 
 /***/ }),
 
-/***/ 1:
-/*!*************************************************!*\
-  !*** multi ./resources/assets/js/navigation.js ***!
-  \*************************************************/
+/***/ 5:
+/*!***************************************************!*\
+  !*** multi ./resources/assets/js/openinghours.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Bärni\Documents\HTW Chur\Studium\HS20\Major_Media_Application\Semesterprojekt\master\booking-system\resources\assets\js\navigation.js */"./resources/assets/js/navigation.js");
+module.exports = __webpack_require__(/*! C:\Users\Bärni\Documents\HTW Chur\Studium\HS20\Major_Media_Application\Semesterprojekt\master\booking-system\resources\assets\js\openinghours.js */"./resources/assets/js/openinghours.js");
 
 
 /***/ })
