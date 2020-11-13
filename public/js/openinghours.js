@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -101,7 +101,7 @@ var checked_wednesday = document.querySelector('[id^="field-openingday-wednesday
 var checked_thursday = document.querySelector('[id^="field-openingday-thursday-"]');
 var checked_friday = document.querySelector('[id^="field-openingday-friday-"]');
 var checked_saturday = document.querySelector('[id^="field-openingday-saturday-"]');
-var checked_sunday = document.querySelector('[id^="field-openingday-sunday-"]'); // openinghours_repeat "Ja"-Knopf
+var checked_sunday = document.querySelector('[id^="field-openingday-sunday-"]'); // openinghours_repeat "Ja"- und "Nein"-Knopf
 
 var oh_repeat = document.querySelector('[id^="field-openinghours-repeat-"][value="1"]');
 var oh_repeat_none = document.querySelector('[id^="field-openinghours-repeat-"][value="0"]'); // Daily Buttons
@@ -514,14 +514,14 @@ function openinghours_halfday() {
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /*!***************************************************!*\
   !*** multi ./resources/assets/js/openinghours.js ***!
   \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\openinghours.js */"./resources/assets/js/openinghours.js");
+module.exports = __webpack_require__(/*! C:\Users\Bärni\Documents\HTW Chur\Studium\HS20\Major_Media_Application\Semesterprojekt\master\booking-system\resources\assets\js\openinghours.js */"./resources/assets/js/openinghours.js");
 
 
 /***/ })
