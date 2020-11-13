@@ -1,6 +1,23 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;
 
-0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);@import url(https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);@import url(https://fonts.googleapis.com/icon?family=Material+Icons);@charset "UTF-8";
+0,
+200;0,
+300;0,
+400;0,
+500;0,
+600;0,
+700;0,
+800;0,
+900;1,
+100;1,
+200;1,
+300;1,
+400;1,
+500;1,
+600;1,
+700;1,
+800;1,
+900&display=swap);@import url(https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);@import url(https://fonts.googleapis.com/icon?family=Material+Icons);@charset "UTF-8";
 
 /* SCSS HEX */
 
@@ -11291,11 +11308,22 @@ h6,
 a {
   font-family: 'Poppins', sans-serif;
   font-style: normal;
+  font-weight: normal;
+}
+
+h1 {
+  font-weight: 600;
 }
 
 a {
   text-decoration: none;
   color: #000;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #6f925aff;
 }
 
 .nav-item {
@@ -11691,7 +11719,7 @@ footer a:hover {
   }
 }
 
-.calendar-banner .overlay {
+.banner .overlay {
   position: absolute;
   background: rgba(0, 0, 0, 0.5);
   height: 100%;
@@ -11702,18 +11730,18 @@ footer a:hover {
   justify-content: center;
 }
 
-.calendar-banner .thumbnail {
+.banner .thumbnail {
   position: relative;
 }
 
-.calendar-banner .thumbnail img {
+.banner .thumbnail img {
   width: 100%;
   height: 350px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.calendar-banner .thumbnail .caption {
+.banner .thumbnail .caption {
   position: absolute;
   top: 50%;
   left: 0;
@@ -11722,10 +11750,34 @@ footer a:hover {
   color: white;
 }
 
-.calendar-banner .thumbnail .caption .row {
+.banner .thumbnail .caption .row {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.functions-section .col.mb-4:nth-child(1) {
+  --animate-duration: 1000ms;
+}
+
+.functions-section .col.mb-4:nth-child(2) {
+  --animate-duration: 1100ms;
+}
+
+.functions-section .col.mb-4:nth-child(3) {
+  --animate-duration: 1200ms;
+}
+
+.functions-section .col.mb-4:nth-child(4) {
+  --animate-duration: 1300ms;
+}
+
+.functions-section .col.mb-4:nth-child(5) {
+  --animate-duration: 1400ms;
+}
+
+.functions-section .col.mb-4:nth-child(6) {
+  --animate-duration: 1500ms;
 }
 
 .home-section h1 {
@@ -11808,8 +11860,16 @@ footer a:hover {
   font-weight: 500;
 }
 
-.functions-section .card .card-body {
-  border-bottom: 3px solid black;
+.functions-section h1 {
+  color: #6f925aff;
+}
+
+.functions-section .card {
+  border-bottom: 4px solid black;
+}
+
+.functions-section p {
+  margin-bottom: 2rem;
 }
 
 section.main {

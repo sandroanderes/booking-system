@@ -1,0 +1,27 @@
+.functions-section {
+    .col.mb-4 {
+        &:nth-child(1) {
+            --animate-duration: 1000ms;
+        }
+
+        &:nth-child(2) {
+            --animate-duration: 1100ms;
+        }
+
+        &:nth-child(3) {
+            --animate-duration: 1200ms;
+        }
+
+        &:nth-child(4) {
+            --animate-duration: 1300ms;
+        }
+
+        &:nth-child(5) {
+            --animate-duration: 1400ms;
+        }
+
+        &:nth-child(6) {
+            --animate-duration: 1500ms;
+        }
+    }
+}

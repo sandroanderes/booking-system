@@ -18,6 +18,7 @@ mix
     .js('resources/assets/js/filter.js', 'public/js')
     .js('resources/assets/js/location.js', 'public/js')
     .js('resources/assets/js/privateLink.js', 'public/js')
+    .js('resources/assets/js/functions.js', 'public/js')
     .js('resources/assets/js/openinghours.js', 'public/js');
 
 if (mix.inProduction()) {

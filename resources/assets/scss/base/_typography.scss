@@ -8,13 +8,23 @@ h6,
 a {
     font-family: 'Poppins', sans-serif;
     font-style: normal;
+    font-weight: normal;
+}
+h1{
+    font-weight: 600;
 }
 
 a {
     text-decoration: none;
     color: #000;
+    font-weight: 500;
+
+    &:hover {
+        text-decoration: none;
+        color: $russian-green;
+    }
 }
 
-.nav-item{
+.nav-item {
     font-size: smaller;
 }
