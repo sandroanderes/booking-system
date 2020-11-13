@@ -41,11 +41,12 @@ class SpecificationLayout extends Rows
                 ->help('In welchem Format soll dein Kalender standardmässig angezeigt werden?'),
 
             RadioButtons::make('specification.timeunit')
+                ->required()
                 ->title('Reservationsdauer in')
                 ->options([
-                    1 => 'Minuten',
-                    0 => 'Stunden',
-                    3 => 'Tage',
+                    0 => 'Minuten',
+                    1 => 'Stunden',
+                    2 => 'Tage',
                 ])
                 ->help('Welches Zeitformat macht für deine Art von Reservationen am meisten Sinn?'),
 
@@ -55,7 +56,7 @@ class SpecificationLayout extends Rows
                 ->value(true)
                 ->help('Dauert eine Reservationseinheit bei dir immer gleich lang?'),
 
-            Select::make('specification.duration_min')
+            Select::make('specification.duration_min_min')
                 ->options([
                     '0.166' => '10 Minuten',
                     '0.25' => '15 Minuten',
@@ -67,7 +68,7 @@ class SpecificationLayout extends Rows
                 ])
                 ->title('Minimale Reservationsdauer in Minuten'),
 
-            Select::make('specification.duration_min')
+            Select::make('specification.duration_min_h')
                 ->options([
                     '1' => '1 Stunde',
                     '1.5' => '1.5 Stunden',
@@ -84,7 +85,7 @@ class SpecificationLayout extends Rows
                     '12' => '12 Stunden',
                 ])
                 ->title('Minimale Reservationsdauer in Stunden'),
-            Select::make('specification.duration_min')
+            Select::make('specification.duration_min_d')
                 ->options([
                     '24' => '1 Tag',
                     '48' => '2 Tage',
@@ -98,7 +99,7 @@ class SpecificationLayout extends Rows
                 ])
                 ->title('Minimale Reservationsdauer in Tagen'),
 
-            Select::make('specification.duration_max')
+            Select::make('specification.duration_max_min')
                 ->options([
                     '0.166' => '10 Minuten',
                     '0.25' => '15 Minuten',
@@ -110,7 +111,7 @@ class SpecificationLayout extends Rows
                 ])
                 ->title('Maximale Reservationsdauer in Minuten'),
 
-            Select::make('specification.duration_max')
+            Select::make('specification.duration_max_h')
                 ->options([
                     '1' => '1 Stunde',
                     '1.5' => '1.5 Stunden',
@@ -127,7 +128,7 @@ class SpecificationLayout extends Rows
                     '12' => '12 Stunden',
                 ])
                 ->title('Maximale Reservationsdauer in Stunden'),
-            Select::make('specification.duration_max')
+            Select::make('specification.duration_max_d')
                 ->options([
                     '24' => '1 Tag',
                     '48' => '2 Tage',

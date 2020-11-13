@@ -7,5 +7,6 @@
     "/js/location.js": "/js/location.js",
     "/js/navigation.js": "/js/navigation.js",
     "/js/openinghours.js": "/js/openinghours.js",
-    "/js/privateLink.js": "/js/privateLink.js"
+    "/js/privateLink.js": "/js/privateLink.js",
+    "/js/specifications.js": "/js/specifications.js"
 }

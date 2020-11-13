@@ -101,7 +101,7 @@ var checked_wednesday = document.querySelector('[id^="field-openingday-wednesday
 var checked_thursday = document.querySelector('[id^="field-openingday-thursday-"]');
 var checked_friday = document.querySelector('[id^="field-openingday-friday-"]');
 var checked_saturday = document.querySelector('[id^="field-openingday-saturday-"]');
-var checked_sunday = document.querySelector('[id^="field-openingday-sunday-"]'); // openinghours_repeat "Ja"-Knopf
+var checked_sunday = document.querySelector('[id^="field-openingday-sunday-"]'); // openinghours_repeat "Ja"- und "Nein"-Knopf
 
 var oh_repeat = document.querySelector('[id^="field-openinghours-repeat-"][value="1"]');
 var oh_repeat_none = document.querySelector('[id^="field-openinghours-repeat-"][value="0"]'); // Daily Buttons
