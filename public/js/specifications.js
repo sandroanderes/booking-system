@@ -81,57 +81,67 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/assets/js/navigation.js":
-/*!*******************************************!*\
-  !*** ./resources/assets/js/navigation.js ***!
-  \*******************************************/
+/***/ "./resources/assets/js/specifications.js":
+/*!***********************************************!*\
+  !*** ./resources/assets/js/specifications.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// define all UI variable
-var navToggler = document.querySelector('.nav-toggler');
-var navMenu = document.querySelector('.site-navbar ul');
-var navLinks = document.querySelectorAll('.site-navbar a'); // load all event listners
+/* =========== Calendar Specifications =========== */
+//Knöpfe mit den Zeiteinheiten
+var timeunit_minute = document.querySelector('[id^="field-specificationtimeunit-"][value="0"]');
+var timeunit_hour = document.querySelector('[id^="field-specificationtimeunit-"][value="1"]');
+var timeunit_day = document.querySelector('[id^="field-specificationtimeunit-"][value="2"]'); //Inputfelder mit Minutenangaben
 
-allEventListners(); // functions of all event listners
+var min_reservation_minute = document.querySelector('[id^="select2-field-specificationduration-min-min-"]').parentElement.parentElement.parentElement.parentElement.parentElement;
+var max_reservation_minute = document.querySelector('[id^="select2-field-specificationduration-max-min-"]').parentElement.parentElement.parentElement.parentElement.parentElement; //Inputfelder mit Stundenangaben
 
-function allEventListners() {
-  // toggler icon click event
-  navToggler.addEventListener('click', togglerClick); // nav links click event
+var min_reservation_hour = document.querySelector('[id^="select2-field-specificationduration-min-h-"]').parentElement.parentElement.parentElement.parentElement.parentElement;
+var max_reservation_hour = document.querySelector('[id^="select2-field-specificationduration-max-h-"]').parentElement.parentElement.parentElement.parentElement.parentElement; //Inputfelder mit Tage-Angaben
 
-  navLinks.forEach(function (elem) {
-    return elem.addEventListener('click', navLinkClick);
-  });
-} // togglerClick function
+var min_reservation_day = document.querySelector('[id^="select2-field-specificationduration-min-d-"]').parentElement.parentElement.parentElement.parentElement.parentElement;
+var max_reservation_day = document.querySelector('[id^="select2-field-specificationduration-max-d-"]').parentElement.parentElement.parentElement.parentElement.parentElement; //EventListener Zeiteinheit
 
+timeunit_minute.addEventListener("click", reservation_timeunit);
+timeunit_hour.addEventListener("click", reservation_timeunit);
+timeunit_day.addEventListener("click", reservation_timeunit); //Standardmässig nichts anzeigen
 
-function togglerClick() {
-  navToggler.classList.toggle('toggler-open');
-  navMenu.classList.toggle('open');
-} // navLinkClick function
+min_reservation_minute.style.display = "none";
+max_reservation_minute.style.display = "none";
+min_reservation_hour.style.display = "none";
+max_reservation_hour.style.display = "none";
+min_reservation_day.style.display = "none";
+max_reservation_day.style.display = "none"; // Function Show Hide TimeUnits
 
-
-function navLinkClick() {
-  if (navMenu.classList.contains('open')) {
-    navToggler.click();
+function reservation_timeunit() {
+  if (timeunit_minute.checked === true) {
+    min_reservation_minute.style.display = "flex";
+    max_reservation_minute.style.display = "flex";
+  } else if (timeunit_hour.checked === true) {
+    min_reservation_hour.style.display = "flex";
+    max_reservation_hour.style.display = "flex";
+  } else if (timeunit_hour.checked === true) {
+    min_reservation_day.style.display = "flex";
+    max_reservation_day.style.display = "flex";
   }
 }
 
 /***/ }),
 
-/***/ 1:
-/*!*************************************************!*\
-  !*** multi ./resources/assets/js/navigation.js ***!
-  \*************************************************/
+/***/ 7:
+/*!*****************************************************!*\
+  !*** multi ./resources/assets/js/specifications.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Bärni\Documents\HTW Chur\Studium\HS20\Major_Media_Application\Semesterprojekt\master\booking-system\resources\assets\js\navigation.js */"./resources/assets/js/navigation.js");
+module.exports = __webpack_require__(/*! C:\Users\Bärni\Documents\HTW Chur\Studium\HS20\Major_Media_Application\Semesterprojekt\master\booking-system\resources\assets\js\specifications.js */"./resources/assets/js/specifications.js");
 
 
 /***/ })
