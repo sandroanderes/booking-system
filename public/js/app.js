@@ -19323,6 +19323,18 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/assets/js/openinghours.js":
+/*!*********************************************!*\
+  !*** ./resources/assets/js/openinghours.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* =========== Calendar Opening Hours =========== */
+// Montag geöffnet Checkbox
+
+/***/ }),
+
 /***/ "./resources/assets/js/privateLink.js":
 /*!********************************************!*\
   !*** ./resources/assets/js/privateLink.js ***!
@@ -19403,6 +19415,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ../assets/js/privateLink */ "./resources/assets/js/privateLink.js");
 
+__webpack_require__(/*! ../assets/js/openinghours */ "./resources/assets/js/openinghours.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -19444,8 +19458,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/booking-system/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/booking-system/resources/assets/scss/main.scss */"./resources/assets/scss/main.scss");
+__webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\scss\main.scss */"./resources/assets/scss/main.scss");
 
 
 /***/ })
