@@ -1,7 +1,9 @@
 /* =========== Calendar Opening Hours =========== */
 
 // openinghours_repeat "Ja"-Knopf
-var oh_repeat = document.querySelector('[id^="field-openinghours-repeat-"]');
+var oh_repeat = document.querySelector('[id^="field-openinghours-repeat-"][value="1"]');
+var oh_repeat_none = document.querySelector('[id^="field-openinghours-repeat-"][value="0"]');
+
 
 // openinghours_halfday_closed_general und openinghourslunchbreak_general auslesen
 var oh_halfday_lunch = document.querySelector(
@@ -96,17 +98,20 @@ var oh_lunchtime_sunday = document.querySelector(
     '[id^="field-lunchbreackstart-sunday-"]'
 ).parentElement.parentElement.parentElement.parentElement;
 
-// EventListener onClick => Switch
+// EventListener onClick => Ja/Nein Button
 oh_repeat.addEventListener("click", openinghours_repeat);
+oh_repeat_none.addEventListener("click", openinghours_repeat);
 
 function openinghours_repeat() {
     if (oh_repeat.checked === true) {
         oh_halfday_lunch_monday.style.display = "none";
         oh_monday.style.display = "none";
         oh_lunchtime_monday.style.display = "none";
+        console.log("none");
     } else {
         oh_halfday_lunch_monday.style.display = "inline";
         oh_monday.style.display = "inline";
         oh_lunchtime_monday.style.display = "inline";
+        console.log("inline");
     }
 }
