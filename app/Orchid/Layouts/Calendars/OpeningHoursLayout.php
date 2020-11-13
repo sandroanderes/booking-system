@@ -8,11 +8,6 @@ use Orchid\Screen\Fields\CheckBox;
 use Orchid\Screen\Fields\DateTimer;
 use Orchid\Screen\Fields\RadioButtons;
 use Orchid\Screen\Fields\Group;
-use Orchid\Screen\Fields\Layout;
-
-
-
-
 
 class OpeningHoursLayout extends Rows
 {
