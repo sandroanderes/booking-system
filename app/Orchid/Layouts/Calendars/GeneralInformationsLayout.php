@@ -45,11 +45,6 @@ class GeneralInformationsLayout extends Rows
                 ->toolbar(["text"])
                 ->placeholder('Beschreibe deinen Kalender in 2-3 Sätzen?'),
 
-            Input::make('calendar.unit')
-                ->type('text')
-                ->required()
-                ->title('Reservationsobjekt')
-                ->help('Was kann in diesem Kalender reserviert werden? (Tische, Büroräumlichkeiten, Tennisplätze?'),
             Switcher::make('calendar.public')
                 ->sendTrueOrFalse()
                 ->title('Öffentlicher Kalender')
@@ -63,14 +58,19 @@ class GeneralInformationsLayout extends Rows
             Select::make('calendar.template')
                 ->options([
                     'none'   => 'Kein Template verwenden',
-                    'gastronomy'   => 'Gastronomie',
-                    'sports' => 'Sport',
-                    'room' => 'Räumlichkeiten',
-                    'services' => 'Dienstleistungen',
-
+                    'gastronomy'   => 'Gastronomie - für Restaurants und Cafés',
+                    'sports' => 'Sport -  für Vereine und Clubs',
+                    'room' => 'Räumlichkeiten - für KMUs und Schulen',
+                    'services' => 'Dienstleistungen - für Termine mit Kunden',
+ 
                 ])
                 ->title('Kalendervorlage wählen')
                 ->help('Verwende eine unserer Kalendervorlagen'),
+
+            Input::make('calendar.unit')
+                ->type('text')
+                ->title('Reservationsobjekt')
+                ->help('Was kann in diesem Kalender reserviert werden?'),
 
             Cropper::make('calendar.image')
                 ->title('Bild hochladen')

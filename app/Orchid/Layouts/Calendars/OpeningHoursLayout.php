@@ -62,8 +62,7 @@ class OpeningHoursLayout extends Rows
             CheckBox::make('openingday_sunday')
                 ->value(0)
                 ->placeholder('Sonntag')
-                ->sendTrueOrFalse()
-                ->help('Wähle alle Tage an, an denen du geöffnet hast'),
+                ->sendTrueOrFalse(),
 
             //Öffnungszeiten für alle Tage identisch
             RadioButtons::make('openinghours_repeat')
@@ -71,7 +70,7 @@ class OpeningHoursLayout extends Rows
                     1 => 'Ja',
                     0 => 'Nein',
                 ])
-                ->title('Sind die Öffnungszeiten an allen Arbeitstagen identisch?')
+                ->title('Sind die Öffnungszeiten an allen Tagen identisch?')
                 ->value(1),
 
             Group::make([
