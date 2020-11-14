@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-/* =========== Calendar Specifications =========== */
+/* =========== Calendar Specifications Min, Hour, Day Button =========== */
 //Knöpfe mit den Zeiteinheiten
 var timeunit_minute = document.querySelector('[id^="field-specificationtimeunit-"][value="0"]');
 var timeunit_hour = document.querySelector('[id^="field-specificationtimeunit-"][value="1"]');
@@ -141,7 +141,9 @@ function reservation_timeunit() {
     min_reservation_day.style.display = "inline";
     max_reservation_day.style.display = "inline";
   }
-} //Switcher Fixes Reservationsintervall
+}
+/* =========== Calendar Specifications Switcher Fixes Reservationsintervall=========== */
+//Switcher Fixes Reservationsintervall
 
 
 var switcher_fixed_res = document.querySelector('[id^="field-specificationduration-fixed-"]'); //Selector Fixed duration
@@ -186,7 +188,7 @@ function reservation_duration_fixed() {
 
 /***/ }),
 
-/***/ 7:
+/***/ 8:
 /*!*****************************************************!*\
   !*** multi ./resources/assets/js/specifications.js ***!
   \*****************************************************/

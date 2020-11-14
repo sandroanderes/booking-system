@@ -186,6 +186,7 @@ class SpecificationLayout extends Rows
                 ->title('Anzahl Tische')
                 ->columns(['Tischgrösse', 'Verfügbare Tische'])
                 ->maxRows(10)
+                ->value(1)
                 ->fields([
                     'Tischgrösse'   => Select::make('gastrotable')->type('text')->options([
                         '1' => '1er-Tisch',
@@ -214,6 +215,7 @@ class SpecificationLayout extends Rows
 
             Matrix::make('specification.room')
                 ->title('Räume')
+                ->value(1)
                 ->columns(['Raum-Name', 'Max. Personenanzahl'])
                 ->fields([
                     'Raum-Name'   => Input::make('room_name')->type('text')->maxlength(50)->placeholder('Z.Bsp. Sitzungszimmer'),
@@ -230,6 +232,7 @@ class SpecificationLayout extends Rows
             Matrix::make('specification.employee')
                 ->title('Mitarbeiter und Funktion')
                 ->columns(['Mitarbeiter/in', 'Funktion'])
+                ->value(1)
                 ->fields([
                     'Mitarbeiter'   => Input::make('employee_name')->type('text')->maxlength(50),
                     'Funktion' => Input::make('employee_function')->type('text'),

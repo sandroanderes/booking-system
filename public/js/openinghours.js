@@ -521,7 +521,7 @@ function openinghours_halfday() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/booking-system/resources/assets/js/openinghours.js */"./resources/assets/js/openinghours.js");
+module.exports = __webpack_require__(/*! C:\Users\Bärni\Documents\HTW Chur\Studium\HS20\Major_Media_Application\Semesterprojekt\master\booking-system\resources\assets\js\openinghours.js */"./resources/assets/js/openinghours.js");
 
 
 /***/ })

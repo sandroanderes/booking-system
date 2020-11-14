@@ -81,38 +81,30 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/assets/js/fixed-footer.js":
-/*!*********************************************!*\
-  !*** ./resources/assets/js/fixed-footer.js ***!
-  \*********************************************/
+/***/ "./resources/assets/js/template.js":
+/*!*****************************************!*\
+  !*** ./resources/assets/js/template.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-document.addEventListener("DOMContentLoaded", function (event) {
-  var elem = document.querySelector('.accordion');
-  var bounding = elem.getBoundingClientRect();
-  console.log(bounding);
 
-  if (bounding.bottom < (window.innerHeight || document.documentElement.clientHeight)) {
-    document.getElementsByTagName("footer")[0].classList.add("fixed-bottom");
-  }
-});
 
 /***/ }),
 
-/***/ 7:
-/*!***************************************************!*\
-  !*** multi ./resources/assets/js/fixed-footer.js ***!
-  \***************************************************/
+/***/ 9:
+/*!***********************************************!*\
+  !*** multi ./resources/assets/js/template.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Bärni\Documents\HTW Chur\Studium\HS20\Major_Media_Application\Semesterprojekt\master\booking-system\resources\assets\js\fixed-footer.js */"./resources/assets/js/fixed-footer.js");
+module.exports = __webpack_require__(/*! C:\Users\Bärni\Documents\HTW Chur\Studium\HS20\Major_Media_Application\Semesterprojekt\master\booking-system\resources\assets\js\template.js */"./resources/assets/js/template.js");
 
 
 /***/ })

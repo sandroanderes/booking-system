@@ -1,4 +1,4 @@
-/* =========== Calendar Specifications =========== */
+/* =========== Calendar Specifications Min, Hour, Day Button =========== */
 
 //Knöpfe mit den Zeiteinheiten
 var timeunit_minute = document.querySelector(
@@ -70,6 +70,8 @@ function reservation_timeunit() {
         max_reservation_day.style.display = "inline";
     }
 }
+
+/* =========== Calendar Specifications Switcher Fixes Reservationsintervall=========== */
 
 //Switcher Fixes Reservationsintervall
 var switcher_fixed_res = document.querySelector(
