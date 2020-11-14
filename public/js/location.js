@@ -170,7 +170,7 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Bärni\Documents\HTW Chur\Studium\HS20\Major_Media_Application\Semesterprojekt\master\booking-system\resources\assets\js\location.js */"./resources/assets/js/location.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\location.js */"./resources/assets/js/location.js");
 
 
 /***/ })

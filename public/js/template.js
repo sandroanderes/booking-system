@@ -110,21 +110,34 @@ var title_oh_identical = document.querySelector('[id^="field-openinghours-repeat
 var oh_halfday_lunch_monday = document.querySelector('[id^="field-lunchbreak-monday-"]').parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
 var oh_monday = document.querySelector('[id^="field-openinghours-monday-"]').parentElement.parentElement.parentElement.parentElement;
 var oh_lunchtime_monday = document.querySelector('[id^="field-lunchbreackstart-monday-"]').parentElement.parentElement.parentElement.parentElement; //EventListener
-//selected_template.addEventListener("click", reservation_template);
 
-select_template.value.addEventListener("change", reservation_template);
-/*select_none.addEventListener("click", reservation_template);
-select_gastronomy.addEventListener("click", reservation_template);
-select_sports.addEventListener("click", reservation_template);
-select_room.addEventListener("click", reservation_template);
-select_services.addEventListener("click", reservation_template);*/
-//Funktion Hide Show je nach Template
+select_template.addEventListener("change", reservation_template); //Funktion Hide Show je nach Template
 
 function reservation_template() {
   switch (select_template.value) {
     case "none":
       title_oh_days.innerHTML = "Sandro stinkt.";
-      console.log("Frank auch");
+      console.log("none");
+      break;
+
+    case "gastronomy":
+      title_oh_days.innerHTML = "Sandro stinkt.";
+      console.log("gastronomy");
+      break;
+
+    case "sports":
+      title_oh_days.innerHTML = "Sandro stinkt.";
+      console.log("sports");
+      break;
+
+    case "room":
+      title_oh_days.innerHTML = "Sandro stinkt.";
+      console.log("room");
+      break;
+
+    case "services":
+      title_oh_days.innerHTML = "Sandro stinkt.";
+      console.log("services");
       break;
   }
 }
@@ -138,7 +151,7 @@ function reservation_template() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Bärni\Documents\HTW Chur\Studium\HS20\Major_Media_Application\Semesterprojekt\master\booking-system\resources\assets\js\template.js */"./resources/assets/js/template.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\template.js */"./resources/assets/js/template.js");
 
 
 /***/ })

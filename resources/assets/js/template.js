@@ -44,20 +44,30 @@ var oh_lunchtime_monday = document.querySelector(
 ).parentElement.parentElement.parentElement.parentElement;
 
 //EventListener
-//selected_template.addEventListener("click", reservation_template);
-select_template.value.addEventListener("change", reservation_template);
-/*select_none.addEventListener("click", reservation_template);
-select_gastronomy.addEventListener("click", reservation_template);
-select_sports.addEventListener("click", reservation_template);
-select_room.addEventListener("click", reservation_template);
-select_services.addEventListener("click", reservation_template);*/
+select_template.addEventListener("change", reservation_template);
 
 //Funktion Hide Show je nach Template
 function reservation_template() {
     switch (select_template.value) {
         case "none":
             title_oh_days.innerHTML="Sandro stinkt.";
-            console.log("Frank auch");
+            console.log("none");
+        break;
+        case "gastronomy":
+            title_oh_days.innerHTML="Sandro stinkt.";
+            console.log("gastronomy");
+        break;
+        case "sports":
+            title_oh_days.innerHTML="Sandro stinkt.";
+            console.log("sports");
+        break;
+        case "room":
+            title_oh_days.innerHTML="Sandro stinkt.";
+            console.log("room");
+        break;
+        case "services":
+            title_oh_days.innerHTML="Sandro stinkt.";
+            console.log("services");
         break;
     }
 }
