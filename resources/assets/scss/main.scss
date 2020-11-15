@@ -23,6 +23,7 @@
 @import 'components/featured-section';
 @import 'components/banner';
 @import 'components/cards-animation';
+@import 'components/calendar';
 
 //Pages
 @import 'pages/home';
@@ -30,6 +31,9 @@
 @import 'pages/calendar';
 @import 'pages/functions';
 @import 'pages/support';
+@import 'pages/rooms';
+@import 'pages/sports';
+@import 'pages/restaurants';
 
 //Themes
 @import 'themes/frontend';

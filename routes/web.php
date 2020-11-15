@@ -32,3 +32,15 @@ Route::get('/support', function () {
 Route::get('/ueber', function () {
     return view('pages.about');
 });
+
+Route::get('/rooms', function () {
+    return view('pages.rooms');
+});
+
+Route::get('/sports', function () {
+    return view('pages.sports');
+});
+
+Route::get('/restaurants', function () {
+    return view('pages.restaurants');
+});

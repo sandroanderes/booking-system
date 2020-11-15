@@ -11708,6 +11708,10 @@ footer a:hover {
   }
 }
 
+.banner.single h1 {
+  font-size: 3rem;
+}
+
 .banner .overlay {
   position: absolute;
   background: rgba(0, 0, 0, 0.5);
@@ -11767,6 +11771,91 @@ footer a:hover {
 
 .functions-section .col.mb-4:nth-child(6) {
   --animate-duration: 1500ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.card-header * {
+  list-style-type: none;
+}
+
+.required:after {
+  content: "*";
+  font-weight: bold;
+  color: red;
+  margin-left: 5px;
+}
+
+.card-header {
+  padding: 50px 25px;
+  width: 100%;
+}
+
+.card-header ul {
+  margin: 0;
+  padding: 0;
+}
+
+.card-header ul li {
+  color: white;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.days {
+  padding: 10px 0;
+}
+
+.badge1 {
+  position: relative;
+}
+
+.badge1[data-badge]:after {
+  content: attr(data-badge);
+  position: absolute;
+  top: -0.5px;
+  right: -0.5px;
+  font-size: 0.7em;
+  background: red;
+  color: white;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  line-height: 18px;
+  border-radius: 50%;
+  box-shadow: 0 0 1px #333;
+}
+
+@media screen and (max-width: 720px) {
+  .weekdays td,
+  .days td {
+    width: 13.1%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .weekdays td,
+  .days td {
+    width: 12.5%;
+  }
+
+  .days td .active {
+    padding: 2px;
+  }
+}
+
+@media screen and (max-width: 290px) {
+  .weekdays td,
+  .days td {
+    width: 12.2%;
+  }
 }
 
 .home-section h1 {
@@ -11952,6 +12041,31 @@ footer a:hover {
   .support-section .accordion-collapse:target .accordion-collapse-content {
     height: 25rem;
   }
+}
+
+.rooms-section a {
+  color: black;
+}
+
+.rooms-section a:hover {
+  color: black;
+}
+
+.rooms-section .card .card-header {
+  color: #6f925aff !important;
+  font-weight: bold;
+}
+
+.rooms-section .card .card-header.border-success {
+  border-color: #6f925aff !important;
+}
+
+.rooms-section .card.border-success {
+  border-color: #6f925aff !important;
+}
+
+.rooms-section .card .card-body.text-success {
+  color: black !important;
 }
 
 section.main {

@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="container-fluid banner px-0">
-    
+
     <div class="thumbnail text-left">
         <div class="overlay"></div>
         <img src="images/place.jpeg" alt="Place" class="img-responsive">
@@ -22,14 +22,14 @@
 </section>
 <section class="container-fluid calendar-section py-5">
     <div class="container">
-        <div class="row ">
-            <div class="col-lg-3 col-md-6 mb-3">
+        <div class="row mb-3">
+            <div class="col-lg-3 col-md-6">
                 <input type="text" id="CalendarFilter" class="form-control" placeholder="Räume, Plätze, Objekte, ...">
             </div>
-            <div class="col-lg-3 col-md-6 mb-3">
+            <div class="col-lg-3 col-md-6">
                 <input type="text" id="CityFilter" class="form-control" placeholder="Ortschaften">
             </div>
-            <div class="col col-md-6 col-lg mb-3">
+            <div class="col col-md-6 col-lg">
                 <select class="form-control" id="exampleFormControlSelect1">
                     <option selected value="Alle">Alle</option>
                     <option value="5 km">5 km</option>
@@ -38,7 +38,7 @@
                     <option value="100 km">100 km</option>
                 </select>
             </div>
-            <div class="col-lg-3 col-md-6 mb-3">
+            <div class="col-lg-3 col-md-6 ">
                 <select class="form-control" id="exampleFormControlSelect1">
                     <option selected value="Alle">Alle Kategorien</option>
                     <option value="Gastronomie">Gastro</option>
@@ -47,7 +47,7 @@
                     <option value="Dienstleistungen">Dienstleistungen</option>
                 </select>
             </div>
-            <div class="col mb-3">
+            <div class="col">
                 <button type="button" id="searchCalendar" class="btn btn-primary btn-block">Suchen</button>
             </div>
         </div>
@@ -74,7 +74,7 @@
                 </a>
             </div>
             <div class="col mb-4">
-                <a href="#">
+                <a href="/sports">
                     <div class="card">
                         <div class="embed-responsive embed-responsive-16by9">
                             <img src="/images/restaurant.jpg" class="card-img-top embed-responsive-item" alt="...">

@@ -195,7 +195,7 @@ function reservation_duration_fixed() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\specifications.js */"./resources/assets/js/specifications.js");
+module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/booking-system/resources/assets/js/specifications.js */"./resources/assets/js/specifications.js");
 
 
 /***/ })

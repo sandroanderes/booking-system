@@ -1,0 +1,31 @@
+.rooms-section {
+    a {
+        color: black;
+
+        &:hover {
+            color: black;
+        }
+    }
+
+    .card {
+        .card-header {
+            color: $russian-green !important;
+            font-weight: bold;
+
+            &.border-success {
+                border-color: $russian-green !important;
+            }
+
+        }
+
+        &.border-success {
+            border-color: $russian-green !important;
+        }
+
+        .card-body {
+            &.text-success {
+                color: black !important;
+            }
+        }
+    }
+}
