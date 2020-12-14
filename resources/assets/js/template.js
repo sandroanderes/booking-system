@@ -26,8 +26,7 @@ var select_services = document.querySelector(
 var res_objekt = document.querySelector('[id^="field-calendarunit-"]')
     .parentElement.parentElement;
 
-var title_oh_days = document.querySelector('[id^="field-openingday-monday"]')
-    .parentElement.parentElement.previousElementSibling;
+var title_oh_days = document.querySelector('[for^="field-openingday-monday-"]');
 var title_oh_identical = document.querySelector(
     '[id^="field-openinghours-repeat-"][value="1"]'
 ).parentElement.parentElement.parentElement.previousElementSibling;
@@ -48,26 +47,195 @@ select_template.addEventListener("change", reservation_template);
 
 //Funktion Hide Show je nach Template
 function reservation_template() {
+    let calender_unit = document.querySelector('[id^="field-calendarunit-"]')
+        .parentElement.parentElement;
+    let tbl_gastro = document.querySelector(
+        '[for^="field-specificationgastro-"]'
+    ).parentElement;
+
+    let sport_unit = document.querySelector(
+        '[id^="field-specificationsportunit-"]'
+    ).parentElement.parentElement;
+    let sport_number = document.querySelector(
+        '[id^="field-specificationsportnumber-"]'
+    ).parentElement.parentElement;
+    let tbl_rooms = document.querySelector('[for^="field-specificationroom"]')
+        .parentElement;
+    let fld_service = document.querySelector(
+        '[id^="field-specificationservice-"]'
+    ).parentElement.parentElement;
+    let tbl_employee = document.querySelector(
+        '[for^="field-specificationemployee-"]'
+    ).parentElement;
+
     switch (select_template.value) {
         case "none":
-            title_oh_days.innerHTML="Sandro stinkt.";
-            console.log("none");
-        break;
+            title_oh_days.innerHTML =
+                "An welchen Tagen können Reservationen vorgenommen werden?";
+            //Ein- und Ausblenden je nach Kalender-Template
+
+            if ((calender_unit.style.display = "none")) {
+                calender_unit.style.display = "inline";
+            }
+
+            if ((sport_unit.style.display = "none")) {
+                sport_unit.style.display = "inline";
+            }
+
+            if ((sport_number.style.display = "none")) {
+                sport_number.style.display = "inline";
+            }
+
+            if ((tbl_rooms.style.display = "none")) {
+                tbl_rooms.style.display = "inline";
+            }
+
+            if ((fld_service.style.display = "none")) {
+                fld_service.style.display = "inline";
+            }
+
+            if ((tbl_employee.style.display = "none")) {
+                tbl_employee.style.display = "inline";
+            }
+
+            if ((tbl_gastro.style.display = "none")) {
+                tbl_gastro.style.display = "inline";
+            }
+            break;
         case "gastronomy":
-            title_oh_days.innerHTML="Sandro stinkt.";
-            console.log("gastronomy");
-        break;
+            title_oh_days.innerHTML =
+                "Wann hat dein Gastronomie-Betrieb geöffnet?";
+            //Ein- und Ausblenden je nach Kalender-Template
+            if ((calender_unit.style.display = "inline")) {
+                calender_unit.style.display = "none";
+            }
+
+            if ((sport_unit.style.display = "inline")) {
+                sport_unit.style.display = "none";
+            }
+
+            if ((sport_number.style.display = "inline")) {
+                sport_number.style.display = "none";
+            }
+
+            if ((tbl_rooms.style.display = "inline")) {
+                tbl_rooms.style.display = "none";
+            }
+
+            if ((fld_service.style.display = "inline")) {
+                fld_service.style.display = "none";
+            }
+
+            if ((tbl_employee.style.display = "inline")) {
+                tbl_employee.style.display = "none";
+            }
+
+            if ((tbl_gastro.style.display = "none")) {
+                tbl_gastro.style.display = "inline";
+            }
+
+            //Default-Fixe Reservationszeit
+
+           
+
+            break;
         case "sports":
-            title_oh_days.innerHTML="Sandro stinkt.";
-            console.log("sports");
-        break;
+            title_oh_days.innerHTML = "Wann hat deine Sportanlage geöffnet?";
+            //Ein- und Ausblenden je nach Kalender-Template
+
+            if ((calender_unit.style.display = "inline")) {
+                calender_unit.style.display = "none";
+            }
+
+            if ((sport_unit.style.display = "none")) {
+                sport_unit.style.display = "inline";
+            }
+
+            if ((sport_number.style.display = "none")) {
+                sport_number.style.display = "inline";
+            }
+
+            if ((tbl_rooms.style.display = "inline")) {
+                tbl_rooms.style.display = "none";
+            }
+
+            if ((fld_service.style.display = "inline")) {
+                fld_service.style.display = "none";
+            }
+
+            if ((tbl_employee.style.display = "inline")) {
+                tbl_employee.style.display = "none";
+            }
+
+            if ((tbl_gastro.style.display = "inline")) {
+                tbl_gastro.style.display = "none";
+            }
+            break;
         case "room":
-            title_oh_days.innerHTML="Sandro stinkt.";
-            console.log("room");
-        break;
+            title_oh_days.innerHTML =
+                "Wann können deine Räume reserviert werden?";
+            //Ein- und Ausblenden je nach Kalender-Template
+
+            if ((calender_unit.style.display = "inline")) {
+                calender_unit.style.display = "none";
+            }
+
+            if ((sport_unit.style.display = "inline")) {
+                sport_unit.style.display = "none";
+            }
+
+            if ((sport_number.style.display = "inline")) {
+                sport_number.style.display = "none";
+            }
+
+            if ((tbl_rooms.style.display = "none")) {
+                tbl_rooms.style.display = "inline";
+            }
+
+            if ((fld_service.style.display = "inline")) {
+                fld_service.style.display = "none";
+            }
+
+            if ((tbl_employee.style.display = "inline")) {
+                tbl_employee.style.display = "none";
+            }
+
+            if ((tbl_gastro.style.display = "inline")) {
+                tbl_gastro.style.display = "none";
+            }
+            break;
         case "services":
-            title_oh_days.innerHTML="Sandro stinkt.";
-            console.log("services");
-        break;
+            title_oh_days.innerHTML =
+                "An welchen Tagen kann deine Dienstleistung reserviert werden?";
+            //Ein- und Ausblenden je nach Kalender-Template
+
+            if ((calender_unit.style.display = "inline")) {
+                calender_unit.style.display = "none";
+            }
+
+            if ((sport_unit.style.display = "inline")) {
+                sport_unit.style.display = "none";
+            }
+
+            if ((sport_number.style.display = "inline")) {
+                sport_number.style.display = "none";
+            }
+
+            if ((tbl_rooms.style.display = "inline")) {
+                tbl_rooms.style.display = "none";
+            }
+
+            if ((fld_service.style.display = "none")) {
+                fld_service.style.display = "inline";
+            }
+
+            if ((tbl_employee.style.display = "none")) {
+                tbl_employee.style.display = "inline";
+            }
+
+            if ((tbl_gastro.style.display = "inline")) {
+                tbl_gastro.style.display = "none";
+            }
+            break;
     }
 }

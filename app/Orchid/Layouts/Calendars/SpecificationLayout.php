@@ -199,7 +199,7 @@ class SpecificationLayout extends Rows
                     ]),
                     'Verfügbare Tische' => Input::make('gastrotable_number')->type('number')->min(1),
                 ])
-                ->help('Klick auf "+Hinzufügen" um weitere Räume einzutragen'),
+                ->help('Klick auf "+Hinzufügen" um weitere Tische einzutragen'),
 
             Input::make('specification.sportunit')
                 ->type('text')
@@ -216,10 +216,12 @@ class SpecificationLayout extends Rows
             Matrix::make('specification.room')
                 ->title('Räume')
                 ->value(1)
-                ->columns(['Raum-Name', 'Max. Personenanzahl'])
+                ->columns(['Raum-Name', 'Max. Personenanzahl', 'Ausstattung'])
                 ->fields([
                     'Raum-Name'   => Input::make('room_name')->type('text')->maxlength(50)->placeholder('Z.Bsp. Sitzungszimmer'),
                     'Max. Personenanzahl' => Input::make('room_capacity')->type('number')->min(1),
+                    'Ausstattung'   => Input::make('room_assets')->type('text')->maxlength(100)->placeholder('z.Bsp. Beamer, Flipchart, TV'),
+
                 ])
                 ->help('Klick auf "+Hinzufügen" um weitere Räume einzutragen'),
 
