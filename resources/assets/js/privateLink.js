@@ -1,7 +1,7 @@
 /* =========== Calendar Private Link =========== */
 // Private Link Field
 var calendarPublicSwitch = document.querySelector('[id^="field-calendarpublic-"]');
-var calendarPublicLink = document.getElementById('field-calendarprivatelink-e214161646df417e1c98b63c42bacedcf980bf94');
+var calendarPublicLink = document.querySelector('[id^="field-calendarprivatelink-"]');
 calendarPublicLink.value = "";
 
 // Get Calendar Name

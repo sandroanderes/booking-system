@@ -96,7 +96,7 @@
 /* =========== Calendar Private Link =========== */
 // Private Link Field
 var calendarPublicSwitch = document.querySelector('[id^="field-calendarpublic-"]');
-var calendarPublicLink = document.getElementById('field-calendarprivatelink-e214161646df417e1c98b63c42bacedcf980bf94');
+var calendarPublicLink = document.querySelector('[id^="field-calendarprivatelink-"]');
 calendarPublicLink.value = ""; // Get Calendar Name
 
 var calendarName = document.querySelector('[id^="field-calendarname-"]').value;
@@ -151,7 +151,7 @@ function randomString(length, chars) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/booking-system/resources/assets/js/privateLink.js */"./resources/assets/js/privateLink.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\privateLink.js */"./resources/assets/js/privateLink.js");
 
 
 /***/ })
