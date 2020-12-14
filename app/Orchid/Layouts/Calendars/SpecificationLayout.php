@@ -210,7 +210,7 @@ class SpecificationLayout extends Rows
             Input::make('specification.sportnumber')
                 ->type('number')
                 ->min('0')
-                ->title('Anzahl Einheiten von oben')
+                ->title('Anzahl')
                 ->placeholder('Gib die gewünschte Anzahl ein'),
 
             Matrix::make('specification.room')
