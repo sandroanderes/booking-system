@@ -100,7 +100,12 @@ class GeneralInformationsLayout extends Rows
                 ->title('Bild hochladen')
                 ->width(500)
                 ->height(300)
+                ->targetRelativeUrl()
                 ->horizontal(),
+
+            Input::make('calendar.user_id')
+                ->value(1)
+                ->hidden(),
         ];
     }
 }
