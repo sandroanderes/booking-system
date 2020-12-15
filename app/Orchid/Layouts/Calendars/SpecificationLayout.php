@@ -188,7 +188,7 @@ class SpecificationLayout extends Rows
                 ->maxRows(10)
                 ->value(1)
                 ->fields([
-                    'Tischgrösse'   => Select::make('gastrotable')->type('text')->options([
+                    'Tischgrösse'   => Select::make('specification.gastrotable')->type('text')->options([
                         '1' => '1er-Tisch',
                         '2' => '2er-Tisch',
                         '4' => '4er-Tisch',
@@ -197,9 +197,9 @@ class SpecificationLayout extends Rows
                         '7' => '7er-Tisch',
                         '8' => '8er-Tisch'
                     ]),
-                    'Verfügbare Tische' => Input::make('gastrotable_number')->type('number')->min(1),
+                    'Verfügbare Tische' => Input::make('specification.gastrotable_number')->type('number')->min(1),
                 ])
-                ->help('Klick auf "+Hinzufügen" um weitere Räume einzutragen'),
+                ->help('Klick auf "+Hinzufügen" um weitere Tische einzutragen'),
 
             Input::make('specification.sportunit')
                 ->type('text')
@@ -210,16 +210,18 @@ class SpecificationLayout extends Rows
             Input::make('specification.sportnumber')
                 ->type('number')
                 ->min('0')
-                ->title('Anzahl Einheiten von oben')
+                ->title('Anzahl')
                 ->placeholder('Gib die gewünschte Anzahl ein'),
 
             Matrix::make('specification.room')
                 ->title('Räume')
                 ->value(1)
-                ->columns(['Raum-Name', 'Max. Personenanzahl'])
+                ->columns(['Raum-Name', 'Max. Personenanzahl', 'Ausstattung'])
                 ->fields([
-                    'Raum-Name'   => Input::make('room_name')->type('text')->maxlength(50)->placeholder('Z.Bsp. Sitzungszimmer'),
-                    'Max. Personenanzahl' => Input::make('room_capacity')->type('number')->min(1),
+                    'Raum-Name'   => Input::make('specification.room_name')->type('text')->maxlength(50)->placeholder('Z.Bsp. Sitzungszimmer'),
+                    'Max. Personenanzahl' => Input::make('specification.room_capacity')->type('number')->min(1),
+                    'Ausstattung'   => Input::make('specification.room_assets')->type('text')->maxlength(100)->placeholder('z.Bsp. Beamer, Flipchart, TV'),
+
                 ])
                 ->help('Klick auf "+Hinzufügen" um weitere Räume einzutragen'),
 
@@ -234,8 +236,8 @@ class SpecificationLayout extends Rows
                 ->columns(['Mitarbeiter/in', 'Funktion'])
                 ->value(1)
                 ->fields([
-                    'Mitarbeiter'   => Input::make('employee_name')->type('text')->maxlength(50),
-                    'Funktion' => Input::make('employee_function')->type('text'),
+                    'Mitarbeiter'   => Input::make('specification.employee_name')->type('text')->maxlength(50),
+                    'Funktion' => Input::make('specification.employee_function')->type('text'),
                 ])
                 ->help('Klick auf "+Hinzufügen" um weitere Mitarbeiter einzutragen'),
         ];

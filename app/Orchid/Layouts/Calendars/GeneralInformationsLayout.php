@@ -35,6 +35,28 @@ class GeneralInformationsLayout extends Rows
                 ->title('Name')
                 ->placeholder('Gib deinem Kalender einen Namen'),
 
+            Select::make('calendar.country')
+                ->options([
+                    'CH' => 'Schweiz',
+                    'DE' => 'Deutschland',
+                    'AUT' => 'Österreich',
+                ])
+                ->value(1)
+                ->required()
+                ->title('Land'),
+
+            Input::make('calendar.street')
+                ->type('text')
+                ->required()
+                ->title('Strasse')
+                ->placeholder('Musterstrasse 10'),
+
+            Input::make('calendar.location')
+                ->type('text')
+                ->required()
+                ->title('Ort')
+                ->placeholder('Musterhausen'),
+
             Input::make('calendar.status')
                 ->sendTrueOrFalse()
                 ->hidden()
@@ -43,6 +65,7 @@ class GeneralInformationsLayout extends Rows
             Quill::make('calendar.description')
                 ->title('Kalenderbeschreibung')
                 ->toolbar(["text"])
+                ->required()
                 ->placeholder('Beschreibe deinen Kalender in 2-3 Sätzen?'),
 
             Switcher::make('calendar.public')
@@ -62,7 +85,7 @@ class GeneralInformationsLayout extends Rows
                     'sports' => 'Sport -  für Vereine und Clubs',
                     'room' => 'Räumlichkeiten - für KMUs und Schulen',
                     'services' => 'Dienstleistungen - für Termine mit Kunden',
- 
+
                 ])
                 ->title('Kalendervorlage wählen')
                 ->help('Verwende eine unserer Kalendervorlagen'),
@@ -70,17 +93,19 @@ class GeneralInformationsLayout extends Rows
             Input::make('calendar.unit')
                 ->type('text')
                 ->title('Reservationsobjekt')
+                ->required()
                 ->help('Was kann in diesem Kalender reserviert werden?'),
 
             Cropper::make('calendar.image')
                 ->title('Bild hochladen')
                 ->width(500)
                 ->height(300)
-                ->horizontal(),
-            Upload::make('files')
-                ->title('Upload files (wissen auch noch nicht welche)')
+                ->targetRelativeUrl()
                 ->horizontal(),
 
+            Input::make('calendar.user_id')
+                ->value(1)
+                ->hidden(),
         ];
     }
 }

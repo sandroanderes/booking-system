@@ -2,12 +2,15 @@
 
 namespace App\Orchid\Screens\Calendars;
 
+use App\Models\CalendarGeneral;
 use App\Orchid\Layouts\Calendars\GeneralInformationsLayout;
 use App\Orchid\Layouts\Calendars\SpecificationLayout;
 use App\Orchid\Layouts\Calendars\OpeningHoursLayout;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
-
+use Illuminate\Http\Request;
+use Orchid\Support\Facades\Alert;
+use Orchid\Screen\Actions\Button;
 
 class NewCalendar extends Screen
 {
@@ -30,11 +33,10 @@ class NewCalendar extends Screen
      *
      * @return array
      */
-    public function query(): array
+    public function query(CalendarGeneral $calendar): array
     {
         return [];
     }
-
     /**
      * Button commands.
      *
@@ -42,7 +44,12 @@ class NewCalendar extends Screen
      */
     public function commandBar(): array
     {
-        return [];
+         return [
+            Button::make('Create post')
+            ->icon('pencil')
+            ->method('createOrUpdate')
+            ->novalidate(),
+        ];
     }
 
     /**
@@ -59,7 +66,11 @@ class NewCalendar extends Screen
                 'Schritt 3: Reservations-Spezifikationen' => SpecificationLayout::class,
             ]),
             Layout::view('orchid.scripts'),
-
         ];
+    }
+    public function createOrUpdate(CalendarGeneral $calendar, Request $request)
+    {
+        $calendar->fill($request->get('calendar'))->save();
+        Alert::info('You have successfully created an Calendar.');
     }
 }
