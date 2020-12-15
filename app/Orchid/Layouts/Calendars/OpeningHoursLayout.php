@@ -70,7 +70,7 @@ class OpeningHoursLayout extends Rows
                     1 => 'Ja',
                     0 => 'Nein',
                 ])
-                ->title('Sind die Öffnungszeiten an allen Tagen identisch?')
+                ->title('Sind die Reservationszeiten an allen Tagen identisch?')
                 ->value(1),
 
             Group::make([
@@ -79,7 +79,7 @@ class OpeningHoursLayout extends Rows
                         0 => 'Ja',
                         1 => 'Nur halbtags geöffnet',
                     ])
-                    ->title('Hast du ganztags geöffnet?')
+                    ->title('Können ganztags Reservationen vorgenommen werden?')
                     ->value(0),
 
                 RadioButtons::make('lunchbreak_general')
@@ -93,12 +93,12 @@ class OpeningHoursLayout extends Rows
 
             Group::make([
                 DateTimer::make('openinghours_general')
-                    ->title('Wann öffnet dein Betrieb?')
+                    ->title('Ab wann können Reservationen vorgenommen werden?')
                     ->noCalendar()
                     ->format('H:i'),
 
                 DateTimer::make('closinghours_general')
-                    ->title('Wann schliesst dein Betrieb?')
+                    ->title('Bis wann können Reservationen vorgenommen werden?')
                     ->noCalendar()
                     ->format('H:i'),
             ]),

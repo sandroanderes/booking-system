@@ -111,7 +111,8 @@ var oh_halfday_lunch_monday = document.querySelector('[id^="field-lunchbreak-mon
 var oh_monday = document.querySelector('[id^="field-openinghours-monday-"]').parentElement.parentElement.parentElement.parentElement;
 var oh_lunchtime_monday = document.querySelector('[id^="field-lunchbreackstart-monday-"]').parentElement.parentElement.parentElement.parentElement; //EventListener
 
-select_template.addEventListener("change", reservation_template); //Funktion Hide Show je nach Template
+select_template.addEventListener("change", reservation_template);
+window.addEventListener("load", reservation_template); //Funktion Hide Show je nach Template
 
 function reservation_template() {
   var calender_unit = document.querySelector('[id^="field-calendarunit-"]').parentElement.parentElement;
@@ -121,6 +122,7 @@ function reservation_template() {
   var tbl_rooms = document.querySelector('[for^="field-specificationroom"]').parentElement;
   var fld_service = document.querySelector('[id^="field-specificationservice-"]').parentElement.parentElement;
   var tbl_employee = document.querySelector('[for^="field-specificationemployee-"]').parentElement;
+  var required_att = document.querySelector('[id^="field-calendarunit-"]');
 
   switch (select_template.value) {
     case "none":
@@ -130,28 +132,28 @@ function reservation_template() {
         calender_unit.style.display = "inline";
       }
 
-      if (sport_unit.style.display = "none") {
-        sport_unit.style.display = "inline";
+      if (sport_unit.style.display = "inline") {
+        sport_unit.style.display = "none";
       }
 
-      if (sport_number.style.display = "none") {
-        sport_number.style.display = "inline";
+      if (sport_number.style.display = "inline") {
+        sport_number.style.display = "none";
       }
 
-      if (tbl_rooms.style.display = "none") {
-        tbl_rooms.style.display = "inline";
+      if (tbl_rooms.style.display = "inline") {
+        tbl_rooms.style.display = "none";
       }
 
-      if (fld_service.style.display = "none") {
-        fld_service.style.display = "inline";
+      if (fld_service.style.display = "inline") {
+        fld_service.style.display = "none";
       }
 
-      if (tbl_employee.style.display = "none") {
-        tbl_employee.style.display = "inline";
+      if (tbl_employee.style.display = "inline") {
+        tbl_employee.style.display = "none";
       }
 
-      if (tbl_gastro.style.display = "none") {
-        tbl_gastro.style.display = "inline";
+      if (tbl_gastro.style.display = "inline") {
+        tbl_gastro.style.display = "none";
       }
 
       break;
@@ -185,8 +187,7 @@ function reservation_template() {
 
       if (tbl_gastro.style.display = "none") {
         tbl_gastro.style.display = "inline";
-      } //Default-Fixe Reservationszeit
-
+      }
 
       break;
 

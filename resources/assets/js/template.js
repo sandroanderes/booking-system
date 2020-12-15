@@ -44,6 +44,7 @@ var oh_lunchtime_monday = document.querySelector(
 
 //EventListener
 select_template.addEventListener("change", reservation_template);
+window.addEventListener("load", reservation_template);
 
 //Funktion Hide Show je nach Template
 function reservation_template() {
@@ -68,6 +69,8 @@ function reservation_template() {
         '[for^="field-specificationemployee-"]'
     ).parentElement;
 
+    let required_att = document.querySelector('[id^="field-calendarunit-"]');
+
     switch (select_template.value) {
         case "none":
             title_oh_days.innerHTML =
@@ -78,29 +81,30 @@ function reservation_template() {
                 calender_unit.style.display = "inline";
             }
 
-            if ((sport_unit.style.display = "none")) {
-                sport_unit.style.display = "inline";
+            if ((sport_unit.style.display = "inline")) {
+                sport_unit.style.display = "none";
             }
 
-            if ((sport_number.style.display = "none")) {
-                sport_number.style.display = "inline";
+            if ((sport_number.style.display = "inline")) {
+                sport_number.style.display = "none";
             }
 
-            if ((tbl_rooms.style.display = "none")) {
-                tbl_rooms.style.display = "inline";
+            if ((tbl_rooms.style.display = "inline")) {
+                tbl_rooms.style.display = "none";
             }
 
-            if ((fld_service.style.display = "none")) {
-                fld_service.style.display = "inline";
+            if ((fld_service.style.display = "inline")) {
+                fld_service.style.display = "none";
             }
 
-            if ((tbl_employee.style.display = "none")) {
-                tbl_employee.style.display = "inline";
+            if ((tbl_employee.style.display = "inline")) {
+                tbl_employee.style.display = "none";
             }
 
-            if ((tbl_gastro.style.display = "none")) {
-                tbl_gastro.style.display = "inline";
+            if ((tbl_gastro.style.display = "inline")) {
+                tbl_gastro.style.display = "none";
             }
+
             break;
         case "gastronomy":
             title_oh_days.innerHTML =
@@ -133,10 +137,6 @@ function reservation_template() {
             if ((tbl_gastro.style.display = "none")) {
                 tbl_gastro.style.display = "inline";
             }
-
-            //Default-Fixe Reservationszeit
-
-           
 
             break;
         case "sports":
