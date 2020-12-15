@@ -512,6 +512,9 @@ function openinghours_halfday() {
   }
 }
 
+openinghours_halfday();
+openinghours_repeat();
+
 /***/ }),
 
 /***/ 6:

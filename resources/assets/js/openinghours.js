@@ -458,3 +458,6 @@ function openinghours_halfday() {
         oh_lunchtime_sunday.style.display = "none";
     }
 }
+
+openinghours_halfday();
+openinghours_repeat();
