@@ -113,7 +113,7 @@ function generateRandomColor() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\functions.js */"./resources/assets/js/functions.js");
+module.exports = __webpack_require__(/*! C:\Users\Bärni\Documents\HTW Chur\Studium\HS20\Major_Media_Application\Semesterprojekt\master\booking-system\resources\assets\js\functions.js */"./resources/assets/js/functions.js");
 
 
 /***/ })
