@@ -131,7 +131,7 @@ var friday_open_halfday = document.querySelector('[id^="field-ohhalfday-closed-f
 var friday_lunch_closed = document.querySelector('[id^="field-ohlunch-friday-"][value="1"]');
 var friday_lunch_notclosed = document.querySelector('[id^="field-ohlunch-friday-"][value="0"]');
 var saturday_open_allday = document.querySelector('[id^="field-ohhalfday-closed-saturday-"][value="0"]');
-var saturday_open_halfday = document.querySelector('[id^="field-ohhalfday-closed--saturday-"][value="1"]');
+var saturday_open_halfday = document.querySelector('[id^="field-ohhalfday-closed-saturday-"][value="1"]');
 var saturday_lunch_closed = document.querySelector('[id^="field-ohlunch-saturday-"][value="1"]');
 var saturday_lunch_notclosed = document.querySelector('[id^="field-ohlunch-saturday-"][value="0"]');
 var sunday_open_allday = document.querySelector('[id^="field-ohhalfday-closed-sunday-"][value="0"]');
@@ -181,11 +181,12 @@ checked_wednesday.addEventListener("click", openinghours_repeat);
 checked_thursday.addEventListener("click", openinghours_repeat);
 checked_friday.addEventListener("click", openinghours_repeat);
 checked_saturday.addEventListener("click", openinghours_repeat);
-checked_sunday.addEventListener("click", openinghours_repeat); // EventListener Buttons of Weekdays
+checked_sunday.addEventListener("click", openinghours_repeat);
+window.addEventListener("load", openinghours_repeat); // EventListener Buttons of Weekdays
 
 general_open_allday.addEventListener("click", openinghours_halfday);
 general_open_halfday.addEventListener("click", openinghours_halfday);
-general_lunch_closed.addEventListener("click", openinghours_halfday);
+general_lunch_closed.addEventListener("click", openinghours_halfday, openinghours_repeat);
 general_lunch_notclosed.addEventListener("click", openinghours_halfday);
 monday_open_allday.addEventListener("click", openinghours_halfday);
 monday_open_halfday.addEventListener("click", openinghours_halfday);
@@ -355,6 +356,52 @@ function openinghours_repeat() {
     oh_general.style.display = "none";
     oh_lunchtime.style.display = "none";
   }
+
+  if (checked_monday.checked == true && oh_repeat.checked === false && monday_lunch_notclosed.checked == true) {
+    oh_halfday_lunch_monday.style.display = "flex";
+    oh_monday.style.display = "flex";
+    oh_lunchtime_monday.style.display = "none";
+  }
+
+  if (checked_tuesday.checked == true && oh_repeat.checked === false && tuesday_lunch_notclosed.checked == true) {
+    oh_halfday_lunch_tuesday.style.display = "flex";
+    oh_tuesday.style.display = "flex";
+    oh_lunchtime_tuesday.style.display = "none";
+  }
+
+  if (checked_wednesday.checked == true && oh_repeat.checked === false && wednesday_lunch_notclosed.checked == true) {
+    oh_halfday_lunch_wednesday.style.display = "flex";
+    oh_wednesday.style.display = "flex";
+    oh_lunchtime_wednesday.style.display = "none";
+  }
+
+  if (checked_thursday.checked == true && oh_repeat.checked === false && thursday_lunch_notclosed.checked == true) {
+    oh_halfday_lunch_thursday.style.display = "flex";
+    oh_thursday.style.display = "flex";
+    oh_lunchtime_thursday.style.display = "none";
+  }
+
+  if (checked_friday.checked == true && oh_repeat.checked === false && friday_lunch_notclosed.checked == true) {
+    oh_halfday_lunch_friday.style.display = "flex";
+    oh_friday.style.display = "flex";
+    oh_lunchtime_friday.style.display = "none";
+  }
+
+  if (checked_saturday.checked == true && oh_repeat.checked === false && saturday_lunch_notclosed.checked == true) {
+    oh_halfday_lunch_saturday.style.display = "flex";
+    oh_saturday.style.display = "flex";
+    oh_lunchtime_saturday.style.display = "none";
+  }
+
+  if (checked_sunday.checked == true && oh_repeat.checked === false && sunday_lunch_notclosed.checked == true) {
+    oh_halfday_lunch_sunday.style.display = "flex";
+    oh_sunday.style.display = "flex";
+    oh_lunchtime_sunday.style.display = "none";
+  }
+
+  if (oh_repeat.checked == true && general_lunch_notclosed.checked == true) {
+    oh_lunchtime.style.display = "none";
+  }
 } // Function Show Hide Elements of Days
 
 
@@ -510,6 +557,8 @@ function openinghours_halfday() {
   if (sunday_lunch_notclosed.checked === true) {
     oh_lunchtime_sunday.style.display = "none";
   }
+
+  openinghours_repeat();
 }
 
 /***/ }),

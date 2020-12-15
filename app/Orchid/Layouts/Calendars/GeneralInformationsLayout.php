@@ -35,6 +35,28 @@ class GeneralInformationsLayout extends Rows
                 ->title('Name')
                 ->placeholder('Gib deinem Kalender einen Namen'),
 
+            Select::make('calendar.country')
+                ->options([
+                    'CH' => 'Schweiz',
+                    'DE' => 'Deutschland',
+                    'AUT' => 'Österreich',
+                ])
+                ->value(1)
+                ->required()
+                ->title('Land'),
+
+            Input::make('calendar.street')
+                ->type('text')
+                ->required()
+                ->title('Strasse')
+                ->placeholder('Musterstrasse 10'),
+
+            Input::make('calendar.location')
+                ->type('text')
+                ->required()
+                ->title('Ort')
+                ->placeholder('Musterhausen'),
+
             Input::make('calendar.status')
                 ->sendTrueOrFalse()
                 ->hidden()
