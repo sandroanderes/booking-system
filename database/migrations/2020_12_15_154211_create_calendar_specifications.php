@@ -26,15 +26,16 @@ class CreateCalendarSpecifications extends Migration
             $table->string('duration_max_min');
             $table->string('duration_max_h');
             $table->string('duration_max_d');
-            $table->string('gastrotable');
-            $table->integer('gastrotable_number');
-            $table->string('sportunit');
-            $table->integer('sportnumber');
-            $table->string('room_name');
-            $table->integer('room_capacity');
-            $table->string('room_assets');
-            $table->string('employee_name');
-            $table->string('employee_function');
+            $table->string('gastrotable')->nullable();
+            $table->integer('gastrotable_number')->nullable();
+            $table->string('sportunit')->nullable();
+            $table->integer('sportnumber')->nullable();
+            $table->string('room_name')->nullable();
+            $table->integer('room_capacity')->nullable();
+            $table->string('room_assets')->nullable();
+            $table->string('service')->nullable();
+            $table->string('employee_name')->nullable();
+            $table->string('employee_function')->nullable();
             $table->timestamps();
             $table->foreign('calendar_id')
                 ->references('id')

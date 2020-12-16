@@ -10,6 +10,7 @@ use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\Cropper;
 use Orchid\Screen\Fields\Upload;
 use Orchid\Screen\Fields\Quill;
+use Illuminate\Support\Facades\Auth;
 
 class GeneralInformationsLayout extends Rows
 {
@@ -104,7 +105,7 @@ class GeneralInformationsLayout extends Rows
                 ->horizontal(),
 
             Input::make('calendar.user_id')
-                ->value(1)
+                ->value(Auth::id())
                 ->hidden(),
         ];
     }

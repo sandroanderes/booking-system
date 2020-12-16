@@ -11,8 +11,6 @@ class CalendarSpecification extends Model
     use AsSource;
     protected $fillable = [
         'calendar_id',
-
-
         'format',
         'duration_fixed',
         'duration_all',
@@ -30,6 +28,7 @@ class CalendarSpecification extends Model
         'room_name',
         'room_capacity',
         'room_assets',
+        'service',
         'employee_name',
         'employee_function',       
     ];

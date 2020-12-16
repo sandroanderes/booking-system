@@ -83,7 +83,7 @@ class NewCalendar extends Screen
     public function createOrUpdate(CalendarGeneral $calendar, Request $request)
     {
         $calendar->fill($request->get('calendar'))->save();
-        Alert::info('You have successfully created an Calendar.');
+        Alert::info('Allgemeine Einstellungen wurden in die DB geschrieben');
     }
 
     public function createOrUpdate_Oh(CalendarOpeninghours $oh, Request $request)
