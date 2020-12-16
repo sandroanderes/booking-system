@@ -86,10 +86,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/assets/js/privateLink.js":
-/*!********************************************!*\
-  !*** ./resources/assets/js/privateLink.js ***!
-  \********************************************/
+/***/ "./resources/assets/js/backend/privateLink.js":
+/*!****************************************************!*\
+  !*** ./resources/assets/js/backend/privateLink.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -145,13 +145,13 @@ function randomString(length, chars) {
 /***/ }),
 
 /***/ 4:
-/*!**************************************************!*\
-  !*** multi ./resources/assets/js/privateLink.js ***!
-  \**************************************************/
+/*!**********************************************************!*\
+  !*** multi ./resources/assets/js/backend/privateLink.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Bärni\Documents\HTW Chur\Studium\HS20\Major_Media_Application\Semesterprojekt\master\booking-system\resources\assets\js\privateLink.js */"./resources/assets/js/privateLink.js");
+module.exports = __webpack_require__(/*! C:\Users\Bärni\Documents\HTW Chur\Studium\HS20\Major_Media_Application\Semesterprojekt\master\booking-system\resources\assets\js\backend\privateLink.js */"./resources/assets/js/backend/privateLink.js");
 
 
 /***/ })

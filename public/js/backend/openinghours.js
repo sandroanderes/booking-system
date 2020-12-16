@@ -86,10 +86,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/assets/js/openinghours.js":
-/*!*********************************************!*\
-  !*** ./resources/assets/js/openinghours.js ***!
-  \*********************************************/
+/***/ "./resources/assets/js/backend/openinghours.js":
+/*!*****************************************************!*\
+  !*** ./resources/assets/js/backend/openinghours.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -564,13 +564,13 @@ function openinghours_halfday() {
 /***/ }),
 
 /***/ 6:
-/*!***************************************************!*\
-  !*** multi ./resources/assets/js/openinghours.js ***!
-  \***************************************************/
+/*!***********************************************************!*\
+  !*** multi ./resources/assets/js/backend/openinghours.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Bärni\Documents\HTW Chur\Studium\HS20\Major_Media_Application\Semesterprojekt\master\booking-system\resources\assets\js\openinghours.js */"./resources/assets/js/openinghours.js");
+module.exports = __webpack_require__(/*! C:\Users\Bärni\Documents\HTW Chur\Studium\HS20\Major_Media_Application\Semesterprojekt\master\booking-system\resources\assets\js\backend\openinghours.js */"./resources/assets/js/backend/openinghours.js");
 
 
 /***/ })

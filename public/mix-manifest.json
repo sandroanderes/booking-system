@@ -1,14 +1,14 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/main.css": "/css/main.css",
+    "/js/backend/openinghours.js": "/js/backend/openinghours.js",
+    "/js/backend/privateLink.js": "/js/backend/privateLink.js",
+    "/js/backend/specifications.js": "/js/backend/specifications.js",
+    "/js/backend/template.js": "/js/backend/template.js",
     "/js/filter.js": "/js/filter.js",
     "/js/fixed-footer.js": "/js/fixed-footer.js",
     "/js/frontend-calendar.js": "/js/frontend-calendar.js",
     "/js/functions.js": "/js/functions.js",
     "/js/location.js": "/js/location.js",
-    "/js/navigation.js": "/js/navigation.js",
-    "/js/openinghours.js": "/js/openinghours.js",
-    "/js/privateLink.js": "/js/privateLink.js",
-    "/js/specifications.js": "/js/specifications.js",
-    "/js/template.js": "/js/template.js"
+    "/js/navigation.js": "/js/navigation.js"
 }

@@ -186,25 +186,57 @@ class SpecificationLayout extends Rows
                 ->value(0)
                 ->title('Maximale Reservationsdauer in Tagen'),
 
-            Matrix::make('gastrotables')
-                ->title('Anzahl Tische')
-                ->columns(['Tischgrösse', 'Verfügbare Tische'])
-                ->maxRows(10)
-                ->value(1)
-                ->fields([
-                    'Tischgrösse'   => Select::make('gastrotables.gastrotable')->type('text')->options([
-                        '1' => '1er-Tisch',
-                        '2' => '2er-Tisch',
-                        '4' => '4er-Tisch',
-                        '5' => '5er-Tisch',
-                        '6' => '6er-Tisch',
-                        '7' => '7er-Tisch',
-                        '8' => '8er-Tisch'
-                    ]),
-                    'Verfügbare Tische' => Input::make('gastrotables.gastrotable_number')->type('number')->min(1),
+            Group::make([
+                Input::make('specification.table_one')
+                    ->title('Anzahl 1er-Tische')
+                    ->type('number')
+                    ->min(0)
+                    ->value(0),
 
-                ])
-                ->help('Klick auf "+Hinzufügen" um weitere Tische einzutragen'),
+                Input::make('specification.table_two')
+                    ->title('Anzahl 2er-Tische')
+                    ->type('number')
+                    ->min(0)
+                    ->value(0),
+
+                Input::make('specification.table_three')
+                    ->title('Anzahl 3er-Tische')
+                    ->type('number')
+                    ->min(0)
+                    ->value(0),
+
+                Input::make('specification.table_four')
+                    ->title('Anzahl 4er-Tische')
+                    ->type('number')
+                    ->min(0)
+                    ->value(0),
+            ]),
+
+            Group::make([
+                Input::make('specification.table_five')
+                    ->title('Anzahl 5er-Tische')
+                    ->type('number')
+                    ->min(0)
+                    ->value(0),
+
+                Input::make('specification.table_six')
+                    ->title('Anzahl 6er-Tische')
+                    ->type('number')
+                    ->min(0)
+                    ->value(0),
+
+                Input::make('specification.table_seven')
+                    ->title('Anzahl 7er-Tische')
+                    ->type('number')
+                    ->min(0)
+                    ->value(0),
+
+                Input::make('specification.table_eight')
+                    ->title('Anzahl 8er-Tische')
+                    ->type('number')
+                    ->min(0)
+                    ->value(0),
+            ]),
 
             Input::make('specification.sportunit')
                 ->type('text')
@@ -249,7 +281,7 @@ class SpecificationLayout extends Rows
                 ->value(5)
                 ->hidden(),
 
-            Input::make('gastrotable.calendar_id')
+            Input::make('gastrotables.calendar_id')
                 ->value(5)
                 ->hidden(),
         ];

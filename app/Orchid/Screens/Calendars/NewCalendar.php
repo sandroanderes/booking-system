@@ -47,26 +47,22 @@ class NewCalendar extends Screen
      */
     public function commandBar(): array
     {
-         return [
+        return [
             Button::make('Create post')
-            ->icon('pencil')
-            ->method('createOrUpdate')
-            ->novalidate(),
+                ->icon('pencil')
+                ->method('createOrUpdate')
+                ->novalidate(),
 
             Button::make('Create OH post')
-            ->icon('pencil')
-            ->method('createOrUpdate_Oh')
-            ->novalidate(),
+                ->icon('pencil')
+                ->method('createOrUpdate_Oh')
+                ->novalidate(),
 
             Button::make('Create specification post')
-            ->icon('pencil')
-            ->method('createOrUpdate_specification')
-            ->novalidate(),
+                ->icon('pencil')
+                ->method('createOrUpdate_specification')
+                ->novalidate(),
 
-            Button::make('Create gastrotable post')
-            ->icon('pencil')
-            ->method('createOrUpdate_gastrotable')
-            ->novalidate(),
         ];
     }
 
@@ -102,11 +98,5 @@ class NewCalendar extends Screen
     {
         $specification->fill($request->get('specification'))->save();
         Alert::info('You have successfully added some specifications.');
-    }
-
-    public function createOrUpdate_gastrotable(SpecificationGastrotable $gastrotable, Request $request)
-    {
-        $gastrotable->fill($request->get('gastrotable'))->save();
-        Alert::info('You have successfully added some gastrotable_shizzly.');
     }
 }
