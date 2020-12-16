@@ -30,7 +30,7 @@
                 <input type="text" id="CityFilter" class="form-control" placeholder="Ortschaften">
             </div>
             <div class="col col-md-6 col-lg">
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="locationSelect">
                     <option selected value="Alle">Alle</option>
                     <option value="5 km">5 km</option>
                     <option value="10 km">10 km</option>
@@ -39,7 +39,7 @@
                 </select>
             </div>
             <div class="col-lg-3 col-md-6 ">
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="categorySelect">
                     <option selected value="Alle">Alle Kategorien</option>
                     <option value="Gastronomie">Gastro</option>
                     <option value="Sportplätze">Sport</option>
@@ -66,7 +66,7 @@
                                 <div class="col-10">
                                     <h5 class="card-title">Co-Working Space</h5>
                                     <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
-                                    <h6 class="card-text">Aarau, Schweiz</h6>
+                                    <h6 class="card-text location">Aarau, Schweiz</h6>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +94,7 @@
                                 <div class="col-10">
                                     <h5 class="card-title">Tennisplätze</h5>
                                     <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
-                                    <h6 class="card-text">Chur, Schweiz</h6>
+                                    <h6 class="card-text location">Chur, Schweiz</h6>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +119,7 @@
                                 <div class="col-10">
                                     <h5 class="card-title">Co-Working Space</h5>
                                     <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
-                                    <h6 class="card-text">Olten, Schweiz</h6>
+                                    <h6 class="card-text location">Olten, Schweiz</h6>
                                 </div>
                             </div>
                         </div>
@@ -140,7 +140,7 @@
                                 <div class="col-10">
                                     <h5 class="card-title">Co-Working Space</h5>
                                     <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
-                                    <h6 class="card-text">Aarau, Schweiz</h6>
+                                    <h6 class="card-text location">Aarau, Schweiz</h6>
                                 </div>
                             </div>
                         </div>
@@ -150,6 +150,7 @@
         </div>
     </div>
 </section>
+<script src="https://cdn.jsdelivr.net/gh/bigdatacloudapi/js-reverse-geocode-client@latest/bigdatacloud_reverse_geocode.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="{{ asset('js/filter.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/location.js') }}"></script>
 @stop

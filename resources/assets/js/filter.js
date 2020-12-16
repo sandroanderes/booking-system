@@ -1,5 +1,5 @@
 document.getElementById("CalendarFilter").onkeyup = function () { TitelFunction() };
-document.getElementById("CityFilter").onkeyup = function () { CityFunction() };
+/* document.getElementById("CityFilter").onkeyup = function () { CityFunction() }; */
 
 function TitelFunction() {
     var input, filter, cards, cardContainer, h5, title, i;

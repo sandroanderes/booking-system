@@ -1,44 +1,17 @@
-document.getElementById("searchCalendar").onclick = function () { GetLocation() };
+document.getElementById("searchCalendar").onclick = function () {
+    var search_location = document.getElementById("CityFilter").value;
+    var card_locations = document.getElementsByClassName("location");
+    var card_locations_array = [];
+    const objectArray = Object.entries(card_locations);
 
-function GetLocation() {
-    var address = document.getElementById("CityFilter").value + ", Schweiz";
-    var mylat;
-    var mylon;
-
-    fetch('/js/api_token.json')
-        .then(response => response.json())
-        .then(data => {
-            api = data;
-            searchFunction(address);
-            getLocation(mylat, mylon);
-            console.log(mylat + "+" + mylon)
-        });
+    objectArray.forEach(([key, value]) => {
+        card_locations_array.push(value.innerText);
+    });
+    if (search_location) {
+        card_locations_array.push(search_location)
+        asyncCall(card_locations_array);
+    }
 }
-
-function searchFunction(address) {
-    console.log(api.token);
-    var token = api.token;
-
-    fetch('https://us1.locationiq.com/v1/search.php?key=' + token + '&format=json&q=' + address)
-        .then(response => response.json())
-        .then(function (data) {
-            return console.log("Source Latitude: " + data[1].lat + " & Longitude: " + data[1].lon);
-        });
-}
-
-function getPosition() {
-    navigator.geolocation.getCurrentPosition(function(position) {
-        let lat = position.coords.latitude;
-        let long = position.coords.longitude;
-    
-        console.log(lat)
-        latText.innerText = lat.toFixed(2);
-        longText.innerText = long.toFixed(2);
-      });
-}
-
-
-
 
 function distance(lat1, lon1, lat2, lon2, unit) {
     if ((lat1 == lat2) && (lon1 == lon2)) {
@@ -62,3 +35,42 @@ function distance(lat1, lon1, lat2, lon2, unit) {
     }
 }
 
+async function asyncCall(locations) {
+    var selected_distance = document.getElementById('locationSelect').value;
+    var card_locations = document.getElementsByClassName("location");
+    var location = [];
+
+    selected_distance = (selected_distance == "Alle" ? 10000 : selected_distance.slice(0, -2))
+    console.time('for {}');
+
+    for (const [i, value] of locations.entries()) {
+        const response = await fetch(`https://nominatim.openstreetmap.org/search?q=${value}&format=json&limit=1`)
+        const data = await response.json()
+        location.push(data[0]);
+
+        if (i == (locations.length - 1)) {
+            for (var j = 0; j < (locations.length - 1); j++) {
+
+                console.log("Distanz zwischen " + location[j].display_name + " und " + location[location.length - 1].display_name + " beträgt " + distance(parseFloat(location[j].lat), parseFloat(location[j].lon), parseFloat(location[location.length - 1].lat), parseFloat(location[location.length - 1].lon)) + "km");
+
+                card_locations[j].parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.style.display = "";
+                if (selected_distance <= distance(parseFloat(location[j].lat), parseFloat(location[j].lon), parseFloat(location[location.length - 1].lat), parseFloat(location[location.length - 1].lon))) {
+                    console.log(location[j].display_name + " is too far away!");
+                    card_locations[j].parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.style.display = "none";
+                }
+            }
+        }
+
+    }
+    console.timeEnd('for {}');
+
+    /*     console.time('.map()');
+        await Promise.all(
+            locations.map(async (value) => {
+                const response = await fetch(`https://nominatim.openstreetmap.org/search?q=${value}&format=json&limit=1`)
+                const location = await response.json()
+                console.log(location[0].display_name)
+            })
+        )
+        console.timeEnd('.map()'); */
+}
