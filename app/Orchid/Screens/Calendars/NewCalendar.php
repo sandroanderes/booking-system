@@ -3,6 +3,8 @@
 namespace App\Orchid\Screens\Calendars;
 
 use App\Models\CalendarGeneral;
+use App\Models\CalendarOpeninghours;
+use App\Models\CalendarSpecification;
 use App\Orchid\Layouts\Calendars\GeneralInformationsLayout;
 use App\Orchid\Layouts\Calendars\SpecificationLayout;
 use App\Orchid\Layouts\Calendars\OpeningHoursLayout;
@@ -49,6 +51,16 @@ class NewCalendar extends Screen
             ->icon('pencil')
             ->method('createOrUpdate')
             ->novalidate(),
+
+            Button::make('Create OH post')
+            ->icon('pencil')
+            ->method('createOrUpdate_Oh')
+            ->novalidate(),
+
+            Button::make('Create specification post')
+            ->icon('pencil')
+            ->method('createOrUpdate_specification')
+            ->novalidate(),
         ];
     }
 
@@ -72,5 +84,17 @@ class NewCalendar extends Screen
     {
         $calendar->fill($request->get('calendar'))->save();
         Alert::info('You have successfully created an Calendar.');
+    }
+
+    public function createOrUpdate_Oh(CalendarOpeninghours $oh, Request $request)
+    {
+        $oh->fill($request->get('oh'))->save();
+        Alert::info('You have successfully added some openinghours.');
+    }
+
+    public function createOrUpdate_specification(CalendarSpecification $specification, Request $request)
+    {
+        $specification->fill($request->get('specification'))->save();
+        Alert::info('You have successfully added some specifications.');
     }
 }
