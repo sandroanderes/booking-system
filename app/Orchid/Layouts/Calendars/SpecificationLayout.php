@@ -186,15 +186,13 @@ class SpecificationLayout extends Rows
                 ->value(0)
                 ->title('Maximale Reservationsdauer in Tagen'),
 
-
-
-            Matrix::make('specification.gastro')
+            Matrix::make('gastrotables')
                 ->title('Anzahl Tische')
                 ->columns(['Tischgrösse', 'Verfügbare Tische'])
                 ->maxRows(10)
                 ->value(1)
                 ->fields([
-                    'Tischgrösse'   => Select::make('specification.gastrotable')->type('text')->options([
+                    'Tischgrösse'   => Select::make('gastrotables.gastrotable')->type('text')->options([
                         '1' => '1er-Tisch',
                         '2' => '2er-Tisch',
                         '4' => '4er-Tisch',
@@ -203,7 +201,8 @@ class SpecificationLayout extends Rows
                         '7' => '7er-Tisch',
                         '8' => '8er-Tisch'
                     ]),
-                    'Verfügbare Tische' => Input::make('specification.gastrotable_number')->type('number')->min(1),
+                    'Verfügbare Tische' => Input::make('gastrotables.gastrotable_number')->type('number')->min(1),
+
                 ])
                 ->help('Klick auf "+Hinzufügen" um weitere Tische einzutragen'),
 
@@ -227,8 +226,8 @@ class SpecificationLayout extends Rows
                     'Raum-Name'   => Input::make('specification.room_name')->type('text')->maxlength(50)->placeholder('Z.Bsp. Sitzungszimmer'),
                     'Max. Personenanzahl' => Input::make('specification.room_capacity')->type('number')->min(1),
                     'Ausstattung'   => Input::make('specification.room_assets')->type('text')->maxlength(100)->placeholder('z.Bsp. Beamer, Flipchart, TV'),
-
                 ])
+
                 ->help('Klick auf "+Hinzufügen" um weitere Räume einzutragen'),
 
             Input::make('specification.service')
@@ -246,8 +245,12 @@ class SpecificationLayout extends Rows
                     'Funktion' => Input::make('specification.employee_function')->type('text'),
                 ])
                 ->help('Klick auf "+Hinzufügen" um weitere Mitarbeiter einzutragen'),
-                Input::make('specification.calendar_id')
-                ->value(1)
+            Input::make('specification.calendar_id')
+                ->value(5)
+                ->hidden(),
+
+            Input::make('gastrotable.calendar_id')
+                ->value(5)
                 ->hidden(),
         ];
     }

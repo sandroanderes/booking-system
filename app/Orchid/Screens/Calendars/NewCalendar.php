@@ -5,6 +5,7 @@ namespace App\Orchid\Screens\Calendars;
 use App\Models\CalendarGeneral;
 use App\Models\CalendarOpeninghours;
 use App\Models\CalendarSpecification;
+use App\Models\SpecificationGastrotable;
 use App\Orchid\Layouts\Calendars\GeneralInformationsLayout;
 use App\Orchid\Layouts\Calendars\SpecificationLayout;
 use App\Orchid\Layouts\Calendars\OpeningHoursLayout;
@@ -61,6 +62,11 @@ class NewCalendar extends Screen
             ->icon('pencil')
             ->method('createOrUpdate_specification')
             ->novalidate(),
+
+            Button::make('Create gastrotable post')
+            ->icon('pencil')
+            ->method('createOrUpdate_gastrotable')
+            ->novalidate(),
         ];
     }
 
@@ -96,5 +102,11 @@ class NewCalendar extends Screen
     {
         $specification->fill($request->get('specification'))->save();
         Alert::info('You have successfully added some specifications.');
+    }
+
+    public function createOrUpdate_gastrotable(SpecificationGastrotable $gastrotable, Request $request)
+    {
+        $gastrotable->fill($request->get('gastrotable'))->save();
+        Alert::info('You have successfully added some gastrotable_shizzly.');
     }
 }

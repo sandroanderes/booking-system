@@ -412,7 +412,7 @@ class OpeningHoursLayout extends Rows
                     ->format('H:i'),
             ]),
             Input::make('oh.calendar_id')
-            ->value(1)
+            ->value(5)
             ->hidden(),
         ];
     }
