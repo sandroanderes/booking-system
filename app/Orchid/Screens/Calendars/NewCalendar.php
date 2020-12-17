@@ -5,7 +5,7 @@ namespace App\Orchid\Screens\Calendars;
 use App\Models\CalendarGeneral;
 use App\Models\CalendarOpeninghours;
 use App\Models\CalendarSpecification;
-use App\Models\SpecificationGastrotable;
+use App\Models\CalendarGastrotable;
 use App\Orchid\Layouts\Calendars\GeneralInformationsLayout;
 use App\Orchid\Layouts\Calendars\SpecificationLayout;
 use App\Orchid\Layouts\Calendars\OpeningHoursLayout;
@@ -14,7 +14,6 @@ use Orchid\Support\Facades\Layout;
 use Illuminate\Http\Request;
 use Orchid\Support\Facades\Alert;
 use Orchid\Support\Facades\Toast;
-use Illuminate\Support\Facades\DB;
 use Orchid\Screen\Actions\Button;
 use Illuminate\Support\Facades\Log;
 
@@ -107,7 +106,7 @@ class NewCalendar extends Screen
         Alert::info('You have successfully added some specifications.');
     }
 
-    public function createOrUpdate_gastrotable(SpecificationGastrotable $gastrotable, Request $request)
+    public function createOrUpdate_gastrotable(CalendarGastrotable $gastrotable, Request $request)
     {
         $data = $request->get('gastrotable');
         Log::info($data);
@@ -120,7 +119,7 @@ class NewCalendar extends Screen
             $size = $data[$i]["Tischgrösse"];
             $count = $data[$i]["Verfügbare Tische"];
             $calendar_id = $data["calendar_id"];
-            $gastrotable = new SpecificationGastrotable;
+            $gastrotable = new CalendarGastrotable;
             $gastrotable->calendar_id = $calendar_id;
             $gastrotable->gastrotable = $size;
             $gastrotable->gastrotable_number = $count;

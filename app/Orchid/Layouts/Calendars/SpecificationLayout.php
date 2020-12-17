@@ -291,7 +291,7 @@ class SpecificationLayout extends Rows
                 ->value(5)
                 ->hidden(),
 
-            Input::make('gastrotables.calendar_id')
+            Input::make('gastrotable.calendar_id')
                 ->value(5)
                 ->hidden(),
         ];
