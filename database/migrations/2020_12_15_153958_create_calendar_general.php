@@ -25,7 +25,7 @@ class CreateCalendarGeneral extends Migration
             $table->boolean('public');
             $table->string('privateLink')->nullable();
             $table->string('template');
-            $table->string('unit');
+            $table->string('unit')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
             $table->foreign('user_id')

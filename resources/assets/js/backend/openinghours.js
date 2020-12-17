@@ -129,6 +129,39 @@ var oh_general = document.querySelector('[id^="field-ohstart-general-"]')
 var oh_lunchtime = document.querySelector('[id^="field-ohlunch-start"]')
     .parentElement.parentElement.parentElement.parentElement;
 
+
+// Werte auf 0 setzen, wenn ausgeblendet //
+
+//General
+var oh_general_start_val = document.querySelector('[id^="field-ohstart-general-"]');
+var oh_general_end_val = document.querySelector('[id^="field-ohend-general-"]');
+var oh_lunchtime_start_val = document.querySelector('[id^="field-ohlunch-start-"]');
+var oh_lunchtime_end_val = document.querySelector('[id^="field-ohlunch-end-"]');
+
+//Montag
+
+
+//Dienstag
+
+
+//Mittwoch
+
+
+
+//Donnerstag
+
+
+
+//Freitag
+
+
+
+//Samstag
+
+//Sonntag
+
+
+
 //Montag
 var oh_halfday_lunch_monday = document.querySelector(
     '[id^="field-ohlunch-monday-"]'
@@ -315,6 +348,15 @@ function openinghours_repeat() {
         oh_sunday.style.display = "none";
         oh_lunchtime_sunday.style.display = "none";
     }
+
+    if (oh_repeat_none.checked === true){
+        oh_general_start_val.value = "";
+        oh_general_end_val.value = "";
+        oh_lunchtime_start_val.value = "";
+        oh_lunchtime_end_val.value = "";
+    }
+
+
     if (checked_monday.checked == true && oh_repeat.checked === false) {
         oh_halfday_lunch_monday.style.display = "flex";
         oh_monday.style.display = "flex";
@@ -435,6 +477,70 @@ function openinghours_repeat() {
 
     if(oh_repeat.checked==true && general_lunch_notclosed.checked == true){
         oh_lunchtime.style.display = "none";
+    }
+
+    if (general_open_halfday.checked === true) {
+        oh_lunchtime.style.display = "none";
+        document.querySelector(
+            '[id^="field-ohlunch-general-"]'
+        ).parentElement.parentElement.parentElement.parentElement.parentElement.style.display =
+            "none";
+    }
+
+    if (monday_open_halfday.checked === true) {
+        oh_lunchtime_monday.style.display = "none";
+        document.querySelector(
+            '[id^="field-ohlunch-monday-"]'
+        ).parentElement.parentElement.parentElement.parentElement.parentElement.style.display =
+            "none";
+    }
+
+    if (tuesday_open_halfday.checked === true) {
+        oh_lunchtime_tuesday.style.display = "none";
+        document.querySelector(
+            '[id^="field-ohlunch-tuesday-"]'
+        ).parentElement.parentElement.parentElement.parentElement.parentElement.style.display =
+            "none";
+    }
+
+    if (wednesday_open_halfday.checked === true) {
+        oh_lunchtime_wednesday.style.display = "none";
+        document.querySelector(
+            '[id^="field-ohlunch-wednesday-"]'
+        ).parentElement.parentElement.parentElement.parentElement.parentElement.style.display =
+            "none";
+    }
+
+    if (thursday_open_halfday.checked === true) {
+        oh_lunchtime_thursday.style.display = "none";
+        document.querySelector(
+            '[id^="field-ohlunch-thursday-"]'
+        ).parentElement.parentElement.parentElement.parentElement.parentElement.style.display =
+            "none";
+    }
+
+    if (friday_open_halfday.checked === true) {
+        oh_lunchtime_friday.style.display = "none";
+        document.querySelector(
+            '[id^="field-ohlunch-friday-"]'
+        ).parentElement.parentElement.parentElement.parentElement.parentElement.style.display =
+            "none";
+    }
+
+    if (saturday_open_halfday.checked === true) {
+        oh_lunchtime_saturday.style.display = "none";
+        document.querySelector(
+            '[id^="field-ohlunch-saturday-"]'
+        ).parentElement.parentElement.parentElement.parentElement.parentElement.style.display =
+            "none";
+    }
+
+    if (sunday_open_halfday.checked === true) {
+        oh_lunchtime_sunday.style.display = "none";
+        document.querySelector(
+            '[id^="field-ohlunch-sunday-"]'
+        ).parentElement.parentElement.parentElement.parentElement.parentElement.style.display =
+            "none";
     }
 }
 

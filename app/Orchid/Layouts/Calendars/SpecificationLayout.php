@@ -203,8 +203,50 @@ class SpecificationLayout extends Rows
                     ]),
                     'Verfügbare Tische' => Input::make('count')->type('number')->min(1),
 
-                ])
-                ->help('Klick auf "+Hinzufügen" um weitere Tische einzutragen'),
+                Input::make('specification.table_two')
+                    ->title('Anzahl 2er-Tische')
+                    ->type('number')
+                    ->min(0)
+                    ->value(0),
+
+                Input::make('specification.table_three')
+                    ->title('Anzahl 3er-Tische')
+                    ->type('number')
+                    ->min(0)
+                    ->value(0),
+
+                Input::make('specification.table_four')
+                    ->title('Anzahl 4er-Tische')
+                    ->type('number')
+                    ->min(0)
+                    ->value(0),
+            ]),
+
+            Group::make([
+                Input::make('specification.table_five')
+                    ->title('Anzahl 5er-Tische')
+                    ->type('number')
+                    ->min(0)
+                    ->value(0),
+
+                Input::make('specification.table_six')
+                    ->title('Anzahl 6er-Tische')
+                    ->type('number')
+                    ->min(0)
+                    ->value(0),
+
+                Input::make('specification.table_seven')
+                    ->title('Anzahl 7er-Tische')
+                    ->type('number')
+                    ->min(0)
+                    ->value(0),
+
+                Input::make('specification.table_eight')
+                    ->title('Anzahl 8er-Tische')
+                    ->type('number')
+                    ->min(0)
+                    ->value(0),
+            ]),
 
             Input::make('specification.sportunit')
                 ->type('text')
@@ -249,7 +291,7 @@ class SpecificationLayout extends Rows
                 ->value(5)
                 ->hidden(),
 
-            Input::make('gastrotable.calendar_id')
+            Input::make('gastrotables.calendar_id')
                 ->value(5)
                 ->hidden(),
         ];

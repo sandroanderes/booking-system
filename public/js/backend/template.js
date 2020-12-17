@@ -86,10 +86,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/assets/js/template.js":
-/*!*****************************************!*\
-  !*** ./resources/assets/js/template.js ***!
-  \*****************************************/
+/***/ "./resources/assets/js/backend/template.js":
+/*!*************************************************!*\
+  !*** ./resources/assets/js/backend/template.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -104,32 +104,28 @@ var select_room = document.querySelector('[id^="select2-field-calendartemplat"][
 var select_services = document.querySelector('[id^="select2-field-calendartemplat"][id$="-services"]'); //auszublendende und einzublendende Variablen
 
 var res_objekt = document.querySelector('[id^="field-calendarunit-"]').parentElement.parentElement;
-var title_oh_days = document.querySelector('[for^="field-openingday-monday-"]');
-var title_oh_identical = document.querySelector('[id^="field-openinghours-repeat-"][value="1"]').parentElement.parentElement.parentElement.previousElementSibling; //Montag
-
-var oh_halfday_lunch_monday = document.querySelector('[id^="field-lunchbreak-monday-"]').parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
-var oh_monday = document.querySelector('[id^="field-openinghours-monday-"]').parentElement.parentElement.parentElement.parentElement;
-var oh_lunchtime_monday = document.querySelector('[id^="field-lunchbreackstart-monday-"]').parentElement.parentElement.parentElement.parentElement; //EventListener
+var title_oh_days = document.querySelector('[for^="field-ohday-monday-"]'); //EventListener
 
 select_template.addEventListener("change", reservation_template);
 window.addEventListener("load", reservation_template); //Funktion Hide Show je nach Template
 
 function reservation_template() {
-  var calender_unit = document.querySelector('[id^="field-calendarunit-"]').parentElement.parentElement;
-  var tbl_gastro = document.querySelector('[for^="field-specificationgastro-"]').parentElement;
+  var calendar_unit = document.querySelector('[id^="field-calendarunit-"]').parentElement.parentElement;
+  var tbl_gastro1 = document.querySelector('[id^="field-specificationtable-one-"]').parentElement.parentElement.parentElement.parentElement;
+  var tbl_gastro2 = document.querySelector('[id^="field-specificationtable-five-"]').parentElement.parentElement.parentElement.parentElement;
   var sport_unit = document.querySelector('[id^="field-specificationsportunit-"]').parentElement.parentElement;
   var sport_number = document.querySelector('[id^="field-specificationsportnumber-"]').parentElement.parentElement;
   var tbl_rooms = document.querySelector('[for^="field-specificationroom"]').parentElement;
   var fld_service = document.querySelector('[id^="field-specificationservice-"]').parentElement.parentElement;
   var tbl_employee = document.querySelector('[for^="field-specificationemployee-"]').parentElement;
-  var required_att = document.querySelector('[id^="field-calendarunit-"]');
+  var calendar_unit_val = document.querySelector('[id^="field-calendarunit-"]');
 
   switch (select_template.value) {
     case "none":
       title_oh_days.innerHTML = "An welchen Tagen können Reservationen vorgenommen werden?"; //Ein- und Ausblenden je nach Kalender-Template
 
-      if (calender_unit.style.display = "none") {
-        calender_unit.style.display = "inline";
+      if (calendar_unit.style.display = "none") {
+        calendar_unit.style.display = "inline";
       }
 
       if (sport_unit.style.display = "inline") {
@@ -152,8 +148,12 @@ function reservation_template() {
         tbl_employee.style.display = "none";
       }
 
-      if (tbl_gastro.style.display = "inline") {
-        tbl_gastro.style.display = "none";
+      if (tbl_gastro1.style.display = "flex") {
+        tbl_gastro1.style.display = "none";
+      }
+
+      if (tbl_gastro2.style.display = "flex") {
+        tbl_gastro2.style.display = "none";
       }
 
       break;
@@ -161,8 +161,9 @@ function reservation_template() {
     case "gastronomy":
       title_oh_days.innerHTML = "Wann hat dein Gastronomie-Betrieb geöffnet?"; //Ein- und Ausblenden je nach Kalender-Template
 
-      if (calender_unit.style.display = "inline") {
-        calender_unit.style.display = "none";
+      if (calendar_unit.style.display = "inline") {
+        calendar_unit_val.value = "";
+        calendar_unit.style.display = "none";
       }
 
       if (sport_unit.style.display = "inline") {
@@ -185,8 +186,12 @@ function reservation_template() {
         tbl_employee.style.display = "none";
       }
 
-      if (tbl_gastro.style.display = "none") {
-        tbl_gastro.style.display = "inline";
+      if (tbl_gastro1.style.display = "none") {
+        tbl_gastro1.style.display = "flex";
+      }
+
+      if (tbl_gastro2.style.display = "none") {
+        tbl_gastro2.style.display = "flex";
       }
 
       break;
@@ -194,8 +199,9 @@ function reservation_template() {
     case "sports":
       title_oh_days.innerHTML = "Wann hat deine Sportanlage geöffnet?"; //Ein- und Ausblenden je nach Kalender-Template
 
-      if (calender_unit.style.display = "inline") {
-        calender_unit.style.display = "none";
+      if (calendar_unit.style.display = "inline") {
+        calendar_unit_val.value = "";
+        calendar_unit.style.display = "none";
       }
 
       if (sport_unit.style.display = "none") {
@@ -218,8 +224,12 @@ function reservation_template() {
         tbl_employee.style.display = "none";
       }
 
-      if (tbl_gastro.style.display = "inline") {
-        tbl_gastro.style.display = "none";
+      if (tbl_gastro1.style.display = "flex") {
+        tbl_gastro1.style.display = "none";
+      }
+
+      if (tbl_gastro2.style.display = "flex") {
+        tbl_gastro2.style.display = "none";
       }
 
       break;
@@ -227,8 +237,9 @@ function reservation_template() {
     case "room":
       title_oh_days.innerHTML = "Wann können deine Räume reserviert werden?"; //Ein- und Ausblenden je nach Kalender-Template
 
-      if (calender_unit.style.display = "inline") {
-        calender_unit.style.display = "none";
+      if (calendar_unit.style.display = "inline") {
+        calendar_unit_val.value = "";
+        calendar_unit.style.display = "none";
       }
 
       if (sport_unit.style.display = "inline") {
@@ -251,8 +262,12 @@ function reservation_template() {
         tbl_employee.style.display = "none";
       }
 
-      if (tbl_gastro.style.display = "inline") {
-        tbl_gastro.style.display = "none";
+      if (tbl_gastro1.style.display = "flex") {
+        tbl_gastro1.style.display = "none";
+      }
+
+      if (tbl_gastro2.style.display = "flex") {
+        tbl_gastro2.style.display = "none";
       }
 
       break;
@@ -260,8 +275,9 @@ function reservation_template() {
     case "services":
       title_oh_days.innerHTML = "An welchen Tagen kann deine Dienstleistung reserviert werden?"; //Ein- und Ausblenden je nach Kalender-Template
 
-      if (calender_unit.style.display = "inline") {
-        calender_unit.style.display = "none";
+      if (calendar_unit.style.display = "inline") {
+        calendar_unit_val.value = "";
+        calendar_unit.style.display = "none";
       }
 
       if (sport_unit.style.display = "inline") {
@@ -284,8 +300,12 @@ function reservation_template() {
         tbl_employee.style.display = "inline";
       }
 
-      if (tbl_gastro.style.display = "inline") {
-        tbl_gastro.style.display = "none";
+      if (tbl_gastro1.style.display = "flex") {
+        tbl_gastro1.style.display = "none";
+      }
+
+      if (tbl_gastro2.style.display = "flex") {
+        tbl_gastro2.style.display = "none";
       }
 
       break;
@@ -295,13 +315,13 @@ function reservation_template() {
 /***/ }),
 
 /***/ 9:
-/*!***********************************************!*\
-  !*** multi ./resources/assets/js/template.js ***!
-  \***********************************************/
+/*!*******************************************************!*\
+  !*** multi ./resources/assets/js/backend/template.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Bärni\Documents\HTW Chur\Studium\HS20\Major_Media_Application\Semesterprojekt\master\booking-system\resources\assets\js\template.js */"./resources/assets/js/template.js");
+module.exports = __webpack_require__(/*! C:\Users\Bärni\Documents\HTW Chur\Studium\HS20\Major_Media_Application\Semesterprojekt\master\booking-system\resources\assets\js\backend\template.js */"./resources/assets/js/backend/template.js");
 
 
 /***/ })
