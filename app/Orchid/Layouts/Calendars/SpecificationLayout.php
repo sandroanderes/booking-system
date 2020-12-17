@@ -186,13 +186,13 @@ class SpecificationLayout extends Rows
                 ->value(0)
                 ->title('Maximale Reservationsdauer in Tagen'),
 
-            Matrix::make('gastrotables')
+            Matrix::make('gastrotable')
                 ->title('Anzahl Tische')
                 ->columns(['Tischgrösse', 'Verfügbare Tische'])
                 ->maxRows(10)
                 ->value(1)
                 ->fields([
-                    'Tischgrösse'   => Select::make('gastrotables.gastrotable')->type('text')->options([
+                    'Tischgrösse' => Select::make('size')->type('text')->options([
                         '1' => '1er-Tisch',
                         '2' => '2er-Tisch',
                         '4' => '4er-Tisch',
@@ -201,7 +201,7 @@ class SpecificationLayout extends Rows
                         '7' => '7er-Tisch',
                         '8' => '8er-Tisch'
                     ]),
-                    'Verfügbare Tische' => Input::make('gastrotables.gastrotable_number')->type('number')->min(1),
+                    'Verfügbare Tische' => Input::make('count')->type('number')->min(1),
 
                 ])
                 ->help('Klick auf "+Hinzufügen" um weitere Tische einzutragen'),

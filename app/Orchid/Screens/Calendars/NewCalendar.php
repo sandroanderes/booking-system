@@ -13,7 +13,10 @@ use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
 use Illuminate\Http\Request;
 use Orchid\Support\Facades\Alert;
+use Orchid\Support\Facades\Toast;
+use Illuminate\Support\Facades\DB;
 use Orchid\Screen\Actions\Button;
+use Illuminate\Support\Facades\Log;
 
 class NewCalendar extends Screen
 {
@@ -47,26 +50,26 @@ class NewCalendar extends Screen
      */
     public function commandBar(): array
     {
-         return [
+        return [
             Button::make('Create post')
-            ->icon('pencil')
-            ->method('createOrUpdate')
-            ->novalidate(),
+                ->icon('pencil')
+                ->method('createOrUpdate')
+                ->novalidate(),
 
             Button::make('Create OH post')
-            ->icon('pencil')
-            ->method('createOrUpdate_Oh')
-            ->novalidate(),
+                ->icon('pencil')
+                ->method('createOrUpdate_Oh')
+                ->novalidate(),
 
             Button::make('Create specification post')
-            ->icon('pencil')
-            ->method('createOrUpdate_specification')
-            ->novalidate(),
+                ->icon('pencil')
+                ->method('createOrUpdate_specification')
+                ->novalidate(),
 
             Button::make('Create gastrotable post')
-            ->icon('pencil')
-            ->method('createOrUpdate_gastrotable')
-            ->novalidate(),
+                ->icon('pencil')
+                ->method('createOrUpdate_gastrotable')
+                ->novalidate(),
         ];
     }
 
@@ -106,7 +109,23 @@ class NewCalendar extends Screen
 
     public function createOrUpdate_gastrotable(SpecificationGastrotable $gastrotable, Request $request)
     {
-        $gastrotable->fill($request->get('gastrotable'))->save();
-        Alert::info('You have successfully added some gastrotable_shizzly.');
+        $data = $request->get('gastrotable');
+        Log::info($data);
+        $calendar_id = $data["calendar_id"];
+
+        for ($i = 0; $i < (count($data) - 1); $i++) {
+            Log::info($data[$i]["Tischgrösse"]) . '<br>';
+            Log::info($data[$i]["Verfügbare Tische"]) . '<br>';
+            Log::info($data["calendar_id"]) . '<br>';
+            $size = $data[$i]["Tischgrösse"];
+            $count = $data[$i]["Verfügbare Tische"];
+            $calendar_id = $data["calendar_id"];
+            $gastrotable = new SpecificationGastrotable;
+            $gastrotable->calendar_id = $calendar_id;
+            $gastrotable->gastrotable = $size;
+            $gastrotable->gastrotable_number = $count;
+            $gastrotable->save();
+            Toast::info(__('Lizenz wurde gespeichert.'));
+        }
     }
 }
