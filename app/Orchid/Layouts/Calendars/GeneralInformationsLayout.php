@@ -59,9 +59,8 @@ class GeneralInformationsLayout extends Rows
                 ->placeholder('Musterhausen'),
 
             Input::make('calendar.status')
-                ->sendTrueOrFalse()
                 ->hidden()
-                ->value(true),
+                ->value(1),
 
             Quill::make('calendar.description')
                 ->title('Kalenderbeschreibung')

@@ -11,7 +11,7 @@ class CalendarServiceEmployees extends Model
     use AsSource;
     protected $fillable = [
         'calendar_id',
-        'name',
-        'function', 
+        'employee_name',
+        'employee_function', 
     ];
 }
