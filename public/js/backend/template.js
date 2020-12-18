@@ -101,7 +101,8 @@ var select_none = document.querySelector('[id^="select2-field-calendartemplat"][
 var select_gastronomy = document.querySelector('[id^="select2-field-calendartemplat"][id$="-gastronomy"]');
 var select_sports = document.querySelector('[id^="select2-field-calendartemplat"][id$="-sports"]');
 var select_room = document.querySelector('[id^="select2-field-calendartemplat"][id$="-room"]');
-var select_services = document.querySelector('[id^="select2-field-calendartemplat"][id$="-services"]'); //auszublendende und einzublendende Variablen
+var select_services = document.querySelector('[id^="select2-field-calendartemplat"][id$="-services"]');
+var gastro_table = document.querySelector('[for^="field-gastrotable-"]').parentElement; //auszublendende und einzublendende Variablen
 
 var res_objekt = document.querySelector('[id^="field-calendarunit-"]').parentElement.parentElement;
 var title_oh_days = document.querySelector('[for^="field-ohday-monday-"]'); //EventListener
@@ -111,8 +112,6 @@ window.addEventListener("load", reservation_template); //Funktion Hide Show je n
 
 function reservation_template() {
   var calendar_unit = document.querySelector('[id^="field-calendarunit-"]').parentElement.parentElement;
-  var tbl_gastro1 = document.querySelector('[id^="field-specificationtable-one-"]').parentElement.parentElement.parentElement.parentElement;
-  var tbl_gastro2 = document.querySelector('[id^="field-specificationtable-five-"]').parentElement.parentElement.parentElement.parentElement;
   var sport_unit = document.querySelector('[id^="field-specificationsportunit-"]').parentElement.parentElement;
   var sport_number = document.querySelector('[id^="field-specificationsportnumber-"]').parentElement.parentElement;
   var tbl_rooms = document.querySelector('[for^="field-specificationroom"]').parentElement;
@@ -148,12 +147,8 @@ function reservation_template() {
         tbl_employee.style.display = "none";
       }
 
-      if (tbl_gastro1.style.display = "flex") {
-        tbl_gastro1.style.display = "none";
-      }
-
-      if (tbl_gastro2.style.display = "flex") {
-        tbl_gastro2.style.display = "none";
+      if (gastro_table.style.display = "inline") {
+        gastro_table.style.display = "none";
       }
 
       break;
@@ -186,12 +181,8 @@ function reservation_template() {
         tbl_employee.style.display = "none";
       }
 
-      if (tbl_gastro1.style.display = "none") {
-        tbl_gastro1.style.display = "flex";
-      }
-
-      if (tbl_gastro2.style.display = "none") {
-        tbl_gastro2.style.display = "flex";
+      if (gastro_table.style.display = "none") {
+        gastro_table.style.display = "inline";
       }
 
       break;
@@ -224,12 +215,8 @@ function reservation_template() {
         tbl_employee.style.display = "none";
       }
 
-      if (tbl_gastro1.style.display = "flex") {
-        tbl_gastro1.style.display = "none";
-      }
-
-      if (tbl_gastro2.style.display = "flex") {
-        tbl_gastro2.style.display = "none";
+      if (gastro_table.style.display = "inline") {
+        gastro_table.style.display = "none";
       }
 
       break;
@@ -262,12 +249,8 @@ function reservation_template() {
         tbl_employee.style.display = "none";
       }
 
-      if (tbl_gastro1.style.display = "flex") {
-        tbl_gastro1.style.display = "none";
-      }
-
-      if (tbl_gastro2.style.display = "flex") {
-        tbl_gastro2.style.display = "none";
+      if (gastro_table.style.display = "inline") {
+        gastro_table.style.display = "none";
       }
 
       break;
@@ -300,12 +283,8 @@ function reservation_template() {
         tbl_employee.style.display = "inline";
       }
 
-      if (tbl_gastro1.style.display = "flex") {
-        tbl_gastro1.style.display = "none";
-      }
-
-      if (tbl_gastro2.style.display = "flex") {
-        tbl_gastro2.style.display = "none";
+      if (gastro_table.style.display = "inline") {
+        gastro_table.style.display = "none";
       }
 
       break;
@@ -321,7 +300,7 @@ function reservation_template() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Bärni\Documents\HTW Chur\Studium\HS20\Major_Media_Application\Semesterprojekt\master\booking-system\resources\assets\js\backend\template.js */"./resources/assets/js/backend/template.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\backend\template.js */"./resources/assets/js/backend/template.js");
 
 
 /***/ })

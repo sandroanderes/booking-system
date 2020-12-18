@@ -22,6 +22,8 @@ var select_services = document.querySelector(
     '[id^="select2-field-calendartemplat"][id$="-services"]'
 );
 
+var gastro_table = document.querySelector('[for^="field-gastrotable-"]').parentElement;
+
 //auszublendende und einzublendende Variablen
 var res_objekt = document.querySelector('[id^="field-calendarunit-"]')
     .parentElement.parentElement;
@@ -35,13 +37,6 @@ window.addEventListener("load", reservation_template);
 function reservation_template() {
     let calendar_unit = document.querySelector('[id^="field-calendarunit-"]')
         .parentElement.parentElement;
-    let tbl_gastro1 = document.querySelector(
-        '[id^="field-specificationtable-one-"]'
-    ).parentElement.parentElement.parentElement.parentElement;
-    let tbl_gastro2 = document.querySelector(
-        '[id^="field-specificationtable-five-"]'
-    ).parentElement.parentElement.parentElement.parentElement;
-
     let sport_unit = document.querySelector(
         '[id^="field-specificationsportunit-"]'
     ).parentElement.parentElement;
@@ -89,13 +84,8 @@ function reservation_template() {
             if ((tbl_employee.style.display = "inline")) {
                 tbl_employee.style.display = "none";
             }
-
-            if ((tbl_gastro1.style.display = "flex")) {
-                tbl_gastro1.style.display = "none";
-            }
-
-            if ((tbl_gastro2.style.display = "flex")) {
-                tbl_gastro2.style.display = "none";
+            if((gastro_table.style.display = "inline")) {
+                gastro_table.style.display = "none";
             }
 
             break;
@@ -128,13 +118,8 @@ function reservation_template() {
             if ((tbl_employee.style.display = "inline")) {
                 tbl_employee.style.display = "none";
             }
-
-            if ((tbl_gastro1.style.display = "none")) {
-                tbl_gastro1.style.display = "flex";
-            }
-
-            if ((tbl_gastro2.style.display = "none")) {
-                tbl_gastro2.style.display = "flex";
+            if((gastro_table.style.display = "none")) {
+                gastro_table.style.display = "inline";
             }
 
             break;
@@ -166,13 +151,8 @@ function reservation_template() {
             if ((tbl_employee.style.display = "inline")) {
                 tbl_employee.style.display = "none";
             }
-
-            if ((tbl_gastro1.style.display = "flex")) {
-                tbl_gastro1.style.display = "none";
-            }
-
-            if ((tbl_gastro2.style.display = "flex")) {
-                tbl_gastro2.style.display = "none";
+            if((gastro_table.style.display = "inline")) {
+                gastro_table.style.display = "none";
             }
 
             break;
@@ -205,13 +185,8 @@ function reservation_template() {
             if ((tbl_employee.style.display = "inline")) {
                 tbl_employee.style.display = "none";
             }
-
-            if ((tbl_gastro1.style.display = "flex")) {
-                tbl_gastro1.style.display = "none";
-            }
-
-            if ((tbl_gastro2.style.display = "flex")) {
-                tbl_gastro2.style.display = "none";
+            if((gastro_table.style.display = "inline")) {
+                gastro_table.style.display = "none";
             }
 
             break;
@@ -244,13 +219,8 @@ function reservation_template() {
             if ((tbl_employee.style.display = "none")) {
                 tbl_employee.style.display = "inline";
             }
-
-            if ((tbl_gastro1.style.display = "flex")) {
-                tbl_gastro1.style.display = "none";
-            }
-
-            if ((tbl_gastro2.style.display = "flex")) {
-                tbl_gastro2.style.display = "none";
+            if((gastro_table.style.display = "inline")) {
+                gastro_table.style.display = "none";
             }
 
             break;
