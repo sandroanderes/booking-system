@@ -1,11 +1,10 @@
-@@ -1,40 +0,0 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCalendarGastrotable extends Migration
+class CreateSports extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +13,11 @@ class CreateCalendarGastrotable extends Migration
      */
     public function up()
     {
-        Schema::create('gastrotable', function (Blueprint $table) {
+        Schema::create('sports', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('calendar_id');
-            $table->integer('gastrotable');
-            $table->integer('gastrotable_number'); 
+            $table->string('name');
+            $table->integer('number'); 
             $table->timestamps();         
             $table->foreign('calendar_id')
             ->references('id')
@@ -35,6 +34,6 @@ class CreateCalendarGastrotable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gastrotable');
+        Schema::dropIfExists('sports');
     }
 }

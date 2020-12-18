@@ -112,11 +112,11 @@ window.addEventListener("load", reservation_template); //Funktion Hide Show je n
 
 function reservation_template() {
   var calendar_unit = document.querySelector('[id^="field-calendarunit-"]').parentElement.parentElement;
-  var sport_unit = document.querySelector('[id^="field-specificationsportunit-"]').parentElement.parentElement;
-  var sport_number = document.querySelector('[id^="field-specificationsportnumber-"]').parentElement.parentElement;
-  var tbl_rooms = document.querySelector('[for^="field-specificationroom"]').parentElement;
+  var sport_unit = document.querySelector('[id^="field-sportsname-"]').parentElement.parentElement;
+  var sport_number = document.querySelector('[id^="field-sportsnumber-"]').parentElement.parentElement;
+  var tbl_rooms = document.querySelector('[for^="field-rooms-"]').parentElement;
   var fld_service = document.querySelector('[id^="field-specificationservice-"]').parentElement.parentElement;
-  var tbl_employee = document.querySelector('[for^="field-specificationemployee-"]').parentElement;
+  var tbl_employee = document.querySelector('[for^="field-service-employees-"]').parentElement;
   var calendar_unit_val = document.querySelector('[id^="field-calendarunit-"]');
 
   switch (select_template.value) {

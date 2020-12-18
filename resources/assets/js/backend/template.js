@@ -38,18 +38,18 @@ function reservation_template() {
     let calendar_unit = document.querySelector('[id^="field-calendarunit-"]')
         .parentElement.parentElement;
     let sport_unit = document.querySelector(
-        '[id^="field-specificationsportunit-"]'
+        '[id^="field-sportsname-"]'
     ).parentElement.parentElement;
     let sport_number = document.querySelector(
-        '[id^="field-specificationsportnumber-"]'
+        '[id^="field-sportsnumber-"]'
     ).parentElement.parentElement;
-    let tbl_rooms = document.querySelector('[for^="field-specificationroom"]')
+    let tbl_rooms = document.querySelector('[for^="field-rooms-"]')
         .parentElement;
     let fld_service = document.querySelector(
         '[id^="field-specificationservice-"]'
     ).parentElement.parentElement;
     let tbl_employee = document.querySelector(
-        '[for^="field-specificationemployee-"]'
+        '[for^="field-service-employees-"]'
     ).parentElement;
 
     let calendar_unit_val = document.querySelector(

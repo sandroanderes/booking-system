@@ -204,26 +204,26 @@ class SpecificationLayout extends Rows
                     'Verfügbare Tische' => Input::make('count')->type('number')->min(1),
             ]),
 
-            Input::make('specification.sportunit')
+            Input::make('sports.name')
                 ->type('text')
                 ->title('Was kann man bei deinem Sportverein reservieren')
                 ->placeholder('Bsp: Tennisplätze, Fussballplätze, Billardtische oder Bowlingbahnen')
                 ->help('Eingabe im Plural z.bsp. Dartscheiben'),
 
-            Input::make('specification.sportnumber')
+            Input::make('sports.number')
                 ->type('number')
                 ->min('0')
                 ->title('Anzahl')
                 ->placeholder('Gib die gewünschte Anzahl ein'),
 
-            Matrix::make('specification.room')
+            Matrix::make('rooms')
                 ->title('Räume')
                 ->value(1)
                 ->columns(['Raum-Name', 'Max. Personenanzahl', 'Ausstattung'])
                 ->fields([
-                    'Raum-Name'   => Input::make('specification.room_name')->type('text')->maxlength(50)->placeholder('Z.Bsp. Sitzungszimmer'),
-                    'Max. Personenanzahl' => Input::make('specification.room_capacity')->type('number')->min(1),
-                    'Ausstattung'   => Input::make('specification.room_assets')->type('text')->maxlength(100)->placeholder('z.Bsp. Beamer, Flipchart, TV'),
+                    'Raum-Name'   => Input::make('name')->type('text')->maxlength(50)->placeholder('Z.Bsp. Sitzungszimmer'),
+                    'Max. Personenanzahl' => Input::make('capacity')->type('number')->min(1),
+                    'Ausstattung'   => Input::make('assets')->type('text')->maxlength(100)->placeholder('z.Bsp. Beamer, Flipchart, TV'),
                 ])
 
                 ->help('Klick auf "+Hinzufügen" um weitere Räume einzutragen'),
@@ -234,13 +234,13 @@ class SpecificationLayout extends Rows
                 ->placeholder('Bsp: Friseurtermin, Massagetermin, Physio')
                 ->help('Was für Termine kann man bei dir reservieren?'),
 
-            Matrix::make('specification.employee')
+            Matrix::make('service_employees')
                 ->title('Mitarbeiter und Funktion')
                 ->columns(['Mitarbeiter/in', 'Funktion'])
                 ->value(1)
                 ->fields([
-                    'Mitarbeiter'   => Input::make('specification.employee_name')->type('text')->maxlength(50),
-                    'Funktion' => Input::make('specification.employee_function')->type('text'),
+                    'Mitarbeiter/in'   => Input::make('name')->type('text')->maxlength(50),
+                    'Funktion' => Input::make('function')->type('text'),
                 ])
                 ->help('Klick auf "+Hinzufügen" um weitere Mitarbeiter einzutragen'),
             Input::make('specification.calendar_id')
@@ -248,6 +248,15 @@ class SpecificationLayout extends Rows
                 ->hidden(),
 
             Input::make('gastrotable.calendar_id')
+                ->value(5)
+                ->hidden(),
+            Input::make('service_employees.calendar_id')
+                ->value(5)
+                ->hidden(),
+            Input::make('rooms.calendar_id')
+                ->value(5)
+                ->hidden(),
+            Input::make('sports.calendar_id')
                 ->value(5)
                 ->hidden(),
         ];
