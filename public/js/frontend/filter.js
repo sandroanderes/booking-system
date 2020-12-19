@@ -81,38 +81,67 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/assets/js/fixed-footer.js":
-/*!*********************************************!*\
-  !*** ./resources/assets/js/fixed-footer.js ***!
-  \*********************************************/
+/***/ "./resources/assets/js/frontend/filter.js":
+/*!************************************************!*\
+  !*** ./resources/assets/js/frontend/filter.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-document.addEventListener("DOMContentLoaded", function (event) {
-  var elem = document.querySelector('.accordion');
-  var bounding = elem.getBoundingClientRect();
-  console.log(bounding);
+document.getElementById("CalendarFilter").onkeyup = function () {
+  TitelFunction();
+};
+/* document.getElementById("CityFilter").onkeyup = function () { CityFunction() }; */
 
-  if (bounding.bottom < (window.innerHeight || document.documentElement.clientHeight)) {
-    document.getElementsByTagName("footer")[0].classList.add("fixed-bottom");
+
+function TitelFunction() {
+  var input, filter, cards, cardContainer, h5, title, i;
+  input = document.getElementById("CalendarFilter");
+  filter = input.value.toUpperCase();
+  cardContainer = document.getElementById("CalendarItems");
+  cards = cardContainer.getElementsByClassName("card");
+
+  for (i = 0; i < cards.length; i++) {
+    title = cards[i].querySelector(".card-body h5.card-title");
+
+    if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+      cards[i].parentElement.parentElement.style.display = "";
+    } else {
+      cards[i].parentElement.parentElement.style.display = "none";
+    }
   }
-});
+}
+/* function CityFunction() {
+    var input, filter, cards, cardContainer, p, title, i;
+    input = document.getElementById("CityFilter");
+    filter = input.value.toUpperCase();
+    cardContainer = document.getElementById("CalendarItems");
+    cards = cardContainer.getElementsByClassName("card");
+    for (i = 0; i < cards.length; i++) {
+        title = cards[i].querySelector(".card-body h6.card-text");
+        if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+            cards[i].parentElement.parentElement.style.display = "";
+        } else {
+            cards[i].parentElement.parentElement.style.display = "none";
+        }
+    }
+} */
 
 /***/ }),
 
-/***/ 7:
-/*!***************************************************!*\
-  !*** multi ./resources/assets/js/fixed-footer.js ***!
-  \***************************************************/
+/***/ 2:
+/*!******************************************************!*\
+  !*** multi ./resources/assets/js/frontend/filter.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\fixed-footer.js */"./resources/assets/js/fixed-footer.js");
+module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/booking-system/resources/assets/js/frontend/filter.js */"./resources/assets/js/frontend/filter.js");
 
 
 /***/ })

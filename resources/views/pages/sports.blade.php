@@ -172,5 +172,5 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js'></script><script  src="./script.js"></script>
-<script type="text/javascript" src="{{ asset('js/frontend-calendar.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/frontend/frontend-calendar.js') }}"></script>
 @stop

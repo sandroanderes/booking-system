@@ -151,6 +151,6 @@
     </div>
 </section>
 <script src="https://cdn.jsdelivr.net/gh/bigdatacloudapi/js-reverse-geocode-client@latest/bigdatacloud_reverse_geocode.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="{{ asset('js/filter.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/location.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/frontend/filter.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/frontend/location.js') }}"></script>
 @stop

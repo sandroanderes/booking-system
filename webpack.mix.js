@@ -14,16 +14,16 @@ const mix = require('laravel-mix');
 mix
     .js('resources/js/app.js', 'public/js')
     .sass('resources/assets/scss/main.scss', 'public/css')
-    .js('resources/assets/js/navigation.js', 'public/js')
-    .js('resources/assets/js/filter.js', 'public/js')
-    .js('resources/assets/js/location.js', 'public/js')
+    .js('resources/assets/js/frontend/navigation.js', 'public/js/frontend')
+    .js('resources/assets/js/frontend/filter.js', 'public/js/frontend')
+    .js('resources/assets/js/frontend/location.js', 'public/js/frontend')
     .js('resources/assets/js/backend/privateLink.js', 'public/js/backend')
-    .js('resources/assets/js/functions.js', 'public/js')
+    .js('resources/assets/js/frontend/functions.js', 'public/js/frontend')
     .js('resources/assets/js/backend/openinghours.js', 'public/js/backend')
-    .js('resources/assets/js/fixed-footer.js', 'public/js')
+    .js('resources/assets/js/frontend/fixed-footer.js', 'public/js/frontend')
     .js('resources/assets/js/backend/specifications.js', 'public/js/backend')
     .js('resources/assets/js/backend/template.js', 'public/js/backend')
-    .js('resources/assets/js/frontend-calendar.js', 'public/js');  
+    .js('resources/assets/js/frontend/frontend-calendar.js', 'public/js/frontend');  
 
 if (mix.inProduction()) {
     mix.version();

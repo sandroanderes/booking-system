@@ -86,10 +86,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/assets/js/frontend-calendar.js":
-/*!**************************************************!*\
-  !*** ./resources/assets/js/frontend-calendar.js ***!
-  \**************************************************/
+/***/ "./resources/assets/js/frontend/frontend-calendar.js":
+/*!***********************************************************!*\
+  !*** ./resources/assets/js/frontend/frontend-calendar.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -593,13 +593,13 @@ function sort_database(data) {
 /***/ }),
 
 /***/ 10:
-/*!********************************************************!*\
-  !*** multi ./resources/assets/js/frontend-calendar.js ***!
-  \********************************************************/
+/*!*****************************************************************!*\
+  !*** multi ./resources/assets/js/frontend/frontend-calendar.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\frontend-calendar.js */"./resources/assets/js/frontend-calendar.js");
+module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/booking-system/resources/assets/js/frontend/frontend-calendar.js */"./resources/assets/js/frontend/frontend-calendar.js");
 
 
 /***/ })

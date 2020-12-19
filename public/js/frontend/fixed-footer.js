@@ -81,39 +81,38 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/assets/js/functions.js":
-/*!******************************************!*\
-  !*** ./resources/assets/js/functions.js ***!
-  \******************************************/
+/***/ "./resources/assets/js/frontend/fixed-footer.js":
+/*!******************************************************!*\
+  !*** ./resources/assets/js/frontend/fixed-footer.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var cards = document.getElementsByClassName("card");
+document.addEventListener("DOMContentLoaded", function (event) {
+  var elem = document.querySelector('.accordion');
+  var bounding = elem.getBoundingClientRect();
+  console.log(bounding);
 
-for (var i = 0; i < cards.length; i += 1) {
-  cards[i].style.borderBottomColor = generateRandomColor();
-}
-
-function generateRandomColor() {
-  var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
-  return randomColor;
-}
+  if (bounding.bottom < (window.innerHeight || document.documentElement.clientHeight)) {
+    document.getElementsByTagName("footer")[0].classList.add("fixed-bottom");
+  }
+});
 
 /***/ }),
 
-/***/ 5:
-/*!************************************************!*\
-  !*** multi ./resources/assets/js/functions.js ***!
-  \************************************************/
+/***/ 7:
+/*!************************************************************!*\
+  !*** multi ./resources/assets/js/frontend/fixed-footer.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\functions.js */"./resources/assets/js/functions.js");
+module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/booking-system/resources/assets/js/frontend/fixed-footer.js */"./resources/assets/js/frontend/fixed-footer.js");
 
 
 /***/ })

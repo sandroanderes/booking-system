@@ -75,5 +75,5 @@
     </div>
   </div>
 </section>
-<script type="text/javascript" src="{{ asset('js/fixed-footer.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/frontend/fixed-footer.js') }}"></script>
 @stop

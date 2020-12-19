@@ -94,5 +94,5 @@
         </div>
     </div>
 </section>
-<script type="text/javascript" src="{{ asset('js/functions.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/frontend/functions.js') }}"></script>
 @stop
