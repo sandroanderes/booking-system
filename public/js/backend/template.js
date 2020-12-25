@@ -117,7 +117,7 @@ function reservation_template() {
   var sport_unit = document.querySelector('[id^="field-sportsname-"]').parentElement.parentElement;
   var sport_number = document.querySelector('[id^="field-sportsnumber-"]').parentElement.parentElement;
   var tbl_rooms = document.querySelector('[for^="field-rooms-"]').parentElement;
-  var fld_service = document.querySelector('[id^="field-specificationservice-"]').parentElement.parentElement;
+  var fld_service = document.querySelector('[id^="field-service-employeesservice-name-"]').parentElement.parentElement;
   var tbl_employee = document.querySelector('[for^="field-service-employees-"]').parentElement;
   var calendar_unit_val = document.querySelector('[id^="field-calendarunit-"]');
 

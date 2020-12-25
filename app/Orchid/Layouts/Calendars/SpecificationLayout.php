@@ -229,21 +229,23 @@ class SpecificationLayout extends Rows
 
                 ->help('Klick auf "+Hinzufügen" um weitere Räume einzutragen'),
 
-            Input::make('specification.service')
+            Input::make('service_employees.service_name')
                 ->type('text')
                 ->title('Name der Dienstleistung')
                 ->placeholder('Bsp: Friseurtermin, Massagetermin, Physio')
                 ->help('Was für Termine kann man bei dir reservieren?'),
-
+                
             Matrix::make('service_employees')
                 ->title('Mitarbeiter und Funktion')
-                ->columns(['Mitarbeiter/in', 'Funktion'])
                 ->value(1)
+                ->columns(['Name', 'Funktion'])
                 ->fields([
-                    'Mitarbeiter/in'   => Input::make('name')->type('text')->maxlength(50),
-                    'Funktion' => Input::make('function')->type('text'),
+                    'Name'   => Input::make('employee')->type('text')->maxlength(50),
+                    'Funktion'   => Input::make('employee_function')->type('text'),
                 ])
+
                 ->help('Klick auf "+Hinzufügen" um weitere Mitarbeiter einzutragen'),
+
             Input::make('specification.calendar_id')
                 ->value(5)
                 ->hidden(),
@@ -260,16 +262,10 @@ class SpecificationLayout extends Rows
             Input::make('sports.calendar_id')
                 ->value(5)
                 ->hidden(),
-            Group::make([
-                Button::make('Eingaben überprüfen')
-                    ->icon('check')
-                    ->method('validate_all')
-                    ->novalidate()
-                    ->right(),
-                    
+            Group::make([                   
                 Button::make('Kalender Speichern')
                     ->icon('database')
-                    ->method('createOrUpdate')
+                    ->method('db_upload')
                     ->novalidate()
                     ->block(),
 

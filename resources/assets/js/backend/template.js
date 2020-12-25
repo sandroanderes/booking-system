@@ -48,7 +48,7 @@ function reservation_template() {
     let tbl_rooms = document.querySelector('[for^="field-rooms-"]')
         .parentElement;
     let fld_service = document.querySelector(
-        '[id^="field-specificationservice-"]'
+        '[id^="field-service-employeesservice-name-"]'
     ).parentElement.parentElement;
     let tbl_employee = document.querySelector(
         '[for^="field-service-employees-"]'
