@@ -52,38 +52,6 @@ class NewCalendar extends Screen
     public function commandBar(): array
     {
         return [
-            Button::make('Create post')
-                ->icon('pencil')
-                ->method('createOrUpdate')
-                ->novalidate(),
-
-            Button::make('Create OH post')
-                ->icon('pencil')
-                ->method('createOrUpdate_Oh')
-                ->novalidate(),
-
-            Button::make('Create specification post')
-                ->icon('pencil')
-                ->method('createOrUpdate_specification')
-                ->novalidate(),
-
-            Button::make('Create gastrotable post')
-                ->icon('pencil')
-                ->method('createOrUpdate_gastrotable')
-                ->novalidate(),
-
-            Button::make('Create serviceemployees')
-                ->icon('heart')
-                ->method('createOrUpdate_service_employees')
-                ->novalidate(),
-            Button::make('Create Rooms')
-                ->icon('heart')
-                ->method('createOrUpdate_rooms')
-                ->novalidate(),
-            Button::make('Create Sports')
-                ->icon('heart')
-                ->method('createOrUpdate_sports')
-                ->novalidate(),
         ];
     }
 
@@ -348,8 +316,6 @@ class NewCalendar extends Screen
             Alert::error($msg);
         } else {
             if ($data_general["template"] == "none"){
-                $calendar = "";
-                $this->createOrUpdate();
             }
             if ($data_general["template"] == "gastronomy") {
             }
