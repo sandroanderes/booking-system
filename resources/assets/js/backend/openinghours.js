@@ -254,7 +254,8 @@ window.addEventListener("load", openinghours_repeat);
 // EventListener Buttons of Weekdays
 general_open_allday.addEventListener("click", openinghours_halfday);
 general_open_halfday.addEventListener("click", openinghours_halfday);
-general_lunch_closed.addEventListener("click", openinghours_halfday, openinghours_repeat);general_lunch_notclosed.addEventListener("click", openinghours_halfday);
+general_lunch_closed.addEventListener("click", openinghours_halfday, openinghours_repeat);
+general_lunch_notclosed.addEventListener("click", openinghours_halfday);
 monday_open_allday.addEventListener("click", openinghours_halfday);
 monday_open_halfday.addEventListener("click", openinghours_halfday);
 monday_lunch_closed.addEventListener("click", openinghours_halfday);
@@ -355,6 +356,51 @@ function openinghours_repeat() {
         oh_lunchtime_start_val.value = "";
         oh_lunchtime_end_val.value = "";
     }
+
+    if (
+        checked_monday.checked === false && 
+        checked_tuesday.checked === false &&
+        checked_wednesday.checked === false &&
+        checked_thursday.checked === false &&
+        checked_friday.checked === false &&
+        checked_saturday.checked === false &&
+        checked_sunday.checked === false &&
+        oh_repeat.checked === true
+        )
+        {
+            oh_halfday_lunch.style.display = "none";
+            oh_general.style.display = "none";
+            oh_lunchtime.style.display = "none";
+    
+            oh_halfday_lunch_monday.style.display = "none";
+            oh_monday.style.display = "none";
+            oh_lunchtime_monday.style.display = "none";
+    
+            oh_halfday_lunch_tuesday.style.display = "none";
+            oh_tuesday.style.display = "none";
+            oh_lunchtime_tuesday.style.display = "none";
+    
+            oh_halfday_lunch_wednesday.style.display = "none";
+            oh_wednesday.style.display = "none";
+            oh_lunchtime_wednesday.style.display = "none";
+    
+            oh_halfday_lunch_thursday.style.display = "none";
+            oh_thursday.style.display = "none";
+            oh_lunchtime_thursday.style.display = "none";
+    
+            oh_halfday_lunch_friday.style.display = "none";
+            oh_friday.style.display = "none";
+            oh_lunchtime_friday.style.display = "none";
+    
+            oh_halfday_lunch_saturday.style.display = "none";
+            oh_saturday.style.display = "none";
+            oh_lunchtime_saturday.style.display = "none";
+    
+            oh_halfday_lunch_sunday.style.display = "none";
+            oh_sunday.style.display = "none";
+            oh_lunchtime_sunday.style.display = "none";
+
+        }
 
 
     if (checked_monday.checked == true && oh_repeat.checked === false) {

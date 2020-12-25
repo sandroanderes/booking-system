@@ -9,6 +9,7 @@ use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\RadioButtons;
 use Orchid\Screen\Fields\Switcher;
 use Orchid\Screen\Fields\Matrix;
+use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Fields\Group;
 
 
@@ -259,6 +260,25 @@ class SpecificationLayout extends Rows
             Input::make('sports.calendar_id')
                 ->value(5)
                 ->hidden(),
+            Group::make([
+                Button::make('Eingaben überprüfen')
+                    ->icon('check')
+                    ->method('validate_all')
+                    ->novalidate()
+                    ->right(),
+                    
+                Button::make('Kalender Speichern')
+                    ->icon('database')
+                    ->method('createOrUpdate')
+                    ->novalidate()
+                    ->block(),
+
+                Button::make('Abbrechen')
+                    ->icon('close')
+                    ->method('close')
+                    ->novalidate()
+                    ->left(),
+            ])
         ];
     }
 }

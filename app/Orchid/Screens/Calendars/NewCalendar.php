@@ -18,9 +18,6 @@ use Illuminate\Http\Request;
 use Orchid\Support\Facades\Alert;
 use Orchid\Support\Facades\Toast;
 use Orchid\Screen\Actions\Button;
-use Illuminate\Support\Facades\Log;
-
-use function PHPUnit\Framework\isEmpty;
 
 class NewCalendar extends Screen
 {
@@ -110,37 +107,220 @@ class NewCalendar extends Screen
         ];
     }
 
+    
+    /* Validation All */
+    public function validate_all(Request $request)
+    {
+        $data_general = $request->get('calendar');
+        if ($data_general["template"] == "none"){
+            // General
+            $this->validate_general($request);
+
+
+
+           
+        }
+
+        if ($data_general["template"] == "gastronomy"){
+
+        }
+
+        if ($data_general["template"] == "sports"){
+
+        }
+
+        if ($data_general["template"] == "room"){
+
+        }
+
+        if ($data_general["template"] == "services"){
+
+        }
+
+
+        // Calendar General Eingaben
+        
+
+        // Calendar Openinghours Eingaben
+        function validate_opening_hours(Request $request)
+        {
+            $data_oh = $request->get('oh');
+            $msg_oh = "Fehlende Angaben: ";
+            $error_oh = false;
+
+            if (!empty($data_oh["repeat"]) && empty($data_oh["start_general"])) {
+                $error_oh = true;
+                $msg_oh .= "Generell geöffnet ab? ";
+                Toast::error(__($msg_oh));
+            }
+            if (!empty($data_oh["repeat"]) && empty($data_oh["end_general"])) {
+                $error_oh = true;
+                $msg_oh .= "Generell geschlossen ab? ";
+                Toast::error(__($msg_oh));
+            }
+            if (empty($data_oh["repeat"]) && !empty($data_oh["day_monday"]) && empty($data_oh["start_monday"])) {
+                $error_oh = true;
+                $msg_oh .= "Öffnungszeiten Montag?";
+                Toast::error(__($msg_oh));
+            } elseif (empty($data_oh["repeat"]) && !empty($data_oh["day_monday"]) && empty($data_oh["end_monday"])) {
+                $error_oh = true;
+                $msg_oh .= "Öffnungszeiten Montag? ";
+                Toast::error(__($msg_oh));
+            }
+            if (empty($data_oh["repeat"]) && !empty($data_oh["day_tuesday"]) && empty($data_oh["start_tuesday"])) {
+                $error_oh = true;
+                $msg_oh .= "Öffnungszeiten Dienstag? ";
+                Toast::error(__($msg_oh));
+            } elseif (empty($data_oh["repeat"]) && !empty($data_oh["day_tuesday"]) && empty($data_oh["end_tuesday"])) {
+                $error_oh = true;
+                $msg_oh .= "Öffnungszeiten Dienstag? ";
+                Toast::error(__($msg_oh));
+            }
+            if (empty($data_oh["repeat"]) && !empty($data_oh["day_wednesday"]) && empty($data_oh["start_wednesday"])) {
+                $error_oh = true;
+                $msg_oh .= "Öffnungszeiten Mittwoch? ";
+                Toast::error(__($msg_oh));
+            } elseif (empty($data_oh["repeat"]) && !empty($data_oh["day_wednesday"]) && empty($data_oh["end_wednesday"])) {
+                $error_oh = true;
+                $msg_oh .= "Öffnungszeiten Mittwoch? ";
+                Toast::error(__($msg_oh));
+            }
+            if (empty($data_oh["repeat"]) && !empty($data_oh["day_thursday"]) && empty($data_oh["start_thursday"])) {
+                $error_oh = true;
+                $msg_oh .= "Öffnungszeiten Donnerstag? ";
+                Toast::error(__($msg_oh));
+            } elseif (empty($data_oh["repeat"]) && !empty($data_oh["day_thursday"]) && empty($data_oh["end_thursday"])) {
+                $msg_oh .= "Öffnungszeiten Donnerstag? ";
+                Toast::error(__($msg_oh));
+            }
+            if (empty($data_oh["repeat"]) && !empty($data_oh["day_friday"]) && empty($data_oh["start_friday"])) {
+                $error_oh = true;
+                $msg_oh .= "Öffnungszeiten Freitag? ";
+                Toast::error(__($msg_oh));
+            } elseif (empty($data_oh["repeat"]) && !empty($data_oh["day_friday"]) && empty($data_oh["end_friday"])) {
+                $error_oh = true;
+                $msg_oh .= "Öffnungszeiten Freitag? ";
+                Toast::error(__($msg_oh));
+            }
+            if (empty($data_oh["repeat"]) && !empty($data_oh["day_saturday"]) && empty($data_oh["start_saturday"])) {
+                $error_oh = true;
+                $msg_oh .= "Öffnungszeiten Samstag? ";
+                Toast::error(__($msg_oh));
+            } elseif (empty($data_oh["repeat"]) && !empty($data_oh["day_saturday"]) && empty($data_oh["end_saturday"])) {
+                $error_oh = true;
+                $msg_oh .= "Öffnungszeiten Samstag? ";
+                Toast::error(__($msg_oh));
+            }
+            if (empty($data_oh["repeat"]) && !empty($data_oh["day_sunday"]) && empty($data_oh["start_sunday"])) {
+                $error_oh = true;
+                $msg_oh .= "Öffnungszeiten Sonntag? ";
+                Toast::error(__($msg_oh));
+            } elseif (empty($data_oh["repeat"]) && !empty($data_oh["day_sunday"]) && empty($data_oh["end_sunday"])) {
+                $error_oh = true;
+                $msg_oh .= "Öffnungszeiten Sonntag? ";
+                Toast::error(__($msg_oh));
+            }
+        }
+
+        // Calendar Specifications Eingabe
+        function validate_gastrotable(Request $request)
+        {
+            $data_gastrotable = $request->get('gastrotable');
+            $msg_gastrotable = "Fehlerhafte Eingabe: ";
+            $error_spec = false;
+
+            for ($i = 0; $i < (count($data_gastrotable) - 1); $i++) {
+                if (!is_numeric($count = $data_gastrotable[$i]["Verfügbare Tische"])) {
+                    $msg_gastrotable = "Verfügbare Tische";
+                    $error_spec = true;
+                    Toast::error(__($msg_gastrotable));
+                    break;
+                }
+            }
+        }
+
+        function validate_rooms(Request $request)
+        {
+            $data_rooms = $request->get('rooms');
+            $msg_rooms = "Fehlerhafte Eingabe: ";
+            $error_spec = false;
+
+            for ($i = 0; $i < (count($data_rooms) - 1); $i++) {
+                if (!is_numeric($data_rooms[$i]["Max. Personenanzahl"])) {
+                    $msg_rooms .= "Verfügbare Tische";
+                    $error_spec = true;
+                    Toast::error(__($msg_rooms));
+                    break;
+                }
+            }
+        }
+
+        function validate_sports(Request $request){
+            $data_sports = $request->get('sports');
+            $msg_sports = "Fehlerhafte Eingabe";
+            $error_spec = false;
+
+            if (!is_numeric($data_sports["number"])) {
+                $msg_sports .= "Anzahl Sport geben Sie eine Zahl ein";
+                $error_spec = true;
+            } elseif (empty($data_sports["name"])) {
+                $msg_sports .= "Tragen Sie einen Namen für Ihre Sportaktivitätein";
+                $error_spec = true;
+            }
+        }
+    }
+
+    public function validate_general($request)
+        {
+            $data_general = $request->get('calendar');
+            $msg_general = "";
+            $error_general = false;
+
+            if (empty($data_general["name"])) {
+                $msg_general .= "Kalendername? ";
+                Toast::error(__($msg_general));
+                $error_general = true;
+            }
+            if (empty($data_general["street"])) {
+                $msg_general .= "Strasse? ";
+                Toast::error(__($msg_general));
+                $error_general = true;
+            }
+            if (empty($data_general["location"])) {
+                $msg_general .= "Ort? ";
+                Toast::error(__($msg_general));
+                $error_general = true;
+            }
+            if (empty($data_general["description"])) {
+                $msg_general .= "Beschreibung? ";
+                Toast::error(__($msg_general));
+                $error_general = true;
+            }
+            if ($data_general["template"] == "none" && empty($data_general["unit"])) {
+                $msg_general .= "Reservationsobjekt?";
+                Toast::error(__($msg_general));
+                $error_general = true;
+            }
+            return $error_general;
+        }
     /* DB Uploads */
     public function createOrUpdate(CalendarGeneral $calendar, Request $request)
     {
         $data = $request->get('calendar');
-
-        if (empty($data["name"])) {
-            Toast::error(__('Gib deinem Kalender einen Namen'));
-        } elseif (empty($data["street"])) {
-            Toast::error(__('Gib ein Land an'));
-        } elseif (empty($data["location"])) {
-            Toast::error(__('Gib einen Ort an'));
-        } elseif (empty($data["description"])) {
-            Toast::error(__('Beschreibe, was man in deinem Kalender buchen kann'));
-        } elseif ($data["template"] == "none" && empty($data["unit"])) {
-            Toast::error(__('Gib ein Reservationsobjekt an'));
-        } else {
-            $calendar->user_id = $data["user_id"];
-            $calendar->name = $data["name"];
-            $calendar->country = $data["country"];
-            $calendar->street = $data["street"];
-            $calendar->location = $data["location"];
-            $calendar->status = $data["status"];
-            $calendar->description = $data["description"];
-            $calendar->public = $data["public"];
-            $calendar->privateLink = $data["privateLink"];
-            $calendar->template = $data["template"];
-            $calendar->unit = $data["unit"];
-            $calendar->image = $data["image"];
-            $calendar->save();
-            Toast::info(__('Allgemeine Einstellungen wurden in die DB geschrieben'));
-        }
+        $calendar->user_id = $data["user_id"];
+        $calendar->name = $data["name"];
+        $calendar->country = $data["country"];
+        $calendar->street = $data["street"];
+        $calendar->location = $data["location"];
+        $calendar->status = $data["status"];
+        $calendar->description = $data["description"];
+        $calendar->public = $data["public"];
+        $calendar->privateLink = $data["privateLink"];
+        $calendar->template = $data["template"];
+        $calendar->unit = $data["unit"];
+        $calendar->image = $data["image"];
+        $calendar->save();
+        Toast::info(__('Allgemeine Einstellungen wurden in die DB geschrieben'));
     }
 
     public function createOrUpdate_Oh(CalendarOpeninghours $oh, Request $request)
@@ -204,19 +384,14 @@ class NewCalendar extends Screen
     public function createOrUpdate_specification(CalendarSpecification $specification, Request $request)
     {
         $specification->fill($request->get('specification'))->save();
-        Alert::info('You have successfully added some specifications.');
     }
 
     public function createOrUpdate_gastrotable(CalendarGastrotable $gastrotable, Request $request)
     {
         $data = $request->get('gastrotable');
-        Log::info($data);
         $calendar_id = $data["calendar_id"];
 
         for ($i = 0; $i < (count($data) - 1); $i++) {
-            Log::info($data[$i]["Tischgrösse"]) . '<br>';
-            Log::info($data[$i]["Verfügbare Tische"]) . '<br>';
-            Log::info($data["calendar_id"]) . '<br>';
             $size = $data[$i]["Tischgrösse"];
             $count = $data[$i]["Verfügbare Tische"];
             $calendar_id = $data["calendar_id"];
@@ -225,7 +400,7 @@ class NewCalendar extends Screen
             $gastrotable->gastrotable = $size;
             $gastrotable->gastrotable_number = $count;
             $gastrotable->save();
-            Toast::info(__('Lizenz wurde gespeichert.'));
+            Toast::info(__('Tische wurden gespeichert'));
         }
     }
     public function createOrUpdate_service_employees(CalendarServiceEmployees $service_employees, Request $request)
@@ -255,18 +430,18 @@ class NewCalendar extends Screen
             $capacity = $data[$i]["Max. Personenanzahl"];
             $assets = $data[$i]["Ausstattung"];
             $calendar_id = $data["calendar_id"];
-            $service_employees = new CalendarRooms;
-            $service_employees->calendar_id = $calendar_id;
-            $service_employees->name = $name;
-            $service_employees->capacity = $capacity;
-            $service_employees->assets = $assets;
-            $service_employees->save();
+            $rooms = new CalendarRooms;
+            $rooms->calendar_id = $calendar_id;
+            $rooms->name = $name;
+            $rooms->capacity = $capacity;
+            $rooms->assets = $assets;
+            $rooms->save();
             Toast::info(__('Räume wurden gespeichert.'));
         }
     }
     public function createOrUpdate_sports(CalendarSports $sports, Request $request)
     {
         $sports->fill($request->get('sports'))->save();
-        Alert::info('Sportplatz wurde hinzugefügt.');
+        Toast::info('Sportplatz wurde hinzugefügt.');
     }
 }

@@ -81,77 +81,30 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/assets/js/backend/privateLink.js":
-/*!****************************************************!*\
-  !*** ./resources/assets/js/backend/privateLink.js ***!
-  \****************************************************/
+/***/ "./resources/assets/js/backend/validation.js":
+/*!***************************************************!*\
+  !*** ./resources/assets/js/backend/validation.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-/* =========== Calendar Private Link =========== */
-// Private Link Field
-var calendarPublicSwitch = document.querySelector('[id^="field-calendarpublic-"]');
-var calendarPublicLink = document.querySelector('[id^="field-calendarprivatelink-"]');
-calendarPublicLink.value = ""; // Get Calendar Name
-
-var calendarName = document.querySelector('[id^="field-calendarname-"]').value;
-var calendarNameField = document.querySelector('[id^="field-calendarname-"]'); // Get Random Value
-
-var randomValue = randomString(16, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
-calendarPublicLink.parentElement.parentElement.style.display = "inline"; // EventListener onClick => Switch
-
-calendarPublicSwitch.addEventListener("click", privateLink); // Function KeyDown Calendar Name
-
-calendarNameField.addEventListener("keyup", function (event) {
-  calendarPublicLink.value = window.location.hostname + "/" + document.querySelector('[id^="field-calendarname-"]').value + "-" + randomValue;
-}); // Function PrivateLink
-
-function privateLink() {
-  var publicCalendar = calendarPublicSwitch.checked;
-
-  if (publicCalendar === true) {
-    calendarPublicLink.parentElement.parentElement.style.display = "none";
-  } else {
-    calendarPublicLink.parentElement.parentElement.style.display = "inline";
-  }
-} // Function Calendar copy
-
-
-calendarPublicLink.addEventListener("click", function (event) {
-  event.preventDefault();
-  calendarPublicLink.select();
-  document.execCommand("copy");
-  alert("Link wurde in die Zwischenablage kopiert");
-}); // Function Random URL
-
-function randomString(length, chars) {
-  var result = '';
-
-  for (var i = length; i > 0; --i) {
-    result += chars[Math.floor(Math.random() * chars.length)];
-  }
-
-  return result;
-}
-
-;
-/* =========== Usage of an Template =========== */
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'C:\\xampp\\htdocs\\Github\\booking-system\\resources\\assets\\js\\backend\\validation.js'");
 
 /***/ }),
 
-/***/ 4:
-/*!**********************************************************!*\
-  !*** multi ./resources/assets/js/backend/privateLink.js ***!
-  \**********************************************************/
+/***/ 10:
+/*!*********************************************************!*\
+  !*** multi ./resources/assets/js/backend/validation.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\backend\privateLink.js */"./resources/assets/js/backend/privateLink.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\backend\validation.js */"./resources/assets/js/backend/validation.js");
 
 
 /***/ })

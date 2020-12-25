@@ -8,9 +8,10 @@ use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Switcher;
 use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\Cropper;
-use Orchid\Screen\Fields\Upload;
 use Orchid\Screen\Fields\Quill;
 use Illuminate\Support\Facades\Auth;
+use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Fields\Group;
 
 class GeneralInformationsLayout extends Rows
 {
