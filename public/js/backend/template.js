@@ -96,6 +96,7 @@
 /* =========== Calendar KalenderTemplate Auswahl =========== */
 //Auslesen des Template-Selectors
 var select_template = document.querySelector('[id^="field-calendartemplate-"]');
+var accordion_3 = document.querySelector("#heading-schritt-3-reservations-spezifikationen");
 var selected_template = document.querySelector('[id^="field-calendartemplate-"]').value;
 var select_none = document.querySelector('[id^="select2-field-calendartemplat"][id$="-none"]');
 var select_gastronomy = document.querySelector('[id^="select2-field-calendartemplat"][id$="-gastronomy"]');
@@ -108,6 +109,7 @@ var res_objekt = document.querySelector('[id^="field-calendarunit-"]').parentEle
 var title_oh_days = document.querySelector('[for^="field-ohday-monday-"]'); //EventListener
 
 select_template.addEventListener("change", reservation_template);
+accordion_3.addEventListener("click", reservation_template);
 window.addEventListener("load", reservation_template); //Funktion Hide Show je nach Template
 
 function reservation_template() {
@@ -115,7 +117,7 @@ function reservation_template() {
   var sport_unit = document.querySelector('[id^="field-sportsname-"]').parentElement.parentElement;
   var sport_number = document.querySelector('[id^="field-sportsnumber-"]').parentElement.parentElement;
   var tbl_rooms = document.querySelector('[for^="field-rooms-"]').parentElement;
-  var fld_service = document.querySelector('[id^="field-specificationservice-"]').parentElement.parentElement;
+  var fld_service = document.querySelector('[id^="field-service-employeesservice-name-"]').parentElement.parentElement;
   var tbl_employee = document.querySelector('[for^="field-service-employees-"]').parentElement;
   var calendar_unit_val = document.querySelector('[id^="field-calendarunit-"]');
 
@@ -300,7 +302,7 @@ function reservation_template() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/booking-system/resources/assets/js/backend/template.js */"./resources/assets/js/backend/template.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\backend\template.js */"./resources/assets/js/backend/template.js");
 
 
 /***/ })

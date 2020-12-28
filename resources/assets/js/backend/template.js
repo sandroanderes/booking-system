@@ -2,6 +2,7 @@
 
 //Auslesen des Template-Selectors
 var select_template = document.querySelector('[id^="field-calendartemplate-"]');
+var accordion_3 = document.querySelector("#heading-schritt-3-reservations-spezifikationen");
 var selected_template = document.querySelector(
     '[id^="field-calendartemplate-"]'
 ).value;
@@ -31,6 +32,7 @@ var title_oh_days = document.querySelector('[for^="field-ohday-monday-"]');
 
 //EventListener
 select_template.addEventListener("change", reservation_template);
+accordion_3.addEventListener("click", reservation_template);
 window.addEventListener("load", reservation_template);
 
 //Funktion Hide Show je nach Template
@@ -46,7 +48,7 @@ function reservation_template() {
     let tbl_rooms = document.querySelector('[for^="field-rooms-"]')
         .parentElement;
     let fld_service = document.querySelector(
-        '[id^="field-specificationservice-"]'
+        '[id^="field-service-employeesservice-name-"]'
     ).parentElement.parentElement;
     let tbl_employee = document.querySelector(
         '[for^="field-service-employees-"]'

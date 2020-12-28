@@ -151,7 +151,7 @@ function randomString(length, chars) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/booking-system/resources/assets/js/backend/privateLink.js */"./resources/assets/js/backend/privateLink.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\backend\privateLink.js */"./resources/assets/js/backend/privateLink.js");
 
 
 /***/ })

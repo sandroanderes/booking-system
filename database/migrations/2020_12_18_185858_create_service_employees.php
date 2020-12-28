@@ -16,6 +16,7 @@ class CreateServiceEmployees extends Migration
         Schema::create('service_employees', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('calendar_id');
+            $table->string('service_name');
             $table->string('employee_name');
             $table->string('employee_function'); 
             $table->timestamps();         
