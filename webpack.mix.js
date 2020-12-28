@@ -15,7 +15,7 @@ mix
     .js('resources/js/app.js', 'public/js')
     .sass('resources/assets/scss/main.scss', 'public/css')
     .js('resources/assets/js/frontend/navigation.js', 'public/js/frontend')
-    .js('resources/assets/js/frontend/location.js', 'public/js/frontend')
+    .js('resources/assets/js/frontend/calendar-search.js', 'public/js/frontend')
     .js('resources/assets/js/backend/privateLink.js', 'public/js/backend')
     .js('resources/assets/js/frontend/functions.js', 'public/js/frontend')
     .js('resources/assets/js/backend/openinghours.js', 'public/js/backend')
