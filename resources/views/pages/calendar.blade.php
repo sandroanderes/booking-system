@@ -10,10 +10,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-12 text-md-left text-center">
-                        <h1>Restaurant, Büro, Coiffeur? Buechs!</h1>
+                        <h1>Die öffentlichen Buechs.ch-Kalender im Überblick.</h1>
                     </div>
                     <div class="col-md-4 col-12 text-md-right text-center">
-                        <button type="button" class="btn btn-primary btn-lg">Jetzt neuen Kalender erstellen!</button>
+                        <button type="button" class="btn btn-primary btn-lg">Jetzt eigenen Kalender erstellen!</button>
                     </div>
                 </div>
             </div>

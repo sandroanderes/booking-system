@@ -9,7 +9,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-12 text-md-left text-center">
-                        <h1>Wo de Bartli de Most holt? Bi Buechs.ch!</h1>
+                        <h1>Nid lang sueche - Bueche!</h1>
                     </div>
                     <div class="col-md-4 col-12 text-md-right text-center">
                         <button type="button" class="btn btn-primary btn-lg">Jetzt eigenen Süssmost anbieten!</button>

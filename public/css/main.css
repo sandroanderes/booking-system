@@ -11743,6 +11743,10 @@ footer a:hover {
   color: white;
 }
 
+.banner .thumbnail .caption h1 {
+  line-height: normal;
+}
+
 .banner .thumbnail .caption .row {
   display: flex;
   justify-content: space-between;
@@ -12019,7 +12023,7 @@ footer a:hover {
 }
 
 .support-section .accordion-collapse:target .accordion-collapse-content {
-  height: 100px;
+  height: auto;
 }
 
 .support-section .accordion-collapse:target a::before {

@@ -1,9 +1,10 @@
 .banner {
-    &.single{
-        h1{
+    &.single {
+        h1 {
             font-size: 3rem;
         }
     }
+
     .overlay {
         position: absolute;
         background: rgba(0, 0, 0, 0.5);
@@ -31,6 +32,10 @@
             transform: translate(0, -50%);
             width: 100%;
             color: white;
+
+            h1 {
+                line-height: normal;
+            }
 
             .row {
                 display: flex;
