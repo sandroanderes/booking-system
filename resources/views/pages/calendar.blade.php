@@ -24,10 +24,10 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col-lg-3 col-md-6">
-                <input type="text" id="CalendarFilter" class="form-control" placeholder="Räume, Plätze, Objekte, ...">
+                <input type="text" id="mainFilter" class="form-control" placeholder="Räume, Plätze, Objekte, ...">
             </div>
             <div class="col-lg-3 col-md-6">
-                <input type="text" id="CityFilter" class="form-control" placeholder="Ortschaften">
+                <input type="text" id="locationFilter" class="form-control" placeholder="Ortschaften">
             </div>
             <div class="col col-md-6 col-lg">
                 <select class="form-control" id="locationSelect">
@@ -40,11 +40,11 @@
             </div>
             <div class="col-lg-3 col-md-6 ">
                 <select class="form-control" id="categorySelect">
-                    <option selected value="Alle">Alle Kategorien</option>
-                    <option value="Gastronomie">Gastro</option>
-                    <option value="Sportplätze">Sport</option>
-                    <option value="Räumlichkeiten">Räumlichkeiten</option>
-                    <option value="Dienstleistungen">Dienstleistungen</option>
+                    <option selected value="all">Alle Kategorien</option>
+                    <option value="food">Gastro</option>
+                    <option value="sports">Sport</option>
+                    <option value="rooms">Räumlichkeiten</option>
+                    <option value="services">Dienstleistungen</option>
                 </select>
             </div>
             <div class="col">
@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3" id="CalendarItems">
-            <div class="col mb-4">
+            <div class="col mb-4 rooms">
                 <a href="#">
                     <div class="card">
                         <div class="embed-responsive embed-responsive-16by9">
@@ -73,7 +73,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col mb-4">
+            <div class="col mb-4 sports">
                 <a href="/sports">
                     <div class="card">
                         <div class="embed-responsive embed-responsive-16by9">
@@ -101,7 +101,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col mb-4">
+            <div class="col mb-4 rooms">
                 <a href="#">
                     <div class="card">
                         <div class="embed-responsive embed-responsive-16by9">
@@ -126,7 +126,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col mb-4">
+            <div class="col mb-4 food">
                 <a href="#">
                     <div class="card">
                         <div class="embed-responsive embed-responsive-16by9">
@@ -138,9 +138,9 @@
                                     <p class="card-date mb-0">SEP</p>
                                 </div>
                                 <div class="col-10">
-                                    <h5 class="card-title">Co-Working Space</h5>
+                                    <h5 class="card-title">Restaurant</h5>
                                     <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
-                                    <h6 class="card-text location">Aarau, Schweiz</h6>
+                                    <h6 class="card-text location">Zürich, Schweiz</h6>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +150,7 @@
         </div>
     </div>
 </section>
+<div id="loader"></div>
 <script src="https://cdn.jsdelivr.net/gh/bigdatacloudapi/js-reverse-geocode-client@latest/bigdatacloud_reverse_geocode.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="{{ asset('js/frontend/filter.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/frontend/location.js') }}"></script>
 @stop

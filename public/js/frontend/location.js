@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -888,24 +888,232 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+/*******************
+Variable definitions
+********************/
+var mainFilterInput, locationFilterInput, categoryFilterInput; //get input fields
+
+mainFilterInput = document.getElementById("mainFilter");
+locationFilterInput = document.getElementById("locationFilter");
+categoryFilterInput = document.getElementById("categorySelect"); //trigger press enter keyboard key
+
+mainFilterInput.addEventListener("keyup", function (e) {
+  if (e.code === 'Enter') {
+    document.getElementById("searchCalendar").click();
+  }
+});
+locationFilterInput.addEventListener("keyup", function (e) {
+  if (e.code === 'Enter') {
+    document.getElementById("searchCalendar").click();
+  }
+});
+categoryFilterInput.addEventListener("keyup", function (e) {
+  if (e.code === 'Enter') {
+    document.getElementById("searchCalendar").click();
+  }
+});
+
 document.getElementById("searchCalendar").onclick = function () {
-  var search_location = document.getElementById("CityFilter").value;
-  var card_locations = document.getElementsByClassName("location");
-  var card_locations_array = [];
-  var objectArray = Object.entries(card_locations);
-  objectArray.forEach(function (_ref) {
-    var _ref2 = _slicedToArray(_ref, 2),
-        key = _ref2[0],
-        value = _ref2[1];
+  /*******************
+  Variable definitions
+  ********************/
+  var mainFilter, locationFilter, categorieFilter, locationCards, cardInformation, categorieCards, allCards; //get title input
 
-    card_locations_array.push(value.innerText);
-  });
+  mainFilter = document.getElementById("mainFilter").value.toUpperCase(); //get search location
 
-  if (search_location) {
-    card_locations_array.push(search_location);
-    asyncCall(card_locations_array);
+  locationFilter = document.getElementById("locationFilter").value; //get selected categorie
+
+  categorieFilter = document.getElementById("categorySelect").value; //get all locations
+
+  /* locations = document.getElementsByClassName("location"); */
+  //get all cards
+
+  allCards = document.querySelectorAll('div.col.mb-4');
+  cardInformation = []; //elements[key].children[0].children[0].children[1].children[0].children[1].children[2].innerText
+
+  console.log("mainFilter");
+  mainFilterFunction(mainFilter, allCards);
+
+  if (categorieFilter && categorieFilter != "all") {
+    //Get all visible cards with category
+    categorieCards = document.querySelectorAll('div.col.mb-4:not(.' + categorieFilter + '):not([style*="display:none"]):not([style*="display: none"])');
+    categorieFilterFunction(categorieCards);
+  }
+
+  if (locationFilter) {
+    //start loading animation
+    document.getElementById("loader").style.display = "block";
+    console.log("locationFilter");
+    locationCards = document.querySelectorAll('div.col.mb-4:not([style*="display:none"]):not([style*="display: none"])');
+    var objectArray = Object.entries(locationCards);
+    objectArray.forEach(function (_ref) {
+      var _ref2 = _slicedToArray(_ref, 2),
+          key = _ref2[0],
+          value = _ref2[1];
+
+      cardInformation[key] = {
+        id: parseInt(key),
+        info: "location: " + key,
+        name: value.children[0].children[0].children[1].children[0].children[1].children[2].innerText
+      };
+    });
+    locatonFilterFunction(cardInformation, locationFilter, locationCards);
   }
 };
+
+function locatonFilterFunction(_x, _x2, _x3) {
+  return _locatonFilterFunction.apply(this, arguments);
+}
+
+function _locatonFilterFunction() {
+  _locatonFilterFunction = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(cardInformation, locationFilter, locationCards) {
+    var selected_distance, location, _iterator, _step, _step$value, i, value, response, data, _response, _data, j;
+
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            //Get selected distance from dropdown
+            selected_distance = document.getElementById('locationSelect').value; //Make array
+
+            location = [];
+            selected_distance = selected_distance == "Alle" ? 10000 : selected_distance.slice(0, -2);
+            console.time('for {}');
+            console.log(cardInformation);
+            _iterator = _createForOfIteratorHelper(cardInformation.entries());
+            _context.prev = 6;
+
+            _iterator.s();
+
+          case 8:
+            if ((_step = _iterator.n()).done) {
+              _context.next = 28;
+              break;
+            }
+
+            _step$value = _slicedToArray(_step.value, 2), i = _step$value[0], value = _step$value[1];
+            _context.next = 12;
+            return fetch("https://nominatim.openstreetmap.org/search?q=".concat(value.name, "&format=json&limit=1"));
+
+          case 12:
+            response = _context.sent;
+            _context.next = 15;
+            return response.json();
+
+          case 15:
+            data = _context.sent;
+            console.log(data);
+            location[i] = {
+              id: parseInt(i),
+              info: "location name",
+              name: data[0].display_name,
+              lat: data[0].lat,
+              lon: data[0].lon
+            };
+
+            if (!(i == cardInformation.length - 1)) {
+              _context.next = 26;
+              break;
+            }
+
+            _context.next = 21;
+            return fetch("https://nominatim.openstreetmap.org/search?q=".concat(locationFilter, "&format=json&limit=1"));
+
+          case 21:
+            _response = _context.sent;
+            _context.next = 24;
+            return _response.json();
+
+          case 24:
+            _data = _context.sent;
+
+            /* console.log(data); */
+            location[cardInformation.length] = {
+              id: parseInt(cardInformation.length),
+              info: "location name",
+              name: _data[0].display_name,
+              lat: _data[0].lat,
+              lon: _data[0].lon
+            };
+
+          case 26:
+            _context.next = 8;
+            break;
+
+          case 28:
+            _context.next = 33;
+            break;
+
+          case 30:
+            _context.prev = 30;
+            _context.t0 = _context["catch"](6);
+
+            _iterator.e(_context.t0);
+
+          case 33:
+            _context.prev = 33;
+
+            _iterator.f();
+
+            return _context.finish(33);
+
+          case 36:
+            if (location.length == cardInformation.length + 1) {
+              for (j = 0; j < location.length - 1; j++) {
+                //console.log("Distanz zwischen " + location[j].name + " und " + location[location.length - 1].name + " beträgt " + distance(parseFloat(location[j].lat), parseFloat(location[j].lon), parseFloat(location[location.length - 1].lat), parseFloat(location[location.length - 1].lon), "K") + " km");
+                locationCards[j].style.display = "block";
+
+                if (selected_distance <= distance(parseFloat(location[j].lat), parseFloat(location[j].lon), parseFloat(location[location.length - 1].lat), parseFloat(location[location.length - 1].lon), "K")) {
+                  //console.log(location[j].name + " is too far away!");
+                  locationCards[j].style.display = "none";
+                }
+              }
+            } else {
+              console.log("Error after coordinate search!");
+            }
+
+            document.getElementById("loader").style.display = "none";
+            console.timeEnd('for {}');
+            /*     console.time('.map()');
+                await Promise.all(
+                    locations.map(async (value) => {
+                        const response = await fetch(`https://nominatim.openstreetmap.org/search?q=${value}&format=json&limit=1`)
+                        const location = await response.json()
+                        console.log(location[0].display_name)
+                    })
+                )
+                console.timeEnd('.map()'); */
+
+          case 39:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee, null, [[6, 30, 33, 36]]);
+  }));
+  return _locatonFilterFunction.apply(this, arguments);
+}
+
+function mainFilterFunction(mainFilter, allCards) {
+  var title;
+
+  for (var i = 0; i < allCards.length; i++) {
+    title = allCards[i].querySelector(".card-body h5.card-title");
+
+    if (title.innerText.toUpperCase().indexOf(mainFilter) > -1) {
+      allCards[i].style.display = "block";
+    } else {
+      allCards[i].style.display = "none";
+    }
+  }
+}
+
+function categorieFilterFunction(categorieCards) {
+  for (var i = 0; i < categorieCards.length; i++) {
+    categorieCards[i].style.display = "none";
+  }
+} //calculates the distance between two coordinates
+
 
 function distance(lat1, lon1, lat2, lon2, unit) {
   if (lat1 == lat2 && lon1 == lon2) {
@@ -937,105 +1145,9 @@ function distance(lat1, lon1, lat2, lon2, unit) {
   }
 }
 
-function asyncCall(_x) {
-  return _asyncCall.apply(this, arguments);
-}
-
-function _asyncCall() {
-  _asyncCall = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(locations) {
-    var selected_distance, card_locations, location, _iterator, _step, _step$value, i, value, response, data, j;
-
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            selected_distance = document.getElementById('locationSelect').value;
-            card_locations = document.getElementsByClassName("location");
-            location = [];
-            selected_distance = selected_distance == "Alle" ? 10000 : selected_distance.slice(0, -2);
-            console.time('for {}');
-            _iterator = _createForOfIteratorHelper(locations.entries());
-            _context.prev = 6;
-
-            _iterator.s();
-
-          case 8:
-            if ((_step = _iterator.n()).done) {
-              _context.next = 20;
-              break;
-            }
-
-            _step$value = _slicedToArray(_step.value, 2), i = _step$value[0], value = _step$value[1];
-            _context.next = 12;
-            return fetch("https://nominatim.openstreetmap.org/search?q=".concat(value, "&format=json&limit=1"));
-
-          case 12:
-            response = _context.sent;
-            _context.next = 15;
-            return response.json();
-
-          case 15:
-            data = _context.sent;
-            location.push(data[0]);
-
-            if (i == locations.length - 1) {
-              for (j = 0; j < locations.length - 1; j++) {
-                console.log("Distanz zwischen " + location[j].display_name + " und " + location[location.length - 1].display_name + " beträgt " + distance(parseFloat(location[j].lat), parseFloat(location[j].lon), parseFloat(location[location.length - 1].lat), parseFloat(location[location.length - 1].lon)) + "km");
-                card_locations[j].parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.style.display = "";
-
-                if (selected_distance <= distance(parseFloat(location[j].lat), parseFloat(location[j].lon), parseFloat(location[location.length - 1].lat), parseFloat(location[location.length - 1].lon))) {
-                  console.log(location[j].display_name + " is too far away!");
-                  card_locations[j].parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.style.display = "none";
-                }
-              }
-            }
-
-          case 18:
-            _context.next = 8;
-            break;
-
-          case 20:
-            _context.next = 25;
-            break;
-
-          case 22:
-            _context.prev = 22;
-            _context.t0 = _context["catch"](6);
-
-            _iterator.e(_context.t0);
-
-          case 25:
-            _context.prev = 25;
-
-            _iterator.f();
-
-            return _context.finish(25);
-
-          case 28:
-            console.timeEnd('for {}');
-            /*     console.time('.map()');
-                await Promise.all(
-                    locations.map(async (value) => {
-                        const response = await fetch(`https://nominatim.openstreetmap.org/search?q=${value}&format=json&limit=1`)
-                        const location = await response.json()
-                        console.log(location[0].display_name)
-                    })
-                )
-                console.timeEnd('.map()'); */
-
-          case 29:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee, null, [[6, 22, 25, 28]]);
-  }));
-  return _asyncCall.apply(this, arguments);
-}
-
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!********************************************************!*\
   !*** multi ./resources/assets/js/frontend/location.js ***!
   \********************************************************/

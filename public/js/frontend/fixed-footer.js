@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 /***/ }),
 
-/***/ 7:
+/***/ 6:
 /*!************************************************************!*\
   !*** multi ./resources/assets/js/frontend/fixed-footer.js ***!
   \************************************************************/

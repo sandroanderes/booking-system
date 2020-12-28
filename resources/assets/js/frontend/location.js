@@ -1,18 +1,168 @@
-document.getElementById("searchCalendar").onclick = function () {
-    var search_location = document.getElementById("CityFilter").value;
-    var card_locations = document.getElementsByClassName("location");
-    var card_locations_array = [];
-    const objectArray = Object.entries(card_locations);
+/*******************
+Variable definitions
+********************/
+var mainFilterInput, locationFilterInput, categoryFilterInput;
 
-    objectArray.forEach(([key, value]) => {
-        card_locations_array.push(value.innerText);
-    });
-    if (search_location) {
-        card_locations_array.push(search_location)
-        asyncCall(card_locations_array);
+//get input fields
+mainFilterInput = document.getElementById("mainFilter")
+locationFilterInput = document.getElementById("locationFilter")
+categoryFilterInput = document.getElementById("categorySelect")
+
+//trigger press enter keyboard key
+mainFilterInput.addEventListener("keyup", function (e) {
+    if (e.code === 'Enter') {
+        document.getElementById("searchCalendar").click();
+    }
+});
+locationFilterInput.addEventListener("keyup", function (e) {
+    if (e.code === 'Enter') {
+        document.getElementById("searchCalendar").click();
+    }
+});
+categoryFilterInput.addEventListener("keyup", function (e) {
+    if (e.code === 'Enter') {
+        document.getElementById("searchCalendar").click();
+    }
+});
+
+document.getElementById("searchCalendar").onclick = function () {
+    /*******************
+    Variable definitions
+    ********************/
+    var mainFilter, locationFilter, categorieFilter, locationCards, cardInformation, categorieCards, allCards;
+
+    //get title input
+    mainFilter = document.getElementById("mainFilter").value.toUpperCase();
+    //get search location
+    locationFilter = document.getElementById("locationFilter").value;
+    //get selected categorie
+    categorieFilter = document.getElementById("categorySelect").value;
+    //get all locations
+    /* locations = document.getElementsByClassName("location"); */
+    //get all cards
+    allCards = document.querySelectorAll('div.col.mb-4');
+
+    cardInformation = [];
+
+
+    //elements[key].children[0].children[0].children[1].children[0].children[1].children[2].innerText
+
+    console.log("mainFilter");
+    mainFilterFunction(mainFilter, allCards);
+
+    if (categorieFilter && (categorieFilter != "all")) {
+        //Get all visible cards with category
+        categorieCards = document.querySelectorAll('div.col.mb-4:not(.' + categorieFilter + '):not([style*="display:none"]):not([style*="display: none"])');
+        categorieFilterFunction(categorieCards);
+    }
+    if (locationFilter) {
+        //start loading animation
+        document.getElementById("loader").style.display = "block";
+        console.log("locationFilter");
+        locationCards = document.querySelectorAll('div.col.mb-4:not([style*="display:none"]):not([style*="display: none"])');
+        const objectArray = Object.entries(locationCards);
+
+        objectArray.forEach(([key, value]) => {
+            cardInformation[key] = {
+                id: parseInt(key),
+                info: "location: " + key,
+                name: value.children[0].children[0].children[1].children[0].children[1].children[2].innerText
+            };
+        });
+        locatonFilterFunction(cardInformation, locationFilter, locationCards);
     }
 }
 
+async function locatonFilterFunction(cardInformation, locationFilter, locationCards) {
+
+    var selected_distance, location;
+
+    //Get selected distance from dropdown
+    selected_distance = document.getElementById('locationSelect').value;
+
+    //Make array
+    location = [];
+
+    selected_distance = (selected_distance == "Alle" ? 10000 : selected_distance.slice(0, -2))
+    console.time('for {}');
+
+    console.log(cardInformation);
+
+    for (const [i, value] of cardInformation.entries()) {
+        const response = await fetch(`https://nominatim.openstreetmap.org/search?q=${value.name}&format=json&limit=1`);
+        const data = await response.json();
+        console.log(data);
+        location[i] = {
+            id: parseInt(i),
+            info: "location name",
+            name: data[0].display_name,
+            lat: data[0].lat,
+            lon: data[0].lon,
+        };
+
+        if (i == (cardInformation.length - 1)) {
+            const response = await fetch(`https://nominatim.openstreetmap.org/search?q=${locationFilter}&format=json&limit=1`);
+            const data = await response.json();
+            /* console.log(data); */
+            location[cardInformation.length] = {
+                id: parseInt(cardInformation.length),
+                info: "location name",
+                name: data[0].display_name,
+                lat: data[0].lat,
+                lon: data[0].lon,
+            };
+        }
+    }
+
+    if (location.length == cardInformation.length + 1) {
+        for (var j = 0; j < (location.length - 1); j++) {
+
+            //console.log("Distanz zwischen " + location[j].name + " und " + location[location.length - 1].name + " beträgt " + distance(parseFloat(location[j].lat), parseFloat(location[j].lon), parseFloat(location[location.length - 1].lat), parseFloat(location[location.length - 1].lon), "K") + " km");
+
+            locationCards[j].style.display = "block";
+            if (selected_distance <= distance(parseFloat(location[j].lat), parseFloat(location[j].lon), parseFloat(location[location.length - 1].lat), parseFloat(location[location.length - 1].lon), "K")) {
+
+                //console.log(location[j].name + " is too far away!");
+                locationCards[j].style.display = "none";
+            }
+        }
+    } else {
+        console.log("Error after coordinate search!")
+    }
+
+    document.getElementById("loader").style.display = "none";
+    console.timeEnd('for {}');
+
+    /*     console.time('.map()');
+        await Promise.all(
+            locations.map(async (value) => {
+                const response = await fetch(`https://nominatim.openstreetmap.org/search?q=${value}&format=json&limit=1`)
+                const location = await response.json()
+                console.log(location[0].display_name)
+            })
+        )
+        console.timeEnd('.map()'); */
+}
+
+function mainFilterFunction(mainFilter, allCards) {
+    var title;
+    for (var i = 0; i < allCards.length; i++) {
+        title = allCards[i].querySelector(".card-body h5.card-title");
+        if (title.innerText.toUpperCase().indexOf(mainFilter) > -1) {
+            allCards[i].style.display = "block";
+        } else {
+            allCards[i].style.display = "none";
+        }
+    }
+}
+
+function categorieFilterFunction(categorieCards) {
+    for (var i = 0; i < categorieCards.length; i++) {
+        categorieCards[i].style.display = "none";
+    }
+}
+
+//calculates the distance between two coordinates
 function distance(lat1, lon1, lat2, lon2, unit) {
     if ((lat1 == lat2) && (lon1 == lon2)) {
         return 0;
@@ -33,44 +183,4 @@ function distance(lat1, lon1, lat2, lon2, unit) {
         if (unit == "N") { dist = dist * 0.8684 }
         return dist;
     }
-}
-
-async function asyncCall(locations) {
-    var selected_distance = document.getElementById('locationSelect').value;
-    var card_locations = document.getElementsByClassName("location");
-    var location = [];
-
-    selected_distance = (selected_distance == "Alle" ? 10000 : selected_distance.slice(0, -2))
-    console.time('for {}');
-
-    for (const [i, value] of locations.entries()) {
-        const response = await fetch(`https://nominatim.openstreetmap.org/search?q=${value}&format=json&limit=1`)
-        const data = await response.json()
-        location.push(data[0]);
-
-        if (i == (locations.length - 1)) {
-            for (var j = 0; j < (locations.length - 1); j++) {
-
-                console.log("Distanz zwischen " + location[j].display_name + " und " + location[location.length - 1].display_name + " beträgt " + distance(parseFloat(location[j].lat), parseFloat(location[j].lon), parseFloat(location[location.length - 1].lat), parseFloat(location[location.length - 1].lon)) + "km");
-
-                card_locations[j].parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.style.display = "";
-                if (selected_distance <= distance(parseFloat(location[j].lat), parseFloat(location[j].lon), parseFloat(location[location.length - 1].lat), parseFloat(location[location.length - 1].lon))) {
-                    console.log(location[j].display_name + " is too far away!");
-                    card_locations[j].parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.style.display = "none";
-                }
-            }
-        }
-
-    }
-    console.timeEnd('for {}');
-
-    /*     console.time('.map()');
-        await Promise.all(
-            locations.map(async (value) => {
-                const response = await fetch(`https://nominatim.openstreetmap.org/search?q=${value}&format=json&limit=1`)
-                const location = await response.json()
-                console.log(location[0].display_name)
-            })
-        )
-        console.timeEnd('.map()'); */
 }
