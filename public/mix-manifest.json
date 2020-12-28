@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/main.css": "/css/main.css",
+    "/css/backend.css": "/css/backend.css",
     "/js/backend/openinghours.js": "/js/backend/openinghours.js",
     "/js/backend/privateLink.js": "/js/backend/privateLink.js",
     "/js/backend/specifications.js": "/js/backend/specifications.js",

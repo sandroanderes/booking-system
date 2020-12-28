@@ -88,7 +88,7 @@ return [
     */
 
     'resource' => [
-        'stylesheets' => [],
+        'stylesheets' => ['/css/backend.css'],
         'scripts'     => [],
     ],
 

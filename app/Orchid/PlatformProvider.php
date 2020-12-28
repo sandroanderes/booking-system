@@ -27,41 +27,7 @@ class PlatformProvider extends OrchidServiceProvider
         return [
             ItemMenu::label('Dashboard')
                 ->icon('monitor')
-                ->route('platform.example')
-                ->badge(function () {
-                    return 6;
-                }),
-
-            ItemMenu::label('Basic Elements')
-                ->title('Form controls')
-                ->icon('note')
-                ->route('platform.example.fields'),
-
-            ItemMenu::label('Advanced Elements')
-                ->icon('briefcase')
-                ->route('platform.example.advanced'),
-
-            ItemMenu::label('Text Editors')
-                ->icon('list')
-                ->route('platform.example.editors'),
-
-            ItemMenu::label('Overview layouts')
-                ->title('Layouts')
-                ->icon('layers')
-                ->route('platform.example.layouts'),
-
-            ItemMenu::label('Chart tools')
-                ->icon('bar-chart')
-                ->route('platform.example.charts'),
-
-            ItemMenu::label('Cards')
-                ->icon('grid')
-                ->route('platform.example.cards'),
-
-            ItemMenu::label('Documentation')
-                ->title('Weiteres')
-                ->icon('docs')
-                ->url('https://orchid.software/en/docs'),
+                ->route('platform.example'),
 
             ItemMenu::label('Kalenderübersicht')
                 ->title('Kalender')
@@ -97,6 +63,38 @@ class PlatformProvider extends OrchidServiceProvider
                 ->place('parent-hidden-menu')
                 ->icon('trash')
                 ->route('platform.delete'),
+
+
+            ItemMenu::label('Basic Elements')
+            ->title('Form controls')
+            ->icon('note')
+            ->route('platform.example.fields'),
+
+        ItemMenu::label('Advanced Elements')
+            ->icon('briefcase')
+            ->route('platform.example.advanced'),
+
+        ItemMenu::label('Text Editors')
+            ->icon('list')
+            ->route('platform.example.editors'),
+
+        ItemMenu::label('Overview layouts')
+            ->title('Layouts')
+            ->icon('layers')
+            ->route('platform.example.layouts'),
+
+        ItemMenu::label('Chart tools')
+            ->icon('bar-chart')
+            ->route('platform.example.charts'),
+
+        ItemMenu::label('Cards')
+            ->icon('grid')
+            ->route('platform.example.cards'),
+
+        ItemMenu::label('Documentation')
+            ->title('Weiteres')
+            ->icon('docs')
+            ->url('https://orchid.software/en/docs'),
 
         ];
     }

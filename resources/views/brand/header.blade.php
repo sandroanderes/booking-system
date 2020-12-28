@@ -6,11 +6,9 @@
     >
 @endpush
 
-<p class="h2 n-m font-thin v-center">
-    <x-orchid-icon path="badge"/>
+<div class="h2 n-m font-thin v-center backend">
 
-    <span class="m-l d-none d-sm-block">
+    <a class="m-l d-none d-sm-block site-logo" href="/admin">
         Buechs.ch
-        <small class="v-top opacity">Nest</small>
-    </span>
-</p>
+    </a>
+</div>
