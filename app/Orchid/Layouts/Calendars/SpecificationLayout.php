@@ -12,7 +12,6 @@ use Orchid\Screen\Fields\Matrix;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Fields\Group;
 
-
 class SpecificationLayout extends Rows
 {
     /**
@@ -203,7 +202,7 @@ class SpecificationLayout extends Rows
                         '8' => '8er-Tisch'
                     ]),
                     'Verfügbare Tische' => Input::make('count')->type('number')->min(1),
-            ]),
+                ]),
 
             Input::make('sports.name')
                 ->type('text')
@@ -234,7 +233,7 @@ class SpecificationLayout extends Rows
                 ->title('Name der Dienstleistung')
                 ->placeholder('Bsp: Friseurtermin, Massagetermin, Physio')
                 ->help('Was für Termine kann man bei dir reservieren?'),
-                
+
             Matrix::make('service_employees')
                 ->title('Mitarbeiter und Funktion')
                 ->value(1)
@@ -262,7 +261,7 @@ class SpecificationLayout extends Rows
             Input::make('sports.calendar_id')
                 ->value(5)
                 ->hidden(),
-            Group::make([                   
+            Group::make([
                 Button::make('Kalender Speichern')
                     ->icon('database')
                     ->method('db_upload')

@@ -30,7 +30,6 @@ class OverviewLayout extends Rows
     {
         return [
 
-
             Input::make('name')
                 ->title('Full Name:')
                 ->placeholder('Enter full name')

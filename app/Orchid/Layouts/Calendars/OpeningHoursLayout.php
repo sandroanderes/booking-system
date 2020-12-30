@@ -9,7 +9,6 @@ use Orchid\Screen\Fields\DateTimer;
 use Orchid\Screen\Fields\RadioButtons;
 use Orchid\Screen\Fields\Group;
 use Orchid\Screen\Fields\Input;
-use Orchid\Screen\Actions\Button;
 
 class OpeningHoursLayout extends Rows
 {
@@ -413,8 +412,8 @@ class OpeningHoursLayout extends Rows
                     ->format('H:i'),
             ]),
             Input::make('oh.calendar_id')
-            ->value(5)
-            ->hidden(),
+                ->value(5)
+                ->hidden(),
         ];
     }
 }
