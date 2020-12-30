@@ -106,7 +106,15 @@ var min_reservation_hour = document.querySelector('[id^="field-specificationdura
 var max_reservation_hour = document.querySelector('[id^="field-specificationduration-max-h-"]').parentElement.parentElement; //Inputfelder mit Tage-Angaben
 
 var min_reservation_day = document.querySelector('[id^="field-specificationduration-min-d-"]').parentElement.parentElement;
-var max_reservation_day = document.querySelector('[id^="field-specificationduration-max-d-"]').parentElement.parentElement; //EventListener Zeiteinheit
+var max_reservation_day = document.querySelector('[id^="field-specificationduration-max-d-"]').parentElement.parentElement; // Select Felder
+
+var min_res_dur_min = document.querySelector('[id^="field-specificationduration-min-min-"]');
+var max_res_dur_min = document.querySelector('[id^="field-specificationduration-max-min-"]');
+var min_res_dur_h = document.querySelector('[id^="field-specificationduration-min-h-"]');
+var max_res_dur_h = document.querySelector('[id^="field-specificationduration-max-h-"]');
+var min_res_dur_d = document.querySelector('[id^="field-specificationduration-min-d-"]');
+var max_res_dur_d = document.querySelector('[id^="field-specificationduration-max-d-"]');
+var fix_dur_val = document.querySelector('[id^="field-specificationduration-all-"]'); //EventListener Zeiteinheit
 
 timeunit_minute.addEventListener("click", reservation_timeunit);
 timeunit_hour.addEventListener("click", reservation_timeunit);
@@ -120,26 +128,44 @@ min_reservation_day.style.display = "none";
 max_reservation_day.style.display = "none"; // Function Show Hide TimeUnits
 
 function reservation_timeunit() {
+  var min_res_dur_min_text = document.querySelector('[id^="select2-field-specificationduration-min-min-"]');
+  var max_res_dur_min_text = document.querySelector('[id^="select2-field-specificationduration-max-min-"]');
+  var min_res_dur_h_text = document.querySelector('[id^="select2-field-specificationduration-min-h-"]');
+  var max_res_dur_h_text = document.querySelector('[id^="select2-field-specificationduration-max-h-"]');
+  var min_res_dur_d_text = document.querySelector('[id^="select2-field-specificationduration-min-d-"]');
+  var max_res_dur_d_text = document.querySelector('[id^="select2-field-specificationduration-max-d-"]');
   min_reservation_minute.style.display = "none";
   max_reservation_minute.style.display = "none";
   min_reservation_hour.style.display = "none";
   max_reservation_hour.style.display = "none";
   min_reservation_day.style.display = "none";
   max_reservation_day.style.display = "none";
+  min_res_dur_min.options.selectedIndex = 0;
+  max_res_dur_min.options.selectedIndex = 0;
+  min_res_dur_h.options.selectedIndex = 0;
+  max_res_dur_h.options.selectedIndex = 0;
+  min_res_dur_d.options.selectedIndex = 0;
+  max_res_dur_d.options.selectedIndex = 0;
 
   if (timeunit_minute.checked === true) {
     min_reservation_minute.style.display = "inline";
     max_reservation_minute.style.display = "inline";
+    min_res_dur_min_text.textContent = "Minimale Reservationsdauer wählen:";
+    max_res_dur_min_text.textContent = "Maximale Reservationsdauer wählen:";
   }
 
   if (timeunit_hour.checked === true) {
     min_reservation_hour.style.display = "inline";
     max_reservation_hour.style.display = "inline";
+    min_res_dur_h_text.textContent = "Minimale Reservationsdauer wählen:";
+    max_res_dur_h_text.textContent = "Maximale Reservationsdauer wählen:";
   }
 
   if (timeunit_day.checked === true) {
     min_reservation_day.style.display = "inline";
     max_reservation_day.style.display = "inline";
+    min_res_dur_d_text.textContent = "Minimale Reservationsdauer wählen:";
+    max_res_dur_d_text.textContent = "Maximale Reservationsdauer wählen:";
   }
 }
 /* =========== Calendar Specifications Switcher Fixes Reservationsintervall=========== */
@@ -159,6 +185,8 @@ switcher_fixed_res.addEventListener("click", reservation_duration_fixed); //bezi
 timeunit_button.addEventListener("click", reservation_duration_fixed); // Function Show Hide reservation_duration_fixed
 
 function reservation_duration_fixed() {
+  var fix_dur_val_text = document.querySelector('[id^="select2-field-specificationduration-all-"]');
+
   if (switcher_fixed_res.checked === true) {
     //Remove Active Class der einzelnen Buttons -man muss die einzelnen Knöpfe auslesen... nicht die Gruppe...
     timeunit_minute.parentElement.classList.remove("active");
@@ -178,9 +206,11 @@ function reservation_duration_fixed() {
     timeunit_button.style.display = "none"; //Selector "Fixe Reservationsdauer" einblenden
 
     select_fixed_dur.style.display = "inline";
+    fix_dur_val_text.textContent = "Fixe Reservationsdauer wählen:";
   } else if (switcher_fixed_res.checked === false) {
     //Button "minuten, Stunden, Tage" einblenden
-    timeunit_button.style.display = "inline"; //Selector "Fixe Reservationsdauer" ausblenden
+    timeunit_button.style.display = "inline";
+    fix_dur_val.options.selectedIndex = 0; //Selector "Fixe Reservationsdauer" ausblenden
 
     select_fixed_dur.style.display = "none";
   }
@@ -195,7 +225,7 @@ function reservation_duration_fixed() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/booking-system/resources/assets/js/backend/specifications.js */"./resources/assets/js/backend/specifications.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\backend\specifications.js */"./resources/assets/js/backend/specifications.js");
 
 
 /***/ })

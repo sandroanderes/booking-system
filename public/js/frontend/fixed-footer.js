@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/booking-system/resources/assets/js/frontend/fixed-footer.js */"./resources/assets/js/frontend/fixed-footer.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\frontend\fixed-footer.js */"./resources/assets/js/frontend/fixed-footer.js");
 
 
 /***/ })
