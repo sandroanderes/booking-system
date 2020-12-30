@@ -18,8 +18,10 @@ use Illuminate\Support\Facades\Route;
 use Tabuna\Breadcrumbs\Trail;
 
 // Calendar Views
-use App\Orchid\Screens\Calendars\Overview;
 use App\Orchid\Screens\Calendars\NewCalendar;
+use App\Orchid\Screens\Calendars\EditCalendar;
+use App\Orchid\Screens\Calendars\CalendarListScreen;
+use App\Orchid\Screens\Calendars\CalendarRemoveScreen;
 
 //Settings Views
 use App\Orchid\Screens\Settings\Password;
@@ -96,17 +98,17 @@ Route::screen('roles', RoleListScreen::class)
             ->push(__('Roles'), route('platform.systems.roles'));
     });
 
-// Platform > Calendars > Overview
-Route::screen('overview', Overview::class)
-    ->name('platform.overview')
+// Platform > Calendars > CalendarListScreen
+Route::screen('calendars', CalendarListScreen::class)
+    ->name('platform.calendar.list')
     ->breadcrumbs(function (Trail $trail) {
         return $trail
             ->parent('platform.index')
-            ->push(__('Übersicht'));
+            ->push(__('Deine Kalender'));
     });
 
 // Platform > Calendars > New Calendar
-Route::screen('newcalendar', NewCalendar::class)
+Route::screen('new-calendar', NewCalendar::class)
     ->name('platform.newcalendar')
     ->breadcrumbs(function (Trail $trail) {
         return $trail
@@ -149,6 +151,18 @@ Route::screen('delete', Delete::class)
             ->parent('platform.index')
             ->push(__('Konto löschen'));
     });
+
+// Calendar Edit Screen
+
+Route::screen('remove-calendar/{calendar_id}', CalendarRemoveScreen::class)
+    ->name('platform.calendar.remove');
+
+Route::screen('edit-calendar/{calendar_id?}', EditCalendar::class)
+->name('platform.calendar.edit');
+
+// Calendar List Screen
+Route::screen('calendars', CalendarListScreen::class)
+    ->name('platform.calendar.list');
 
 // Example...
 Route::screen('example', ExampleScreen::class)

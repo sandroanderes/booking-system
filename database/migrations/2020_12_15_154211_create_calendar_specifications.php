@@ -19,13 +19,12 @@ class CreateCalendarSpecifications extends Migration
             $table->string('format');
             $table->boolean('duration_fixed');
             $table->string('duration_all');
-            $table->string('timeunit');
-            $table->string('duration_min_min');
-            $table->string('duration_min_h');
-            $table->string('duration_min_d');
-            $table->string('duration_max_min');
-            $table->string('duration_max_h');
-            $table->string('duration_max_d');
+            $table->string('duration_min_min')->nullable();
+            $table->string('duration_min_h')->nullable();
+            $table->string('duration_min_d')->nullable();
+            $table->string('duration_max_min')->nullable();
+            $table->string('duration_max_h')->nullable();
+            $table->string('duration_max_d')->nullable();
             $table->timestamps();
             $table->foreign('calendar_id')
                 ->references('id')

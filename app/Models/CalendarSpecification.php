@@ -14,7 +14,6 @@ class CalendarSpecification extends Model
         'format',
         'duration_fixed',
         'duration_all',
-        'timeunit',
         'duration_min_min',
         'duration_min_h',
         'duration_min_d',

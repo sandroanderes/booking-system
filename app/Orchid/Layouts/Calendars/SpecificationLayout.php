@@ -92,6 +92,7 @@ class SpecificationLayout extends Rows
                     1 => 'Stunden',
                     2 => 'Tage',
                 ])
+                ->value('0')
                 ->help('Welches Zeitformat macht für deine Art von Reservationen am meisten Sinn?'),
 
             Select::make('specification.duration_min_min')
@@ -244,23 +245,6 @@ class SpecificationLayout extends Rows
                 ])
 
                 ->help('Klick auf "+Hinzufügen" um weitere Mitarbeiter einzutragen'),
-
-            Input::make('specification.calendar_id')
-                ->value(5)
-                ->hidden(),
-
-            Input::make('gastrotable.calendar_id')
-                ->value(5)
-                ->hidden(),
-            Input::make('service_employees.calendar_id')
-                ->value(5)
-                ->hidden(),
-            Input::make('rooms.calendar_id')
-                ->value(5)
-                ->hidden(),
-            Input::make('sports.calendar_id')
-                ->value(5)
-                ->hidden(),
             Group::make([
                 Button::make('Kalender Speichern')
                     ->icon('database')

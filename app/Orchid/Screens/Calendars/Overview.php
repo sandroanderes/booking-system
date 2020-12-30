@@ -2,9 +2,12 @@
 
 namespace App\Orchid\Screens\Calendars;
 
-use App\Orchid\Layouts\Calendars\OverviewLayout;
+use App\Orchid\Layouts\CalendarListLayout;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
+use App\Models\CalendarGeneral;
+use Orchid\Screen\Actions\Link;
+
 
 class Overview extends Screen
 {
@@ -21,6 +24,10 @@ class Overview extends Screen
      * @var string
      */
     public $description = 'All deine Kalender im Überblick';
+    /**
+     * @var bool
+     */
+    public $exists = false;
 
     /**
      * Query data.
@@ -29,7 +36,7 @@ class Overview extends Screen
      */
     public function query(): array
     {
-        return [];
+        return ['calendar' => CalendarGeneral::paginate()];
     }
 
     /**
@@ -39,7 +46,11 @@ class Overview extends Screen
      */
     public function commandBar(): array
     {
-        return [];
+        return [
+            Link::make('Create new')
+            ->icon('pencil')
+            ->route('platform.newcalendar')
+        ];
     }
 
     /**
@@ -50,12 +61,8 @@ class Overview extends Screen
     public function layout(): array
     {
         return [
-            Layout::tabs([
-                'Example Tab 1' => Layout::view('platform::dummy.block'),
-                'Example Tab 2' => Layout::view('platform::dummy.block'),
-                'Example Tab 3' => Layout::view('platform::dummy.block'),
-            ]),
-            OverviewLayout::class,
+            CalendarListLayout::class
         ];
     }
+
 }

@@ -15,32 +15,41 @@ use App\Orchid\Layouts\Calendars\OpeningHoursLayout;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
 use Illuminate\Http\Request;
+use Orchid\Support\Facades\Toast;
 use Orchid\Support\Facades\Alert;
 
-class NewCalendar extends Screen
+class EditCalendar extends Screen
 {
     /**
      * Display header name.
      *
      * @var string
      */
-    public $name = 'Neuer Kalender hinzufügen';
+    public $name = 'Kalender Bearbeiten';
 
     /**
      * Display header description.
      *
      * @var string
      */
-    public $description = 'Alle Angaben können später wieder geändert werden';
+    public $description = 'Bearbeite deinen Kalender';
 
     /**
      * Query data.
      *
      * @return array
      */
-    public function query(): array
+    public function query(CalendarGeneral $calendar, CalendarOpeninghours $oh, CalendarSpecification $specification, CalendarGastrotable $gastrotable, CalendarSports $sports, CalendarRooms $rooms, CalendarServiceEmployees $service_employees): array
     {
-        return [];
+        return [
+            'calendar' => $calendar,
+            'oh' => $oh,
+            'specification' => $specification,
+            'gastrotable' => $gastrotable,
+            'sports' => $sports,
+            'rooms' => $rooms,
+            'service_employees' => $service_employees
+        ];
     }
     /**
      * Button commands.
@@ -331,6 +340,7 @@ class NewCalendar extends Screen
         $specification->format = $data_specification["format"];
         $specification->duration_fixed = $data_specification["duration_fixed"];
         $specification->duration_all = $data_specification["duration_all"];
+        $specification->timeunit = $data_specification["timeunit"];
         $specification->duration_min_min = $data_specification["duration_min_min"];
         $specification->duration_min_h = $data_specification["duration_min_h"];
         $specification->duration_min_d = $data_specification["duration_min_d"];
@@ -360,33 +370,38 @@ class NewCalendar extends Screen
     {
         $data_employ = $request->get('service_employees');
         $service_name = $data_employ["service_name"];
+        $calendar_id = $calendar_id;
 
         for ($i = 0; $i < (count($data_employ) - 2); $i++) {
             $employee_name = $data_employ[$i]["Name"];
             $function = $data_employ[$i]["Funktion"];
+            $calendar_id = $data_employ["calendar_id"];
             $service_employees = new CalendarServiceEmployees;
             $service_employees->calendar_id = $calendar_id;
             $service_employees->service_name = $service_name;
             $service_employees->employee_name = $employee_name;
             $service_employees->employee_function = $function;
-            return $service_employees->save();
+            $service_employees->save();
+            Toast::info(__('Mitarbeiter wurde gespeichert.'));
         }
     }
     public function createOrUpdate_rooms(CalendarRooms $rooms, Request $request, $calendar_id)
     {
         $data_room = $request->get('rooms');
+        $calendar_id = $calendar_id;
+
         for ($i = 0; $i < (count($data_room) - 1); $i++) {
             $name = $data_room[$i]["Raum-Name"];
             $capacity = $data_room[$i]["Max. Personenanzahl"];
             $assets = $data_room[$i]["Ausstattung"];
-            $cal_id = $calendar_id;
-
+            $calendar_id = $data_room["calendar_id"];
             $rooms = new CalendarRooms;
-            $rooms->calendar_id = $cal_id;
+            $rooms->calendar_id = $calendar_id;
             $rooms->name = $name;
             $rooms->capacity = $capacity;
             $rooms->assets = $assets;
-            return $rooms->save();
+            $rooms->save();
+            Toast::info(__('Räume wurden gespeichert.'));
         }
     }
     public function createOrUpdate_sports(CalendarSports $sports, Request $request, $calendar_id)
@@ -487,7 +502,7 @@ class NewCalendar extends Screen
                         if ($uploadValidation == 1){
                             Alert::success("Ihr Kalender wurde erfolgreich erstellt!");
                         } else {
-                            Alert::error("Beim Upload in die Datenbank ist ein Fehler Aufgetreten! Gastro"); 
+                            Alert::error("Beim Upload in die Datenbank ist ein Fehler Aufgetreten!"); 
                         }
                     }
                     if ($data_general["template"] == "sports" && $uploadValidation == 1) {
@@ -503,7 +518,7 @@ class NewCalendar extends Screen
                         if ($uploadValidation == 1){
                             Alert::success("Ihr Kalender wurde erfolgreich erstellt!");
                         } else {
-                            Alert::error("Beim Upload in die Datenbank ist ein Fehler Aufgetreten! Raum"); 
+                            Alert::error("Beim Upload in die Datenbank ist ein Fehler Aufgetreten!"); 
                         }
                     }            
                     if ($data_general["template"] == "services" && $uploadValidation == 1) {
@@ -511,7 +526,7 @@ class NewCalendar extends Screen
                         if ($uploadValidation == 1){
                             Alert::success("Ihr Kalender wurde erfolgreich erstellt!");
                         } else {
-                            Alert::error("Beim Upload in die Datenbank ist ein Fehler Aufgetreten! Service"); 
+                            Alert::error("Beim Upload in die Datenbank ist ein Fehler Aufgetreten!"); 
                         }
                     }
                 } else {
