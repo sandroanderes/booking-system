@@ -16,7 +16,6 @@ use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
 use Illuminate\Http\Request;
 use Orchid\Support\Facades\Toast;
-use Orchid\Screen\Actions\Button;
 use Orchid\Support\Facades\Alert;
 
 class NewCalendar extends Screen
@@ -40,7 +39,7 @@ class NewCalendar extends Screen
      *
      * @return array
      */
-    public function query(CalendarGeneral $calendar): array
+    public function query(): array
     {
         return [];
     }
@@ -245,8 +244,171 @@ class NewCalendar extends Screen
     }
 
     /* ======================== DB Uploads ========================  */
-    public function db_upload(Request $request)
+    public function createOrUpdate(CalendarGeneral $calendar, Request $request)
     {
+        $data_general = $request->get('calendar');
+        $calendar->user_id = $data_general["user_id"];
+        $calendar->name = $data_general["name"];
+        $calendar->country = $data_general["country"];
+        $calendar->street = $data_general["street"];
+        $calendar->location = $data_general["location"];
+        $calendar->status = $data_general["status"];
+        $calendar->description = $data_general["description"];
+        $calendar->public = $data_general["public"];
+        $calendar->privateLink = $data_general["privateLink"];
+        $calendar->template = $data_general["template"];
+        $calendar->unit = $data_general["unit"];
+        $calendar->image = $data_general["image"];
+        $validation = $calendar->save();
+        if ($validation == 1) {
+            return $calendar->id;
+        }else {
+            return 0;
+        }
+
+    }
+
+    public function createOrUpdate_Oh(CalendarOpeninghours $oh, Request $request, $calendar_id)
+    {
+        $data_oh = $request->get('oh');
+        $oh->calendar_id = $calendar_id;
+        $oh->day_monday = $data_oh["day_monday"];
+        $oh->day_tuesday = $data_oh["day_tuesday"];
+        $oh->day_wednesday = $data_oh["day_wednesday"];
+        $oh->day_thursday = $data_oh["day_thursday"];
+        $oh->day_friday = $data_oh["day_friday"];
+        $oh->day_saturday = $data_oh["day_saturday"];
+        $oh->day_sunday = $data_oh["day_sunday"];
+        $oh->repeat = $data_oh["repeat"];
+        $oh->halfday_closed_general = $data_oh["halfday_closed_general"];
+        $oh->lunch_general = $data_oh["lunch_general"];
+        $oh->start_general = $data_oh["start_general"];
+        $oh->end_general = $data_oh["end_general"];
+        $oh->lunch_start = $data_oh["lunch_start"];
+        $oh->lunch_end = $data_oh["lunch_end"];
+        $oh->halfday_closed_monday = $data_oh["halfday_closed_monday"];
+        $oh->lunch_monday = $data_oh["lunch_monday"];
+        $oh->start_monday = $data_oh["start_monday"];
+        $oh->end_monday = $data_oh["end_monday"];
+        $oh->lunch_start_monday = $data_oh["lunch_start_monday"];
+        $oh->lunch_end_monday = $data_oh["lunch_end_monday"];
+        $oh->halfday_closed_tuesday = $data_oh["halfday_closed_tuesday"];
+        $oh->lunch_tuesday = $data_oh["lunch_tuesday"];
+        $oh->start_tuesday = $data_oh["start_tuesday"];
+        $oh->end_tuesday = $data_oh["end_tuesday"];
+        $oh->lunch_start_tuesday = $data_oh["lunch_start_tuesday"];
+        $oh->lunch_end_tuesday = $data_oh["lunch_end_tuesday"];
+        $oh->halfday_closed_wednesday = $data_oh["halfday_closed_wednesday"];
+        $oh->lunch_wednesday = $data_oh["lunch_wednesday"];
+        $oh->start_wednesday = $data_oh["start_wednesday"];
+        $oh->end_wednesday = $data_oh["end_wednesday"];
+        $oh->halfday_closed_thursday = $data_oh["halfday_closed_thursday"];
+        $oh->lunch_thursday = $data_oh["lunch_thursday"];
+        $oh->lunch_start_thursday = $data_oh["lunch_start_thursday"];
+        $oh->lunch_end_thursday = $data_oh["lunch_end_thursday"];
+        $oh->halfday_closed_friday = $data_oh["halfday_closed_friday"];
+        $oh->lunch_friday = $data_oh["lunch_friday"];
+        $oh->start_friday = $data_oh["start_friday"];
+        $oh->end_friday = $data_oh["end_friday"];
+        $oh->halfday_closed_saturday = $data_oh["halfday_closed_saturday"];
+        $oh->lunch_saturday = $data_oh["lunch_saturday"];
+        $oh->start_saturday = $data_oh["start_saturday"];
+        $oh->end_saturday = $data_oh["end_saturday"];
+        $oh->lunch_start_saturday = $data_oh["lunch_start_saturday"];
+        $oh->lunch_end_saturday = $data_oh["lunch_end_saturday"];
+        $oh->halfday_closed_sunday = $data_oh["halfday_closed_sunday"];
+        $oh->lunch_sunday = $data_oh["lunch_sunday"];
+        $oh->start_sunday = $data_oh["start_sunday"];
+        $oh->end_sunday = $data_oh["end_sunday"];
+        $oh->lunch_start_sunday = $data_oh["lunch_start_sunday"];
+        $oh->lunch_end_sunday = $data_oh["lunch_end_sunday"];
+        return $oh->save();
+    }
+
+    public function createOrUpdate_specification(CalendarSpecification $specification, Request $request, $calendar_id)
+    {
+        $data_specification = $request->get('specification');
+        $specification->calendar_id = $calendar_id;
+        $specification->format = $data_specification["format"];
+        $specification->duration_fixed = $data_specification["duration_fixed"];
+        $specification->duration_all = $data_specification["duration_all"];
+        $specification->timeunit = $data_specification["timeunit"];
+        $specification->duration_min_min = $data_specification["duration_min_min"];
+        $specification->duration_min_h = $data_specification["duration_min_h"];
+        $specification->duration_min_d = $data_specification["duration_min_d"];
+        $specification->duration_max_min = $data_specification["duration_max_min"];
+        $specification->duration_max_h = $data_specification["duration_max_h"];
+        $specification->duration_max_d = $data_specification["duration_max_d"];
+        return $specification->save();
+    }
+
+    public function createOrUpdate_gastrotable(CalendarGastrotable $gastrotable, Request $request, $calendar_id)
+    {
+        $data_gastrotbl = $request->get('gastrotable');
+        $calendar_id = $calendar_id;
+
+        for ($i = 0; $i < (count($data_gastrotbl) - 1); $i++) {
+            $size = $data_gastrotbl[$i]["Tischgrösse"];
+            $count = $data_gastrotbl[$i]["Verfügbare Tische"];
+            $calendar_id = $data_gastrotbl["calendar_id"];
+            $gastrotable = new CalendarGastrotable;
+            $gastrotable->calendar_id = $calendar_id;
+            $gastrotable->gastrotable = $size;
+            $gastrotable->gastrotable_number = $count;
+            return $gastrotable->save();
+        }
+    }
+    public function createOrUpdate_service_employees(CalendarServiceEmployees $service_employees, Request $request, $calendar_id)
+    {
+        $data_employ = $request->get('service_employees');
+        $service_name = $data_employ["service_name"];
+        $calendar_id = $calendar_id;
+
+        for ($i = 0; $i < (count($data_employ) - 2); $i++) {
+            $employee_name = $data_employ[$i]["Name"];
+            $function = $data_employ[$i]["Funktion"];
+            $calendar_id = $data_employ["calendar_id"];
+            $service_employees = new CalendarServiceEmployees;
+            $service_employees->calendar_id = $calendar_id;
+            $service_employees->service_name = $service_name;
+            $service_employees->employee_name = $employee_name;
+            $service_employees->employee_function = $function;
+            $service_employees->save();
+            Toast::info(__('Mitarbeiter wurde gespeichert.'));
+        }
+    }
+    public function createOrUpdate_rooms(CalendarRooms $rooms, Request $request, $calendar_id)
+    {
+        $data_room = $request->get('rooms');
+        $calendar_id = $calendar_id;
+
+        for ($i = 0; $i < (count($data_room) - 1); $i++) {
+            $name = $data_room[$i]["Raum-Name"];
+            $capacity = $data_room[$i]["Max. Personenanzahl"];
+            $assets = $data_room[$i]["Ausstattung"];
+            $calendar_id = $data_room["calendar_id"];
+            $rooms = new CalendarRooms;
+            $rooms->calendar_id = $calendar_id;
+            $rooms->name = $name;
+            $rooms->capacity = $capacity;
+            $rooms->assets = $assets;
+            $rooms->save();
+            Toast::info(__('Räume wurden gespeichert.'));
+        }
+    }
+    public function createOrUpdate_sports(CalendarSports $sports, Request $request, $calendar_id)
+    {
+        $data_sports = $request->get('sports');
+        $sports->calendar_id = $calendar_id;
+        $sports->name = $data_sports["name"];
+        $sports->number = $data_sports["number"];
+        return $sports->save();
+    }
+
+    /* ======================== Validate & Upload Calendar ========================  */
+    public function db_upload(CalendarGeneral $calendar, CalendarOpeninghours $oh, CalendarSpecification $specification, CalendarGastrotable $gastrotable, CalendarSports $sports, CalendarRooms $rooms, CalendarServiceEmployees $service_employees, Request $request)
+    {
+        /* ==================== 1. Validate ====================   */
         // Set Default errormsg ""
         $errormsg_general = "";
         $errormsg_sports = "";
@@ -314,163 +476,57 @@ class NewCalendar extends Screen
                 $msg .= "</ul><br>";
             }
             Alert::error($msg);
+
+        /* ==================== 2. Upload ====================   */
         } else {
-            if ($data_general["template"] == "none"){
-            }
-            if ($data_general["template"] == "gastronomy") {
-            }
-    
-            if ($data_general["template"] == "sports") {
-            }
-    
-            if ($data_general["template"] == "room") {
-            }
-    
-            if ($data_general["template"] == "services") {
+            $calendar_id = $this->createOrUpdate($calendar, $request);
+            if ($calendar_id !== 0){
+                $uploadValidation = $this->createOrUpdate_Oh($oh, $request, $calendar_id);
+                if ($uploadValidation == 1){
+                    $uploadValidation = $this->createOrUpdate_specification($specification, $request, $calendar_id);
+                    if ($data_general["template"] == "none" && $uploadValidation == 1) {
+                        Alert::success("Ihr Kalender wurde erfolgreich erstellt!");
+                        } else {
+                            Alert::error("Beim Upload in die Datenbank ist ein Fehler Aufgetreten!"); 
+                        }
+                    if ($data_general["template"] == "gastronomy" && $uploadValidation == 1) {
+                        $uploadValidation = $this->createOrUpdate_gastrotable($gastrotable, $request, $calendar_id);
+                        if ($uploadValidation == 1){
+                            Alert::success("Ihr Kalender wurde erfolgreich erstellt!");
+                        } else {
+                            Alert::error("Beim Upload in die Datenbank ist ein Fehler Aufgetreten!"); 
+                        }
+                    }
+                    if ($data_general["template"] == "sports" && $uploadValidation == 1) {
+                        $uploadValidation = $this->createOrUpdate_sports($sports, $request, $calendar_id);
+                        if ($uploadValidation == 1){
+                            Alert::success("Ihr Kalender wurde erfolgreich erstellt!");
+                        } else {
+                            Alert::error("Beim Upload in die Datenbank ist ein Fehler Aufgetreten!"); 
+                        }
+                    }
+                    if ($data_general["template"] == "room" && $uploadValidation == 1) {
+                        $uploadValidation = $this->createOrUpdate_rooms($rooms, $request, $calendar_id);
+                        if ($uploadValidation == 1){
+                            Alert::success("Ihr Kalender wurde erfolgreich erstellt!");
+                        } else {
+                            Alert::error("Beim Upload in die Datenbank ist ein Fehler Aufgetreten!"); 
+                        }
+                    }            
+                    if ($data_general["template"] == "services" && $uploadValidation == 1) {
+                        $uploadValidation = $this->createOrUpdate_service_employees($service_employees, $request, $calendar_id);
+                        if ($uploadValidation == 1){
+                            Alert::success("Ihr Kalender wurde erfolgreich erstellt!");
+                        } else {
+                            Alert::error("Beim Upload in die Datenbank ist ein Fehler Aufgetreten!"); 
+                        }
+                    }
+                } else {
+                    Alert::error("Beim Upload in die Datenbank ist ein Fehler Aufgetreten!");
+                }
+            } else {
+                Alert::error("Beim Upload in die Datenbank ist ein Fehler Aufgetreten!");
             }
         }
-    }
-
-
-    public function createOrUpdate(CalendarGeneral $calendar, Request $request)
-    {
-        $data_general = $request->get('calendar');
-        $calendar->user_id = $data_general["user_id"];
-        $calendar->name = $data_general["name"];
-        $calendar->country = $data_general["country"];
-        $calendar->street = $data_general["street"];
-        $calendar->location = $data_general["location"];
-        $calendar->status = $data_general["status"];
-        $calendar->description = $data_general["description"];
-        $calendar->public = $data_general["public"];
-        $calendar->privateLink = $data_general["privateLink"];
-        $calendar->template = $data_general["template"];
-        $calendar->unit = $data_general["unit"];
-        $calendar->image = $data_general["image"];
-        $calendar->save();
-    }
-
-    public function createOrUpdate_Oh(CalendarOpeninghours $oh, Request $request)
-    {
-        $data_oh = $request->get('oh');
-        $oh->calendar_id = $data_oh["calendar_id"];
-        $oh->day_monday = $data_oh["day_monday"];
-        $oh->day_tuesday = $data_oh["day_tuesday"];
-        $oh->day_wednesday = $data_oh["day_wednesday"];
-        $oh->day_thursday = $data_oh["day_thursday"];
-        $oh->day_friday = $data_oh["day_friday"];
-        $oh->day_saturday = $data_oh["day_saturday"];
-        $oh->day_sunday = $data_oh["day_sunday"];
-        $oh->repeat = $data_oh["repeat"];
-        $oh->halfday_closed_general = $data_oh["halfday_closed_general"];
-        $oh->lunch_general = $data_oh["lunch_general"];
-        $oh->start_general = $data_oh["start_general"];
-        $oh->end_general = $data_oh["end_general"];
-        $oh->lunch_start = $data_oh["lunch_start"];
-        $oh->lunch_end = $data_oh["lunch_end"];
-        $oh->halfday_closed_monday = $data_oh["halfday_closed_monday"];
-        $oh->lunch_monday = $data_oh["lunch_monday"];
-        $oh->start_monday = $data_oh["start_monday"];
-        $oh->end_monday = $data_oh["end_monday"];
-        $oh->lunch_start_monday = $data_oh["lunch_start_monday"];
-        $oh->lunch_end_monday = $data_oh["lunch_end_monday"];
-        $oh->halfday_closed_tuesday = $data_oh["halfday_closed_tuesday"];
-        $oh->lunch_tuesday = $data_oh["lunch_tuesday"];
-        $oh->start_tuesday = $data_oh["start_tuesday"];
-        $oh->end_tuesday = $data_oh["end_tuesday"];
-        $oh->lunch_start_tuesday = $data_oh["lunch_start_tuesday"];
-        $oh->lunch_end_tuesday = $data_oh["lunch_end_tuesday"];
-        $oh->halfday_closed_wednesday = $data_oh["halfday_closed_wednesday"];
-        $oh->lunch_wednesday = $data_oh["lunch_wednesday"];
-        $oh->start_wednesday = $data_oh["start_wednesday"];
-        $oh->end_wednesday = $data_oh["end_wednesday"];
-        $oh->halfday_closed_thursday = $data_oh["halfday_closed_thursday"];
-        $oh->lunch_thursday = $data_oh["lunch_thursday"];
-        $oh->lunch_start_thursday = $data_oh["lunch_start_thursday"];
-        $oh->lunch_end_thursday = $data_oh["lunch_end_thursday"];
-        $oh->halfday_closed_friday = $data_oh["halfday_closed_friday"];
-        $oh->lunch_friday = $data_oh["lunch_friday"];
-        $oh->start_friday = $data_oh["start_friday"];
-        $oh->end_friday = $data_oh["end_friday"];
-        $oh->halfday_closed_saturday = $data_oh["halfday_closed_saturday"];
-        $oh->lunch_saturday = $data_oh["lunch_saturday"];
-        $oh->start_saturday = $data_oh["start_saturday"];
-        $oh->end_saturday = $data_oh["end_saturday"];
-        $oh->lunch_start_saturday = $data_oh["lunch_start_saturday"];
-        $oh->lunch_end_saturday = $data_oh["lunch_end_saturday"];
-        $oh->halfday_closed_sunday = $data_oh["halfday_closed_sunday"];
-        $oh->lunch_sunday = $data_oh["lunch_sunday"];
-        $oh->start_sunday = $data_oh["start_sunday"];
-        $oh->end_sunday = $data_oh["end_sunday"];
-        $oh->lunch_start_sunday = $data_oh["lunch_start_sunday"];
-        $oh->lunch_end_sunday = $data_oh["lunch_end_sunday"];
-        $oh->save();
-        Toast::info('Öffnungszeiten wurden in die DB geschrieben');
-    }
-
-    public function createOrUpdate_specification(CalendarSpecification $specification, Request $request)
-    {
-        $specification->fill($request->get('specification'))->save();
-    }
-
-    public function createOrUpdate_gastrotable(CalendarGastrotable $gastrotable, Request $request)
-    {
-        $data_gastrotbl = $request->get('gastrotable');
-        $calendar_id = $data_gastrotbl["calendar_id"];
-
-        for ($i = 0; $i < (count($data_gastrotbl) - 1); $i++) {
-            $size = $data_gastrotbl[$i]["Tischgrösse"];
-            $count = $data_gastrotbl[$i]["Verfügbare Tische"];
-            $calendar_id = $data_gastrotbl["calendar_id"];
-            $gastrotable = new CalendarGastrotable;
-            $gastrotable->calendar_id = $calendar_id;
-            $gastrotable->gastrotable = $size;
-            $gastrotable->gastrotable_number = $count;
-            $gastrotable->save();
-            Toast::info(__('Tische wurden gespeichert'));
-        }
-    }
-    public function createOrUpdate_service_employees(CalendarServiceEmployees $service_employees, Request $request)
-    {
-        $data_employ = $request->get('service_employees');
-        $service_name = $data_employ["service_name"];
-        $calendar_id = $data_employ["calendar_id"];
-
-        for ($i = 0; $i < (count($data_employ) - 2); $i++) {
-            $employee_name = $data_employ[$i]["Name"];
-            $function = $data_employ[$i]["Funktion"];
-            $calendar_id = $data_employ["calendar_id"];
-            $service_employees = new CalendarServiceEmployees;
-            $service_employees->calendar_id = $calendar_id;
-            $service_employees->service_name = $service_name;
-            $service_employees->employee_name = $employee_name;
-            $service_employees->employee_function = $function;
-            $service_employees->save();
-            Toast::info(__('Mitarbeiter wurde gespeichert.'));
-        }
-    }
-    public function createOrUpdate_rooms(CalendarRooms $rooms, Request $request)
-    {
-        $data_room = $request->get('rooms');
-        $calendar_id = $data_room["calendar_id"];
-
-        for ($i = 0; $i < (count($data_room) - 1); $i++) {
-            $name = $data_room[$i]["Raum-Name"];
-            $capacity = $data_room[$i]["Max. Personenanzahl"];
-            $assets = $data_room[$i]["Ausstattung"];
-            $calendar_id = $data_room["calendar_id"];
-            $rooms = new CalendarRooms;
-            $rooms->calendar_id = $calendar_id;
-            $rooms->name = $name;
-            $rooms->capacity = $capacity;
-            $rooms->assets = $assets;
-            $rooms->save();
-            Toast::info(__('Räume wurden gespeichert.'));
-        }
-    }
-    public function createOrUpdate_sports(CalendarSports $sports, Request $request)
-    {
-        $sports->fill($request->get('sports'))->save();
-        Toast::info('Sportplatz wurde hinzugefügt.');
     }
 }
