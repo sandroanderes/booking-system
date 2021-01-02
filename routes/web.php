@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CalendarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,7 @@ Route::get('/', function () {
     return view('pages.home');
 });
 
-Route::get('/kalender', function () {
-    return view('pages.calendar');
-});
+Route::get('/kalender', [CalendarController::class, 'index']);
 
 Route::get('/funktionen', function () {
     return view('pages.functions');

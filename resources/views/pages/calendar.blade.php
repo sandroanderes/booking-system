@@ -51,7 +51,10 @@
                 <button type="button" id="searchCalendar" class="btn btn-primary btn-block">Suchen</button>
             </div>
         </div>
+
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3" id="CalendarItems">
+
+            @foreach($data as $calendar)
             <div class="col mb-4 rooms">
                 <a href="#">
                     <div class="card">
@@ -64,89 +67,20 @@
                                     <p class="card-date mb-0">SEP</p>
                                 </div>
                                 <div class="col-10">
-                                    <h5 class="card-title">Co-Working Space</h5>
-                                    <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
-                                    <h6 class="card-text location">Aarau, Schweiz</h6>
+                                    <h5 class="card-title">{{$calendar->name}}</h5>
+                                    @if (isset($calendar->day_monday,$calendar->day_tuesday,$calendar->day_wednesday,$calendar->day_thursday,$calendar->day_friday,$calendar->day_saturday,$calendar->day_sunday))
+                                    <p class="card-text">Täglich - 07:00 bis 22:00</p>
+                                    @else
+                                    <p class="card-text">Nicht Täglich - 07:00 bis 22:00</p>
+                                    @endif
+                                    <h6 class="card-text location">{{$calendar->location}}, {{$calendar->country}}</h6>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col mb-4 sports">
-                <a href="/sports">
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <img src="/images/restaurant.jpg" class="card-img-top embed-responsive-item" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <div class="row" id="CalendarItems">
-                                <div class="col-2 d-flex align-items-center">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="card-date mb-0 text-center">OKT</p>
-                                        </div>
-                                        <div class="col text-center">
-                                            <p class="text-center">30</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-10">
-                                    <h5 class="card-title">Tennisplätze</h5>
-                                    <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
-                                    <h6 class="card-text location">Chur, Schweiz</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col mb-4 rooms">
-                <a href="#">
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <img src="/images/table_tennis.jpeg" class="card-img-top embed-responsive-item" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <div class="row" id="CalendarItems">
-                            <div class="col-2 d-flex align-items-center date">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="card-date mb-0 text-center">SEP</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-10">
-                                    <h5 class="card-title">Co-Working Space</h5>
-                                    <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
-                                    <h6 class="card-text location">Olten, Schweiz</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col mb-4 food">
-                <a href="#">
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <img src="/images/party.jpeg" class="card-img-top embed-responsive-item" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <div class="row" id="CalendarItems">
-                                <div class="col-2 text-center d-flex align-items-center">
-                                    <p class="card-date mb-0">SEP</p>
-                                </div>
-                                <div class="col-10">
-                                    <h5 class="card-title">Restaurant</h5>
-                                    <p class="card-text">Wöchentlich - 07:00 bis 22:00</p>
-                                    <h6 class="card-text location">Zürich, Schweiz</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
