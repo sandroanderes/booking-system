@@ -18,45 +18,75 @@
 </section>
 <section class="container-fluid about-section py-5">
     <div class="container">
-        <div class="row justify-content-center text-center pb-3">
-            <div class="col-8">
-                <blockquote class="blockquote">
-                    <p class="mb-0">"Talent wins games, but teamwork and intelligence win championships."</p>
-                    <footer class="blockquote-footer">Michael Jordan</footer>
-                </blockquote>
-            </div>
-        </div>
-        <div class="row justify-content-center text-left">
+        <div class="row justify-content-center text-left mb-5">
             <div class="col-lg-6 col-xs-12">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium sapiente dignissimos natus corrupti molestiae est, nostrum asperiores aperiam ullam, amet minima porro. Iusto dolorem repudiandae saepe neque, ratione optio voluptas! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum soluta ullam dolorem laboriosam delectus eveniet accusamus eligendi officia praesentium explicabo. Molestias aperiam ea non ipsa ut, dolor modi ipsam expedita.</p>
+                <p>Hinter Buechs.ch stehen Sandro, Frank und Bernhard. Die drei haben im Rahmen einer Projektarbeit an der Fachhochschule Graubünden Buechs.ch umgesetzt.
+                    Ursprünglich war Buechs.ch eine Bieridee. Frank und Bernhard spielen regelmässig Tennis und haben festgestellt, dass die Reservationsmöglichkeiten von Tennisplätzen in der Schweiz vielerorts umständlich sind.
+                </p>
             </div>
             <div class="col-lg-6 col-xs-12">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse tempore, dolor iusto eius assumenda quasi incidunt facere fugiat ea possimus dicta magni. Velit deleniti sint delectus quae repellendus vero? Dolorem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, molestiae amet, dolor possimus consectetur aliquam explicabo placeat, assumenda laborum dolorem cum a magni adipisci! Quasi voluptatibus recusandae quisquam exercitationem quas?</p>
+                <p>Einige Tennisstunden und Besprechungen mit Sandro später, war die Idee von Buechs.ch entstanden. Neben Tennisplätzen können nun auch Tische von Restaurants, Räume oder Dienstleistungen aller Art reserviert werden. </p>
             </div>
         </div>
 
-        <div class="row justify-content-center py-5">
-            <img src="https://images.unsplash.com/photo-1526560244950-1a3c1ace48f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&q=80" alt="Team">
-        </div>
-
         <div class="row justify-content-center text-left">
-            <div class="col-lg-3 col-xs-12">
-                <h4><strong><span class="material-icons">
-                            school
-                        </span><span class="align-top"> Studenten</span> </strong></h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni a animi maiores deserunt ducimus at amet doloribus veniam saepe, ipsam reprehenderit rem! Ipsum neque debitis necessitatibus, exercitationem ipsam voluptatibus et.</p>
-            </div>
-            <div class="col-lg-3 col-xs-12">
-                <h4><strong><span class="material-icons">
-                            design_services
-                        </span><span class="align-top"> Design + Craft</span></strong></h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt corrupti aliquam optio doloremque sunt. Ipsum soluta obcaecati perspiciatis, aliquid veritatis magnam placeat praesentium excepturi explicabo alias, consectetur, iste delectus ratione.</p>
-            </div>
-            <div class="col-lg-3 col-xs-12">
-                <h4><strong><span class="material-icons">
-                            local_hospital
-                        </span><span  class="align-top"> Swiss Made</span></strong></h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem nesciunt, libero cum asperiores obcaecati labore magni corporis ipsum omnis explicabo! Laudantium aspernatur quas veniam quisquam aliquam fugiat nisi aut amet.</p>
+            <div class="row">
+                <!-- Single Starts  -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="team__item set-bg" style="background-image: url('/images/about/frank.jpg');">
+                        <div class="team__text">
+                            <div class="team__title">
+                                <h4>Frank Zinsli</h4>
+                                <span>♡ Angeln, Milchstrasse, Vögel fotografieren</span>
+                            </div>
+                            <p>Vestibulum dapibus odio quam, sit amet hendrerit dui ultricies consectetur. Ut viverra
+                                porta leo, non tincidunt mauris condimentu eget. Vivamus non turpis elit. Aenean
+                                ultricies nisl sit amet.</p>
+                            <div class="team__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Ends    -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="team__item set-bg" style="background-image: url('/images/about/bernhard.jpg');">
+                        <div class="team__text">
+                            <div class="team__title">
+                                <h4>Bernhard Aebersold</h4>
+                                <span>♡ Schlechte Sprüche, Schoggimilch & Bier </span>
+                            </div>
+                            <p>Vestibulum dapibus odio quam, sit amet hendrerit dui ultricies consectetur. Ut viverra
+                                porta leo, non tincidunt mauris condimentu eget. Vivamus non turpis elit. Aenean
+                                ultricies nisl sit amet.</p>
+                            <div class="team__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="team__item set-bg" style="background-image: url('/images/about/sandro.jpg');">
+                        <div class="team__text">
+                            <div class="team__title">
+                                <h4>Sandro Anderes</h4>
+                                <span>♡ Brot, Laufsport & Schwedentorte</span>
+                            </div>
+                            <p>Vestibulum dapibus odio quam, sit amet hendrerit dui ultricies consectetur. Ut viverra
+                                porta leo, non tincidunt mauris condimentu eget. Vivamus non turpis elit. Aenean
+                                ultricies nisl sit amet.</p>
+                            <div class="team__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -218,7 +218,7 @@ function reservation_duration_fixed() {
 
 /***/ }),
 
-/***/ 7:
+/***/ 6:
 /*!*************************************************************!*\
   !*** multi ./resources/assets/js/backend/specifications.js ***!
   \*************************************************************/

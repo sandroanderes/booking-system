@@ -26,7 +26,7 @@
             Falls du noch Fragen hast, helfen wir dir gerne unter <a href="/support">Support & FAQ</a> weiter.</p>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3" id="CalendarItems">
             <div class="col mb-4">
-                <div class="card animate__animated animate__slideInUp">
+                <div class="card card-1 animate__animated animate__slideInUp">
                     <div class="embed-responsive embed-responsive-16by9">
                         <img src="/images/functions/all-in-one.jpeg" class="card-img-top embed-responsive-item" alt="...">
                     </div>
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="col mb-4">
-                <div class="card animate__animated animate__slideInUp">
+                <div class="card card-2 animate__animated animate__slideInUp">
                     <div class="embed-responsive embed-responsive-16by9">
                         <img src="/images/functions/modern.jpeg" class="card-img-top embed-responsive-item" alt="...">
                     </div>
@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="col mb-4">
-                <div class="card animate__animated animate__slideInUp">
+                <div class="card card-3 animate__animated animate__slideInUp">
                     <div class="embed-responsive embed-responsive-16by9">
                         <img src="/images/functions/private.jpeg" class="card-img-top embed-responsive-item" alt="...">
                     </div>
@@ -59,7 +59,7 @@
                 </div>
             </div>
             <div class="col mb-4">
-                <div class="card animate__animated animate__slideInUp">
+                <div class="card card-4 animate__animated animate__slideInUp">
                     <div class="embed-responsive embed-responsive-16by9">
                         <img src="/images/functions/security.jpeg" class="card-img-top embed-responsive-item" alt="...">
                     </div>
@@ -70,7 +70,7 @@
                 </div>
             </div>
             <div class="col mb-4">
-                <div class="card animate__animated animate__slideInUp">
+                <div class="card card-5 animate__animated animate__slideInUp">
                     <div class="embed-responsive embed-responsive-16by9">
                         <img src="/images/functions/simple.jpeg" class="card-img-top embed-responsive-item" alt="...">
                     </div>
@@ -81,7 +81,7 @@
                 </div>
             </div>
             <div class="col mb-4">
-                <div class="card animate__animated animate__slideInUp">
+                <div class="card card-6 animate__animated animate__slideInUp">
                     <div class="embed-responsive embed-responsive-16by9">
                         <img src="/images/functions/support.jpeg" class="card-img-top embed-responsive-item" alt="...">
                     </div>
@@ -94,5 +94,4 @@
         </div>
     </div>
 </section>
-<script type="text/javascript" src="{{ asset('js/frontend/functions.js') }}"></script>
 @stop
