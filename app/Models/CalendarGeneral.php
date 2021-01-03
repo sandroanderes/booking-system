@@ -27,6 +27,7 @@ class CalendarGeneral extends Model
     ];
 
     protected $allowedSorts = [
+        'id',
         'name',
         'created_at'
     ];
