@@ -7,6 +7,7 @@ use App\Models\CalendarGeneral;
 use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Alert;
+use Illuminate\Support\Facades\Auth;
 
 class CalendarListScreen extends Screen
 {
@@ -32,7 +33,8 @@ class CalendarListScreen extends Screen
     public function query(): array
     {
         return [
-            'calendar' => CalendarGeneral::filters()->defaultSort('id')->paginate()
+            $user_id = Auth::user()->id,
+            'calendar' => CalendarGeneral::where('user_id', $user_id)->filters()->defaultSort('id')->paginate()
         ];
     }
 
