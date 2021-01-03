@@ -37,9 +37,9 @@ class GeneralInformationsLayout extends Rows
 
             Select::make('calendar.country')
                 ->options([
-                    'CH' => 'Schweiz',
-                    'DE' => 'Deutschland',
-                    'AUT' => 'Österreich',
+                    'Schweiz' => 'Schweiz',
+                    'Deutschland' => 'Deutschland',
+                    'Österreich' => 'Österreich',
                 ])
                 ->value(1)
                 ->required()
