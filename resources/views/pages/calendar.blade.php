@@ -59,19 +59,43 @@
                 <a href="#">
                     <div class="card">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <img src="/images/place.jpeg" class="card-img-top embed-responsive-item" alt="...">
+                            <img src="{{$calendar->image}}" class="card-img-top embed-responsive-item" alt="...">
                         </div>
                         <div class="card-body">
                             <div class="row" id="CalendarItems">
                                 <div class="col-2 text-center d-flex align-items-center">
-                                    <p class="card-date mb-0">SEP</p>
+                                    <p class="card-date mb-0">
+                                        <span class="material-icons">
+                                            {{ $calendar->template=="gastronomy" ? 'restaurant_menu' : ''}}
+                                            {{ $calendar->template=="services" ? 'store' : ''}}
+                                            {{ $calendar->template=="sports" ? 'directions_run' : ''}}
+                                            {{ $calendar->template=="rooms" ? 'meeting_room' : ''}}
+                                            {{ $calendar->template=="none" ? 'shuffle' : ''}}
+                                        </span>
+                                    </p>
                                 </div>
                                 <div class="col-10">
                                     <h5 class="card-title">{{$calendar->name}}</h5>
-                                    @if (isset($calendar->day_monday,$calendar->day_tuesday,$calendar->day_wednesday,$calendar->day_thursday,$calendar->day_friday,$calendar->day_saturday,$calendar->day_sunday))
-                                    <p class="card-text">Täglich - 07:00 bis 22:00</p>
+                                    @if (($calendar->day_monday) AND ($calendar->day_tuesday) AND ($calendar->day_wednesday) AND ($calendar->day_thursday) AND ($calendar->day_friday) AND ($calendar->day_saturday) AND ($calendar->day_sunday))
+                                    <p class="card-text">Täglich
+                                        @if ($calendar->repeat)
+                                        - {{$calendar->start_general}} bis {{$calendar->end_general}}
+                                        @endif
+                                    </p>
                                     @else
-                                    <p class="card-text">Nicht Täglich - 07:00 bis 22:00</p>
+                                    <p class="card-text">
+                                        {{ $calendar->day_monday ? (($calendar->day_monday AND $calendar->day_tuesday) ? 'Mo,' : 'Mo') : ''}}
+                                        {{ $calendar->day_tuesday ? (($calendar->day_tuesday AND $calendar->day_wednesday) ? 'Di,' : 'Di') : ''}}
+                                        {{ $calendar->day_wednesday ? (($calendar->day_wednesday AND $calendar->day_thursday) ? 'Mi,' : 'Mi') : ''}}
+                                        {{ $calendar->day_thursday ? (($calendar->day_thursday AND $calendar->day_friday) ? 'Do,' : 'Do') : ''}}
+                                        {{ $calendar->day_friday ? (($calendar->day_friday AND $calendar->day_saturday) ? 'Fr,' : 'Fr') : ''}}
+                                        {{ $calendar->day_saturday ? (($calendar->day_saturday AND $calendar->day_sunday) ? 'Sa,' : 'Sa') : ''}}
+                                        {{ $calendar->day_sunday ? 'So' : ''}}
+
+                                        @if ($calendar->repeat)
+                                        - {{$calendar->start_general}} bis {{$calendar->end_general}}
+                                        @endif
+                                    </p>
                                     @endif
                                     <h6 class="card-text location">{{$calendar->location}}, {{$calendar->country}}</h6>
                                 </div>

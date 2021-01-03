@@ -1,6 +1,10 @@
 .calendar-section {
     .container {
         padding: 10px;
+
+        span.material-icons {
+            font-size: 35px;
+        }
     }
 
     ul li {
@@ -8,25 +12,27 @@
 
     }
 
-    a{
-        &:hover{
+    a {
+        &:hover {
             color: black;
             text-decoration: none;
         }
 
-        .card{
+        .card {
             .embed-responsive .card-img-top {
                 object-fit: cover;
             }
+
             h5,
-            p{
+            p {
                 margin-bottom: 0.5rem;
             }
-            .card-date{
+
+            .card-date {
                 color: $russian-green;
                 font-weight: 500;
             }
         }
-        
+
     }
 }

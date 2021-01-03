@@ -23,6 +23,7 @@ class CreateCalendarGeneral extends Migration
             $table->boolean('status');
             $table->text('description');
             $table->boolean('public');
+            $table->boolean('featured');
             $table->string('privateLink')->nullable();
             $table->string('template');
             $table->string('unit')->nullable();
