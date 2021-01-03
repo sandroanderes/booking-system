@@ -343,25 +343,27 @@ class NewCalendar extends Screen
     public function createOrUpdate_gastrotable(CalendarGastrotable $gastrotable, Request $request, $calendar_id)
     {
         $data_gastrotbl = $request->get('gastrotable');
-        $calendar_id = $calendar_id;
-
-        for ($i = 0; $i < (count($data_gastrotbl) - 1); $i++) {
+        for ($i = 0; $i <= (count($data_gastrotbl) - 1); $i++) {
             $size = $data_gastrotbl[$i]["Tischgrösse"];
             $count = $data_gastrotbl[$i]["Verfügbare Tische"];
-            $calendar_id = $data_gastrotbl["calendar_id"];
             $gastrotable = new CalendarGastrotable;
             $gastrotable->calendar_id = $calendar_id;
             $gastrotable->gastrotable = $size;
             $gastrotable->gastrotable_number = $count;
-            return $gastrotable->save();
+            $error = $gastrotable->save();
+            if ($error == 0) {
+                return $error;
+                break;
+            }
         }
+        return 1;
     }
     public function createOrUpdate_service_employees(CalendarServiceEmployees $service_employees, Request $request, $calendar_id)
     {
         $data_employ = $request->get('service_employees');
         $service_name = $data_employ["service_name"];
 
-        for ($i = 0; $i < (count($data_employ) - 2); $i++) {
+        for ($i = 0; $i < (count($data_employ) - 1); $i++) {
             $employee_name = $data_employ[$i]["Name"];
             $function = $data_employ[$i]["Funktion"];
             $service_employees = new CalendarServiceEmployees;
@@ -369,25 +371,34 @@ class NewCalendar extends Screen
             $service_employees->service_name = $service_name;
             $service_employees->employee_name = $employee_name;
             $service_employees->employee_function = $function;
-            return $service_employees->save();
+            $error = $service_employees->save();
+            if ($error == 0) {
+                return $error;
+                break;
+            }
         }
+        return 1;
     }
     public function createOrUpdate_rooms(CalendarRooms $rooms, Request $request, $calendar_id)
     {
         $data_room = $request->get('rooms');
-        for ($i = 0; $i < (count($data_room) - 1); $i++) {
+        for ($i = 0; $i <= (count($data_room) - 1); $i++) {
             $name = $data_room[$i]["Raum-Name"];
             $capacity = $data_room[$i]["Max. Personenanzahl"];
             $assets = $data_room[$i]["Ausstattung"];
-            $cal_id = $calendar_id;
 
             $rooms = new CalendarRooms;
-            $rooms->calendar_id = $cal_id;
+            $rooms->calendar_id = $calendar_id;
             $rooms->name = $name;
             $rooms->capacity = $capacity;
             $rooms->assets = $assets;
-            return $rooms->save();
+            $error =  $rooms->save();
+            if ($error == 0) {
+                return $error;
+                break;
+            }
         }
+        return 1;
     }
     public function createOrUpdate_sports(CalendarSports $sports, Request $request, $calendar_id)
     {
