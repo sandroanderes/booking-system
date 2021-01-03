@@ -977,30 +977,31 @@ function _locatonFilterFunction() {
             selected_distance = document.getElementById('locationSelect').value; //Make array
 
             location = [];
-            selected_distance = selected_distance == "Alle" ? 10000 : selected_distance.slice(0, -2);
+            /* selected_distance = (selected_distance == "Alle" ? 10000 : selected_distance.slice(0, -2)) */
+
             console.time('for {}');
             console.log(cardInformation);
             _iterator = _createForOfIteratorHelper(cardInformation.entries());
-            _context.prev = 6;
+            _context.prev = 5;
 
             _iterator.s();
 
-          case 8:
+          case 7:
             if ((_step = _iterator.n()).done) {
-              _context.next = 28;
+              _context.next = 27;
               break;
             }
 
             _step$value = _slicedToArray(_step.value, 2), i = _step$value[0], value = _step$value[1];
-            _context.next = 12;
+            _context.next = 11;
             return fetch("https://nominatim.openstreetmap.org/search?q=".concat(value.name, "&format=json&limit=1"));
 
-          case 12:
+          case 11:
             response = _context.sent;
-            _context.next = 15;
+            _context.next = 14;
             return response.json();
 
-          case 15:
+          case 14:
             data = _context.sent;
             console.log(data);
             location[i] = {
@@ -1012,19 +1013,19 @@ function _locatonFilterFunction() {
             };
 
             if (!(i == cardInformation.length - 1)) {
-              _context.next = 26;
+              _context.next = 25;
               break;
             }
 
-            _context.next = 21;
+            _context.next = 20;
             return fetch("https://nominatim.openstreetmap.org/search?q=".concat(locationFilter, "&format=json&limit=1"));
 
-          case 21:
+          case 20:
             _response = _context.sent;
-            _context.next = 24;
+            _context.next = 23;
             return _response.json();
 
-          case 24:
+          case 23:
             _data = _context.sent;
 
             /* console.log(data); */
@@ -1036,28 +1037,28 @@ function _locatonFilterFunction() {
               lon: _data[0].lon
             };
 
-          case 26:
-            _context.next = 8;
+          case 25:
+            _context.next = 7;
             break;
 
-          case 28:
-            _context.next = 33;
+          case 27:
+            _context.next = 32;
             break;
 
-          case 30:
-            _context.prev = 30;
-            _context.t0 = _context["catch"](6);
+          case 29:
+            _context.prev = 29;
+            _context.t0 = _context["catch"](5);
 
             _iterator.e(_context.t0);
 
-          case 33:
-            _context.prev = 33;
+          case 32:
+            _context.prev = 32;
 
             _iterator.f();
 
-            return _context.finish(33);
+            return _context.finish(32);
 
-          case 36:
+          case 35:
             if (location.length == cardInformation.length + 1) {
               for (j = 0; j < location.length - 1; j++) {
                 //console.log("Distanz zwischen " + location[j].name + " und " + location[location.length - 1].name + " beträgt " + distance(parseFloat(location[j].lat), parseFloat(location[j].lon), parseFloat(location[location.length - 1].lat), parseFloat(location[location.length - 1].lon), "K") + " km");
@@ -1084,12 +1085,12 @@ function _locatonFilterFunction() {
                 )
                 console.timeEnd('.map()'); */
 
-          case 39:
+          case 38:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[6, 30, 33, 36]]);
+    }, _callee, null, [[5, 29, 32, 35]]);
   }));
   return _locatonFilterFunction.apply(this, arguments);
 }

@@ -56,7 +56,7 @@
 
             <div class="col-lg-2 col-md-4 col-sm-4">
                 <br>
-                <butinpton type="button" id="searchRooms" class="btn btn-primary btn-block">Suchen</butinpton>
+                <button type="button" id="searchRooms" class="btn btn-primary btn-block">Suchen</button>
             </div>
         </div>
 

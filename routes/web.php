@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GastronomyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +16,15 @@ use App\Http\Controllers\CalendarController;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home');
-});
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/kalender', [CalendarController::class, 'index']);
+Route::get('/calendar', [CalendarController::class, 'index']);
+
+Route::get('/calendar/gastronomy/{id}', [GastronomyController::class, 'index']);
+Route::get('/calendar/sports/{id}', [GastronomyController::class, 'index']);
+Route::get('/calendar/rooms/{id}', [GastronomyController::class, 'index']);
+Route::get('/calendar/services/{id}', [GastronomyController::class, 'index']);
+Route::get('/calendar/none/{id}', [GastronomyController::class, 'index']);
 
 Route::get('/funktionen', function () {
     return view('pages.functions');

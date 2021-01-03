@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang="de">
+<?php
+setlocale(LC_TIME, "de_DE");
+?>
 <head>
     <meta charset="utf-8">
     <meta name="description" content="">

@@ -83,7 +83,7 @@ async function locatonFilterFunction(cardInformation, locationFilter, locationCa
     //Make array
     location = [];
 
-    selected_distance = (selected_distance == "Alle" ? 10000 : selected_distance.slice(0, -2))
+    /* selected_distance = (selected_distance == "Alle" ? 10000 : selected_distance.slice(0, -2)) */
     console.time('for {}');
 
     console.log(cardInformation);
