@@ -12094,6 +12094,10 @@ footer a:hover {
   padding: 10px;
 }
 
+.calendar-section .container span.material-icons {
+  font-size: 35px;
+}
+
 .calendar-section ul li {
   list-style: none;
 }
