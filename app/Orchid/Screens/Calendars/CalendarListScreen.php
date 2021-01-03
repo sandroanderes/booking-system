@@ -10,6 +10,7 @@ use Orchid\Support\Facades\Alert;
 use Illuminate\Support\Facades\Auth;
 use Orchid\Screen\Actions\Button;
 use Illuminate\Http\Request;
+use Symfony\Component\VarDumper\VarDumper;
 
 class CalendarListScreen extends Screen
 {
@@ -77,15 +78,11 @@ class CalendarListScreen extends Screen
         return redirect()->route('platform.calendar.list');
     }
 
-    public function dbStatusUpdate(CalendarGeneral $calendar, Request $request)
+    public function dbStatusUpdate(Request $request)
     {
-        $calendar_id = $request->get('calendar_id');
-        // $calendar_status = $data_calendar['status'];
-        $calendar::where("id", $calendar_id)->update(["status" => 0]);
-        /* $calendar->exists = true;
-        $calendar->id = $calendar_id; //already exists in database.
-        $calendar->status = 0;
+        $calendar_id = 7;
+        $calendar = CalendarGeneral::find($calendar_id);
+        $calendar->status = $request->calendar_status;
         $calendar->save();
-         CalendarGeneral::where('id',$calendar_id)->update(['status'=>false]); */
     }
 }

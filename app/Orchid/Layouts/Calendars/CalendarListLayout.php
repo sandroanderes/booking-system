@@ -35,9 +35,9 @@ class CalendarListLayout extends Table
             TD::set('calendar_id', __('Kalender ID'))
             ->sort()
             ->render(function (CalendarGeneral $calendar) {
-                return $calendar->id;
+                return $calendar->id;                
                 }),
-            TD::set('calendar.name', __('Name'))
+            TD::set('calendar_name', __('Name'))
                 ->sort()
                 ->filter(TD::FILTER_TEXT)
                 ->cantHide()
@@ -45,18 +45,18 @@ class CalendarListLayout extends Table
                     return Link::make(Str::limit($calendar->name, 20, '(...)'));
                         // ->route('platform.calendar.edit', $calendar->id);
                 }),
-            TD::set('calendar.description', __('Beschreibung'))
+            TD::set('calendar_description', __('Beschreibung'))
                 ->render(function (CalendarGeneral $calendar) {
                     return Str::limit($calendar->description, 40, '(...)');
             }),
-            TD::set('calendar.created_at', __('Created'))
+            TD::set('calendar_created_at', __('Created'))
                 ->sort()
                 ->render(function (CalendarGeneral $calendar) {
                     return $calendar->created_at->toDateTimeString();
                 }),
-            TD::set('calendar.status', __('Kalenderstatus'))
+            TD::set('calendar_status', __('Kalenderstatus'))
             ->render(function (CalendarGeneral $calendar) {
-                return RadioButtons::make('calendar.status')
+                return RadioButtons::make('calendar_status')
                 ->options([
                     1 => 'Aktiv',
                     0 => 'Inaktiv',
@@ -64,14 +64,14 @@ class CalendarListLayout extends Table
                 ->value($calendar->status)
                 ->novalidate();
                 }),
-            TD::set('refresh_status', __('Kalender aktualisieren'))
+            TD::set('calendar_refreshStatus', __('Kalender aktualisieren'))
             ->render(function () {
-                return Button::make()
+                return Button::make('Aktualisieren')
                 ->icon('refresh')
                 ->method("dbStatusUpdate")
                 ->novalidate();
                 }),     
-            TD::set('remove', __('Löschen'))
+            TD::set('calendar_remove', __('Löschen'))
             ->render(function (CalendarGeneral $calendar) {
                 return Link::make()
                     ->route('platform.calendar.remove', $calendar->id)
