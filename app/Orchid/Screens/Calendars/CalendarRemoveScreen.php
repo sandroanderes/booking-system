@@ -69,7 +69,6 @@ class CalendarRemoveScreen extends Screen
     public function remove(CalendarGeneral $calendar)
     {
         $calendar->delete();
-       
         Alert::success('Der Kalender wurde erfolgreich gelöscht');
         return redirect()->route('platform.calendar.list');
     }
