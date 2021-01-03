@@ -264,7 +264,6 @@ class NewCalendar extends Screen
         }else {
             return 0;
         }
-
     }
 
     public function createOrUpdate_Oh(CalendarOpeninghours $oh, Request $request, $calendar_id)

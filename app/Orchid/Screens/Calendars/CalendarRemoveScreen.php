@@ -9,13 +9,6 @@ use Orchid\Support\Facades\Layout;
 use Orchid\Support\Facades\Alert;
 use App\Orchid\Layouts\Calendars\CalendarRemoveLayout;
 
-use App\Models\CalendarOpeninghours;
-use App\Models\CalendarSpecification;
-use App\Models\CalendarGastrotable;
-use App\Models\CalendarServiceEmployees;
-use App\Models\CalendarRooms;
-use App\Models\CalendarSports;
-
 class CalendarRemoveScreen extends Screen
 {
     /**

@@ -8,6 +8,8 @@ use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Alert;
 use Illuminate\Support\Facades\Auth;
+use Orchid\Screen\Actions\Button;
+use Illuminate\Http\Request;
 
 class CalendarListScreen extends Screen
 {
@@ -46,6 +48,10 @@ class CalendarListScreen extends Screen
     public function commandBar(): array
     {
         return [
+            Button::make('Kalenderstatus aktualisieren')
+                ->icon('refresh')
+                ->method('dbStatusUpdate'),
+
             Link::make('Neuer Kalender hinzufügen')
                 ->icon('plus')
                 ->route('platform.newcalendar')
@@ -67,9 +73,19 @@ class CalendarListScreen extends Screen
     public function removeCalendar(CalendarGeneral $calendar, $calendar_id)
     {
         $calendar->where('id', $calendar_id)->delete();
-
-        Alert::info('You have successfully deleted the post.');
-
+        Alert::info('Dein Kalender wurde erfolgreich gelöscht.');
         return redirect()->route('platform.calendar.list');
+    }
+
+    public function dbStatusUpdate(CalendarGeneral $calendar, Request $request)
+    {
+        $calendar_id = $request->get('calendar_id');
+        // $calendar_status = $data_calendar['status'];
+        $calendar::where("id", $calendar_id)->update(["status" => 0]);
+        /* $calendar->exists = true;
+        $calendar->id = $calendar_id; //already exists in database.
+        $calendar->status = 0;
+        $calendar->save();
+         CalendarGeneral::where('id',$calendar_id)->update(['status'=>false]); */
     }
 }
