@@ -20,6 +20,7 @@ class CalendarGeneral extends Model
         'status',
         'description',
         'public',
+        'featured',
         'privateLink',
         'template',
         'unit',

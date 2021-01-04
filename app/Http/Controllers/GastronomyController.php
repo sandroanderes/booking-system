@@ -18,6 +18,11 @@ class GastronomyController extends Controller
             ->where('public', '=', 0)
             ->first();
 
-        return view('pages.single-page', compact('data'));
+        $gastrotable = DB::table('calendar_general')
+            ->leftJoin('gastrotable', 'gastrotable.calendar_id', '=', 'calendar_general.id')
+            ->where('calendar_general.id', '=', $id)
+            ->get();
+
+        return view('pages.single-page', compact('data','gastrotable'));
     }
 }

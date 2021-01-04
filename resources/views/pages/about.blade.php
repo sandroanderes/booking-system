@@ -4,7 +4,7 @@
 <section class="container-fluid banner single px-0">
     <div class="thumbnail text-left">
         <div class="overlay"></div>
-        <img src="https://images.unsplash.com/photo-1499540633125-484965b60031?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" alt="Place" class="img-responsive">
+        <img src="images/team.jpg" alt="team" class="img-responsive">
         <div class="caption">
             <div class="container">
                 <div class="row">
