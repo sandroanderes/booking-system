@@ -28,22 +28,24 @@
             <div class="col mb-4">
                 <div class="card card-1 animate__animated animate__slideInUp">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <img src="/images/functions/all-in-one.jpeg" class="card-img-top embed-responsive-item" alt="...">
+                        <img src="/images/functions/printing.jpg" class="card-img-top embed-responsive-item" alt="Symbolbild das die Verwendung von Templates illustriert.">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-center">All-In-One Lösung</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="card-title text-center">Templates nach Mass</h5>
+                        <p class="card-text">Verwende ein Buechs.ch-Template und erledige die Erstellung deines Kalenders im
+                        Handumdrehen. Für Clubs, für Restaurants, für Dich!</p>
                     </div>
                 </div>
             </div>
             <div class="col mb-4">
                 <div class="card card-2 animate__animated animate__slideInUp">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <img src="/images/functions/modern.jpeg" class="card-img-top embed-responsive-item" alt="...">
+                        <img src="/images/functions/lookout.jpg" class="card-img-top embed-responsive-item" alt="Symbolbild, das die Möglichkeit von buechs.ch beschreibt, neue Angeobt in seiner Nähe zu entdecken.">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-center">Modernes Design</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="card-title text-center">What's Up?</h5>
+                        <p class="card-text">Suche und finde andere Buechs.ch-Kalender in deiner Nähe und entdecke Angebote
+                        von denen du gar nicht wusstest, dass es sie in deiner Nähe gibt.</p>
                     </div>
                 </div>
             </div>
@@ -54,18 +56,18 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center">Privat und Öffentlich</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">Bestimme selbst, ob nur du und deine Mitglieder Zugang zum Kalender haben sollen. Ein Klick genügt. </p>
                     </div>
                 </div>
             </div>
             <div class="col mb-4">
                 <div class="card card-4 animate__animated animate__slideInUp">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <img src="/images/functions/security.jpeg" class="card-img-top embed-responsive-item" alt="...">
+                        <img src="/images/functions/closed.jpg" class="card-img-top embed-responsive-item" alt="...">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-center">Hohe Sicherheitsstandards</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="card-title text-center">Zu wegen geschlossen</h5>
+                        <p class="card-text">Bleibt dein Betrieb über Mittag geschlossen? Kein Problem, bei Buechs.ch kannst du selbst die Mittagspause für Reservationen sperren.</p>
                     </div>
                 </div>
             </div>
@@ -75,8 +77,8 @@
                         <img src="/images/functions/simple.jpeg" class="card-img-top embed-responsive-item" alt="...">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-center">Benutzerfreundlich</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="card-title text-center">Flexibilität</h5>
+                        <p class="card-text">Folgt mehr hier</p>
                     </div>
                 </div>
             </div>
