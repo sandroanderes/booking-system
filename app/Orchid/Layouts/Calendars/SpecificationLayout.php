@@ -208,8 +208,7 @@ class SpecificationLayout extends Rows
             Input::make('sports.name')
                 ->type('text')
                 ->title('Was kann man bei deinem Sportverein reservieren')
-                ->placeholder('Bsp: Tennisplätze, Fussballplätze, Billardtische oder Bowlingbahnen')
-                ->help('Eingabe im Plural z.bsp. Dartscheiben'),
+                ->placeholder('Bsp: Tennisplätze, Fussballplätze, Billardtische oder Bowlingbahnen'),
 
             Input::make('sports.number')
                 ->type('number')
