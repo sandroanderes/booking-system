@@ -39,13 +39,12 @@
                                 <h4>Frank Zinsli</h4>
                                 <span>♡ Angeln, Milchstrasse, Vögel fotografieren</span>
                             </div>
-                            <p>Vestibulum dapibus odio quam, sit amet hendrerit dui ultricies consectetur. Ut viverra
-                                porta leo, non tincidunt mauris condimentu eget. Vivamus non turpis elit. Aenean
-                                ultricies nisl sit amet.</p>
+                            <p>Den Ausgleich neben dem Programmieren hole ich mir in der Natur im schönen Kanton Graubünden. Regelmässig findet
+                            man mich auf Bergtouren mit einem Feldstecher oder einer Angelroute im Gepäck.</p>
                             <div class="team__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/frank.zinsli" target="_blank"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.linkedin.com/in/frank-zinsli/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                <a href="https://www.instagram.com/frank.zinsli/" target="_blank"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -58,13 +57,13 @@
                                 <h4>Bernhard Aebersold</h4>
                                 <span>♡ Schlechte Sprüche, Schoggimilch & Bier </span>
                             </div>
-                            <p>Vestibulum dapibus odio quam, sit amet hendrerit dui ultricies consectetur. Ut viverra
-                                porta leo, non tincidunt mauris condimentu eget. Vivamus non turpis elit. Aenean
-                                ultricies nisl sit amet.</p>
+                            <p>Neben dem Programmieren von Reservationsplattformen stehe ich gerne
+                                auf dem Tennisplatz (natürlich mit Buechs.ch reserviert) oder betrachte die Welt durch den Sucher einer Kamera.
+                            </p>
                             <div class="team__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/bernhard.aebersold" target="_blank"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.linkedin.com/in/bernhard-aebersold-1624b3129/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                <a href="https://www.instagram.com/licht.bildner/" target="_blank"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -76,13 +75,12 @@
                                 <h4>Sandro Anderes</h4>
                                 <span>♡ Brot, Laufsport & Schwedentorte</span>
                             </div>
-                            <p>Vestibulum dapibus odio quam, sit amet hendrerit dui ultricies consectetur. Ut viverra
-                                porta leo, non tincidunt mauris condimentu eget. Vivamus non turpis elit. Aenean
-                                ultricies nisl sit amet.</p>
+                            <p>Das Programmieren von Buechs.ch ist mit einem Orientierungslauf zu vergleichen - meiner grossen Leidenschaft. Im Unterschied zum Orientierungslauf steht einem beim Programmieren allerdings keine
+                            wegweisende Karte zur Verfügung, wenn man sich mal verrennt hat.</p>
                             <div class="team__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/profile.php?id=100007096939022" target="_blank"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.linkedin.com/in/sandro-a-528028170/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                <a href="https://www.instagram.com/sandroanderers" target="_blank"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>

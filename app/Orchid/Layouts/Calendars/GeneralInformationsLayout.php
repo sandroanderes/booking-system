@@ -65,13 +65,13 @@ class GeneralInformationsLayout extends Rows
                 ->title('Kalenderbeschreibung')
                 ->toolbar(["text"])
                 ->required()
-                ->placeholder('Beschreibe deinen Kalender in 2-3 Sätzen?'),
+                ->placeholder('Beschreibe kurz deine Organisation und erklär, was der Kunde bei dir reservieren kann'),
 
             Switcher::make('calendar.public')
                 ->sendTrueOrFalse()
                 ->title('Öffentlicher Kalender')
                 ->value(false)
-                ->help('Sollen dein Kalender öffentlich einsehbar sein?'),
+                ->help('Ist der Kalender auf privat gesetzt, können Kunden nur mit dem nachfolgenden Link auf deinen Kalender zugreifen.'),
 
             Input::make('calendar.privateLink')
                 ->title('Dein privater Link')

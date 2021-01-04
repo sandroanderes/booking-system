@@ -101,15 +101,15 @@
             <div class="row">
                 <div class="col col-lg-6 col-12 mb-3 mb-lg-0">
                     <div class="img-container">
-                        <img src="images/underwater.jpeg" class="img-fluid" alt="Underwater">
+                        <img src="images/restaurant_2.jpg" class="img-fluid" alt="Underwater">
                     </div>
                 </div>
                 <div class="col col-lg-6 col-12">
                     <h5 class="pb-4 font-weight-bold">Anwendungsbeispiel Restaurant</h5>
                     <p>
                         Hat mein Lieblingsrestaurant heute Abend um 19 Uhr noch einen Tisch frei? Statt zum Hörer zu greifen
-                        oder eine Mail zu schreiben, gibst Du Deinen Gästen mit Buechs.ch die Möglichkeit selbst nachschauen
-                        zu können, wann noch Tische frei sind. Erstelle dafür einen Kalender auf Buechs.ch, trage Deine
+                        oder eine Mail zu schreiben, gibst Du Deinen Gästen mit Buechs.ch die Möglichkeit selbst nachzuschauen
+                        , wann noch Tische frei sind. Erstelle dafür einen Kalender auf Buechs.ch, trage Deine
                         Anzahl 2er, 4er oder 6er-Tische ein und lass Deine Kunden die Reservation in vorgegebenen Slots
                         vornehmen.
                     </p>
@@ -130,7 +130,7 @@
                 </div>
                 <div class="col col-lg-6 col-12 mb-3 mb-lg-0">
                     <div class="img-container">
-                        <img src="images/underwater.jpeg" class="img-fluid" alt="Underwater">
+                        <img src="images/tennisclub.jpg" class="img-fluid" alt="Underwater">
                     </div>
                 </div>
             </div>
@@ -141,7 +141,7 @@
             <div class="row">
                 <div class="col col-lg-6 col-12 mb-3 mb-lg-0">
                     <div class="img-container">
-                        <img src="images/underwater.jpeg" class="img-fluid" alt="Underwater">
+                        <img src="images/startfeld.jpg" class="img-fluid" alt="Underwater">
                     </div>
                 </div>
                 <div class="col col-lg-6 col-12">
