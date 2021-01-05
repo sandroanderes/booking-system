@@ -31,7 +31,7 @@ class CalendarListLayout extends Table
     protected function columns(): array
     {
         return [
-            TD::set('calendar_id', __('Kalender ID'))
+            TD::set('calendar_id', __('ID'))
             ->sort()
             ->render(function (CalendarGeneral $calendar) {
                 return $calendar->id;                
@@ -42,7 +42,6 @@ class CalendarListLayout extends Table
                 ->cantHide()
                 ->render(function (CalendarGeneral $calendar) {
                     return Link::make(Str::limit($calendar->name, 20, '(...)'));
-                        // ->route('platform.calendar.edit', $calendar->id);
                 }),
             TD::set('calendar_description', __('Beschreibung'))
                 ->render(function (CalendarGeneral $calendar) {
@@ -59,7 +58,7 @@ class CalendarListLayout extends Table
                 ->novalidate();
                 }),
             TD::set('calendar_refreshStatus', __('Kalender aktualisieren'))
-            ->render(function () {
+            ->render(function (CalendarGeneral $calendar) {
                 return Button::make('Aktualisieren')
                 ->icon('refresh')
                 ->method("dbStatusUpdate")

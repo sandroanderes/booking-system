@@ -73,9 +73,12 @@ class CalendarListScreen extends Screen
         return redirect()->route('platform.calendar.list');
     }
 
-    public function dbStatusUpdate(Request $request)
+    
+    public function dbStatusUpdate(Request $request, $calendar_id)
     {
-        $calendar_id = 9;
+
+        $calendar_id = 8;
+
         $calendar = CalendarGeneral::find($calendar_id);
         $calendar->status = $request->calendar_status;
         $calendar->save();
