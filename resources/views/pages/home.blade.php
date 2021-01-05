@@ -1,81 +1,83 @@
 @extends('base.default')
 
 @section('content')
-    <section class="container-fluid featured-section">
-        <div class="row">
-            <div class="col-xl-7 col-12">
-                <div class="img-container">
-                    <img src="{{ $data[0] ? $data[0]->image : '' }}" class="img-fluid" alt="Restaurant">
-                    <div class="content text-center desktop">
-                        <div class="align-middle">
-                            <p>{{ $data[0] ? ucfirst( $data[0]->template) : '' }}</p>
-                            <h1>{{ $data[0] ? $data[0]->name : '' }}</h1>
-                            <h6>Öffnungszeiten</h6>
-                            <table>
-                                <tr>
-                                    <td>Mo-Do:</td>
-                                    <td>10 bis 21 Uhr</td>
-                                </tr>
-                                <tr>
-                                    <td>Fr-Sa:</td>
-                                    <td>10 bis 23 Uhr</td>
-                                </tr>
-                            </table>
-                            <button type="button" class="btn btn-primary">Buechs jetzt!</button>
-                        </div>
-                    </div>
-                    <div class="content-hover mobile">
-                        <div>
-                            <button type="button" class="btn btn-outline-light mx-auto">Buechs jetzt!</button>
-                        </div>
-                    </div>
-                    <div class="content mobile">
-                        <div>
-                            <p>{{ $data[0] ? ucfirst($data[0]->template): '' }}</p>
-                            <h2 class="text-break">{{ $data[0] ? $data[0]->name : '' }}</h2>
-                            <p>{{ $data[0] ? $data[0]->location : '' }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-5 col-12">
-                <div class="col">
+    @isset ($data[0]->image)
+        <section class="container-fluid featured-section">
+            <div class="row">
+                <div class="col-xl-7 col-12">
                     <div class="img-container">
-                        <img src="{{ $data[1] ? $data[1]->image : '' }}" class="img-fluid" alt="Restaurant">
-                        <div class="content-hover">
+                        <img src="{{ $data[0] ? $data[0]->image : '' }}" class="img-fluid" alt="Restaurant">
+                        <div class="content text-center desktop">
+                            <div class="align-middle">
+                                <p>{{ $data[0] ? ucfirst($data[0]->template) : '' }}</p>
+                                <h1>{{ $data[0] ? $data[0]->name : '' }}</h1>
+                                <h6>Öffnungszeiten</h6>
+                                <table>
+                                    <tr>
+                                        <td>Mo-Do:</td>
+                                        <td>10 bis 21 Uhr</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fr-Sa:</td>
+                                        <td>10 bis 23 Uhr</td>
+                                    </tr>
+                                </table>
+                                <button type="button" class="btn btn-primary">Buechs jetzt!</button>
+                            </div>
+                        </div>
+                        <div class="content-hover mobile">
                             <div>
                                 <button type="button" class="btn btn-outline-light mx-auto">Buechs jetzt!</button>
                             </div>
                         </div>
-                        <div class="content">
+                        <div class="content mobile">
                             <div>
-                                <p>{{ $data[1] ? ucfirst($data[1]->template) : '' }}</p>
-                                <h2 class="text-break">{{ $data[1] ? $data[1]->name : '' }}</h2>
-                                <p>{{ $data[1] ? $data[1]->location : '' }}</p>
+                                <p>{{ $data[0] ? ucfirst($data[0]->template) : '' }}</p>
+                                <h2 class="text-break">{{ $data[0] ? $data[0]->name : '' }}</h2>
+                                <p>{{ $data[0] ? $data[0]->location : '' }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="img-container">
-                        <img src="{{ $data[2] ? $data[2]->image : '' }}" class="img-fluid" alt="Restaurant">
-                        <div class="content-hover">
-                            <div>
-                                <button type="button" class="btn btn-outline-light mx-auto">Buechs jetzt!</button>
+                <div class="col-xl-5 col-12">
+                    <div class="col">
+                        <div class="img-container">
+                            <img src="{{ $data[1] ? $data[1]->image : '' }}" class="img-fluid" alt="Restaurant">
+                            <div class="content-hover">
+                                <div>
+                                    <button type="button" class="btn btn-outline-light mx-auto">Buechs jetzt!</button>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div>
+                                    <p>{{ $data[1] ? ucfirst($data[1]->template) : '' }}</p>
+                                    <h2 class="text-break">{{ $data[1] ? $data[1]->name : '' }}</h2>
+                                    <p>{{ $data[1] ? $data[1]->location : '' }}</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="content">
-                            <div>
-                                <p>{{ $data[2] ? ucfirst($data[2]->template) : '' }}</p>
-                                <h2 class="text-break">{{ $data[2] ? $data[2]->name : '' }}</h2>
-                                <p>{{ $data[2] ? $data[2]->location : '' }}</p>
+                    </div>
+                    <div class="col">
+                        <div class="img-container">
+                            <img src="{{ $data[2] ? $data[2]->image : '' }}" class="img-fluid" alt="Restaurant">
+                            <div class="content-hover">
+                                <div>
+                                    <button type="button" class="btn btn-outline-light mx-auto">Buechs jetzt!</button>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div>
+                                    <p>{{ $data[2] ? ucfirst($data[2]->template) : '' }}</p>
+                                    <h2 class="text-break">{{ $data[2] ? $data[2]->name : '' }}</h2>
+                                    <p>{{ $data[2] ? $data[2]->location : '' }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
     <section class="container-fluid home-section py-5">
         <div class="container">
             <h1 class="text-center mt-0">Alüte oder Mail schribe? Buechs eifach!</h1>
@@ -108,7 +110,8 @@
                     <h5 class="pb-4 font-weight-bold">Anwendungsbeispiel Restaurant</h5>
                     <p>
                         Hat mein Lieblingsrestaurant heute Abend um 19 Uhr noch einen Tisch frei? Statt zum Hörer zu greifen
-                        oder eine Mail zu schreiben, gibst Du Deinen Gästen mit Buechs.ch die Möglichkeit selbst nachzuschauen
+                        oder eine Mail zu schreiben, gibst Du Deinen Gästen mit Buechs.ch die Möglichkeit selbst
+                        nachzuschauen
                         , wann noch Tische frei sind. Erstelle dafür einen Kalender auf Buechs.ch, trage Deine
                         Anzahl 2er, 4er oder 6er-Tische ein und lass Deine Kunden die Reservation in vorgegebenen Slots
                         vornehmen.

@@ -12,8 +12,12 @@
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "illuminate/support": "^8.20",
         "laravel/framework": "^8.0",
+        "laravel/jetstream": "^1.6",
+        "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.0",
+        "livewire/livewire": "^2.0",
         "orchid/platform": "^9.1"
     },
     "require-dev": {

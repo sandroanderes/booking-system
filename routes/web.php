@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GastronomyController;
+use App\Orchid\Screens\PlatformScreen;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,3 +50,7 @@ Route::get('/sports', function () {
 Route::get('/restaurants', function () {
     return view('pages.restaurants');
 });
+
+Route::screen('/main', PlatformScreen::class)
+->middleware(['auth:sanctum', 'verified'])
+->name('platform.main');
