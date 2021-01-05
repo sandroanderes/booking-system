@@ -10,7 +10,7 @@ use Orchid\Screen\Layouts\Rows;
 class UserLayout extends Rows
 {
     /**
-     * Views.
+     * Views. 
      *
      * @return array
      */

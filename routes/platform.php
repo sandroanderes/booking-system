@@ -125,14 +125,14 @@ Route::screen('userscreen', UserScreen::class)
             ->push(__('Benutzereinstellungen'));
     });
 
-// Platform > Settings > Password
+/* Platform > Settings > Password
 Route::screen('password', Password::class)
     ->name('platform.password')
     ->breadcrumbs(function (Trail $trail) {
         return $trail
             ->parent('platform.index')
             ->push(__('Password ändern'));
-    });
+    }); */
 
 // Platform > Settings > View
 Route::screen('view', View::class)

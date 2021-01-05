@@ -12,6 +12,7 @@ use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Actions\ModalToggle;
 use Orchid\Screen\Fields\Password;
 use Orchid\Support\Facades\Toast;
+use Illuminate\Support\Facades\Auth;
 
 class UserScreen extends Screen
 {
@@ -36,7 +37,10 @@ class UserScreen extends Screen
      */
     public function query(): array
     {
-        return [];
+        return [
+            'user.name' => Auth::user()->name,
+            'user.email' => Auth::user()->email,
+        ];
     }
 
     /**
@@ -101,7 +105,7 @@ class UserScreen extends Screen
         ]);
 
         $request->user()
-            ->fill($request->get('user'))
+            ->fill($request->get('user')) 
             ->save();
 
         Toast::info(__('Profil aktualisiert.'));
