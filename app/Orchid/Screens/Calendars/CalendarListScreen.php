@@ -10,7 +10,6 @@ use Orchid\Support\Facades\Alert;
 use Illuminate\Support\Facades\Auth;
 use Orchid\Screen\Actions\Button;
 use Illuminate\Http\Request;
-use Symfony\Component\VarDumper\VarDumper;
 
 class CalendarListScreen extends Screen
 {
@@ -49,10 +48,6 @@ class CalendarListScreen extends Screen
     public function commandBar(): array
     {
         return [
-            Button::make('Kalenderstatus aktualisieren')
-                ->icon('refresh')
-                ->method('dbStatusUpdate'),
-
             Link::make('Neuer Kalender hinzufügen')
                 ->icon('plus')
                 ->route('platform.newcalendar')

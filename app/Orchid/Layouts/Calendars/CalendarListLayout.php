@@ -8,7 +8,6 @@ use Orchid\Screen\Layouts\Table;
 use Orchid\Screen\Actions\Link;
 use Illuminate\Support\Str;
 use Orchid\Screen\Fields\RadioButtons;
-use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Actions\Button;
 
 
