@@ -118,7 +118,5 @@ class Delete extends Screen
         }else {
             Alert::error("<strong>Benutzerkonto nicht gelöscht:</strong><br>E-Mail oder Passwort ist falsch");
         }
-
-
     }
 }

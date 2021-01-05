@@ -178,11 +178,11 @@ class NewCalendar extends Screen
         $data_gastrotable = $request->get('gastrotable');
         $msg_gastrotable = "";
 
-        for ($i = 0; $i < (count($data_gastrotable) - 1); $i++) {
-            if (empty($count = $data_gastrotable[$i]["Verfügbare Tische"])) {
+        for ($i = 0; $i <= (count($data_gastrotable) - 1); $i++) {
+            if (empty($data_gastrotable[$i]["Verfügbare Tische"])) {
                 $msg_gastrotable .= "<li>Trage die Anzahl verfügbarer Tische ein.</li>";
                 break;
-            } elseif (!is_numeric($count = $data_gastrotable[$i]["Verfügbare Tische"])) {
+            } elseif (!is_numeric($data_gastrotable[$i]["Verfügbare Tische"])) {
                 $msg_gastrotable .= "<li>Trage eine Zahl für verfügbare Tische ein.</li>";
                 break;
             }
@@ -213,7 +213,7 @@ class NewCalendar extends Screen
         $data_rooms = $request->get('rooms');
         $msg_rooms = "";
 
-        for ($i = 0; $i < (count($data_rooms) - 1); $i++) {
+        for ($i = 0; $i <= (count($data_rooms) - 1); $i++) {
             if (empty($data_rooms[$i]["Raum-Name"])) {
                 $msg_rooms .= "<li>Trage einen Namen für deinen Raum ein.</li>";
             }
