@@ -80,7 +80,7 @@ class CalendarListScreen extends Screen
 
     public function dbStatusUpdate(Request $request)
     {
-        $calendar_id = 7;
+        $calendar_id = 9;
         $calendar = CalendarGeneral::find($calendar_id);
         $calendar->status = $request->calendar_status;
         $calendar->save();

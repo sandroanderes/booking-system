@@ -49,16 +49,11 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('user')
                 ->route('platform.userscreen'),
 
-            ItemMenu::label('Passwort ändern')
-                ->place('parent-hidden-menu')
-                ->icon('pencil')
-                ->route('platform.password'),
-
-            ItemMenu::label('Ansicht')
+            /* ItemMenu::label('Ansicht')
                 ->place('parent-hidden-menu')
                 ->icon('screen-desktop')
                 ->route('platform.view'),
-
+            */
             ItemMenu::label('Konto löschen')
                 ->place('parent-hidden-menu')
                 ->icon('trash')

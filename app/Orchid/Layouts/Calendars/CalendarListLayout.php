@@ -49,11 +49,6 @@ class CalendarListLayout extends Table
                 ->render(function (CalendarGeneral $calendar) {
                     return Str::limit($calendar->description, 40, '(...)');
             }),
-            TD::set('calendar_created_at', __('Created'))
-                ->sort()
-                ->render(function (CalendarGeneral $calendar) {
-                    return $calendar->created_at->toDateTimeString();
-                }),
             TD::set('calendar_status', __('Kalenderstatus'))
             ->render(function (CalendarGeneral $calendar) {
                 return RadioButtons::make('calendar_status')
@@ -70,7 +65,17 @@ class CalendarListLayout extends Table
                 ->icon('refresh')
                 ->method("dbStatusUpdate")
                 ->novalidate();
-                }),     
+                }),   
+            TD::set('calendar_created_at', __('Created'))
+            ->sort()
+            ->render(function (CalendarGeneral $calendar) {
+                return $calendar->created_at->format('Y-m-d');
+            }),
+            TD::set('calendar_updated_at', __('Updated'))
+            ->sort()
+            ->render(function (CalendarGeneral $calendar) {
+                return $calendar->updated_at->format('Y-m-d');
+            }),  
             TD::set('calendar_remove', __('Löschen'))
             ->render(function (CalendarGeneral $calendar) {
                 return Link::make()
