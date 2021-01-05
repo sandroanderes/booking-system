@@ -10,6 +10,7 @@ use Orchid\Support\Facades\Alert;
 use Illuminate\Support\Facades\Auth;
 use Orchid\Screen\Actions\Button;
 use Illuminate\Http\Request;
+use Orchid\Screen\Fields\Input;
 
 class CalendarListScreen extends Screen
 {
@@ -74,11 +75,9 @@ class CalendarListScreen extends Screen
     }
 
     
-    public function dbStatusUpdate(Request $request, $calendar_id)
+    public function dbStatusUpdate(Request $request)
     {
-
-        $calendar_id = 8;
-
+        $calendar_id = $request->calendar_id;
         $calendar = CalendarGeneral::find($calendar_id);
         $calendar->status = $request->calendar_status;
         $calendar->save();

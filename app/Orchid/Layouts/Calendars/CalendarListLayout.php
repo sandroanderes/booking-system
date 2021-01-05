@@ -61,7 +61,7 @@ class CalendarListLayout extends Table
             ->render(function (CalendarGeneral $calendar) {
                 return Button::make('Aktualisieren')
                 ->icon('refresh')
-                ->method("dbStatusUpdate")
+                ->method("dbStatusUpdate?calendar_id=$calendar->id")
                 ->novalidate();
                 }),   
             TD::set('calendar_created_at', __('Created'))
