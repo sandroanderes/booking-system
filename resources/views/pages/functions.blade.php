@@ -28,12 +28,11 @@
             <div class="col mb-4">
                 <div class="card card-1 animate__animated animate__slideInUp">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <img src="/images/functions/printing.jpg" class="card-img-top embed-responsive-item" alt="Symbolbild das die Verwendung von Templates illustriert.">
+                        <img src="/images/functions/vielseitigkeit.jpg" class="card-img-top embed-responsive-item" alt="Symbolbild das die Verwendung von Templates illustriert.">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-center">Templates nach Mass</h5>
-                        <p class="card-text">Verwende ein Buechs.ch-Template und erledige die Erstellung deines Kalenders im
-                        Handumdrehen. Für Clubs, für Restaurants, für Dich!</p>
+                        <h5 class="card-title text-center">Vielseitigkeit</h5>
+                        <p class="card-text">Vom Coworking Space übers Restaurant bis hin zum Sportverein – Buechs.ch hat für alle das passende Reservationssystem parat.</p>
                     </div>
                 </div>
             </div>
@@ -44,7 +43,7 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center">What's Up?</h5>
-                        <p class="card-text">Suche und finde andere Buechs.ch-Kalender in deiner Nähe und entdecke Angebote
+                        <p class="card-text">Suche und finde andere Kalender in deiner Nähe und entdecke Angebote
                         von denen du gar nicht wusstest, dass es sie in deiner Nähe gibt.</p>
                     </div>
                 </div>
@@ -52,11 +51,11 @@
             <div class="col mb-4">
                 <div class="card card-3 animate__animated animate__slideInUp">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <img src="/images/functions/private.jpeg" class="card-img-top embed-responsive-item" alt="...">
+                        <img src="/images/functions/printing.jpg" class="card-img-top embed-responsive-item" alt="...">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-center">Privat und Öffentlich</h5>
-                        <p class="card-text">Bestimme selbst, ob nur du und deine Mitglieder Zugang zum Kalender haben sollen. Ein Klick genügt. </p>
+                        <h5 class="card-title text-center">Templates nach Mass</h5>
+                        <p class="card-text">Verwende ein Buechs.ch-Template und erledige die Erstellung deines Kalenders im Handumdrehen. Für Clubs, für Restaurants, für Dich!</p>
                     </div>
                 </div>
             </div>
@@ -66,19 +65,19 @@
                         <img src="/images/functions/closed.jpg" class="card-img-top embed-responsive-item" alt="...">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-center">Zu wegen geschlossen</h5>
-                        <p class="card-text">Bleibt dein Betrieb über Mittag geschlossen? Kein Problem, bei Buechs.ch kannst du selbst die Mittagspause für Reservationen sperren.</p>
+                        <h5 class="card-title text-center">Flexibilität</h5>
+                        <p class="card-text">Täglich wechselnde Öffnungszeiten? Kein Problem, mit Buechs.ch kannst du selbst die Mittagspause für Reservationen sperren.</p>
                     </div>
                 </div>
             </div>
             <div class="col mb-4">
                 <div class="card card-5 animate__animated animate__slideInUp">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <img src="/images/functions/simple.jpeg" class="card-img-top embed-responsive-item" alt="...">
+                        <img src="/images/functions/private.jpeg" class="card-img-top embed-responsive-item" alt="...">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-center">Flexibilität</h5>
-                        <p class="card-text">Folgt mehr hier</p>
+                        <h5 class="card-title text-center">Privat und Öffentlich</h5>
+                        <p class="card-text">Bestimme selbst, ob nur du und deine Mitglieder Zugang zum Kalender haben sollen oder jeder und jede Reservationen vornehmen kann.</p>
                     </div>
                 </div>
             </div>
@@ -89,7 +88,7 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center">Professioneller Support</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">Unkompliziert und persönlich. Ruf uns an oder schreib uns dein Anliegen und wir kümmern uns schnellstmöglichst drum. </p>
                     </div>
                 </div>
             </div>
