@@ -34,7 +34,7 @@
         </a>
         <div class="accordion-collapse-content">
           <div class="inner-content p-3">
-            <p>Hat mein Lieblingsrestaurant heute noch einen Tisch frei? Ist der Tennisplatz morgen um 11 Uhr schon belegt? Wann ist der nächste Friseurtermin frei? Mit Buechs.ch erstellst Du Deinen massgeschneiderten Reservationskalender im Handumdrehen und Kunden können direkt online einen Termin oder eine Reservation eintragen. Verschwende keine Zeit mehr mit der Beantwortung der immer gleichen Anfragen.</p>
+            <p>Hat mein Lieblingsrestaurant heute noch einen Tisch frei? Ist der Tennisplatz morgen um 11 Uhr schon belegt? Wann ist der nächste Friseurtermin frei? Mit Buechs.ch erstellst Du Deinen massgeschneiderten Buecher im Handumdrehen und Kunden können direkt online einen Termin oder eine Reservation eintragen. Verschwende keine Zeit mehr mit der Beantwortung der immer gleichen Anfragen.</p>
           </div>
         </div>
       </div>
@@ -45,7 +45,7 @@
         </a>
         <div class="accordion-collapse-content">
           <div class="inner-content p-3">
-            <p>Nach Ablauf des kostenlosen Probemonats kostet jeder aktivierte Kalender 15 Franken pro Monat.</p>
+            <p>Nach Ablauf des kostenlosen Probemonats kostet jeder aktivierte Buecher 15 Franken pro Monat.</p>
           </div>
         </div>
       </div>
@@ -56,29 +56,29 @@
         </a>
         <div class="accordion-collapse-content">
           <div class="inner-content p-3">
-            <p>Nach erfolgter Registrierung kannst Du direkt Deinen ersten Kalender erstellen. Danach kannst Du den Kalender auf Deiner eigenen Webseite einbinden und Deinen Kunden / Vereinsmitglieder zugänglich machen. Wenn Du bei der Erstellung des Kalenders Unterstützung brauchst, stehen wir Dir jederzeit zur Verfügung.</p>
+            <p>Nach erfolgter Registrierung kannst Du direkt Deinen ersten Buecher erstellen. Danach kannst Du den Buecher auf Deiner eigenen Webseite einbinden und Deinen Kunden / Vereinsmitglieder zugänglich machen. Wenn Du bei der Erstellung des Buechers Unterstützung brauchst, stehen wir Dir jederzeit zur Verfügung.</p>
           </div>
         </div>
       </div>
 
       <div class="accordion-collapse" id="four">
         <a href="#four">
-          Mein Betrieb muss wegen Covid-19 kurzerhand schliessen. Muss ich den Kalender weiterhin bezahlen?
+          Mein Betrieb muss wegen Covid-19 kurzerhand schliessen. Muss ich den Buecher weiterhin bezahlen?
         </a>
         <div class="accordion-collapse-content">
           <div class="inner-content p-3">
-            <p>Wird dein Kalender nicht gebraucht, musst du auch nicht dafür bezahlen. Stelle unter den Kalendereinstellungen sicher, dass du den entsprechenden Kalenderstatus auf “inaktiv” gesetzt hast, dann entfällt die monatliche Gebühr.</p>
+            <p>Wird dein Buecher nicht gebraucht, musst du auch nicht dafür bezahlen. Stelle unter den Buechereinstellungen sicher, dass du den entsprechenden Buecherstatus auf “inaktiv” gesetzt hast, dann entfällt die monatliche Gebühr.</p>
           </div>
         </div>
       </div>
 
       <div class="accordion-collapse" id="five">
         <a href="#five">
-          Mein Verein hat nur über die Sommermonate geöffnet, kann ich den Reservationskalender nur für die entsprechenden Monate nutzen?
+          Mein Verein hat nur über die Sommermonate geöffnet, kann ich den Buecher nur für die entsprechenden Monate nutzen?
         </a>
         <div class="accordion-collapse-content">
           <div class="inner-content p-3">
-            <p>Sobald Dein Kalender in den Einstellungen auf “Aktiv” gesetzt ist, muss eine monatliche Gebühr von 15 Franken bezahlt werden. Wenn der Kalender auf “Inaktiv” gesetzt ist, muss Du nichts bezahlen. </p>
+            <p>Sobald Dein Buecher in den Einstellungen auf “Aktiv” gesetzt ist, muss eine monatliche Gebühr von 15 Franken bezahlt werden. Wenn der Buecher auf “Inaktiv” gesetzt ist, muss Du nichts bezahlen. </p>
           </div>
         </div>
       </div>

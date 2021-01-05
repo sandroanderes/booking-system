@@ -73,7 +73,7 @@ class Delete extends Screen
         return [
             Layout::tabs([
                 'Benutzerkonto' => DeleteLayout::class,
-                'Erstellte Kalender' => DeleteListLayout::class,
+                'Erstellte Buecher' => DeleteListLayout::class,
             ]),
             Layout::modal('removeUser', [
                 Layout::rows([
@@ -89,7 +89,7 @@ class Delete extends Screen
                         ->type('password')
                         ->required(),
                 ]),
-            ])->title('Dein Benutzerkonto und alle dazugehörigen Kalender löschen'),
+            ])->title('Dein Benutzerkonto und alle dazugehörigen Buecher löschen'),
     ];
 
     }

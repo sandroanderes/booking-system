@@ -23,7 +23,7 @@ class Overview extends Screen
      *
      * @var string
      */
-    public $description = 'All deine Kalender im Überblick';
+    public $description = 'All deine Buecher im Überblick';
     /**
      * @var bool
      */

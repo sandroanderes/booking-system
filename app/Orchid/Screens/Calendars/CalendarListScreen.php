@@ -18,14 +18,14 @@ class CalendarListScreen extends Screen
      *
      * @var string
      */
-    public $name = 'Deine Kalender';
+    public $name = 'Deine Buecher';
 
     /**
      * Display header description.
      *
      * @var string
      */
-    public $description = 'Liste deiner Kalender';
+    public $description = 'Liste deiner Buecher';
 
     /**
      * Query data.
@@ -48,7 +48,7 @@ class CalendarListScreen extends Screen
     public function commandBar(): array
     {
         return [
-            Link::make('Neuer Kalender hinzufügen')
+            Link::make('Neuer Buecher hinzufügen')
                 ->icon('plus')
                 ->route('platform.newcalendar')
         ];
@@ -69,7 +69,7 @@ class CalendarListScreen extends Screen
     public function removeCalendar(CalendarGeneral $calendar, $calendar_id)
     {
         $calendar->where('id', $calendar_id)->delete();
-        Alert::info('Dein Kalender wurde erfolgreich gelöscht.');
+        Alert::info('Dein Buecher wurde erfolgreich gelöscht.');
         return redirect()->route('platform.calendar.list');
     }
 

@@ -83,7 +83,7 @@
                 <div class="col col-lg-6 col-12 mb-3 mb-lg-0">
                     <p> Keine Lust die immer gleichen Terminanfragen zu beantworten? Spar Dir die Zeit mit Buechs.ch.</p>
                     <ul class="mb-0">
-                        <li>Erstelle massgeschneiderte Reservationskalender für Dein Unternehmen oder Deinen Verein.</li>
+                        <li>Erstelle massgeschneiderte Reservationskalender (sog. Buecher) für Dein Unternehmen oder Deinen Verein.</li>
                         <li>Kunden, Mitarbeiter oder Vereinsmitglieder sehen freie Slots und buchen sich selbst ein.</li>
                         <li>Spare Zeit und behalte den Überblick.</li>
                     </ul>
@@ -109,7 +109,7 @@
                     <p>
                         Hat mein Lieblingsrestaurant heute Abend um 19 Uhr noch einen Tisch frei? Statt zum Hörer zu greifen
                         oder eine Mail zu schreiben, gibst Du Deinen Gästen mit Buechs.ch die Möglichkeit selbst nachzuschauen
-                        , wann noch Tische frei sind. Erstelle dafür einen Kalender auf Buechs.ch, trage Deine
+                        , wann noch Tische frei sind. Erstelle dafür einen Buecher auf Buechs.ch, trage Deine
                         Anzahl 2er, 4er oder 6er-Tische ein und lass Deine Kunden die Reservation in vorgegebenen Slots
                         vornehmen.
                     </p>
@@ -148,7 +148,7 @@
                     <h5 class="pb-4 font-weight-bold">Anwendungsbeispiel: Co-Working-Space</h5>
                     <p>
                         Willst Du Deinen Co-Working-Space-Kunden die Möglichkeit geben, sich unkompliziert einen
-                        Meeting-Raum zu mieten? Nichts einfacher als das. Auf Buechs.ch erstellst Du Deinen eigenen Kalender
+                        Meeting-Raum zu mieten? Nichts einfacher als das. Auf Buechs.ch erstellst Du Deinen eigenen Buecher
                         für Deine Meeting-Räume und Deine Co-Worker mieten sich gleich selbst ein.
                     </p>
                 </div>

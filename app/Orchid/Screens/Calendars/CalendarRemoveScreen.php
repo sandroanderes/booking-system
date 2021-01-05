@@ -16,15 +16,15 @@ class CalendarRemoveScreen extends Screen
      *
      * @var string
      */
-    public $name = 'Kalender Löschen';
+    public $name = 'Buecher Löschen';
 
     /**
      * Display header description.
      *
      * @var string
      */
-    public $description = 'Sie sind dabei einen Kalender zu löschen.
-    Wenn Sie diesen Kalender löschen, kann dies nicht wieder rückgängig gemacht werden.';
+    public $description = 'Sie sind dabei einen Buecher zu löschen.
+    Wenn Sie diesen Buecher löschen, kann dies nicht wieder rückgängig gemacht werden.';
 
 
     /**
@@ -69,7 +69,7 @@ class CalendarRemoveScreen extends Screen
     public function remove(CalendarGeneral $calendar)
     {
         $calendar->delete();
-        Alert::success('Der Kalender wurde erfolgreich gelöscht');
+        Alert::success('Der Buecher wurde erfolgreich gelöscht');
         return redirect()->route('platform.calendar.list');
     }
 }
