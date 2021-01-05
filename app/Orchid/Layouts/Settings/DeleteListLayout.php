@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Orchid\Layouts\Calendars;
+namespace App\Orchid\Layouts\Settings;
 
 use Orchid\Screen\TD;
 use App\Models\CalendarGeneral;
@@ -8,10 +8,9 @@ use Orchid\Screen\Layouts\Table;
 use Orchid\Screen\Actions\Link;
 use Illuminate\Support\Str;
 use Orchid\Screen\Fields\RadioButtons;
-use Orchid\Screen\Actions\Button;
 
 
-class CalendarListLayout extends Table
+class DeleteListLayout extends Table
 {
     /**
      * Data source.
@@ -31,7 +30,7 @@ class CalendarListLayout extends Table
     protected function columns(): array
     {
         return [
-            TD::set('calendar_id', __('ID'))
+            TD::set('calendar_id', __('Kalender ID'))
             ->sort()
             ->render(function (CalendarGeneral $calendar) {
                 return $calendar->id;                
@@ -41,7 +40,8 @@ class CalendarListLayout extends Table
                 ->filter(TD::FILTER_TEXT)
                 ->cantHide()
                 ->render(function (CalendarGeneral $calendar) {
-                    return Link::make(Str::limit($calendar->name, 20, '(...)'));
+                    return Str::limit($calendar->name, 20, '(...)');
+                        // ->route('platform.calendar.edit', $calendar->id);
                 }),
             TD::set('calendar_description', __('Beschreibung'))
                 ->render(function (CalendarGeneral $calendar) {
@@ -55,15 +55,9 @@ class CalendarListLayout extends Table
                     0 => 'Inaktiv',
                 ])
                 ->value($calendar->status)
-                ->novalidate();
-                }),
-            TD::set('calendar_refreshStatus', __('Kalender aktualisieren'))
-            ->render(function (CalendarGeneral $calendar) {
-                return Button::make('Aktualisieren')
-                ->icon('refresh')
-                ->method("dbStatusUpdate?calendar_id=$calendar->id")
-                ->novalidate();
-                }),   
+                ->novalidate()
+                ->disabled();
+                }), 
             TD::set('calendar_created_at', __('Created'))
             ->sort()
             ->render(function (CalendarGeneral $calendar) {
@@ -74,12 +68,6 @@ class CalendarListLayout extends Table
             ->render(function (CalendarGeneral $calendar) {
                 return $calendar->updated_at->format('Y-m-d');
             }),  
-            TD::set('calendar_remove', __('Löschen'))
-            ->render(function (CalendarGeneral $calendar) {
-                return Link::make()
-                    ->route('platform.calendar.remove', $calendar->id)
-                    ->icon('trash');
-                }),
         ];
     }
 }

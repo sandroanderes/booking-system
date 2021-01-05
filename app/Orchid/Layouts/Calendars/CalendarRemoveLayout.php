@@ -50,14 +50,14 @@ class CalendarRemoveLayout extends Rows
                 ->disabled(),
 
             Input::make('calendar.description')
-                ->title('Kalenderbeschreibung')
+                ->title('Beschreibung')
                 ->type('text')
                 ->disabled(),
 
             Switcher::make('calendar.public')
                 ->sendTrueOrFalse()
-                ->title('Öffentlicher Kalender')
-                ->help('Sollen dein Kalender öffentlich einsehbar sein?')
+                ->title('Öffentlicher Buecher')
+                ->help('Sollen dein Buecher öffentlich einsehbar sein?')
                 ->disabled(),
 
             Input::make('calendar.privateLink')
@@ -74,8 +74,8 @@ class CalendarRemoveLayout extends Rows
                     'services' => 'Dienstleistungen - für Termine mit Kunden',
 
                 ])
-                ->title('Kalendervorlage wählen')
-                ->help('Verwende eine unserer Kalendervorlagen')
+                ->title('Buechervorlage wählen')
+                ->help('Verwende eine unserer Vorlagen')
                 ->disabled(),
         ];
     }

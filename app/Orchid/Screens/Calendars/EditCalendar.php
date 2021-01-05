@@ -25,14 +25,14 @@ class EditCalendar extends Screen
      *
      * @var string
      */
-    public $name = 'Kalender Bearbeiten';
+    public $name = 'Buecher Bearbeiten';
 
     /**
      * Display header description.
      *
      * @var string
      */
-    public $description = 'Bearbeite deinen Kalender';
+    public $description = 'Bearbeite deinen Buecher';
 
     /**
      * Query data.

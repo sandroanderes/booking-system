@@ -33,7 +33,7 @@ class GeneralInformationsLayout extends Rows
                 ->type('text')
                 ->required()
                 ->title('Name')
-                ->placeholder('Gib deinem Kalender einen Namen'),
+                ->placeholder('Gib deinem Buecher einen Namen'),
 
             Select::make('calendar.country')
                 ->options([
@@ -62,16 +62,16 @@ class GeneralInformationsLayout extends Rows
                 ->value(1),
 
             Quill::make('calendar.description')
-                ->title('Kalenderbeschreibung')
+                ->title('Kurzbeschreibung')
                 ->toolbar(["text"])
                 ->required()
                 ->placeholder('Beschreibe kurz deine Organisation und erklär, was der Kunde bei dir reservieren kann'),
 
             Switcher::make('calendar.public')
                 ->sendTrueOrFalse()
-                ->title('Öffentlicher Kalender')
+                ->title('Öffentlicher Buecher')
                 ->value(false)
-                ->help('Ist der Kalender auf privat gesetzt, können Kunden nur mit dem nachfolgenden Link auf deinen Kalender zugreifen.'),
+                ->help('Ist der Schalter auf privat gesetzt, können Kunden nur mit dem nachfolgenden Link auf deinen Buecher zugreifen.'),
 
             Input::make('calendar.privateLink')
                 ->title('Dein privater Link')
@@ -86,14 +86,14 @@ class GeneralInformationsLayout extends Rows
                     'services' => 'Dienstleistungen - für Termine mit Kunden',
 
                 ])
-                ->title('Kalendervorlage wählen')
-                ->help('Verwende eine unserer Kalendervorlagen'),
+                ->title('Buechervorlage wählen')
+                ->help('Verwende eine unserer Vorlagen'),
 
             Input::make('calendar.unit')
                 ->type('text')
                 ->title('Reservationsobjekt')
                 ->required()
-                ->help('Was kann in diesem Kalender reserviert werden?'),
+                ->help('Was kann in diesem Buecher reserviert werden?'),
 
             Cropper::make('calendar.image')
                 ->title('Bild hochladen')

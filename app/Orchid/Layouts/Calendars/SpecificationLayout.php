@@ -37,9 +37,9 @@ class SpecificationLayout extends Rows
                     'weekly' => 'Wochenansicht',
                     'monthly'   => 'Monatsansicht',
                 ])
-                ->title('Kalenderformat wählen')
+                ->title('Format wählen')
                 ->value('weekly')
-                ->help('In welchem Format soll dein Kalender standardmässig angezeigt werden?'),
+                ->help('In welchem Format soll dein Buecher standardmässig angezeigt werden?'),
 
             Group::make([
                 Switcher::make('specification.duration_fixed')
@@ -245,7 +245,7 @@ class SpecificationLayout extends Rows
 
                 ->help('Klick auf "+Hinzufügen" um weitere Mitarbeiter einzutragen'),
             Group::make([
-                Button::make('Kalender Speichern')
+                Button::make('Buecher Speichern')
                     ->icon('database')
                     ->method('db_upload')
                     ->novalidate()

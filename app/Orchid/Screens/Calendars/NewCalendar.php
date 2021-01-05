@@ -24,7 +24,7 @@ class NewCalendar extends Screen
      *
      * @var string
      */
-    public $name = 'Neuer Kalender hinzufügen';
+    public $name = 'Neuer Buecher hinzufügen';
 
     /**
      * Display header description.
@@ -106,7 +106,7 @@ class NewCalendar extends Screen
         $msg_general = "";
 
         if (empty($data_general["name"])) {
-            $msg_general .= "<li>Trage einen Kalendernamen ein.</li>";
+            $msg_general .= "<li>Trage einen Namen für deinen Buecher ein.</li>";
         }
         if (empty($data_general["street"])) {
             $msg_general .= "<li>Trage eine Strasse ein.</li>";
@@ -178,11 +178,11 @@ class NewCalendar extends Screen
         $data_gastrotable = $request->get('gastrotable');
         $msg_gastrotable = "";
 
-        for ($i = 0; $i < (count($data_gastrotable) - 1); $i++) {
-            if (empty($count = $data_gastrotable[$i]["Verfügbare Tische"])) {
+        for ($i = 0; $i <= (count($data_gastrotable) - 1); $i++) {
+            if (empty($data_gastrotable[$i]["Verfügbare Tische"])) {
                 $msg_gastrotable .= "<li>Trage die Anzahl verfügbarer Tische ein.</li>";
                 break;
-            } elseif (!is_numeric($count = $data_gastrotable[$i]["Verfügbare Tische"])) {
+            } elseif (!is_numeric($data_gastrotable[$i]["Verfügbare Tische"])) {
                 $msg_gastrotable .= "<li>Trage eine Zahl für verfügbare Tische ein.</li>";
                 break;
             }
@@ -213,7 +213,7 @@ class NewCalendar extends Screen
         $data_rooms = $request->get('rooms');
         $msg_rooms = "";
 
-        for ($i = 0; $i < (count($data_rooms) - 1); $i++) {
+        for ($i = 0; $i <= (count($data_rooms) - 1); $i++) {
             if (empty($data_rooms[$i]["Raum-Name"])) {
                 $msg_rooms .= "<li>Trage einen Namen für deinen Raum ein.</li>";
             }
@@ -488,14 +488,14 @@ class NewCalendar extends Screen
                 if ($uploadValidation == 1){
                     $uploadValidation = $this->createOrUpdate_specification($specification, $request, $calendar_id);
                     if ($data_general["template"] == "none" && $uploadValidation == 1) {
-                        Alert::success("Ihr Kalender wurde erfolgreich erstellt!");
+                        Alert::success("Ihr Buecher wurde erfolgreich erstellt!");
                         } else {
                             Alert::error("Beim Upload in die Datenbank ist ein Fehler Aufgetreten!"); 
                         }
                     if ($data_general["template"] == "gastronomy" && $uploadValidation == 1) {
                         $uploadValidation = $this->createOrUpdate_gastrotable($gastrotable, $request, $calendar_id);
                         if ($uploadValidation == 1){
-                            Alert::success("Ihr Kalender wurde erfolgreich erstellt!");
+                            Alert::success("Ihr Buecher wurde erfolgreich erstellt!");
                         } else {
                             Alert::error("Beim Upload in die Datenbank ist ein Fehler Aufgetreten! Gastro"); 
                         }
@@ -503,7 +503,7 @@ class NewCalendar extends Screen
                     if ($data_general["template"] == "sports" && $uploadValidation == 1) {
                         $uploadValidation = $this->createOrUpdate_sports($sports, $request, $calendar_id);
                         if ($uploadValidation == 1){
-                            Alert::success("Ihr Kalender wurde erfolgreich erstellt!");
+                            Alert::success("Ihr Buecher wurde erfolgreich erstellt!");
                         } else {
                             Alert::error("Beim Upload in die Datenbank ist ein Fehler Aufgetreten!"); 
                         }
@@ -511,7 +511,7 @@ class NewCalendar extends Screen
                     if ($data_general["template"] == "room" && $uploadValidation == 1) {
                         $uploadValidation = $this->createOrUpdate_rooms($rooms, $request, $calendar_id);
                         if ($uploadValidation == 1){
-                            Alert::success("Ihr Kalender wurde erfolgreich erstellt!");
+                            Alert::success("Ihr Buecher wurde erfolgreich erstellt!");
                         } else {
                             Alert::error("Beim Upload in die Datenbank ist ein Fehler Aufgetreten! Raum"); 
                         }
@@ -519,7 +519,7 @@ class NewCalendar extends Screen
                     if ($data_general["template"] == "services" && $uploadValidation == 1) {
                         $uploadValidation = $this->createOrUpdate_service_employees($service_employees, $request, $calendar_id);
                         if ($uploadValidation == 1){
-                            Alert::success("Ihr Kalender wurde erfolgreich erstellt!");
+                            Alert::success("Ihr Buecher wurde erfolgreich erstellt!");
                         } else {
                             Alert::error("Beim Upload in die Datenbank ist ein Fehler Aufgetreten! Service"); 
                         }

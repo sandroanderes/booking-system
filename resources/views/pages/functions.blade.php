@@ -43,7 +43,7 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center">What's Up?</h5>
-                        <p class="card-text">Suche und finde andere Kalender in deiner Nähe und entdecke Angebote
+                        <p class="card-text">Suche und finde andere Buecher in deiner Nähe und entdecke Angebote
                         von denen du gar nicht wusstest, dass es sie in deiner Nähe gibt.</p>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center">Templates nach Mass</h5>
-                        <p class="card-text">Verwende ein Buechs.ch-Template und erledige die Erstellung deines Kalenders im Handumdrehen. Für Clubs, für Restaurants, für Dich!</p>
+                        <p class="card-text">Verwende ein Buechs.ch-Template und erledige die Erstellung deines Buechers im Handumdrehen. Für Clubs, für Restaurants, für Dich!</p>
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center">Privat und Öffentlich</h5>
-                        <p class="card-text">Bestimme selbst, ob nur du und deine Mitglieder Zugang zum Kalender haben sollen oder jeder und jede Reservationen vornehmen kann.</p>
+                        <p class="card-text">Bestimme selbst, ob nur du und deine Mitglieder Zugang zum Buecher haben sollen oder jeder und jede Reservationen vornehmen kann.</p>
                     </div>
                 </div>
             </div>
