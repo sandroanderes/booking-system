@@ -83,7 +83,7 @@ class UserEditScreen extends Screen
     {
         return [
             UserEditLayout::class,
-            UserRoleLayout::class,
+            //UserRoleLayout::class,
             RolePermissionLayout::class,
         ];
     }

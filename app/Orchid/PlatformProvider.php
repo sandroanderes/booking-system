@@ -25,9 +25,15 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerMainMenu(): array
     {
         return [
-            ItemMenu::label('Dashboard')
+            /* ItemMenu::label('Dashboard')
                 ->icon('monitor')
                 ->route('platform.example'),
+            */
+            ItemMenu::label('Verwaltung')
+                ->title('Systemeinstellungen')
+                ->icon('settings')
+                ->route('platform.systems.index')
+                ->permission('platform.systems.index'),
 
             ItemMenu::label('Kalenderübersicht')
                 ->title('Kalender')
@@ -59,12 +65,12 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('trash')
                 ->route('platform.delete'),
 
-
+            /* 
             ItemMenu::label('Basic Elements')
             ->title('Form controls')
             ->icon('note')
             ->route('platform.example.fields'),
-
+            
         ItemMenu::label('Advanced Elements')
             ->icon('briefcase')
             ->route('platform.example.advanced'),
@@ -90,7 +96,7 @@ class PlatformProvider extends OrchidServiceProvider
             ->title('Weiteres')
             ->icon('docs')
             ->url('https://orchid.software/en/docs'),
-
+        */
         ];
     }
 
@@ -112,14 +118,14 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerSystemMenu(): array
     {
         return [
-            ItemMenu::label(__('Access rights'))
+            ItemMenu::label(__('Verwaltung'))
                 ->icon('lock')
                 ->slug('Auth')
                 ->active('platform.systems.*')
                 ->permission('platform.systems.index')
                 ->sort(1000),
 
-            ItemMenu::label(__('Users'))
+            ItemMenu::label(__('Benutzer'))
                 ->place('Auth')
                 ->icon('user')
                 ->route('platform.systems.users')
@@ -127,13 +133,13 @@ class PlatformProvider extends OrchidServiceProvider
                 ->sort(1000)
                 ->title(__('All registered users')),
 
-            ItemMenu::label(__('Roles'))
+            ItemMenu::label(__('Buechers'))
                 ->place('Auth')
-                ->icon('lock')
-                ->route('platform.systems.roles')
+                ->icon('calendar')
+                ->route('platform.systems.buechers')
                 ->permission('platform.systems.roles')
                 ->sort(1000)
-                ->title(__('A Role defines a set of tasks a user assigned the role is allowed to perform. ')),
+                ->title(__('Liste aller Buecher die erstellt wurden. ')),
         ];
     }
 

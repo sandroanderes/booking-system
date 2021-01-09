@@ -21,11 +21,11 @@ class CreateNewUser implements CreatesNewUsers
     public function create(array $input)
     {
         $permissions = [
-            'platform.systems.roles'=>true,
-            'platform.systems.users'=>true,
+            'platform.systems.roles'=>false,
+            'platform.systems.users'=>false,
             'platform.systems.attachment'=>true,
             'platform.index'=>true,
-            'platform.systems.index'=>true,
+            'platform.systems.index'=>false,
         ];
 
         Validator::make($input, [

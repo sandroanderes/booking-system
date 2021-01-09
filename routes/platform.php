@@ -21,6 +21,7 @@ use Tabuna\Breadcrumbs\Trail;
 use App\Orchid\Screens\Calendars\NewCalendar;
 use App\Orchid\Screens\Calendars\EditCalendar;
 use App\Orchid\Screens\Calendars\CalendarListScreen;
+use App\Orchid\Screens\Calendars\AllBuechersScreen;
 use App\Orchid\Screens\Calendars\CalendarRemoveScreen;
 
 //Settings Views
@@ -90,13 +91,13 @@ Route::screen('roles/create', RoleEditScreen::class)
     });
 
 // Platform > System > Roles
-Route::screen('roles', RoleListScreen::class)
+/*Route::screen('roles', RoleListScreen::class)
     ->name('platform.systems.roles')
     ->breadcrumbs(function (Trail $trail) {
         return $trail
             ->parent('platform.systems.index')
             ->push(__('Roles'), route('platform.systems.roles'));
-    });
+    }); */
 
 // Platform > Calendars > CalendarListScreen
 Route::screen('calendars', CalendarListScreen::class)
@@ -107,7 +108,16 @@ Route::screen('calendars', CalendarListScreen::class)
             ->push(__('Deine Kalender'));
     });
 
-// Platform > Calendars > New Calendar
+// Platform > Calendars > CalendarListScreen
+Route::screen('buechers', AllBuechersScreen::class)
+    ->name('platform.systems.buechers')
+    ->breadcrumbs(function (Trail $trail) {
+        return $trail
+            ->parent('platform.systems.index')
+            ->push(__('Buechers'), route('platform.systems.buechers'));
+    }); 
+
+// Platform > Calendars > AllBuechers
 Route::screen('new-calendar', NewCalendar::class)
     ->name('platform.newcalendar')
     ->breadcrumbs(function (Trail $trail) {
