@@ -23,6 +23,7 @@ use App\Orchid\Screens\Calendars\EditCalendar;
 use App\Orchid\Screens\Calendars\CalendarListScreen;
 use App\Orchid\Screens\Calendars\AllBuechersScreen;
 use App\Orchid\Screens\Calendars\CalendarRemoveScreen;
+use App\Orchid\Screens\Calendars\CalendarViewScreen;
 
 //Settings Views
 use App\Orchid\Screens\Settings\Password;
@@ -163,12 +164,14 @@ Route::screen('delete', Delete::class)
     });
 
 // Calendar Edit Screen
-
 Route::screen('remove-calendar/{calendar_id}', CalendarRemoveScreen::class)
     ->name('platform.calendar.remove');
 
 Route::screen('edit-calendar/{calendar_id?}', EditCalendar::class)
 ->name('platform.calendar.edit');
+
+Route::screen('view-buecher/{calendar_id}', CalendarViewScreen::class)
+    ->name('platform.calendar.view');
 
 // Calendar List Screen
 Route::screen('calendars', CalendarListScreen::class)

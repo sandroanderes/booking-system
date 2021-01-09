@@ -41,7 +41,8 @@ class CalendarListLayout extends Table
                 ->filter(TD::FILTER_TEXT)
                 ->cantHide()
                 ->render(function (CalendarGeneral $calendar) {
-                    return Link::make(Str::limit($calendar->name, 20, '(...)'));
+                    return Link::make(Str::limit($calendar->name, 20, '(...)'))
+                    ->route('platform.calendar.view', $calendar->id);;
                 }),
             TD::set('calendar_description', __('Beschreibung'))
                 ->render(function (CalendarGeneral $calendar) {
