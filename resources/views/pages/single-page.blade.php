@@ -112,9 +112,11 @@
                 @endforeach
             </div>
         </div>
+        {!!json_encode($data->start_general) !!}
+        {!!json_encode($data->end_general) !!}
         <script>
-            var start_general = {!!json_encode($data->start_general) !!};
-            var end_general = {!!json_encode($data->end_general) !!};
+            /* var start_general = {!!json_encode($data->start_general) !!};
+            var end_general = {!!json_encode($data->end_general) !!}; */
             var duration_min_h = {!!json_encode($data->duration_min_h) !!};
             var duration_max_h = {!!json_encode($data->duration_max_h) !!};
         </script>

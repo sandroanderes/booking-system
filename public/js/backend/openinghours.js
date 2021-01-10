@@ -150,13 +150,6 @@ var oh_general_start_val = document.querySelector('[id^="field-ohstart-general-"
 var oh_general_end_val = document.querySelector('[id^="field-ohend-general-"]');
 var oh_lunchtime_start_val = document.querySelector('[id^="field-ohlunch-start-"]');
 var oh_lunchtime_end_val = document.querySelector('[id^="field-ohlunch-end-"]'); //Montag
-//Dienstag
-//Mittwoch
-//Donnerstag
-//Freitag
-//Samstag
-//Sonntag
-//Montag
 
 var oh_halfday_lunch_monday = document.querySelector('[id^="field-ohlunch-monday-"]').parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
 var oh_monday = document.querySelector('[id^="field-ohstart-monday-"]').parentElement.parentElement.parentElement.parentElement;
@@ -195,7 +188,7 @@ checked_thursday.addEventListener("click", openinghours_repeat);
 checked_friday.addEventListener("click", openinghours_repeat);
 checked_saturday.addEventListener("click", openinghours_repeat);
 checked_sunday.addEventListener("click", openinghours_repeat);
-window.addEventListener("load", openinghours_repeat); // EventListener Buttons of Weekdays
+window.addEventListener("load", openinghours_repeat, openinghours_halfday); // EventListener Buttons of Weekdays
 
 general_open_allday.addEventListener("click", openinghours_halfday);
 general_open_halfday.addEventListener("click", openinghours_halfday);
