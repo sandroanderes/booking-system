@@ -16,6 +16,7 @@ use App\Orchid\Screens\Calendars\CalendarListScreen;
 use App\Orchid\Screens\Calendars\AllBuechersScreen;
 use App\Orchid\Screens\Calendars\CalendarRemoveScreen;
 use App\Orchid\Screens\Calendars\CalendarViewScreen;
+use App\Orchid\Screens\Calendars\geBuechtGastroScreen;
 
 //Settings Views
 use App\Orchid\Screens\Settings\Delete;
@@ -162,6 +163,9 @@ Route::screen('buecher/edit/{calendar_id?}', EditCalendar::class)
 
 Route::screen('buecher/view/{calendar_id}', CalendarViewScreen::class)
     ->name('platform.calendar.view');
+
+Route::screen('buecher/booked/{calendar_id}', geBuechtGastroScreen::class)
+    ->name('platform.booked.gastro.view');
 
 // Calendar List Screen
 Route::screen('buecher/list', CalendarListScreen::class)
