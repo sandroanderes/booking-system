@@ -22,6 +22,7 @@ class CalendarGeneral extends Model
         'public',
         'featured',
         'privateLink',
+        'buecherKey',
         'template',
         'unit',
         'image'

@@ -97,7 +97,8 @@
 // Private Link Field
 var calendarPublicSwitch = document.querySelector('[id^="field-calendarpublic-"]');
 var calendarPublicLink = document.querySelector('[id^="field-calendarprivatelink-"]');
-calendarPublicLink.value = ""; // Get Calendar Name
+var calendarKey = document.querySelector('[id^="field-calendarbuecherkey-"]'); // calendarPublicLink.value = "";
+// Get Calendar Name
 
 var calendarName = document.querySelector('[id^="field-calendarname-"]').value;
 var calendarNameField = document.querySelector('[id^="field-calendarname-"]'); // Get Random Value
@@ -108,7 +109,8 @@ calendarPublicLink.parentElement.parentElement.style.display = "inline"; // Even
 calendarPublicSwitch.addEventListener("click", privateLink); // Function KeyDown Calendar Name
 
 calendarNameField.addEventListener("keyup", function (event) {
-  calendarPublicLink.value = window.location.hostname + "/" + document.querySelector('[id^="field-calendarname-"]').value + "-" + randomValue;
+  calendarPublicLink.value = window.location.hostname + "/" + 'buecher/' + randomValue;
+  calendarKey.value = randomValue;
 }); // Function PrivateLink
 
 function privateLink() {
@@ -151,7 +153,7 @@ function randomString(length, chars) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/booking-system/resources/assets/js/backend/privateLink.js */"./resources/assets/js/backend/privateLink.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\backend\privateLink.js */"./resources/assets/js/backend/privateLink.js");
 
 
 /***/ })

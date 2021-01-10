@@ -1,0 +1,21 @@
+a.site-logo {
+        font-size: 26px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: black;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+.login_bg_image {
+  /* The image used */
+  background-image: url("/images/login_bg.jpg") !important;
+
+  /* Full height */
+  height: 100%  !important;
+
+  /* Center and scale the image nicely */
+  background-position: center  !important;
+  background-repeat: no-repeat  !important;
+  background-size: cover  !important;
+}
