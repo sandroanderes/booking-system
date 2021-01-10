@@ -134,7 +134,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->sort(1000)
                 ->title(__('All registered users')),
 
-            ItemMenu::label(__('Buechers'))
+            ItemMenu::label(__('Buecher'))
                 ->place('Auth')
                 ->icon('calendar')
                 ->route('platform.systems.buechers')
