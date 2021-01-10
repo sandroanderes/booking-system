@@ -92,7 +92,6 @@ class SpecificationLayout extends Rows
                     1 => 'Stunden',
                     2 => 'Tage',
                 ])
-                ->value('0')
                 ->help('Welches Zeitformat macht für deine Art von Reservationen am meisten Sinn?'),
 
             Select::make('specification.duration_min_min')
