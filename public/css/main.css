@@ -11753,6 +11753,10 @@ footer a:hover {
   align-items: center;
 }
 
+.banner .thumbnail .caption .row a {
+  font-size: 18px;
+}
+
 .functions-section .col.mb-4:nth-child(1) {
   --animate-duration: 1000ms;
 }
