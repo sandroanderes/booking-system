@@ -87,7 +87,7 @@ class GeneralInformationsLayout extends Rows
                     'none'   => 'Kein Template verwenden',
                     'gastronomy'   => 'Gastronomie - für Restaurants und Cafés',
                     'sports' => 'Sport -  für Vereine und Clubs',
-                    'room' => 'Räumlichkeiten - für KMUs und Schulen',
+                    'rooms' => 'Räumlichkeiten - für KMUs und Schulen',
                     'services' => 'Dienstleistungen - für Termine mit Kunden',
 
                 ])

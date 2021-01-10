@@ -17,7 +17,7 @@ calendarPublicSwitch.addEventListener("click", privateLink);
 
 // Function KeyDown Calendar Name
 calendarNameField.addEventListener("keyup", function (event) {
-    calendarPublicLink.value = window.location.hostname + "/" + document.querySelector('[id^="field-calendarname-"]').value + "-" + randomValue;
+    calendarPublicLink.value = window.location.hostname + "/" + 'buecher/' + randomValue;
 });
 
 // Function PrivateLink

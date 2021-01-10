@@ -108,7 +108,7 @@ calendarPublicLink.parentElement.parentElement.style.display = "inline"; // Even
 calendarPublicSwitch.addEventListener("click", privateLink); // Function KeyDown Calendar Name
 
 calendarNameField.addEventListener("keyup", function (event) {
-  calendarPublicLink.value = window.location.hostname + "/" + document.querySelector('[id^="field-calendarname-"]').value + "-" + randomValue;
+  calendarPublicLink.value = window.location.hostname + "/" + 'buecher/' + randomValue;
 }); // Function PrivateLink
 
 function privateLink() {
@@ -151,7 +151,7 @@ function randomString(length, chars) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/booking-system/resources/assets/js/backend/privateLink.js */"./resources/assets/js/backend/privateLink.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Github\booking-system\resources\assets\js\backend\privateLink.js */"./resources/assets/js/backend/privateLink.js");
 
 
 /***/ })
