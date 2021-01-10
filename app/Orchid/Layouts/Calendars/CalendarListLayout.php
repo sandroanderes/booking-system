@@ -64,7 +64,11 @@ class CalendarListLayout extends Table
                 ->icon('refresh')
                 ->method("dbStatusUpdate?calendar_id=$calendar->id")
                 ->novalidate();
-                }),   
+                }),  
+            TD::set('calendar_privateLink', __('Privater Link'))
+            ->render(function (CalendarGeneral $calendar) {
+                return $calendar->privateLink;                
+                }), 
             TD::set('calendar_created_at', __('Created'))
             ->sort()
             ->render(function (CalendarGeneral $calendar) {

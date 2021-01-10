@@ -96,11 +96,13 @@ class OpeningHoursLayout extends Rows
                 DateTimer::make('oh.start_general')
                     ->title('Ab wann können Reservationen vorgenommen werden?')
                     ->noCalendar()
+                    ->required()
                     ->format('H:i'),
 
                 DateTimer::make('oh.end_general')
                     ->title('Bis wann können Reservationen vorgenommen werden?')
                     ->noCalendar()
+                    ->required()
                     ->format('H:i'),
             ]),
 
@@ -140,11 +142,13 @@ class OpeningHoursLayout extends Rows
                 DateTimer::make('oh.start_monday')
                     ->title('Öffnungszeiten Montag: Von...')
                     ->noCalendar()
+                    ->required()
                     ->format('H:i'),
 
                 DateTimer::make('oh.end_monday')
                     ->title('... bis')
                     ->noCalendar()
+                    ->required()
                     ->format('H:i'),
             ]),
 
@@ -182,6 +186,7 @@ class OpeningHoursLayout extends Rows
                 DateTimer::make('oh.start_tuesday')
                     ->title('Öffnungszeiten Dienstag: Von...')
                     ->noCalendar()
+                    ->required()
                     ->format('H:i'),
 
                 DateTimer::make('oh.end_tuesday')
@@ -194,6 +199,7 @@ class OpeningHoursLayout extends Rows
                 DateTimer::make('oh.lunch_start_tuesday')
                     ->title('Mittagspause Dienstag: Von...')
                     ->noCalendar()
+                    ->required()
                     ->format('H:i'),
 
                 DateTimer::make('oh.lunch_end_tuesday')
@@ -224,11 +230,13 @@ class OpeningHoursLayout extends Rows
                 DateTimer::make('oh.start_wednesday')
                     ->title('Öffnungszeiten Mittwoch: Von...')
                     ->noCalendar()
+                    ->required()
                     ->format('H:i'),
 
                 DateTimer::make('oh.end_wednesday')
                     ->title('... bis')
                     ->noCalendar()
+                    ->required()
                     ->format('H:i'),
             ]),
 
@@ -266,11 +274,13 @@ class OpeningHoursLayout extends Rows
                 DateTimer::make('oh.start_thursday')
                     ->title('Öffnungszeiten Donnerstag: Von...')
                     ->noCalendar()
+                    ->required()
                     ->format('H:i'),
 
                 DateTimer::make('oh.end_thursday')
                     ->title('... bis')
                     ->noCalendar()
+                    ->required()
                     ->format('H:i'),
             ]),
 
@@ -308,11 +318,13 @@ class OpeningHoursLayout extends Rows
                 DateTimer::make('oh.start_friday')
                     ->title('Öffnungszeiten Freitag: Von...')
                     ->noCalendar()
+                    ->required()
                     ->format('H:i'),
 
                 DateTimer::make('oh.end_friday')
                     ->title('... bis')
                     ->noCalendar()
+                    ->required()
                     ->format('H:i'),
             ]),
 
@@ -350,11 +362,13 @@ class OpeningHoursLayout extends Rows
                 DateTimer::make('oh.start_saturday')
                     ->title('Öffnungszeiten Samstag: Von...')
                     ->noCalendar()
+                    ->required()
                     ->format('H:i'),
 
                 DateTimer::make('oh.end_saturday')
                     ->title('... bis')
                     ->noCalendar()
+                    ->required()
                     ->format('H:i'),
             ]),
 
@@ -392,11 +406,13 @@ class OpeningHoursLayout extends Rows
                 DateTimer::make('oh.start_sunday')
                     ->title('Öffnungszeiten Sonntag: Von...')
                     ->noCalendar()
+                    ->required()
                     ->format('H:i'),
 
                 DateTimer::make('oh.end_sunday')
                     ->title('... bis')
                     ->noCalendar()
+                    ->required()
                     ->format('H:i'),
             ]),
 
