@@ -42,7 +42,7 @@ class CalendarListLayout extends Table
                 ->cantHide()
                 ->render(function (CalendarGeneral $calendar) {
                     return Link::make(Str::limit($calendar->name, 20, '(...)'))
-                    ->route('platform.booked.gastro.view', $calendar->id);;
+                    ->route("platform.booked.$calendar->template.view", $calendar->id);;
                 }),
             TD::set('calendar_description', __('Beschreibung'))
                 ->render(function (CalendarGeneral $calendar) {

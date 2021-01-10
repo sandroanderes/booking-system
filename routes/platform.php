@@ -164,8 +164,20 @@ Route::screen('buecher/edit/{calendar_id?}', EditCalendar::class)
 Route::screen('buecher/view/{calendar_id}', CalendarViewScreen::class)
     ->name('platform.calendar.view');
 
-Route::screen('buecher/booked/{calendar_id}', geBuechtGastroScreen::class)
-    ->name('platform.booked.gastro.view');
+Route::screen('buecher/booked/gastro/{calendar_id}', geBuechtGastroScreen::class)
+    ->name("platform.booked.gastronomy.view");
+
+    Route::screen('buecher/booked/room/{calendar_id}', CalendarViewScreen::class)
+    ->name("platform.booked.room.view");
+
+    Route::screen('buecher/booked/sports/{calendar_id}', CalendarViewScreen::class)
+    ->name('platform.booked.sports.view');
+
+    Route::screen('buecher/booked/services/{calendar_id}', CalendarViewScreen::class)
+    ->name('platform.booked.services.view');
+
+    Route::screen('buecher/booked/none/{calendar_id}', CalendarViewScreen::class)
+    ->name('platform.booked.none.view');
 
 // Calendar List Screen
 Route::screen('buecher/list', CalendarListScreen::class)
