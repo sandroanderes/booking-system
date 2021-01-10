@@ -258,6 +258,7 @@ class NewCalendar extends Screen
         $calendar->description = $data_general["description"];
         $calendar->public = $data_general["public"];
         $calendar->privateLink = $data_general["privateLink"];
+        $calendar->buecherKey = $data_general["buecherKey"];
         $calendar->template = $data_general["template"];
         $calendar->unit = $data_general["unit"];
         $calendar->image = $data_general["image"];

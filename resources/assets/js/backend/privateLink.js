@@ -2,7 +2,9 @@
 // Private Link Field
 var calendarPublicSwitch = document.querySelector('[id^="field-calendarpublic-"]');
 var calendarPublicLink = document.querySelector('[id^="field-calendarprivatelink-"]');
-calendarPublicLink.value = "";
+var calendarKey = document.querySelector('[id^="field-calendarbuecherkey-"]');
+
+// calendarPublicLink.value = "";
 
 // Get Calendar Name
 var calendarName = document.querySelector('[id^="field-calendarname-"]').value;
@@ -18,6 +20,7 @@ calendarPublicSwitch.addEventListener("click", privateLink);
 // Function KeyDown Calendar Name
 calendarNameField.addEventListener("keyup", function (event) {
     calendarPublicLink.value = window.location.hostname + "/" + 'buecher/' + randomValue;
+    calendarKey.value = randomValue;
 });
 
 // Function PrivateLink

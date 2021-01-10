@@ -73,7 +73,7 @@ class GeneralInformationsLayout extends Rows
             Switcher::make('calendar.public')
                 ->sendTrueOrFalse()
                 ->title('Öffentlicher Buecher')
-                ->value(false)
+                ->value(true)
                 ->help('Ist der Schalter auf privat gesetzt, können Kunden nur mit dem nachfolgenden Link auf deinen Buecher zugreifen.')
                 ->popover('Öffentliche Buecher sind auf der Website frei zugänglich. Private hingegen können nur über den privaten Link aufgerufen werden. Du findest diesen Link auch in der Buecher Übersicht.'),
 
@@ -81,6 +81,9 @@ class GeneralInformationsLayout extends Rows
                 ->title('Dein privater Link')
                 ->readonly()
                 ->popover('Kopiere diesen Link oder und sende ihn jedem, der Zugriff auf deinen Buecher haben soll.'),
+
+            Input::make('calendar.buecherKey')
+            ->hidden(),
 
             Select::make('calendar.template')
                 ->options([
