@@ -35,23 +35,24 @@ class PlatformProvider extends OrchidServiceProvider
                 ->route('platform.systems.index')
                 ->permission('platform.systems.index'),
 
-            ItemMenu::label('Kalenderübersicht')
-                ->title('Kalender')
+            ItemMenu::label('Übersicht')
+                ->title('Buecher')
                 ->icon('calendar')
                 ->route('platform.calendar.list'),
 
-            ItemMenu::label('Neuer Kalender hinzufügen')
+            ItemMenu::label('Neu Erstellen')
                 ->icon('plus')
                 ->route('platform.newcalendar'),
 
-            ItemMenu::label('Alle Einstellungen')
+            /* ItemMenu::label('Alle Einstellungen')
                 ->title('Einstellungen')
                 ->slug('parent-hidden-menu')
                 ->childs()
-                ->hideEmpty(),
+                ->hideEmpty(), */
 
-            ItemMenu::label('Benutzereinstellungen')
-                ->place('parent-hidden-menu')
+            ItemMenu::label('Dein Konto')
+                ->title('Einstellungen')
+            //  ->place('parent-hidden-menu')
                 ->icon('user')
                 ->route('platform.userscreen'),
 
@@ -61,7 +62,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->route('platform.view'),
             */
             ItemMenu::label('Konto löschen')
-                ->place('parent-hidden-menu')
+            //  ->place('parent-hidden-menu')
                 ->icon('trash')
                 ->route('platform.delete'),
 

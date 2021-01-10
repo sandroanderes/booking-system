@@ -33,7 +33,8 @@ class GeneralInformationsLayout extends Rows
                 ->type('text')
                 ->required()
                 ->title('Name')
-                ->placeholder('Gib deinem Buecher einen Namen'),
+                ->placeholder('Gib deinem Buecher einen Namen')
+                ->popover('Gib deinem Buecher einen Namen. Unter diesem wird er auf der Website freigeschaltet.'),
 
             Select::make('calendar.country')
                 ->options([
@@ -43,7 +44,8 @@ class GeneralInformationsLayout extends Rows
                 ])
                 ->value(1)
                 ->required()
-                ->title('Land'),
+                ->title('Land')
+                ->help('Wo befindet sich dein Bucher. (Verein, Restaurant, Raum, Dienstleiter, usw.)'),
 
             Input::make('calendar.street')
                 ->type('text')
@@ -65,17 +67,20 @@ class GeneralInformationsLayout extends Rows
                 ->title('Kurzbeschreibung')
                 ->toolbar(["text"])
                 ->required()
-                ->placeholder('Beschreibe kurz deine Organisation und erklär, was der Kunde bei dir reservieren kann'),
+                ->placeholder('Beschreibe kurz deine Organisation und erklär, was der Kunde bei dir reservieren kann')
+                ->popover('Die Beschreibung wird zusammen mit deinem Buecher auf der Website dargestellt.'),
 
             Switcher::make('calendar.public')
                 ->sendTrueOrFalse()
                 ->title('Öffentlicher Buecher')
                 ->value(false)
-                ->help('Ist der Schalter auf privat gesetzt, können Kunden nur mit dem nachfolgenden Link auf deinen Buecher zugreifen.'),
+                ->help('Ist der Schalter auf privat gesetzt, können Kunden nur mit dem nachfolgenden Link auf deinen Buecher zugreifen.')
+                ->popover('Öffentliche Buecher sind auf der Website frei zugänglich. Private hingegen können nur über den privaten Link aufgerufen werden. Du findest diesen Link auch in der Buecher Übersicht.'),
 
             Input::make('calendar.privateLink')
                 ->title('Dein privater Link')
-                ->readonly(),
+                ->readonly()
+                ->popover('Kopiere diesen Link oder und sende ihn jedem, der Zugriff auf deinen Buecher haben soll.'),
 
             Select::make('calendar.template')
                 ->options([
@@ -93,14 +98,17 @@ class GeneralInformationsLayout extends Rows
                 ->type('text')
                 ->title('Reservationsobjekt')
                 ->required()
-                ->help('Was kann in diesem Buecher reserviert werden?'),
+                ->help('Was kann in diesem Buecher reserviert werden?')
+                ->popover('Hier kannst du z.B. auch eine Fotokamera usw. für andere zur Verfügung stellen.'),
 
             Cropper::make('calendar.image')
                 ->title('Bild hochladen')
                 ->width(500)
+                ->required()
                 ->height(300)
                 ->targetRelativeUrl()
-                ->horizontal(),
+                ->horizontal()
+                ->popover('Lade ein aussagekräfiges Foto für deinen Buecher hoch. Dieses wird als Anzeigebild für deinen Buecher verwendet.'),
 
             Input::make('calendar.user_id')
                 ->value(Auth::id())

@@ -2,16 +2,8 @@
 
 declare(strict_types=1);
 
-use App\Orchid\Screens\Examples\ExampleCardsScreen;
-use App\Orchid\Screens\Examples\ExampleChartsScreen;
-use App\Orchid\Screens\Examples\ExampleFieldsAdvancedScreen;
-use App\Orchid\Screens\Examples\ExampleFieldsScreen;
-use App\Orchid\Screens\Examples\ExampleLayoutsScreen;
-use App\Orchid\Screens\Examples\ExampleScreen;
-use App\Orchid\Screens\Examples\ExampleTextEditorsScreen;
 use App\Orchid\Screens\PlatformScreen;
 use App\Orchid\Screens\Role\RoleEditScreen;
-use App\Orchid\Screens\Role\RoleListScreen;
 use App\Orchid\Screens\User\UserEditScreen;
 use App\Orchid\Screens\User\UserListScreen;
 use Illuminate\Support\Facades\Route;
@@ -23,10 +15,9 @@ use App\Orchid\Screens\Calendars\EditCalendar;
 use App\Orchid\Screens\Calendars\CalendarListScreen;
 use App\Orchid\Screens\Calendars\AllBuechersScreen;
 use App\Orchid\Screens\Calendars\CalendarRemoveScreen;
+use App\Orchid\Screens\Calendars\CalendarViewScreen;
 
 //Settings Views
-use App\Orchid\Screens\Settings\Password;
-use App\Orchid\Screens\Settings\View;
 use App\Orchid\Screens\Settings\Delete;
 use App\Orchid\Screens\Settings\UserScreen;
 
@@ -55,7 +46,7 @@ Route::screen('userscreen', UserScreen::class)
     });
 
 // Platform > System > Users
-Route::screen('users/{users}/edit', UserEditScreen::class)
+Route::screen('systems/user/{users}/edit', UserEditScreen::class)
     ->name('platform.systems.users.edit')
     ->breadcrumbs(function (Trail $trail, $user) {
         return $trail
@@ -64,7 +55,7 @@ Route::screen('users/{users}/edit', UserEditScreen::class)
     });
 
 // Platform > System > Users > User
-Route::screen('users', UserListScreen::class)
+Route::screen('systems/user/list', UserListScreen::class)
     ->name('platform.systems.users')
     ->breadcrumbs(function (Trail $trail) {
         return $trail
@@ -100,16 +91,16 @@ Route::screen('roles/create', RoleEditScreen::class)
     }); */
 
 // Platform > Calendars > CalendarListScreen
-Route::screen('calendars', CalendarListScreen::class)
+/* Route::screen('your-buechers', CalendarListScreen::class)
     ->name('platform.calendar.list')
     ->breadcrumbs(function (Trail $trail) {
         return $trail
             ->parent('platform.index')
             ->push(__('Deine Kalender'));
-    });
+    }); */
 
 // Platform > Calendars > CalendarListScreen
-Route::screen('buechers', AllBuechersScreen::class)
+Route::screen('systems/buecher/list', AllBuechersScreen::class)
     ->name('platform.systems.buechers')
     ->breadcrumbs(function (Trail $trail) {
         return $trail
@@ -118,7 +109,7 @@ Route::screen('buechers', AllBuechersScreen::class)
     }); 
 
 // Platform > Calendars > AllBuechers
-Route::screen('new-calendar', NewCalendar::class)
+Route::screen('buecher/create', NewCalendar::class)
     ->name('platform.newcalendar')
     ->breadcrumbs(function (Trail $trail) {
         return $trail
@@ -127,7 +118,7 @@ Route::screen('new-calendar', NewCalendar::class)
     });
 
 // Platform > Settings > User
-Route::screen('userscreen', UserScreen::class)
+Route::screen('account/settings', UserScreen::class)
     ->name('platform.userscreen')
     ->breadcrumbs(function (Trail $trail) {
         return $trail
@@ -145,16 +136,16 @@ Route::screen('password', Password::class)
     }); */
 
 // Platform > Settings > View
-Route::screen('view', View::class)
+/* Route::screen('view', View::class)
     ->name('platform.view')
     ->breadcrumbs(function (Trail $trail) {
         return $trail
             ->parent('platform.index')
             ->push(__('Ansicht ändern'));
-    });
+    }); */
 
 // Platform > Settings > Delete
-Route::screen('delete', Delete::class)
+Route::screen('account/remove', Delete::class)
     ->name('platform.delete')
     ->breadcrumbs(function (Trail $trail) {
         return $trail
@@ -163,33 +154,36 @@ Route::screen('delete', Delete::class)
     });
 
 // Calendar Edit Screen
-
-Route::screen('remove-calendar/{calendar_id}', CalendarRemoveScreen::class)
+Route::screen('buecher/remove/{calendar_id}', CalendarRemoveScreen::class)
     ->name('platform.calendar.remove');
 
-Route::screen('edit-calendar/{calendar_id?}', EditCalendar::class)
+Route::screen('buecher/edit/{calendar_id?}', EditCalendar::class)
 ->name('platform.calendar.edit');
 
+Route::screen('buecher/view/{calendar_id}', CalendarViewScreen::class)
+    ->name('platform.calendar.view');
+
 // Calendar List Screen
-Route::screen('calendars', CalendarListScreen::class)
+Route::screen('buecher/list', CalendarListScreen::class)
     ->name('platform.calendar.list');
 
 // Example...
-Route::screen('example', ExampleScreen::class)
+/* Route::screen('example', ExampleScreen::class)
     ->name('platform.example')
     ->breadcrumbs(function (Trail $trail) {
         return $trail
             ->parent('platform.index')
             ->push(__('Example screen'));
-    });
+    }); */
 
 
 
 
-
+/*
 Route::screen('example-fields', ExampleFieldsScreen::class)->name('platform.example.fields');
 Route::screen('example-layouts', ExampleLayoutsScreen::class)->name('platform.example.layouts');
 Route::screen('example-charts', ExampleChartsScreen::class)->name('platform.example.charts');
 Route::screen('example-editors', ExampleTextEditorsScreen::class)->name('platform.example.editors');
 Route::screen('example-cards', ExampleCardsScreen::class)->name('platform.example.cards');
 Route::screen('example-advanced', ExampleFieldsAdvancedScreen::class)->name('platform.example.advanced');
+*/

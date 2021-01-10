@@ -41,7 +41,8 @@ class CalendarListLayout extends Table
                 ->filter(TD::FILTER_TEXT)
                 ->cantHide()
                 ->render(function (CalendarGeneral $calendar) {
-                    return Link::make(Str::limit($calendar->name, 20, '(...)'));
+                    return Link::make(Str::limit($calendar->name, 20, '(...)'))
+                    ->route('platform.calendar.view', $calendar->id);;
                 }),
             TD::set('calendar_description', __('Beschreibung'))
                 ->render(function (CalendarGeneral $calendar) {
@@ -63,7 +64,11 @@ class CalendarListLayout extends Table
                 ->icon('refresh')
                 ->method("dbStatusUpdate?calendar_id=$calendar->id")
                 ->novalidate();
-                }),   
+                }),  
+            TD::set('calendar_privateLink', __('Privater Link'))
+            ->render(function (CalendarGeneral $calendar) {
+                return $calendar->privateLink;                
+                }), 
             TD::set('calendar_created_at', __('Created'))
             ->sort()
             ->render(function (CalendarGeneral $calendar) {

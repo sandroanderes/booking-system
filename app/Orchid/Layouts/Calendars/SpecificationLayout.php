@@ -82,7 +82,8 @@ class SpecificationLayout extends Rows
                         '240' => '10 Tage',
                         '336' => '14 Tage',
                     ])
-                    ->value('0.166'),
+                    ->value('0')
+                    ->required(),
             ]),
 
             RadioButtons::make('specification.timeunit')
@@ -92,8 +93,8 @@ class SpecificationLayout extends Rows
                     1 => 'Stunden',
                     2 => 'Tage',
                 ])
-                ->value('0')
-                ->help('Welches Zeitformat macht für deine Art von Reservationen am meisten Sinn?'),
+                ->help('Welches Zeitformat macht für deine Art von Reservationen am meisten Sinn?')
+                ->required(),
 
             Select::make('specification.duration_min_min')
                 ->options([
@@ -105,12 +106,19 @@ class SpecificationLayout extends Rows
                     '0.666' => '40 Minuten',
                     '0.75' => '45 Minuten',
                     '0.833' => '50 Minuten',
+                    '1' => '1 Stunde',
+                    '1.5' => '1.5 Stunden',
+                    '2' => '2 Stunden'
                 ])
-                ->title('Minimale Reservationsdauer in Minuten'),
+                ->title('Minimale Reservationsdauer in Minuten')
+                ->required(),
 
             Select::make('specification.duration_min_h')
                 ->options([
                     '0' => 'Minimale Reservationsdauer wählen:',
+                    '0.25' => 'Viertel Stunde',
+                    '0.5' => 'Halbe Stunde',
+                    '0.75' => 'Dreiviertel Stunde',
                     '1' => '1 Stunde',
                     '1.5' => '1.5 Stunden',
                     '2' => '2 Stunden',
@@ -125,7 +133,8 @@ class SpecificationLayout extends Rows
                     '11' => '11 Stunden',
                     '12' => '12 Stunden',
                 ])
-                ->title('Minimale Reservationsdauer in Stunden'),
+                ->title('Minimale Reservationsdauer in Stunden')
+                ->required(),
             Select::make('specification.duration_min_d')
                 ->options([
                     '0' => 'Minimale Reservationsdauer wählen:',
@@ -139,7 +148,8 @@ class SpecificationLayout extends Rows
                     '240' => '10 Tage',
                     '336' => '14 Tage',
                 ])
-                ->title('Minimale Reservationsdauer in Tagen'),
+                ->title('Minimale Reservationsdauer in Tagen')
+                ->required(),
 
             Select::make('specification.duration_max_min')
                 ->options([
@@ -152,7 +162,8 @@ class SpecificationLayout extends Rows
                     '0.75' => '45 Minuten',
                     '0.833' => '50 Minuten',
                 ])
-                ->title('Maximale Reservationsdauer in Minuten'),
+                ->title('Maximale Reservationsdauer in Minuten')
+                ->required(),
 
             Select::make('specification.duration_max_h')
                 ->options([
@@ -171,7 +182,8 @@ class SpecificationLayout extends Rows
                     '11' => '11 Stunden',
                     '12' => '12 Stunden',
                 ])
-                ->title('Maximale Reservationsdauer in Stunden'),
+                ->title('Maximale Reservationsdauer in Stunden')
+                ->required(),
             Select::make('specification.duration_max_d')
                 ->options([
                     '0' => 'Maximale Reservationsdauer wählen:',
@@ -185,7 +197,8 @@ class SpecificationLayout extends Rows
                     '240' => '10 Tage',
                     '336' => '14 Tage',
                 ])
-                ->title('Maximale Reservationsdauer in Tagen'),
+                ->title('Maximale Reservationsdauer in Tagen')
+                ->required(),
 
             Matrix::make('gastrotable')
                 ->title('Anzahl Tische')
@@ -208,13 +221,15 @@ class SpecificationLayout extends Rows
             Input::make('sports.name')
                 ->type('text')
                 ->title('Was kann man bei deinem Sportverein reservieren')
-                ->placeholder('Bsp: Tennisplätze, Fussballplätze, Billardtische oder Bowlingbahnen'),
+                ->placeholder('Bsp: Tennisplätze, Fussballplätze, Billardtische oder Bowlingbahnen')
+                ->required(),
 
             Input::make('sports.number')
                 ->type('number')
                 ->min('0')
                 ->title('Anzahl')
-                ->placeholder('Gib die gewünschte Anzahl ein'),
+                ->placeholder('Gib die gewünschte Anzahl ein')
+                ->required(),
 
             Matrix::make('rooms')
                 ->title('Räume')
@@ -232,7 +247,8 @@ class SpecificationLayout extends Rows
                 ->type('text')
                 ->title('Name der Dienstleistung')
                 ->placeholder('Bsp: Friseurtermin, Massagetermin, Physio')
-                ->help('Was für Termine kann man bei dir reservieren?'),
+                ->help('Was für Termine kann man bei dir reservieren?')
+                ->required(),
 
             Matrix::make('service_employees')
                 ->title('Mitarbeiter und Funktion')
