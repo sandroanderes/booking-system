@@ -114,6 +114,9 @@ class NewCalendar extends Screen
         if (empty($data_general["location"])) {
             $msg_general .= "<li>Trage einen Ort ein.</li>";
         }
+        if (empty($data_general["image"])) {
+            $msg_general .= "<li>Lade ein Foto deines Buechers hoch.</li>";
+        }
         if (empty($data_general["description"])) {
             $msg_general .= "<li>Trage eine Beschreibung ein.</li>";
         }
