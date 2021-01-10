@@ -974,7 +974,7 @@ function _locatonFilterFunction() {
         switch (_context.prev = _context.next) {
           case 0:
             //Get selected distance from dropdown
-            selected_distance = document.getElementById('locationSelect').value; //Make array
+            selected_distance = document.getElementById('locationSelect').value.slice(0, -2); //Make array
 
             location = [];
             /* selected_distance = (selected_distance == "Alle" ? 10000 : selected_distance.slice(0, -2)) */

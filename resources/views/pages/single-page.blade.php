@@ -17,48 +17,6 @@
     </section>
     <section class="container-fluid single-page py-5">
         <div class="container">
-            {{--<div class="row form-inline mb-3">
-                <div class="col-lg-3 col-md-4 col-sm-12">
-                    <label class="my-1 mr-2 persons-check-label justify-content-start" for="date-input">Datum</label>
-                    <div class="input-group mb-2 mr-sm-2">
-                        <input class="form-control" type="date" value="2020-08-19" id="date-input">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-12">
-                    <label class="my-1 mr-2 persons-check-label justify-content-start" for="from-time-input">Zeit</label>
-                    <div class="input-group mb-2 mr-sm-2">
-                        <input class="form-control" type="time" value="13:45:00" id="from-time-input">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-12">
-                    <label class="my-1 mr-2 persons-check-label justify-content-start" for="to-time-input">bis</label>
-                    <div class="input-group mb-2 mr-sm-2">
-                        <input class="form-control" type="time" value="13:45:00" id="to-time-input">
-                    </div>
-                </div>
-                <div class="col-lg-1 col-md-4 col-sm-4">
-                    <label class="my-1 mr-2 persons-check-label justify-content-start" for="persons">Personen</label>
-                    <div class="input-group mb-2 mr-sm-2">
-                        <input class="form-control" type="number" value="1" id="persons">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-4">
-                    <br>
-                    <div class="form-check mb-2 mr-sm-2">
-                        <input class="form-check-input" type="checkbox" id="available">
-                        <label class="form-check-label" for="available">
-                            Verfügbar
-                        </label>
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-4 col-sm-4">
-                    <br>
-                    <button type="button" id="searchRooms" class="btn btn-primary btn-block">Suchen</button>
-                </div>
-            </div>--}}
-
-
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
                 <div class="col-lg-6 mb-5">
                     <h2 class="mb-3"><b>Details</b></h2>
@@ -87,7 +45,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <small><b>Beschreibung</b></small>
-                            <p>{{ strip_tags($data->description) }}</p>
+                            {!! $data->description !!}
                         </div>
                     </div>
                 </div>
@@ -146,7 +104,7 @@
                         </div>
                     @else
                         <div class="col-lg-12 mb-4">
-                            <p>Momentan haben sind keine Tische im verfügbar.</p>
+                            <p>Momentan haben sind alle Tische reserviert.</p>
                             <p>Bei weiteren Fragen ist das <b>{{ $data->name }}</b>-Team unter der folgenden Nummer
                                 erreichbar: <a href="tel:+499123456789">+41 (0)79 123 45 67</a></p>
                         </div>
@@ -155,10 +113,10 @@
             </div>
         </div>
         <script>
-            var start_general = {!!json_encode($data -> start_general) !!};
-            var end_general = {!!json_encode($data -> end_general) !!};
-            var duration_min_h = {!!json_encode($data -> duration_min_h) !!};
-            var duration_max_h = {!!json_encode($data -> duration_max_h) !!};
+            var start_general = {!!json_encode($data->start_general) !!};
+            var end_general = {!!json_encode($data->end_general) !!};
+            var duration_min_h = {!!json_encode($data->duration_min_h) !!};
+            var duration_max_h = {!!json_encode($data->duration_max_h) !!};
         </script>
         @foreach ($gastrotable as $table)
             <div class="modal fade" id="modal-{{ $table->gastrotable }}" tabindex="-1" aria-labelledby="exampleModalLabel"

@@ -16,4 +16,15 @@ mix.js('resources/js/app.js', 'public/js')
         require('postcss-import'),
         require('tailwindcss'),
     ])
-    .webpackConfig(require('./webpack.config'));
+    .webpackConfig(require('./webpack.config'))
+    .sass('resources/assets/scss/main.scss', 'public/css')
+    .sass('resources/assets/scss/backend.scss', 'public/css')
+    .js('resources/assets/js/frontend/navigation.js', 'public/js/frontend')
+    .js('resources/assets/js/frontend/calendar-search.js', 'public/js/frontend')
+    .js('resources/assets/js/backend/privateLink.js', 'public/js/backend')
+    .js('resources/assets/js/backend/openinghours.js', 'public/js/backend')
+    .js('resources/assets/js/frontend/fixed-footer.js', 'public/js/frontend')
+    .js('resources/assets/js/backend/specifications.js', 'public/js/backend')
+    .js('resources/assets/js/backend/template.js', 'public/js/backend')
+    .js('resources/assets/js/frontend/frontend-calendar.js', 'public/js/frontend')
+    .js('resources/assets/js/frontend/reservation.js', 'public/js/frontend');  

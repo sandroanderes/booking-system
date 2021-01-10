@@ -33,6 +33,7 @@
                     <select class="form-control" id="locationSelect">
                         <option selected value="5 km">5 km</option>
                         <option value="10 km">10 km</option>
+                        <option value="25 km">25 km</option>
                         <option value="50 km">50 km</option>
                         <option value="100 km">100 km</option>
                     </select>
@@ -52,13 +53,15 @@
             </div>
 
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+                
 
                 @foreach ($data as $calendar)
+               
                     <div class="col mb-4 {{ $calendar->template }}">
                         <a href="/calendar/{{ $calendar->template }}/{{ $calendar->id }}">
                             <div class="card">
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <img src="{{ $calendar->image }}" class="card-img-top embed-responsive-item" alt="...">
+                                    <img src="{{ $calendar->image }}" class="card-img-top embed-responsive-item" alt="{{$calendar->name}}">
                                 </div>
                                 <div class="card-body">
                                     <div class="row">

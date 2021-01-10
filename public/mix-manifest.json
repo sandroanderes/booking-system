@@ -1,4 +1,15 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/main.css": "/css/main.css",
+    "/css/backend.css": "/css/backend.css",
+    "/css/app.css": "/css/app.css",
+    "/js/backend/openinghours.js": "/js/backend/openinghours.js",
+    "/js/backend/privateLink.js": "/js/backend/privateLink.js",
+    "/js/backend/specifications.js": "/js/backend/specifications.js",
+    "/js/backend/template.js": "/js/backend/template.js",
+    "/js/frontend/calendar-search.js": "/js/frontend/calendar-search.js",
+    "/js/frontend/fixed-footer.js": "/js/frontend/fixed-footer.js",
+    "/js/frontend/frontend-calendar.js": "/js/frontend/frontend-calendar.js",
+    "/js/frontend/navigation.js": "/js/frontend/navigation.js",
+    "/js/frontend/reservation.js": "/js/frontend/reservation.js"
 }

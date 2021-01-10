@@ -78,7 +78,7 @@ async function locatonFilterFunction(cardInformation, locationFilter, locationCa
     var selected_distance, location;
 
     //Get selected distance from dropdown
-    selected_distance = document.getElementById('locationSelect').value;
+    selected_distance = (document.getElementById('locationSelect').value.slice(0, -2));
 
     //Make array
     location = [];
