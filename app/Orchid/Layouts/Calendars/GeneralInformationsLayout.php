@@ -64,7 +64,7 @@ class GeneralInformationsLayout extends Rows
                 ->value(1),
 
             Quill::make('calendar.description')
-                ->title('Kurzbeschreibung')
+                ->title('Beschreibung')
                 ->toolbar(["text"])
                 ->required()
                 ->placeholder('Beschreibe kurz deine Organisation und erklär, was der Kunde bei dir reservieren kann')
@@ -90,7 +90,7 @@ class GeneralInformationsLayout extends Rows
                     'none'   => 'Kein Template verwenden',
                     'gastronomy'   => 'Gastronomie - für Restaurants und Cafés',
                     'sports' => 'Sport -  für Vereine und Clubs',
-                    'rooms' => 'Räumlichkeiten - für KMUs und Schulen',
+                    'room' => 'Räumlichkeiten - für KMUs und Schulen',
                     'services' => 'Dienstleistungen - für Termine mit Kunden',
 
                 ])

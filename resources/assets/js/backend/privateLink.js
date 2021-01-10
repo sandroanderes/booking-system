@@ -15,6 +15,7 @@ var randomValue = randomString(16, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGH
 calendarPublicLink.parentElement.parentElement.style.display = "inline";
 
 // EventListener onClick => Switch
+document.addEventListener("DOMContentLoaded", privateLink);
 calendarPublicSwitch.addEventListener("click", privateLink);
 
 // Function KeyDown Calendar Name
