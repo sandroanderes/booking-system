@@ -22,12 +22,12 @@
                                         <td>10 bis 23 Uhr</td>
                                     </tr>
                                 </table>
-                                <button type="button" class="btn btn-primary">Buechs jetzt!</button>
+                                <a href="/buecher/{{$data[0]->buecherKey}}" type="button" class="btn btn-primary">Buechs jetzt!</a>
                             </div>
                         </div>
                         <div class="content-hover mobile">
                             <div>
-                                <button type="button" class="btn btn-outline-light mx-auto">Buechs jetzt!</button>
+                                <a href="/buecher/{{$data[0]->buecherKey}}" type="button" class="btn btn-outline-light mx-auto">Buechs jetzt!</a>
                             </div>
                         </div>
                         <div class="content mobile">
@@ -45,7 +45,7 @@
                             <img src="{{ $data[1] ? $data[1]->image : '' }}" class="img-fluid" alt="Restaurant">
                             <div class="content-hover">
                                 <div>
-                                    <button type="button" class="btn btn-outline-light mx-auto">Buechs jetzt!</button>
+                                    <a href="buecher/{{$data[1]->buecherKey}}" type="button" class="btn btn-outline-light mx-auto">Buechs jetzt!</a>
                                 </div>
                             </div>
                             <div class="content">
@@ -62,7 +62,7 @@
                             <img src="{{ $data[2] ? $data[2]->image : '' }}" class="img-fluid" alt="Restaurant">
                             <div class="content-hover">
                                 <div>
-                                    <button type="button" class="btn btn-outline-light mx-auto">Buechs jetzt!</button>
+                                    <a href="buecher/{{$data[2]->buecherKey}}" type="button" class="btn btn-outline-light mx-auto">Buechs jetzt!</a>
                                 </div>
                             </div>
                             <div class="content">

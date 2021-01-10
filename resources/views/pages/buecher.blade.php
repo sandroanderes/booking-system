@@ -13,7 +13,7 @@
                             <h1>Die öffentlichen Buecher im Überblick.</h1>
                         </div>
                         <div class="col-md-4 col-12 text-md-right text-center">
-                            <button type="button" class="btn btn-primary btn-lg">Jetzt eigenen Buecher erstellen!</button>
+                            <a href="/register" type="button" class="btn btn-primary btn-lg">Jetzt eigenen Buecher erstellen!</a>
                         </div>
                     </div>
                 </div>

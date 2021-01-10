@@ -221,7 +221,7 @@
             } : '');
 
         </script>
-        {{-- @foreach ($template as $table)
+        @foreach ($template as $table)
             <div class="modal fade" id="modal-{{ $table->gastrotable }}" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
@@ -301,7 +301,7 @@
                     </div>
                 </div>
             </div>
-        @endforeach --}}
+        @endforeach
     </section>
 
 
