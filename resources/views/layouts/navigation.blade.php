@@ -8,7 +8,7 @@
             <!-- site menu/nav -->
             <ul>
                 <li><a class="{{ Request::is('/') ? 'active' : '' }}" href="/">Startseite</a></li>
-                <li><a class="{{ Request::is('buecher') ? 'active' : '' }}" href="/calendar">Buecher</a></li>
+                <li><a class="{{ Request::is('buecher*') ? 'active' : '' }}" href="/buecher">Buecher</a></li>
                 <li><a class="{{ Request::is('funktionen') ? 'active' : '' }}" href="/funktionen">Funktionen</a></li>
                 <li><a class="{{ Request::is('support') ? 'active' : '' }}" href="/support">Support & FAQ</a></li>
                 <li><a class="{{ Request::is('ueber') ? 'active' : '' }}" href="/ueber">Über uns</a></li>

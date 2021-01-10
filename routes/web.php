@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\BuecherController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\GastronomyController;
+use App\Http\Controllers\SinglePageController;
 use App\Orchid\Screens\PlatformScreen;
 
 /*
@@ -19,13 +19,9 @@ use App\Orchid\Screens\PlatformScreen;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/calendar', [CalendarController::class, 'index']);
+Route::get('/buecher', [BuecherController::class, 'index']);
 
-Route::get('/calendar/gastronomy/{id}', [GastronomyController::class, 'index']);
-Route::get('/calendar/sports/{id}', [GastronomyController::class, 'index']);
-Route::get('/calendar/rooms/{id}', [GastronomyController::class, 'index']);
-Route::get('/calendar/services/{id}', [GastronomyController::class, 'index']);
-Route::get('/calendar/none/{id}', [GastronomyController::class, 'index']);
+Route::get('/buecher/{buecherKey}', [SinglePageController::class, 'index']);
 
 Route::get('/funktionen', function () {
     return view('pages.functions');
@@ -39,7 +35,7 @@ Route::get('/ueber', function () {
     return view('pages.about');
 });
 
-Route::get('/rooms', function () {
+/* Route::get('/rooms', function () {
     return view('pages.rooms');
 });
 
@@ -49,7 +45,7 @@ Route::get('/sports', function () {
 
 Route::get('/restaurants', function () {
     return view('pages.restaurants');
-});
+}); */
 
 Route::screen('/main', PlatformScreen::class)
 ->middleware(['auth:sanctum', 'verified'])

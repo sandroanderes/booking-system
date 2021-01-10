@@ -43,7 +43,7 @@
                         <option selected value="all">Alle Kategorien</option>
                         <option value="gastronomy">Gastro</option>
                         <option value="sports">Sport</option>
-                        <option value="rooms">Räumlichkeiten</option>
+                        <option value="room">Räumlichkeiten</option>
                         <option value="services">Dienstleistungen</option>
                     </select>
                 </div>
@@ -58,7 +58,7 @@
                 @foreach ($data as $calendar)
                
                     <div class="col mb-4 {{ $calendar->template }}">
-                        <a href="/calendar/{{ $calendar->template }}/{{ $calendar->id }}">
+                        <a href="/buecher/{{$calendar->buecherKey}}">
                             <div class="card">
                                 <div class="embed-responsive embed-responsive-16by9">
                                     <img src="{{ $calendar->image }}" class="card-img-top embed-responsive-item" alt="{{$calendar->name}}">
@@ -71,7 +71,7 @@
                                                     {{ $calendar->template == 'gastronomy' ? 'restaurant_menu' : '' }}
                                                     {{ $calendar->template == 'services' ? 'store' : '' }}
                                                     {{ $calendar->template == 'sports' ? 'directions_run' : '' }}
-                                                    {{ $calendar->template == 'rooms' ? 'meeting_room' : '' }}
+                                                    {{ $calendar->template == 'room' ? 'meeting_room' : '' }}
                                                     {{ $calendar->template == 'none' ? 'shuffle' : '' }}
                                                 </span>
                                             </p>

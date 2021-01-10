@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
         $data = DB::table('calendar_general')
         ->leftJoin('calendar_openinghours','calendar_openinghours.calendar_id','=','calendar_general.id')
-        ->where('public','=',0)
+        ->where('public','=',1)
         ->where('featured','=',1)
         ->get();
 
