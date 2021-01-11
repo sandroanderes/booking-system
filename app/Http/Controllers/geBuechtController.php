@@ -30,6 +30,6 @@ class geBuechtController extends Controller
         ->where('featured','=',1)
         ->get();
 
-        return redirect('/');}}
+        return redirect('/');
     }
 }
