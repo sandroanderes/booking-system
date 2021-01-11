@@ -79,12 +79,6 @@
             @switch($data->template)
                 {{-- Gastro --}}
                 @case('gastronomy')
-                <script>
-                    var start_general = (({!! json_encode($data->start_general) !!}) ? {!! json_encode($data->start_general) !!} : '');
-                    var end_general = (({!! json_encode($data->end_general) !!}) ? {!! json_encode($data->end_general) !!} : '');
-                    var duration_min_h = (({!! json_encode($data->duration_min_h) !!}) ? {!! json_encode($data->duration_min_h) !!} : '');
-                    var duration_max_h = (({!! json_encode($data->duration_max_h) !!}) ? {!! json_encode($data->duration_max_h) !!} : '');
-                </script>
                 <h2 class="mb-3"><b>Verfügbare Tische</b></h2>
                 <div class="row">
                     @foreach ($template as $detail)
@@ -127,18 +121,20 @@
                                                     <div class="form-row">
                                                         <div class="col">
                                                             <label for="exampleFormControlInput1">Vorname*</label>
-                                                            <input name="firstname" type="text" class="form-control" placeholder="Vorname">
+                                                            <input name="firstname" type="text" class="form-control"
+                                                                placeholder="Vorname">
                                                         </div>
                                                         <div class="col">
                                                             <label for="exampleFormControlInput1">Nachname*</label>
-                                                            <input name="name" type="text" class="form-control" placeholder="Nachname">
+                                                            <input name="name" type="text" class="form-control"
+                                                                placeholder="Nachname">
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">Email-Adresse*</label>
-                                                    <input name="email" type="email" class="form-control" id="exampleFormControlInput1"
-                                                        placeholder="max.mustermann@email.ch">
+                                                    <input name="email" type="email" class="form-control"
+                                                        id="exampleFormControlInput1" placeholder="max.mustermann@email.ch">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">Telefonnummer</label>
@@ -148,15 +144,36 @@
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">Reservationsdauer</label>
                                                     <div class="row">
-                                                        <div class="col-lg-10">
-                                                            <input name="reservation_duration" type="range" id="res_duration" data-name="{{ $detail->gastrotable }}" class="custom-range"
-                                                                min="{{ $data->duration_min_h }}"
-                                                                max="{{ $data->duration_max_h }}" step="0.5"
-                                                                oninput="this.parentElement.nextElementSibling.firstElementChild.value = this.value">
-                                                        </div>
-                                                        <div class="col-lg-2">
-                                                            <output id="duration_output-{{ $detail->gastrotable }}">{{ ($data->duration_min_h + $data->duration_max_h) / 2 }}</output>
-                                                        </div>
+                                                        @if ($data->duration_fixed)
+                                                            <div class="col-lg-10">
+                                                                <input disabled name="reservation_duration" type="range"
+                                                                    id="res_duration" data-name="{{ $detail->gastrotable }}"
+                                                                    class="custom-range" min="0" max="2"
+                                                                    value="{{ $data->duration_all }}"
+                                                                    oninput="this.parentElement.nextElementSibling.firstElementChild.value = this.value">
+                                                            </div>
+                                                            <div class="col-lg-2">
+                                                                <output id="duration_output-{{ $detail->gastrotable }}">{{ $data->duration_all }}</output>
+                                                            </div>
+                                                        @else
+                                                        <script>
+                                                            var start_general = (({!! json_encode($data->start_general) !!}) ? {!! json_encode($data->start_general) !!} : '');
+                                                            var end_general = (({!! json_encode($data->end_general) !!}) ? {!! json_encode($data->end_general) !!} : '');
+                                                            var duration_min_h = (({!! json_encode($data->duration_min_h) !!}) ? {!! json_encode($data->duration_min_h) !!} : '');
+                                                            var duration_max_h = (({!! json_encode($data->duration_max_h) !!}) ? {!! json_encode($data->duration_max_h) !!} : '');
+                                                        </script>
+                                                            <div class="col-lg-10">
+                                                                <input name="reservation_duration" type="range"
+                                                                    id="res_duration" data-name="{{ $detail->gastrotable }}"
+                                                                    class="custom-range" min="{{ $data->duration_min_h }}"
+                                                                    max="{{ $data->duration_max_h }}" step="0.5"
+                                                                    oninput="this.parentElement.nextElementSibling.firstElementChild.value = this.value">
+                                                            </div>
+                                                            <div class="col-lg-2">
+                                                                <output id="duration_output-{{ $detail->gastrotable }}">{{ ($data->duration_min_h + $data->duration_max_h) / 2 }}</output>
+                                                            </div>
+                                                        @endif
+
                                                     </div>
                                                     <small id="passwordHelpInline" class="text-muted">
                                                         Wie lange möchtest du deinen Tisch reservieren?
@@ -164,7 +181,8 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="timeslot">Heute verfügbares Zeitfenster*</label>
-                                                    <select name="timeslot" class="form-control" id="timeslot-{{ $detail->gastrotable }}">
+                                                    <select name="timeslot" class="form-control"
+                                                        id="timeslot-{{ $detail->gastrotable }}">
                                                     </select>
                                                     <small id="passwordHelpInline" class="text-muted">
                                                         Vom Restaurant zur Verfügung gestellter Zeitraum.
@@ -176,19 +194,21 @@
                                                         rows="3"></textarea>
                                                 </div>
                                                 <div class="form-group">
-                                                    <input hidden name="size" class="form-control" value="{{$detail->gastrotable}}">
+                                                    <input hidden name="size" class="form-control"
+                                                        value="{{ $detail->gastrotable }}">
                                                 </div>
                                                 <div class="form-group">
-                                                    <input hidden name="calendar_id" class="form-control" value="{{$detail->calendar_id}}">
+                                                    <input hidden name="calendar_id" class="form-control"
+                                                        value="{{ $detail->calendar_id }}">
                                                 </div>
                                             </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-dismiss="modal">Abbrechen</button>
-                                            <button type="submit" class="btn btn-primary">Für gewählte Uhrzeit
-                                                reservieren</button>
-                                        </div>
-                                    </form>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Abbrechen</button>
+                                                <button type="submit" class="btn btn-primary">Für gewählte Uhrzeit
+                                                    reservieren</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
