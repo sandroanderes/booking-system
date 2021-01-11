@@ -33,7 +33,7 @@
                         <div class="content mobile">
                             <div>
                                 <p>{{ $data[0] ? ucfirst($data[0]->template) : '' }}</p>
-                                <h2 class="text-break">{{ $data[0] ? $data[0]->name : '' }}</h2>
+                                <h2>{{ $data[0] ? $data[0]->name : '' }}</h2>
                                 <p>{{ $data[0] ? $data[0]->location : '' }}</p>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                             <div class="content">
                                 <div>
                                     <p>{{ $data[1] ? ucfirst($data[1]->template) : '' }}</p>
-                                    <h2 class="text-break">{{ $data[1] ? $data[1]->name : '' }}</h2>
+                                    <h2>{{ $data[1] ? $data[1]->name : '' }}</h2>
                                     <p>{{ $data[1] ? $data[1]->location : '' }}</p>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                             <div class="content">
                                 <div>
                                     <p>{{ $data[2] ? ucfirst($data[2]->template) : '' }}</p>
-                                    <h2 class="text-break">{{ $data[2] ? $data[2]->name : '' }}</h2>
+                                    <h2>{{ $data[2] ? $data[2]->name : '' }}</h2>
                                     <p>{{ $data[2] ? $data[2]->location : '' }}</p>
                                 </div>
                             </div>
