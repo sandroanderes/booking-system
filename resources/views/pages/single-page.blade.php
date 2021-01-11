@@ -79,8 +79,6 @@
             @switch($data->template)
                 {{-- Gastro --}}
                 @case('gastronomy')
-                {!! json_encode($data->start_general) !!} 
-                {!! json_encode($data->end_general) !!}
                 <script>
                     var start_general = (({!! json_encode($data->start_general) !!}) ? {!! json_encode($data->start_general) !!} : '');
                     var end_general = (({!! json_encode($data->end_general) !!}) ? {!! json_encode($data->end_general) !!} : '');
@@ -122,43 +120,42 @@
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
-                                            <form>
+                                        <form method="post" action="/buecher/storegastro">
+                                            @csrf
+                                            <div class="modal-body">
                                                 <div class="form-group">
                                                     <div class="form-row">
                                                         <div class="col">
                                                             <label for="exampleFormControlInput1">Vorname*</label>
-                                                            <input type="text" class="form-control" placeholder="Vorname">
+                                                            <input name="firstname" type="text" class="form-control" placeholder="Vorname">
                                                         </div>
                                                         <div class="col">
                                                             <label for="exampleFormControlInput1">Nachname*</label>
-                                                            <input type="text" class="form-control" placeholder="Nachname">
+                                                            <input name="name" type="text" class="form-control" placeholder="Nachname">
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">Email-Adresse*</label>
-                                                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                                                    <input name="email" type="email" class="form-control" id="exampleFormControlInput1"
                                                         placeholder="max.mustermann@email.ch">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">Telefonnummer</label>
-                                                    <input class="form-control" type="tel" id="phone" name="phone"
+                                                    <input class="form-control" type="tel" id="phone" name="tel"
                                                         pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="+41 (0)79 123 45 67">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">Reservationsdauer</label>
                                                     <div class="row">
                                                         <div class="col-lg-10">
-                                                            <input type="range" id="res_duration" class="custom-range"
+                                                            <input name="reservation_duration" type="range" id="res_duration" class="custom-range"
                                                                 min="{{ $data->duration_min_h }}"
                                                                 max="{{ $data->duration_max_h }}" step="0.5"
                                                                 oninput="this.parentElement.nextElementSibling.firstElementChild.value = this.value">
                                                         </div>
                                                         <div class="col-lg-2">
-                                                            <output
-                                                                id="duration_output">{{ ($data->duration_min_h + $data->duration_max_h) / 2 }}</output>
-                                                            h
+                                                            <output id="duration_output">{{ ($data->duration_min_h + $data->duration_max_h) / 2 }}</output>
                                                         </div>
                                                     </div>
                                                     <small id="passwordHelpInline" class="text-muted">
@@ -166,32 +163,32 @@
                                                     </small>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="exampleFormControlSelect1">Heute verfügbares
-                                                        Zeitfenster*</label>
-                                                    <select class="form-control" id="exampleFormControlSelect1">
-                                                        <option>13:00 - 14:00 Uhr</option>
-                                                        <option>14:00 - 15:00 Uhr</option>
-                                                        <option>15:00 - 16:00 Uhr</option>
-                                                        <option>16:00 - 17:00 Uhr</option>
-                                                        <option>17:00 - 18:00 Uhr</option>
+                                                    <label for="timeslot">Heute verfügbares Zeitfenster*</label>
+                                                    <select name="timeslot" class="form-control" id="timeslot">
                                                     </select>
                                                     <small id="passwordHelpInline" class="text-muted">
                                                         Vom Restaurant zur Verfügung gestellter Zeitraum.
                                                     </small>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="exampleFormControlTextarea1">Bemerkung</label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                    <label for="remarks">Bemerkung</label>
+                                                    <textarea name="remarks" class="form-control" id="remarks"
                                                         rows="3"></textarea>
                                                 </div>
-                                            </form>
-                                        </div>
+                                                <div class="form-group">
+                                                    <input hidden name="size" class="form-control" value="{{$detail->gastrotable}}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input hidden name="calendar_id" class="form-control" value="{{$detail->calendar_id}}">
+                                                </div>
+                                            </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-dismiss="modal">Abbrechen</button>
-                                            <button type="button" class="btn btn-primary">Für gewählte Uhrzeit
+                                            <button type="submit" class="btn btn-primary">Für gewählte Uhrzeit
                                                 reservieren</button>
                                         </div>
+                                    </form>
                                     </div>
                                 </div>
                             </div>

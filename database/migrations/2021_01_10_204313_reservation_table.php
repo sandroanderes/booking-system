@@ -22,7 +22,6 @@ class ReservationTable extends Migration
             $table->integer('tel')->nullable();
             $table->integer('reservation_duration');
             $table->string('timeslot');
-            $table->string('weekday');
             $table->text('remarks')->nullable();
             $table->integer('size');
             $table->timestamps();

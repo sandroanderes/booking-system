@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var start_splitted, end_splitted, count_time, duration, h, m, end_time;
+var start_splitted, end_splitted, start_time, end_time, count_time, duration, h1, h2, m1, m2, option, time_slot_1, time_slot_2, x;
 start_splitted = start_general.split(':');
 end_splitted = end_general.split(':');
 document.getElementById("res_duration").addEventListener("change", setTimeSlot);
@@ -103,70 +103,35 @@ function setTimeSlot() {
   end_time = new Date(null, null, null, end_splitted[0], end_splitted[1]);
   count_time = new Date(null, null, null, start_splitted[0], start_splitted[1]);
   duration = parseFloat(document.getElementById('duration_output').value);
+  select = document.getElementById("timeslot");
+  var length = select.options.length;
+
+  for (i = length - 1; i >= 0; i--) {
+    select.options[i] = null;
+  }
+
   console.log(duration);
   duration = parseFloat(document.getElementById('duration_output').value);
-  console.log(start_time);
-  console.log(end_time);
-  /* h = addZero(start_time.getHours());
-  m = addZero(start_time.getMinutes());
-  start_time = h + ":" + m;
-  console.log(start_time); */
 
-  /* h = addZero(count_time.getHours());
-  m = addZero(count_time.getMinutes());
-  var test = h + ":" + m;
-  console.log(test); */
-
-  /* h = addZero(end_time.getHours());
-  m = addZero(end_time.getMinutes());
-  end_time = h + ":" + m;
-  console.log(end_time); */
-
-  /* if (Date.parse(count_time) >= Date.parse(end_time)) {
-      console.log(true);
-  } */
-
-  while (count_time <= end_time.setMinutes(end_time.getMinutes() - duration)) {
+  while (count_time <= end_time) {
     h1 = addZero(count_time.getHours());
-    m2 = addZero(count_time.getMinutes());
-    var time_slot_1 = h1 + ":" + m2;
+    m1 = addZero(count_time.getMinutes());
+    time_slot_1 = h1 + ":" + m1;
     count_time.setMinutes(count_time.getMinutes() + duration * 60);
     h2 = addZero(count_time.getHours());
     m2 = addZero(count_time.getMinutes());
     time_slot_2 = h2 + ":" + m2;
-    console.log(time_slot_1 + " - " + time_slot_2);
+
+    if (count_time <= end_time) {
+      console.log(time_slot_1 + " - " + time_slot_2);
+      option = document.createElement("option");
+      option.text = time_slot_1 + " - " + time_slot_2;
+      select.add(option);
+    } else {
+      break;
+    }
   }
-  /* for (count_time; count_time <= end_time; count_time.setMinutes(count_time.getMinutes() + (duration * 60))) {
-      
-      h1 = addZero(count_time.getHours());
-      m2 = addZero(count_time.getMinutes());
-      var time_slot_1  = h1 + ":" + m2;
-      console.log(time_slot_1);
-        h2 = addZero(count_time.getHours());
-      m2 = addZero(count_time.getMinutes());
-      time_slot_2  = h2 + ":" + m2;
-      console.log(time_slot_1);
-   } */
-
 }
-/* time_slot.setMinutes(time_slot.getMinutes() + (duration * 60)); */
-
-/* 
-    h = addZero(time_slot.getHours());
-    m = addZero(time_slot.getMinutes());
-    end_time = h + ":" + m;
-    console.log(end_time);
-
-    h = addZero(start_general.getHours());
-    m = addZero(start_general.getMinutes());
-    start_general = h + ":" + m;
-    console.log(start_general);
-
-    h = addZero(end_general.getHours());
-    m = addZero(end_general.getMinutes());
-    end_general = h + ":" + m;
-    console.log(end_general); */
-
 
 function addZero(i) {
   if (i < 10) {

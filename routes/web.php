@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BuecherController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SinglePageController;
+use App\Http\Controllers\geBuechtController;
 use App\Orchid\Screens\PlatformScreen;
 
 /*
@@ -35,17 +36,7 @@ Route::get('/ueber', function () {
     return view('pages.about');
 });
 
-/* Route::get('/rooms', function () {
-    return view('pages.rooms');
-});
-
-Route::get('/sports', function () {
-    return view('pages.sports');
-});
-
-Route::get('/restaurants', function () {
-    return view('pages.restaurants');
-}); */
+Route::post('/buecher/storegastro', [geBuechtController::class, 'store']);
 
 Route::screen('/main', PlatformScreen::class)
 ->middleware(['auth:sanctum', 'verified'])
