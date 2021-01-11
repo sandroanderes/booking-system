@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\geBuechtGastro;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class geBuechtController extends Controller
 {
@@ -22,5 +23,13 @@ class geBuechtController extends Controller
         $form->calendar_id = $request->calendar_id;
 
         $form->save();
+
+        $data = DB::table('calendar_general')
+        ->leftJoin('calendar_openinghours','calendar_openinghours.calendar_id','=','calendar_general.id')
+        ->where('public','=',1)
+        ->where('featured','=',1)
+        ->get();
+
+        return redirect('/');
     }
 }

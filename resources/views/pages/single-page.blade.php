@@ -149,13 +149,13 @@
                                                     <label for="exampleFormControlInput1">Reservationsdauer</label>
                                                     <div class="row">
                                                         <div class="col-lg-10">
-                                                            <input name="reservation_duration" type="range" id="res_duration" class="custom-range"
+                                                            <input name="reservation_duration" type="range" id="res_duration" data-name="{{ $detail->gastrotable }}" class="custom-range"
                                                                 min="{{ $data->duration_min_h }}"
                                                                 max="{{ $data->duration_max_h }}" step="0.5"
                                                                 oninput="this.parentElement.nextElementSibling.firstElementChild.value = this.value">
                                                         </div>
                                                         <div class="col-lg-2">
-                                                            <output id="duration_output">{{ ($data->duration_min_h + $data->duration_max_h) / 2 }}</output>
+                                                            <output id="duration_output-{{ $detail->gastrotable }}">{{ ($data->duration_min_h + $data->duration_max_h) / 2 }}</output>
                                                         </div>
                                                     </div>
                                                     <small id="passwordHelpInline" class="text-muted">
@@ -164,7 +164,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="timeslot">Heute verfügbares Zeitfenster*</label>
-                                                    <select name="timeslot" class="form-control" id="timeslot">
+                                                    <select name="timeslot" class="form-control" id="timeslot-{{ $detail->gastrotable }}">
                                                     </select>
                                                     <small id="passwordHelpInline" class="text-muted">
                                                         Vom Restaurant zur Verfügung gestellter Zeitraum.
