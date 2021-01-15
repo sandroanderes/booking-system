@@ -5,8 +5,6 @@ end_splitted = end_general.split(':')
 
 document.querySelectorAll('.custom-range').forEach(item => {
     item.addEventListener('change', event => {
-
-
         var data_name = item.getAttribute('data-name');
 
         start_time = new Date(null, null, null, start_splitted[0], start_splitted[1]);
@@ -20,33 +18,24 @@ document.querySelectorAll('.custom-range').forEach(item => {
             select.options[i] = null;
         }
 
-
-        console.log(duration);
-
         while (count_time <= end_time) {
-
             h1 = addZero(count_time.getHours());
             m1 = addZero(count_time.getMinutes());
             time_slot_1 = h1 + ":" + m1;
-
             count_time.setMinutes(count_time.getMinutes() + (duration * 60))
             h2 = addZero(count_time.getHours());
             m2 = addZero(count_time.getMinutes());
             time_slot_2 = h2 + ":" + m2;
 
             if (count_time <= end_time) {
-
                 console.log(time_slot_1 + " - " + time_slot_2);
                 option = document.createElement("option");
                 option.text = time_slot_1 + " - " + time_slot_2;
                 select.add(option);
-
             } else {
                 break;
             }
         }
-
-
     })
 })
 
