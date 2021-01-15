@@ -1,4 +1,4 @@
-# 🚀 Booking system
+# 🚀 Buechs.ch
  
 ---
  ## Table of contents
@@ -7,4 +7,5 @@
 ---
 
 ## Project information
-In this project a versatile online reservation system is developed. Whether for a restaurant, a sports club or an office: With this reservation system you can bring order to the availability of your tables, sports fields and offices.
+In the fifth semester of the Media Application major, a project was implemented. The following project deals with the realization of a universal online reservation system. This covers different areas in which reservations are made. Special attention was paid to restaurants, sports grounds and corporate events.
+The administration of the reservation possibilities was ensured with a backend.
