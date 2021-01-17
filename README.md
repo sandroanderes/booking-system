@@ -58,6 +58,5 @@ Have fun!
 In cases that something doesen't work, you might have to run 
 ```
 npm install
-.
 npm run watch
 ```
