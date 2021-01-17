@@ -3,14 +3,14 @@
 ---
  ## Table of contents
 
-* [Project information](#project-information)
-* [How to make it work?](#how-to-make-it-work?)
-    * [1. Clone the repository](#1.-Clone-the-repository)
-    * [2. Install Composer dependencies](#2.-Install-Composer-dependencies)
-    * [3. Create a Database & customize the .env file](#3.-Create-a-Database-&-customize-the-.env-file)
-    * [4. Create the DB tables](#4.-Create-the-DB-tables)
-    * [5. Create an admin User](#5.-Create-an-admin-User)
-    * [6. Explore the Application](#6.-Explore-the-Application)
+* [Project information]
+* [How to make it work?]
+    * [1. Clone the repository]
+    * [2. Install Composer dependencies]
+    * [3. Create a Database & customize the .env file]
+    * [4. Create the DB tables]
+    * [5. Create an admin User]
+    * [6. Explore the Application]
 ---
 
 ## Project information
