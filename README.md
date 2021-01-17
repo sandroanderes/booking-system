@@ -10,7 +10,7 @@
 In the fifth semester of the Media Application major, a project was implemented. The following project deals with the realization of a universal online reservation system. This covers different areas in which reservations are made. Special attention was paid to restaurants, sports grounds and corporate events.
 The administration of the reservation possibilities was ensured with a backend.
 
-
+## How to make it run
 ### 1. Clone
 ```
 $ git clone https://github.com/sandroanderes/booking-system/
@@ -23,7 +23,7 @@ php composer.phar install
 ```
 
 ### 3. Create a Database & customize the .env file
-Change .env.example to --> .env and modify the database configuration.
+Change the (.env.example)-File to --> (.env)-File and modify the database configuration.
 
 ```
 DB_CONNECTION=mysql
@@ -46,3 +46,11 @@ php artisan orchid:admin admin admin@admin.com password
 
 ### 6. Explore the Application
 Have fun!
+
+### It doesen't work
+In cases that something doesen't work, you might have to run 
+```
+npm install
+.
+npm run watch
+```
