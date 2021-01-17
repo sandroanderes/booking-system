@@ -4,7 +4,7 @@
  ## Table of contents
 
 * [Project information](#project-information)
-* [How to make it work?](#How-to-make-it-work?)
+* [How to make it work?](#how-to-make-it-work?)
     * [1. Clone the repository](#1.-Clone-the-repository)
     * [2. Install Composer dependencies](#2.-Install-Composer-dependencies)
     * [3. Create a Database & customize the .env file](#3.-Create-a-Database-&-customize-the-.env-file)
