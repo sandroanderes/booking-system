@@ -4,14 +4,21 @@
  ## Table of contents
 
 * [Project information](#project-information)
+* [How to make it work?](#How-to-make-it-work?)
+    * [1. Clone the repository](#1.-Clone-the-repository)
+    * [2. Install Composer dependencies](#2.-Install-Composer-dependencies)
+    * [3. Create a Database & customize the .env file](#3.-Create-a-Database-&-customize-the-.env-file)
+    * [4. Create the DB tables](#4.-Create-the-DB-tables)
+    * [5. Create an admin User](#5.-Create-an-admin-User)
+    * [6. Explore the Application](#6.-Explore-the-Application)
 ---
 
 ## Project information
 In the fifth semester of the Media Application major, a project was implemented. The following project deals with the realization of a universal online reservation system. This covers different areas in which reservations are made. Special attention was paid to restaurants, sports grounds and corporate events.
 The administration of the reservation possibilities was ensured with a backend.
 
-## How to make it run
-### 1. Clone
+## How to make it work?
+### 1. Clone the repository
 ```
 $ git clone https://github.com/sandroanderes/booking-system/
 ```
@@ -47,7 +54,6 @@ php artisan orchid:admin admin admin@admin.com password
 ### 6. Explore the Application
 Have fun!
 
-### It doesen't work
 In cases that something doesen't work, you might have to run 
 ```
 npm install
