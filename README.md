@@ -14,7 +14,7 @@
 ---
 
 ## Project information
-In the fifth semester of the Media Application major, a project was implemented. The following project deals with the realization of a universal online reservation system. This covers different areas in which reservations are made. Special attention was paid to restaurants, sports grounds and corporate events.
+In the fifth semester of the Media Application major, a project was implemented. The following project deals with the realization of a universal online reservation system called Buechs. This covers different areas in which reservations are made. Special attention was paid to restaurants, sports grounds and corporate events.
 The administration of the reservation possibilities was ensured with a backend.
 
 ## How to make it work?
@@ -45,6 +45,7 @@ DB_PASSWORD=ExamplePassword
 ```
 php artisan migrate
 ```
+If you want some sample data, there is a DataBase in the root directory called (laravel_test.sql)
 
 ### 5. Create an admin User
 ```
