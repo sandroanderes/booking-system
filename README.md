@@ -26,7 +26,7 @@ Then switch to the cloned directory.
 
 ### 2. Install Composer dependencies
 ```
-php composer.phar install
+composer install
 ```
 
 ### 3. Create a Database & customize the .env file
@@ -53,6 +53,9 @@ php artisan orchid:admin admin admin@admin.com password
 ```
 
 ### 6. Explore the Application
+```
+php artisan serve
+```
 Have fun!
 
 In cases that something doesen't work, you might have to run 
