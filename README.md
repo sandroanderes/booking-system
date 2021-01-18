@@ -30,15 +30,17 @@ composer install
 ```
 
 ### 3. Create a Database & customize the .env file
-Change the (.env.example)-File to --> (.env)-File and modify the database configuration.
+* Create a new MySQL Database
+* Rename the (.env.example)-File to --> (.env)-File (it is located in the root directory)
+* Modify the database configuration in the .env-File
 
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=ExampleDBName
-DB_USERNAME=ExampleDBUsername
-DB_PASSWORD=ExamplePassword
+DB_DATABASE=ExampleDBName // Your DB-Name here!
+DB_USERNAME=ExampleDBUsername // Your DB-Username here!
+DB_PASSWORD=ExamplePassword // Your DB-Password here!
 ```
 
 ### 4. Create the DB tables
@@ -57,9 +59,3 @@ php artisan orchid:admin admin admin@admin.com password
 php artisan serve
 ```
 Have fun!
-
-In cases that something doesen't work, you might have to run 
-```
-npm install
-npm run watch
-```
