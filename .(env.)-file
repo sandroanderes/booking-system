@@ -2,16 +2,16 @@ APP_NAME=Laravel
 APP_ENV=local
 APP_KEY=
 APP_DEBUG=true
-APP_URL=http://localhost
+APP_URL=localhost
 
 LOG_CHANNEL=stack
 
 DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
+DB_HOST=154.0.167.90
 DB_PORT=3306
-DB_DATABASE=laravel
-DB_USERNAME=root
-DB_PASSWORD=
+DB_DATABASE=rendeonx_book123
+DB_USERNAME=rendeonx_admin
+DB_PASSWORD=Fk1987@rend
 
 BROADCAST_DRIVER=log
 CACHE_DRIVER=file

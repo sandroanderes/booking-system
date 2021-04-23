@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  bookingsystem:
+    image: bookingsystem
+    build:
+      context: .
+      dockerfile: ./Dockerfile
