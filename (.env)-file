@@ -9,8 +9,8 @@ LOG_CHANNEL=stack
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=rendeonx_book123
-DB_USERNAME=rendeonx_admin
+DB_DATABASE=rendeonx_booking44
+DB_USERNAME=rendeonx_bookme
 DB_PASSWORD=Fk1987@rend
 
 BROADCAST_DRIVER=log
